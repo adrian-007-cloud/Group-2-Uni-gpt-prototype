@@ -1,6 +1,6 @@
 import chromadb
 from sentence_transformers import SentenceTransformer
-from chunker import chunk_pdf
+from core.chunker import chunk_pdf
 
 FILE = "data/COS 335 Lecture Note 1.pdf"
 DB_FOLDER = "chroma_db"

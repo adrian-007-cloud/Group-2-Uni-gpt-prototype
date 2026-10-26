@@ -40,7 +40,7 @@ def chunk_pdf(path):
 
 
 if __name__ == "__main__":
-    FILE = "data\COS 335 Lecture Note 1.pdf"
+    FILE = "data/COS 335 Lecture Note 1.pdf"
     all_chunks = chunk_pdf(FILE)
     print("Total chunks:", len(all_chunks))
     for text, page in all_chunks[:3]:
