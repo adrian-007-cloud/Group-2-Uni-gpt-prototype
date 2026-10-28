@@ -38,4 +38,13 @@ Ten questions is a small test. The report should say so.
 The questions use the slides’ own words, which makes them easier to find. Add a few questions worded differently, such as “what kinds of AI agents are there?”, to see how the search copes with paraphrases.
 Page 19 and page 23 appeared twice in the top results. That means two chunks from the same page matched, which is useful but means the top 3 can contain repeats. Note it as an observation.
 Unification (page 88) ranked the wrong page first. Page 55 came top. Look at that page to see why it matched; it’s a good example for your limitations section.
+- Answer step works end to end. Question "types of agents" returned five agent types, sources pages 11, 13, 51. Main source is page 13.
 
+Prompt enginerring techniques:
+1.  Role: “You are a study assistant for one university course.” This sets how the model behaves.
+2.  Grounding: “Answer using ONLY the course notes.” This keeps answers tied to the source material.
+3.  Fallback: “If the notes do not contain the answer, say...” This gives the model an honest exit, instead of guessing.
+
+Eval: i asked the capital of france and it didnt generate a random answer, it just said it wasnt in the course notes
+
+Limitation: The speed of the interface is quite slow for modern standards
