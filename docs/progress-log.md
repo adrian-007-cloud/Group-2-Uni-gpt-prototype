@@ -48,3 +48,33 @@ Prompt enginerring techniques:
 Eval: i asked the capital of france and it didnt generate a random answer, it just said it wasnt in the course notes
 
 Limitation: The speed of the interface is quite slow for modern standards
+
+To run the project, 
+activate env :    .\venv\Scripts\activate
+start ollama
+run streamlit
+
+### 2026-10-30
+
+**Search (retrieval)**
+- Tested: Recall@3 = 100% (10 of 10 questions), MRR = 0.85. One course only.
+- Tested: the search returns the right page for the sample questions.
+
+**Answers (model and prompt)**
+- Tested: the fallback works. "What is the capital of France" returns "I cannot find this in the course notes."
+- Tested: `llama3.2` gives clearer explanations than `llama3.2:1b`. It is slower on the same laptop. Decision: keep `llama3.2` for the final project, and report the speed trade-off honestly.
+- Tested: the answer was cut off mid-sentence at `num_predict` = 120 and at 300. Raising the limit (and checking `num_ctx`) produced a complete explanation of alpha beta pruning.
+- Pending: confirm the final `num_predict` value and time a full answer with it.
+
+**Speed**
+- Before changes: "what is alpha beta pruning" took about 80 seconds on the first run. A second question took 37 seconds (with `llama3.2`).
+- Limitation: the answer step is slow on an 8 GB laptop CPU, mainly before the first word appears. This is a known limit for the report.
+- Added, pending a timed test: `keep_alive` = 30m, so the model stays loaded between questions.
+- Added, pending a timed test: streaming answers, so words appear as they are written.
+
+**App**
+- Tested: the app starts with `HF_HUB_OFFLINE` set. The offline warning appears, but the saved embedding model still loads.
+- Fixed: an error about Ollama refusing connections happened because the Ollama service was not running. Solved by starting it (`ollama serve` or the Ollama app).
+- Fixed: the notes were shown twice, because an old block was left in `app.py`. Now the notes are in one expander.
+- Added, pending a test: the query is trimmed with `strip()` before searching. Test with extra spaces at the start and end.
+Added a side expander to allow user pick the model they want to use

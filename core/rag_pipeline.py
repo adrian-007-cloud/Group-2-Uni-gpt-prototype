@@ -6,7 +6,7 @@ from core.llm_client import ask_model
 DB_FOLDER = "chroma_db"
 COLLECTION_NAME = "notes"
 EMBEDDING_MODEL = "all-MiniLM-L6-v2"
-NUMBER_OF_RESULTS = 3
+NUMBER_OF_RESULTS = 2
 
 # The rules we give the model every time
 INSTRUCTIONS = """You are a study assistant for one university course.
@@ -54,6 +54,16 @@ def answer_question(model, collection, question):
     ]
     answer = ask_model(messages)
     return answer, notes
+
+def prepare_question(model, collection, question):
+    question = question.strip()
+    notes = find_notes(model, collection, question)
+    prompt = build_prompt(question, notes)
+    messages = [
+        {"role": "system", "content": INSTRUCTIONS},
+        {"role": "user", "content": prompt},
+    ]
+    return messages, notes
 
 
 # Test it on its own. Run from the UNI-GPT folder.
