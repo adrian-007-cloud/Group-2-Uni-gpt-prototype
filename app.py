@@ -50,6 +50,12 @@ if question:
         st.error("Could not search the notes. Details: " + str(error))
         st.stop()
 
+     # If the notes don't cover the question, show the fallback without asking the model
+    if messages is None:
+        st.subheader("Answer")
+        st.write("I cannot find this in the course notes.")
+        st.stop()
+
     # Show the answer as it is written
     st.subheader("Answer")
     answer_box = st.empty()

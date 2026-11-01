@@ -120,3 +120,64 @@ Added a side expander to allow user pick the model they want to use
 **Courses**
 - Folders: `data/COS335/` and `data/COS331/`, one per course.
 - Pending: confirm the COS331 embedding step stored its chunks, and record the number of chunks.
+
+**Library**
+- Name: KeyBERT (MIT license)
+- Install: `pip install keybert`
+- Version: [run `pip show keybert` and paste the version here]
+- Uses the embedding model `all-MiniLM-L6-v2`, already saved on this computer.
+
+**Purpose**
+- Suggest candidate key phrases for each page, which the model will group into topics. The student never sees these directly.
+
+**Test method**
+- Script: `eval/test_keybert.py`. It reads the first 20 pages of each course PDF and prints up to 5 phrases per page.
+- Run with the internet turned off (`HF_HUB_OFFLINE = 1`).
+- Checked by hand: does each page's phrases describe the page's topic?
+
+**Results**
+- Offline: passed. The script ran with no internet connection.
+- COS335 (first 20 pages): most pages gave topic-relevant phrases, such as advantages and disadvantages of AI, Turing test, agents, and learning agents. Some phrases were near-duplicates, and some were fragments.
+- COS331 (first 20 pages): most pages gave topic-relevant phrases, such as concurrency, process states, PCB, CPU scheduling, preemptive scheduling, and deadlock prevention. Noise: a page number ("12") appeared in a phrase, a stray word ("dbms") appeared, and some phrases repeated.
+- Broken characters: "artiﬁcial" appears because the PDF uses a special "fi" character. This must be fixed in the cleaning step.
+
+**Decision**
+- Kept KeyBERT as a candidate generator, for the reasons above.
+- It is not used as the final topic list.
+
+**Next steps (needed before topics are final)**
+1. Cleaning step: remove page numbers, replace the "fi" and "fl" special characters, and drop phrases that appear on most pages of a course.
+2. Grouping step: the model combines near-duplicate phrases into one topic name.
+3. Check step: the course owner reviews and corrects `topics.json`.
+
+**Limits**
+- Only the first 20 pages of each course were checked.
+- Phrases were checked by hand, by one person.
+
+**Working and tested**
+- Course folders: each course has its own folder in `data/`. COS331 and COS335 are both stored.
+- Course tags and search filter: answers come only from the chosen course.
+- Model picker: a faster model and a smarter model in the sidebar.
+- Streaming answers, sources shown only when the notes answer the question, and the notes shown in one expander.
+- Prompt: a general prompt with no course-specific examples. Tested on COS331 and COS335.
+- Relevance cutoff: a question is refused without calling the model when the closest note is too far. Starting value 1.1. Measured on both courses: notes-covered questions scored about 0.6 to 0.8, questions the notes don't cover scored 1.48 and above.
+- Cleaning step: fixes special characters, joins hyphenated words, removes bare page numbers and repeated headers and footers, flags weak pages, and saves cleaned pages to `data/<course>/cleaned/`.
+- PDF reader: switched to pdfplumber. Fixes split words such as "sys tem," but can lose subscripts such as "q0."
+- Topic builder (`core/topics.py`): automatic. KeyBERT finds phrases, common phrases are removed, similar phrases are grouped, and each topic gets its pages. About 16 of 22 topics found on COS335 were real.
+
+**Known problems (not fixed yet)**
+- Some pages lose the spaces between words (for example COS335 pages 2 and 4), which makes topic names run together. Next step: compare pypdf and pdfplumber on those pages, and decide whether to combine them.
+- Subscripts such as "q0" lose their digits with pdfplumber.
+- Topic names need the glued-words fix before they're usable.
+- The relevance cutoff (1.1) is based on six questions. It needs testing on the 40-question set.
+- The app's search doesn't keep context between questions. Planned for later, after the learning structure design.
+
+**Decisions made today**
+- Course notes are checked once by the course owner. Student uploads use automatic rules, with sources shown so students can verify.
+- Every feature must work for any course, not only COS335.
+- Libraries are used only when they pass an offline test on two courses. KeyBERT passed. genanki and py-fsrs are for later.
+
+**Next steps**
+1. Fix the glued-words problem on the pages that lose spaces.
+2. Tune the topic rules and the cutoff.
+3. Build flashcards and the quiz from the checked topics.

@@ -8,7 +8,8 @@ import sys
 import glob
 import chromadb
 from sentence_transformers import SentenceTransformer
-from core.chunker import chunk_pdf
+from core.chunker import chunk_text
+from core.cleaner import clean_course
 
 DATA_FOLDER = "data"        # each course has its own folder here, named with its code
 DB_FOLDER = "chroma_db"     # where the database is saved
@@ -44,20 +45,19 @@ def index_course(model, collection, course, rebuild):
         collection.delete(where={"course": course})
         print("Removed the old chunks for", course)
 
-    # Read every PDF in the course folder, one chunk at a time
+    # Clean every page first, then split the cleaned text into chunks
+    cleaned_pages = clean_course(course)
+
     texts = []
     ids = []
     metadatas = []
     counter = 0
-    pdf_files = sorted(glob.glob(os.path.join(DATA_FOLDER, course, "*.pdf")))
-    for pdf_path in pdf_files:
-        file_name = os.path.basename(pdf_path)
-        for chunk_text, page in chunk_pdf(pdf_path):
-            texts.append(chunk_text)
-            ids.append(course + "-chunk-" + str(counter))   # unique id for each course
-            metadatas.append({"course": course, "source": file_name, "page": page})
+    for item in cleaned_pages:
+        for piece in chunk_text(item["text"]):
+            texts.append(piece)
+            ids.append(course + "-chunk-" + str(counter))
+            metadatas.append({"course": course, "source": item["file"], "page": item["page"]})
             counter = counter + 1
-
     if not texts:
         print("No text was found for", course, "- check its PDF files.")
         return

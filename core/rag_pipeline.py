@@ -7,6 +7,8 @@ DB_FOLDER = "chroma_db"
 COLLECTION_NAME = "notes"
 EMBEDDING_MODEL = "all-MiniLM-L6-v2"
 NUMBER_OF_RESULTS = 3
+RELEVANCE_CUTOFF = 1.1   # if even the closest note is farther than this, the notes don't cover the question
+FALLBACK = "I cannot find this in the course notes."
 
 # The rules we give the model every time
 INSTRUCTIONS = """You are a study assistant. You answer a student's question using only the course notes provided below.
@@ -44,8 +46,8 @@ def find_notes(model, collection, question, course):
         where={"course": course},   # only search this course's notes
     )
     found = []
-    for text, info in zip(results["documents"][0], results["metadatas"][0]):
-        found.append({"text": text, "page": info["page"]})
+    for text, info, distance in zip(results["documents"][0], results["metadatas"][0], results["distances"][0]):
+        found.append({"text": text, "page": info["page"], "distance": distance})
     return found
 
 
@@ -60,12 +62,19 @@ def build_prompt(question, notes):
 # The whole process: find notes, build the prompt, ask the model
 def answer_question(model, collection, question, course):
     messages, notes = prepare_question(model, collection, question, course)
+    if messages is None:
+        return FALLBACK, notes
     answer = ask_model(messages)
     return answer, notes
 
 def prepare_question(model, collection, question, course):
     question = question.strip()
     notes = find_notes(model, collection, question, course)
+
+    # Notes come back closest first. If even the closest is too far, the notes don't cover this question.
+    if not notes or notes[0]["distance"] > RELEVANCE_CUTOFF:
+        return None, []
+
     prompt = build_prompt(question, notes)
     messages = [
         {"role": "system", "content": INSTRUCTIONS},

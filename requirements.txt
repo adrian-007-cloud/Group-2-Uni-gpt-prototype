@@ -3,6 +3,6 @@ streamlit
 chromadb
 sentence-transformers
 torch
-pypdf
+pdfplumber
 python-pptx
 requests
