@@ -3,7 +3,7 @@ os.environ["HF_HUB_OFFLINE"] = "1"
 
 # Step 1: bring in the tools this page needs
 import streamlit as st
-from core.rag_pipeline import load_search, answer_question, prepare_question
+from core.rag_pipeline import load_search, answer_question, prepare_question, list_courses
 from core.llm_client import ask_model_stream
 
 # The model choices the student can pick from
@@ -33,6 +33,10 @@ def get_search():
 with st.spinner("Loading the search model. This takes a moment the first time..."):
     model, collection = get_search()
 
+# Pick the course to search (add this right here)
+with st.sidebar:
+    st.subheader("Choose a course")
+    course = st.selectbox("Course", list_courses(collection))
 
 # Step 4: the box where the student types a question
 question = st.text_input("Your question")
@@ -41,7 +45,7 @@ question = st.text_input("Your question")
 # Step 5: when a question is typed, find the notes and write the answer
 if question:
     try:
-        messages, notes = prepare_question(model, collection, question)
+        messages, notes = prepare_question(model, collection, question, course)
     except Exception as error:
         st.error("Could not search the notes. Details: " + str(error))
         st.stop()
@@ -58,17 +62,17 @@ if question:
         st.error("Could not get an answer. Is Ollama running? Details: " + str(error))
         st.stop()
 
-    # Show the pages the answer was based on, without repeats
-    st.subheader("Sources")
-    page_numbers = []
-    for note in notes:
-        if note["page"] not in page_numbers:
-            page_numbers.append(note["page"])
-    st.write("Pages: " + ", ".join(str(p) for p in page_numbers))
-
-    # Show the notes behind the answer, hidden until the student opens them
-    with st.expander("Notes that were found"):
+    # Only show sources when the notes actually answered the question
+    if not answer.startswith("I cannot find"):
+        st.subheader("Sources")
+        page_numbers = []
         for note in notes:
-            st.markdown("**Page " + str(note["page"]) + "**")
-            st.write(note["text"])
-            st.divider()
+            if note["page"] not in page_numbers:
+                page_numbers.append(note["page"])
+        st.write("Pages: " + ", ".join(str(p) for p in page_numbers))
+
+        with st.expander("Notes that were found"):
+            for note in notes:
+                st.markdown("**Page " + str(note["page"]) + "**")
+                st.write(note["text"])
+                st.divider()
