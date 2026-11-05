@@ -181,3 +181,56 @@ Added a side expander to allow user pick the model they want to use
 1. Fix the glued-words problem on the pages that lose spaces.
 2. Tune the topic rules and the cutoff.
 3. Build flashcards and the quiz from the checked topics.
+
+## 2026-11-05: Topics, tutor, and checkpoints
+
+**Topics (core/topics.py)**
+- Changed from automatic phrase finding (KeyBERT) to outline-driven. Each course has `data/<course>/outline.txt` with one topic per line.
+- For each topic, the script compares the topic name with every page and keeps the top 4 pages, only if the match is at least 0.30.
+- Reason: KeyBERT produced glued and unrelated topic names. Outlines come from the official course content, so topic names are correct.
+- The first version of the cutoff was too loose (almost every page matched). Fixed by using the top 4 pages with a minimum score.
+- Tested: `python -m core.topics COS331` and `python -m core.topics COS335` both ran and saved `topics.json`.
+
+**COS331 topics**
+- Built from the official outline: 24 topics, 17 marked checked.
+- Pages checked against the PDF with keyword searches and some manual corrections. Monitors matched page 25 only.
+- Not all topics are verified. Semaphores, Producer-Consumer, and Segmentation were checked by reading the PDF text.
+
+**COS335 topics**
+- Built from the official course description in the notes: 13 topics.
+- Page 1 is the course description, so it was removed from topics that only match because the description lists them.
+- Multilayer Neural Networks checked: pages 114 and 115 (deep learning section).
+- Introduction to Pattern Recognition and Self-Organizing Neural Networks have no pages yet. They stay unchecked until the pages are found.
+- Other topics were not checked against the PDF.
+
+**Tutor (core/tutor.py)**
+- Six steps in fixed order: topic, key ideas, worked example, check question, feedback, next step.
+- The model only writes steps 2 to 4 from the notes for that topic.
+- Number check: if the worked example uses a number not found in the notes, it is replaced with "The notes do not give a worked example for this topic."
+- Tested on Deadlock (correct) and Thrashing (example replaced by the check).
+- Known limit: llama3.2 sometimes adds details or swaps names. The app shows page numbers so students can check.
+
+**LLM settings (core/llm_client.py)**
+- `ask_model` raised from `num_predict` 120 to 800, and `num_ctx` set to 4096. This stopped replies from being cut off.
+
+**Helpers**
+- `core/course_plan.py`: topic list, topic pages, next topic.
+- `core/progress.py`: saves the last finished topic per course. No names are stored.
+
+**Checkpoints (core/checkpoint.py)**
+- Middle checkpoint after half the checked topics. End checkpoint after all of them.
+- Questions are saved in `data/<course>/check_questions.json`.
+- COS331: 17 questions. Questions that were on the wrong topic were rewritten from the notes.
+- COS335: 8 questions. The Semantic Networks question was rewritten from the notes.
+- Limit: the model's questions are not always accurate. Each one should be checked before use.
+
+**Sensitive-information policy**
+- Drafted: what is stored (notes, index, topic files, last finished topic), what is not stored (names, answers), where it is kept (local only), and how to delete it.
+
+**Pending**
+- README with setup steps.
+- Test run on both courses, one topic and one checkpoint each.
+- Check COS335 pages for Pattern Recognition and Self-Organizing Neural Networks.
+- Check the remaining COS335 topics against the PDF.
+- Front end (tutor screen, checkpoints).
+- Student uploads (optional, last if time allows).

@@ -39,11 +39,13 @@ with st.sidebar:
     course = st.selectbox("Course", list_courses(collection))
 
 # Step 4: the box where the student types a question
-question = st.text_input("Your question")
+with st.form("question_form"):
+    question = st.text_input("Your question")
+    submitted = st.form_submit_button("Ask")
 
 
 # Step 5: when a question is typed, find the notes and write the answer
-if question:
+if submitted and question:
     try:
         messages, notes = prepare_question(model, collection, question, course)
     except Exception as error:

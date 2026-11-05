@@ -14,6 +14,11 @@ questions = [
     "what is concurrency",
     "what is alpha beta pruning",
     "what is the capital of France",
+    "what is weak AI",
+    "what is Weak AI",
+    "what weak Ai",
+    "explain weak AI",
+    "what is narrow AI",
 ]
 
 model = SentenceTransformer("all-MiniLM-L6-v2")

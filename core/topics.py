@@ -1,114 +1,117 @@
 # core/topics.py
-# Builds a topic list for a course automatically: key phrases, then groups, then topic names.
+# Builds a topic list for a prebuilt course from an outline file.
+# The outline file is data/<course>/outline.txt — one topic name per line.
 # Run from the UNI-GPT folder:
-#   python -m core.topics COS335
+#   python -m core.topics COS331
+
 import json
 import os
 import sys
-from collections import Counter
 
 os.environ["HF_HUB_OFFLINE"] = "1"   # use only the saved model, no internet
 
-from keybert import KeyBERT
 from sentence_transformers import SentenceTransformer
 from core.cleaner import clean_course
 
-EMBED_MODEL = "all-MiniLM-L6-v2"
-DATA_FOLDER = "data"
-MIN_WORDS = 2          # a phrase needs at least 2 words
-MIN_PAGES = 2          # a topic must appear on at least 2 pages
-GENERAL_SHARE = 0.5    # a phrase on more than half of all pages is too general
-SIMILAR_ENOUGH = 0.75  # phrases this close in meaning are grouped into one topic
+EMBED_MODEL  = "all-MiniLM-L6-v2"
+DATA_FOLDER  = "data"
+TOP_PAGES      = 4      # keep at most this many pages per topic
+MIN_SIMILARITY = 0.25   # a page must score at least this to count
 
 
-# Step 1: get key phrases from each page, and record which pages each phrase came from
-def extract_phrases(kw_model, pages):
-    phrase_pages = {}
-    for item in pages:
-        if len(item["text"].split()) < 30:
-            continue                                   # too little text on this page
-        keywords = kw_model.extract_keywords(
-            item["text"], keyphrase_ngram_range=(1, 3), stop_words="english", top_n=5
-        )
-        for phrase, score in keywords:
-            phrase = phrase.strip().lower()
-            if len(phrase.split()) < MIN_WORDS:
-                continue                               # drop single words
-            if any(ch.isdigit() for ch in phrase):
-                continue                               # drop phrases with numbers
-            phrase_pages.setdefault(phrase, set()).add(item["page"])
-    return phrase_pages
+def load_outline(course):
+    """
+    Read data/<course>/outline.txt and return a list of topic names.
+    Each non-empty line in the file is one topic name.
+    """
+    outline_path = os.path.join(DATA_FOLDER, course, "outline.txt")
 
-
-# Step 2: drop phrases that appear on too many pages (general words, not topics)
-def drop_general_phrases(phrase_pages, total_pages):
-    limit = GENERAL_SHARE * total_pages
-    return {p: pages for p, pages in phrase_pages.items() if len(pages) <= limit}
-
-
-# Step 3: group phrases whose meanings are close together
-def group_phrases(embed_model, phrases):
-    vectors = embed_model.encode(phrases, normalize_embeddings=True)
-    groups = []                                        # each group is a list of phrase indexes
-    for i in range(len(phrases)):
-        placed = False
-        for group in groups:
-            # compare with the first phrase in the group
-            if float(vectors[i] @ vectors[group[0]]) >= SIMILAR_ENOUGH:
-                group.append(i)
-                placed = True
-                break
-        if not placed:
-            groups.append([i])
-    return groups
-
-
-# Step 4: turn each group into a topic, named after its most common phrase
-def build_topics(embed_model, phrase_pages):
-    phrases = list(phrase_pages.keys())
-    if not phrases:
+    # If the outline file does not exist, tell the user what to do
+    if not os.path.exists(outline_path):
+        print(f"No outline file found at {outline_path}")
+        print("Create that file with one topic name per line, then run this script again.")
         return []
+
     topics = []
-    for group in group_phrases(embed_model, phrases):
-        names = [phrases[i] for i in group]
-        name = max(names, key=lambda p: len(phrase_pages[p]))
-        pages = sorted(set().union(*[phrase_pages[p] for p in names]))
-        if len(pages) < MIN_PAGES:
-            continue                                   # too few pages to count as a topic
-        topics.append({
-            "name": name.title(),
-            "pages": pages,
-            "phrases": sorted(names),
-            "checked": False,                          # the course owner sets this to true after checking
-        })
-    topics.sort(key=lambda t: t["pages"][0])
+    with open(outline_path, encoding="utf-8") as f:
+        for line in f:
+            name = line.strip()
+            if name:                          # skip blank lines
+                topics.append(name)
+
+    print(f"Loaded {len(topics)} topics from outline.")
     return topics
 
 
+def find_pages_for_topic(embed_model, pages, topic_name):
+    # Step A: turn the topic name into a list of numbers
+    topic_vector = embed_model.encode([topic_name], normalize_embeddings=True)[0]
+
+    # Step B: score every page for similarity to the topic
+    scored = []                                  # will hold (score, page number) pairs
+    for item in pages:
+        if len(item["text"].split()) < 30:       # skip pages with almost no text
+            continue
+        page_vector = embed_model.encode([item["text"]], normalize_embeddings=True)[0]
+        similarity = float(topic_vector @ page_vector)   # higher = more similar
+        scored.append((similarity, item["page"]))
+
+    # Step C: sort from most similar to least similar
+    scored.sort(reverse=True)
+
+    # Step D: keep only the best few pages that are similar enough
+    best = [page for score, page in scored[:TOP_PAGES] if score >= MIN_SIMILARITY]
+    return sorted(best)
+
+
 def build_topic_file(course):
-    # Step 5: clean the pages, then build the topics
-    pages = clean_course(course)
-    if not pages:
+    """
+    Main function: load the outline, clean the pages, find pages per topic,
+    and write data/<course>/topics.json.
+    """
+    # Step 1: load the topic names from the outline file
+    topic_names = load_outline(course)
+    if not topic_names:
         return
 
-    print("Loading the models...")
+    # Step 2: clean the course pages (same cleaning step as before)
+    print("Cleaning the course pages...")
+    pages = clean_course(course)
+    if not pages:
+        print("No pages found. Check that the PDFs are in data/<course>/.")
+        return
+
+    # Step 3: load the embedding model
+    print("Loading the embedding model...")
     embed_model = SentenceTransformer(EMBED_MODEL)
-    kw_model = KeyBERT(model=embed_model)
 
-    phrase_pages = extract_phrases(kw_model, pages)
-    phrase_pages = drop_general_phrases(phrase_pages, len(pages))
-    topics = build_topics(embed_model, phrase_pages)
+    # Step 4: for each topic in the outline, find the matching pages
+    print("Matching topics to pages...")
+    topics = []
+    for name in topic_names:
+        matched = find_pages_for_topic(embed_model, pages, name)
+        topics.append({
+            "name"   : name,
+            "pages"  : matched,
+            "checked": False,   # set this to true after you review it
+        })
+        status = f"pages {matched}" if matched else "no pages found"
+        print(f"  - {name}: {status}")
 
-    # Step 6: save the topic file and print it for checking
+    # Step 5: save the topics file
     out_path = os.path.join(DATA_FOLDER, course, "topics.json")
     with open(out_path, "w", encoding="utf-8") as out:
         json.dump({"course": course, "topics": topics}, out, indent=2)
 
-    print("Topics found:", len(topics))
-    for topic in topics:
-        print("  -", topic["name"], "| pages", topic["pages"])
-    print("Saved to", out_path)
+    print(f"\nSaved {len(topics)} topics to {out_path}")
+    print("Open topics.json and check the page numbers look right.")
+    print("Set 'checked': true for each topic once you are happy with it.")
 
 
 if __name__ == "__main__":
+    if len(sys.argv) < 2:
+        print("Usage: python -m core.topics <COURSE>")
+        print("Example: python -m core.topics COS331")
+        sys.exit(1)
+
     build_topic_file(sys.argv[1])

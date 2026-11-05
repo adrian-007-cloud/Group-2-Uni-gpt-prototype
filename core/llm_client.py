@@ -13,7 +13,7 @@ def ask_model(messages, model_name = LLM_MODEL):
         "stream": False,
         "messages": messages,
         "keep_alive" : "30m",
-        "options": {"temperature": 0.1, "num_predict": 120},   # low value = more consistent answers
+        "options": {"temperature": 0.1, "num_predict": 800, "num_ctx": 4096},   # 800 = room for longer tutor steps   # low value = more consistent answers
     }
     reply = requests.post(OLLAMA_URL, json=body, timeout=300)
     reply.raise_for_status()               # stops with an error if Ollama failed
