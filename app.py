@@ -1,6 +1,7 @@
 import json
 import os
 import random
+import re
 os.environ["HF_HUB_OFFLINE"] = "1"   # use only the saved models, no internet
 
 import streamlit as st
@@ -12,23 +13,100 @@ st.set_page_config(page_title="Uni-GPT", page_icon="📚", layout="centered")
 # Step 1: a light, flat look. Colours change automatically in dark mode.
 st.markdown("""
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
-:root { --ink:#111827; --muted:#6b7280; --accent:#4f46e5; --line:#eceef2; }
-@media (prefers-color-scheme: dark) {
-  :root { --ink:#f3f4f6; --muted:#9ca3af; --accent:#a5b4fc; --line:#2a2d36; }
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+/* Colours. Dark mode changes these automatically. */
+:root {
+  --ink:#0f172a; --muted:#64748b; --accent:#6366f1; --accent2:#a855f7;
+  --line:#e2e8f0; --bg:#f8fafc; --card:#ffffff; --soft:rgba(99,102,241,0.08);
+  --shadow:0 1px 2px rgba(15,23,42,0.04), 0 8px 24px -12px rgba(15,23,42,0.12);
 }
-html, body, [class*="css"] { font-family:'Inter', system-ui, sans-serif; }
+@media (prefers-color-scheme: dark) {
+  :root {
+    --ink:#f1f5f9; --muted:#94a3b8; --accent:#818cf8; --accent2:#c084fc;
+    --line:#1e293b; --bg:#0a0c12; --card:#111521; --soft:rgba(129,140,248,0.12);
+    --shadow:0 1px 2px rgba(0,0,0,0.4), 0 10px 30px -14px rgba(0,0,0,0.7);
+  }
+}
+
+/* Background with a soft glow at the top */
+html, body, [class*="css"] { font-family:'Inter', system-ui, sans-serif; -webkit-font-smoothing:antialiased; }
+.stApp {
+  background:
+    radial-gradient(900px 500px at 15% -10%, rgba(99,102,241,0.14), transparent 60%),
+    radial-gradient(700px 400px at 100% 0%, rgba(168,85,247,0.10), transparent 55%),
+    var(--bg);
+}
 #MainMenu, footer, header { visibility:hidden; }
-.block-container { max-width:720px; padding-top:2.5rem; padding-bottom:6rem; }
-h1, h2, h3 { color:var(--ink); letter-spacing:-0.01em; }
-.kicker { color:var(--accent); font-size:0.75rem; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; }
-.muted { color:var(--muted); font-size:0.92rem; }
-.big-title { font-size:2rem; font-weight:700; color:var(--ink); line-height:1.2; margin:0.3rem 0 0.8rem; }
-.course-name { font-size:1.15rem; font-weight:600; color:var(--ink); margin:0; }
-.objective { color:var(--ink); line-height:1.7; }
-.stButton > button { border-radius:999px; font-weight:500; }
-.stButton > button[kind="primary"] { background:var(--accent); border-color:var(--accent); }
-hr { margin:1.2rem 0 !important; border-color:var(--line) !important; }
+[data-testid="stDecoration"] { display:none; }
+.block-container { max-width:740px; padding-top:2.5rem; padding-bottom:7rem; }
+.block-container > div { animation: fadeUp .5s ease both; }
+@keyframes fadeUp { from { opacity:0; transform:translateY(8px); } to { opacity:1; transform:none; } }
+
+/* Text */
+h1, h2, h3, h4 { color:var(--ink); letter-spacing:-0.02em; }
+h4 { font-weight:650; margin-top:1.4rem; }
+.kicker {
+  display:inline-block; color:var(--accent); font-size:0.72rem; font-weight:700;
+  letter-spacing:0.09em; text-transform:uppercase; padding:5px 11px; border-radius:999px;
+  background:var(--soft); margin-bottom:0.4rem;
+}
+.big-title {
+  font-size:2.25rem; font-weight:800; line-height:1.15; letter-spacing:-0.03em; margin:0.2rem 0 0.9rem;
+  background:linear-gradient(120deg, var(--ink) 25%, var(--accent) 75%, var(--accent2));
+  -webkit-background-clip:text; background-clip:text; color:transparent;
+}
+.course-name { font-size:1.2rem; font-weight:650; color:var(--ink); margin:0; letter-spacing:-0.01em; }
+.muted { color:var(--muted); font-size:0.92rem; line-height:1.6; }
+.objective { color:var(--ink); line-height:1.75; }
+
+/* Buttons: primary is a gradient with a soft glow, secondary is a clean pill */
+.stButton > button {
+  border-radius:999px; font-weight:600; padding:0.5rem 1.1rem; border:1px solid var(--line);
+  background:var(--card); color:var(--ink); box-shadow:var(--shadow);
+  transition: transform .15s ease, box-shadow .2s ease, border-color .2s ease;
+}
+.stButton > button:hover { transform:translateY(-1px); border-color:var(--accent); color:var(--accent); }
+.stButton > button:disabled { opacity:0.4; transform:none; }
+.stButton > button[kind="primary"] {
+  background:linear-gradient(135deg, var(--accent), var(--accent2)); border:none; color:#fff;
+  box-shadow:0 10px 24px -10px var(--accent);
+}
+.stButton > button[kind="primary"]:hover { color:#fff; box-shadow:0 14px 28px -10px var(--accent); }
+
+/* Progress bar: one thin track with a gradient fill */
+.track { height:6px; border-radius:999px; background:var(--line); overflow:hidden; margin:0.6rem 0 0.8rem; }
+.fill { height:100%; border-radius:999px; background:linear-gradient(90deg, var(--accent), var(--accent2)); transition:width .4s ease; }
+
+/* Quiz options */
+[data-testid="stRadio"] label {
+  padding:9px 14px; border-radius:12px; transition: background .15s ease;
+}
+[data-testid="stRadio"] label:hover { background:var(--soft); }
+
+/* Example as a highlighted quote */
+blockquote {
+  border-left:3px solid var(--accent); background:var(--soft); padding:14px 18px;
+  border-radius:0 14px 14px 0; margin:0.5rem 0; color:var(--ink);
+}
+
+/* Dividers that fade at the ends */
+hr {
+  margin:2rem 0 !important; border:none !important; height:1px;
+  background:linear-gradient(90deg, transparent, var(--line), transparent) !important;
+}
+
+/* Chat messages as soft cards, and a floating input */
+[data-testid="stChatMessage"] {
+  background:var(--card); border:1px solid var(--line); border-radius:18px;
+  padding:14px 18px; margin-bottom:12px; box-shadow:var(--shadow);
+}
+[data-testid="stChatInput"] {
+  border-radius:999px !important; border:1px solid var(--line) !important;
+  box-shadow:0 18px 40px -18px rgba(15,23,42,0.35) !important; background:var(--card) !important;
+}
+[data-testid="stChatInput"]:focus-within { border-color:var(--accent) !important; }
+[data-testid="stBottom"] > div { background:transparent !important; }
 </style>
 """, unsafe_allow_html=True)
 
@@ -74,9 +152,12 @@ def go_home():
 
 
 # Step 5: ask the notes a question and stream the answer
-def ask(course, question, model, collection):
-    messages, notes = prepare_question(model, collection, question, course)
+def ask(course, question, model, collection, history):
+    # history is the earlier chat. rag_pipeline.py uses it to search and to build the prompt.
+    messages, notes = prepare_question(model, collection, question, course, history=history)
     if messages is None:
+        # The notes don't cover this, so show the fallback message. It was not shown before.
+        st.markdown("I cannot find this in the course notes.")
         return "I cannot find this in the course notes.", []
     pages = sorted({n["page"] for n in notes})
     text = ""
@@ -95,6 +176,16 @@ def ask_about(name):
 # Step 5c: the "try again" button starts a new set of quiz questions
 def try_again(base):
     st.session_state[base + "_attempt"] = st.session_state.get(base + "_attempt", 0) + 1
+
+
+# Step 5d: spot "my name is ..." (or "call me ...") so the app can greet the student.
+# This is handled here, not by the notes, so it does not depend on the notes at all.
+NAME_PATTERN = re.compile(r"\b(?:my name is|call me|i'm called)\s+([A-Za-z][A-Za-z'-]{1,30})", re.IGNORECASE)
+
+
+def find_name(text):
+    match = NAME_PATTERN.search(text)
+    return match.group(1).capitalize() if match else None
 
 
 # Step 6: load the search model once, so the page stays fast
@@ -151,8 +242,10 @@ else:
     index = min(max(st.session_state.get("slide", 0), 0), len(slides) - 1)
     slide = slides[index]
 
-    # Progress bar across the top of the course
-    st.progress(index / max(len(slides) - 1, 1))
+    # One progress bar, drawn with HTML so only one line appears
+    percent_done = index / max(len(slides) - 1, 1) * 100
+    st.markdown('<div class="track"><div class="fill" style="width:%d%%"></div></div>' % percent_done,
+                unsafe_allow_html=True)
     st.markdown('<p class="muted">Slide %d of %d</p>' % (index + 1, len(slides)), unsafe_allow_html=True)
 
     # ----- The slide itself -----
@@ -161,12 +254,21 @@ else:
         st.markdown('<div class="big-title">%s</div>' % course, unsafe_allow_html=True)
         st.write("This course has %d topics, in the order of the lecture notes. "
                  "There is a quiz halfway through and one at the end." % len(study["topics"]))
+        # Step A: count the topics the student has ticked as read (this browser session only)
+        total_topics = len(study["topics"])
+        read_count = sum(1 for n in range(1, total_topics + 1)
+                         if st.session_state.get("read_%s_%d" % (course, n)))
+        st.markdown('<p class="muted">%d of %d topics read</p>' % (read_count, total_topics),
+                    unsafe_allow_html=True)
+
         st.markdown("#### Outline")
         for n, topic in enumerate(study["topics"], start=1):
             pages = topic["pages"]
             where = ("pages %d to %d" % (min(pages), max(pages))) if pages else "not in the notes"
             st.markdown("**%d. %s**  \n<span class='muted'>%s</span>" % (n, topic["name"], where),
                         unsafe_allow_html=True)
+            # Step B: a tick box the student clicks once they have read the topic
+            st.checkbox("I have read this topic", key="read_%s_%d" % (course, n))
             for objective in topic["objectives"]:
                 st.markdown('<div class="objective">&nbsp;&nbsp;&nbsp;&nbsp;• %s</div>' % objective,
                             unsafe_allow_html=True)
@@ -266,15 +368,24 @@ else:
 
     question = st.chat_input("Ask a question about %s" % course) or st.session_state.pop("pending_question", None)
     if question:
+        # the chat before this question, in the form rag_pipeline.py expects
+        history = [{"role": m["role"], "content": m["text"]} for m in st.session_state["chat"]]
         st.session_state["chat"].append({"role": "user", "text": question, "pages": []})
         with st.chat_message("user"):
             st.write(question)
+        name = find_name(question)
         with st.chat_message("assistant"):
-            try:
-                text, pages = ask(course, question, model, collection)
-            except Exception as error:
-                text, pages = "Could not get an answer. Is Ollama running? " + str(error), []
-                st.error(text)
-            if pages:
-                st.caption("From pages " + ", ".join(str(p) for p in pages))
+            if name:
+                st.session_state["student_name"] = name
+                text = "Nice to meet you, %s. Ask me anything about %s from your notes." % (name, course)
+                pages = []
+                st.markdown(text)
+            else:
+                try:
+                    text, pages = ask(course, question, model, collection, history)
+                except Exception as error:
+                    text, pages = "Could not get an answer. Is Ollama running? " + str(error), []
+                    st.error(text)
+                if pages:
+                    st.caption("From pages " + ", ".join(str(p) for p in pages))
         st.session_state["chat"].append({"role": "assistant", "text": text, "pages": pages})

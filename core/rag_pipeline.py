@@ -1,6 +1,4 @@
 # This file runs the RAG steps: find the notes, build the prompt, get the answer.
-import json
-import os
 import chromadb
 from sentence_transformers import SentenceTransformer
 from core.llm_client import ask_model
@@ -10,6 +8,8 @@ COLLECTION_NAME = "notes"
 EMBEDDING_MODEL = "all-MiniLM-L6-v2"
 NUMBER_OF_RESULTS = 3
 RELEVANCE_CUTOFF = 1.35   # if even the closest note is farther than this, the notes don't cover the question
+HISTORY_EXCHANGES = 2     # how many earlier messages to send back to the model (2 = the last exchange)
+HISTORY_CHARS = 600       # earlier answers are cut to this many characters to keep the prompt short
 FALLBACK = "I cannot find this in the course notes."
 
 # The rules we give the model every time
@@ -30,20 +30,7 @@ Rules:
 - Never answer and then add the fallback sentence. Use one or the other."""
 
 
-# Step 1: read data/<course>/topics.json and return the pages for one topic
-def load_topic_pages(course, topic_name):
-    path = os.path.join("data", course, "topics.json")
-    if not os.path.exists(path):
-        return []                                  # no topics file yet
-    with open(path, encoding="utf-8") as f:
-        data = json.load(f)
-    for topic in data["topics"]:                   # look through every topic
-        if topic["name"] == topic_name:
-            return topic["pages"]                  # the list of page numbers
-    return []                                      # topic name not found
-
-
-# Step 2: load the embedding model and open the notes database
+# Step 1: load the embedding model and open the notes database
 def load_search():
     model = SentenceTransformer(EMBEDDING_MODEL)
     collection = chromadb.PersistentClient(path=DB_FOLDER).get_collection(COLLECTION_NAME)
@@ -56,8 +43,7 @@ def list_courses(collection):
     return sorted(set(m["course"] for m in stored))
 
 
-# Step 3: find the most relevant note chunks for the question
-# If pages is given, only search chunks from those pages
+# Step 2: find the most relevant note chunks for the question
 def find_notes(model, collection, question, course, pages=None):
     question_numbers = model.encode([question], normalize_embeddings=True).tolist()
 
@@ -78,7 +64,7 @@ def find_notes(model, collection, question, course, pages=None):
     return found
 
 
-# Put the notes and the question into one message
+# Step 3: put the notes and the question into one message
 def build_prompt(question, notes):
     notes_text = ""
     for note in notes:
@@ -86,20 +72,39 @@ def build_prompt(question, notes):
     return "Course notes:\n" + notes_text + "Student question: " + question
 
 
-# Step 4: get the messages for the model, or None if the notes don't cover the question
-def prepare_question(model, collection, question, course, pages=None):
+# Step 4: find the last question the student asked, from the earlier messages
+def last_question_in(history):
+    for message in reversed(history):
+        if message["role"] == "user":
+            return message["content"]
+    return ""
+
+
+# Step 5: get the messages for the model, or None if the notes don't cover the question.
+# history is the earlier chat as a list of {"role": ..., "content": ...}, oldest first.
+# A follow-up is searched together with the question before it, so the right notes are found.
+def prepare_question(model, collection, question, course, pages=None, history=None):
     question = question.strip()
-    notes = find_notes(model, collection, question, course, pages)
+    history = history or []
+
+    search_text = question
+    last = last_question_in(history)
+    if last:
+        search_text = last + " " + question
+
+    notes = find_notes(model, collection, search_text, course, pages)
 
     # Notes come back closest first. If even the closest is too far, the notes don't cover this question.
     if not notes or notes[0]["distance"] > RELEVANCE_CUTOFF:
         return None, []
 
-    prompt = build_prompt(question, notes)
-    messages = [
-        {"role": "system", "content": INSTRUCTIONS},
-        {"role": "user", "content": prompt},
-    ]
+    # The earlier messages go between the rules and the new question, shortened to fit the model's memory
+    earlier = [{"role": m["role"], "content": m["content"][:HISTORY_CHARS]}
+               for m in history[-(HISTORY_EXCHANGES * 2):]]
+
+    messages = [{"role": "system", "content": INSTRUCTIONS}]
+    messages = messages + earlier
+    messages.append({"role": "user", "content": build_prompt(question, notes)})
     return messages, notes
 
 
