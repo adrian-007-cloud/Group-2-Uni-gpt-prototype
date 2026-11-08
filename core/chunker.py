@@ -5,8 +5,10 @@ MAX_WORDS = 200
 
 
 def split_sentences(text):
-    # Split at . ! ? or line breaks, and drop empty pieces
-    pieces = re.split(r"(?<=[.!?])\s+|\n+", text)
+    # Join lines that continue a sentence. Only a blank line counts as a break.
+    text = re.sub(r"(?<!\n)\n(?!\n)", " ", text)
+    # Split after . ! ? and after blank lines
+    pieces = re.split(r"(?<=[.!?])\s+|\n\n+", text)
     return [p.strip() for p in pieces if p.strip()]
 
 

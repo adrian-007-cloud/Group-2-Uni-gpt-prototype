@@ -10,7 +10,7 @@ DB_FOLDER = os.path.join(PROJECT_FOLDER, "chroma_db")
 COLLECTION_NAME = "notes"
 EMBEDDING_MODEL = "all-MiniLM-L6-v2"
 NUMBER_OF_RESULTS = 5     # how many note chunks the model sees for each question
-RELEVANCE_CUTOFF = 1.35   # if even the closest note is farther than this, the notes don't cover the question
+RELEVANCE_CUTOFF = 1.2   # if even the closest note is farther than this, the notes don't cover the question
 HISTORY_EXCHANGES = 2     # how many earlier messages to send back to the model (2 = the last exchange)
 HISTORY_CHARS = 600       # earlier answers are cut to this many characters to keep the prompt short
 FALLBACK = "I cannot find this in the course notes."

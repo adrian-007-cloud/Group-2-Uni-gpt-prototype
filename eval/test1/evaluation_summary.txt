@@ -1,0 +1,29 @@
+Questions: 12 (course: 10, unrelated: 2)
+
+Ranking, over the course questions with expected pages:
+  MRR (mean reciprocal rank): 0.817
+  nDCG@5: 0.735
+
+k sweep (does the right page appear in the top k?):
+  k=1   recall (hit rate): 0.70   precision: 0.70
+  k=3   recall (hit rate): 1.00   precision: 0.40
+  k=5   recall (hit rate): 1.00   precision: 0.26
+  k=8   recall (hit rate): 1.00   precision: 0.20
+  k=10  recall (hit rate): 1.00   precision: 0.17
+
+Cutoff sweep (answer when the closest chunk distance is at most the cutoff):
+  cutoff  answered course  answered unrelated  recall of answering  precision of answering
+  1.0     10               0                   1.00                 1.00
+  1.1     10               0                   1.00                 1.00
+  1.2     10               0                   1.00                 1.00
+  1.3     10               0                   1.00                 1.00
+  1.35    10               0                   1.00                 1.00
+  1.4     10               0                   1.00                 1.00
+  1.5     10               0                   1.00                 1.00
+  1.6     10               1                   1.00                 0.91
+
+Answers (answered questions only):
+  average answer time: 60.74 seconds
+  refusal correct: 12 of 12
+
+Next: read each answer in the CSV and mark correct_by_hand (yes or no).

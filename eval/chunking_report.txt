@@ -1,0 +1,24 @@
+Course: COS331
+
+Pages
+  pages read: 65
+  empty pages: 0 []
+  weak pages (under 30 words, may be scanned): 0 []
+  pages that gave at least one chunk: 65 of 65
+
+Chunks at size 200 words (the app's setting)
+  total chunks: 171
+  words per chunk: average 155, shortest 11, longest 200
+  chunks over 200 words (only happens with one very long sentence): 0
+  chunks that do not end with . ! ? (check a few; often headings): 22 (13%)
+  repeated chunks (same text twice): 0
+  chunks crossing a page boundary: 0 by design (each page is cut on its own)
+
+Comparing chunk sizes (what if the size were different?)
+  size  chunks  average words
+  100   322     82
+  200   171     155
+  400   98      270
+
+This shows the size of chunks, not how well they find answers.
+To judge the size, change CHUNK_LIMIT in chunker.py, rebuild the database, and run evaluate.py again.

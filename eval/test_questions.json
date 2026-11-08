@@ -1,0 +1,20 @@
+[
+  {"course": "COS331", "question": "What is a race condition?", "should_answer": true, "expected_pages": [16]},
+  {"course": "COS331", "question": "What is deadlock?", "should_answer": true, "expected_pages": [19]},
+  {"course": "COS331", "question": "What is the Banker's algorithm used for?", "should_answer": true, "expected_pages": [21]},
+  {"course": "COS331", "question": "What rules must the producer and consumer follow in the producer-consumer problem?", "should_answer": true, "expected_pages": [27]},
+  {"course": "COS331", "question": "What is thrashing?", "should_answer": true, "expected_pages": [49]},
+  {"course": "COS331", "question": "What is the minimum number of states in a process's life cycle?", "should_answer": true, "expected_pages": [5]},
+  {"course": "COS331", "question": "What is a Process Control Block (PCB)?", "should_answer": true, "expected_pages": [9]},
+  {"course": "COS331", "question": "How does paging reduce fragmentation?", "should_answer": true, "expected_pages": [34]},
+  {"course": "COS331", "question": "What is the difference between a virtual address and a physical address?", "should_answer": true, "expected_pages": [30]},
+  {"course": "COS331", "question": "What are the advantages of preemptive scheduling?", "should_answer": true, "expected_pages": [13]},
+  {"course": "COS331", "question": "Who is the lecturer for this course?", "should_answer": false, "expected_pages": []},
+  {"course": "COS331", "question": "What is the capital of Nigeria?", "should_answer": false, "expected_pages": []},
+  {"course": "COS331", "question": "Who won the 2022 World Cup?", "should_answer": false, "expected_pages": []},
+  {"course": "COS331", "question": "How do I bake bread?", "should_answer": false, "expected_pages": []},
+  {"course": "COS331", "question": "How does photosynthesis work?", "should_answer": false, "expected_pages": []},
+  {"course": "COS331", "question": "What is a neural network?", "should_answer": false, "expected_pages": []},
+  {"course": "COS331", "question": "What is the best football club in England?", "should_answer": false, "expected_pages": []},
+  {"course": "COS331", "question": "How many days are in a leap year?", "should_answer": false, "expected_pages": []}
+]
