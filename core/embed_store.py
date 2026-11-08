@@ -11,8 +11,9 @@ from sentence_transformers import SentenceTransformer
 from core.chunker import chunk_text
 from core.cleaner import clean_course
 
-DATA_FOLDER = "data"        # each course has its own folder here, named with its code
-DB_FOLDER = "chroma_db"     # where the database is saved
+PROJECT_FOLDER = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+DATA_FOLDER = os.path.join(PROJECT_FOLDER, "data")
+DB_FOLDER = os.path.join(PROJECT_FOLDER, "chroma_db")      # each course has its own folder here, named with its code
 COLLECTION = "notes"        # the name of the collection inside the database
 EMBED_MODEL = "all-MiniLM-L6-v2"
 

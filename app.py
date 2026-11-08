@@ -10,6 +10,7 @@ from core.llm_client import ask_model_stream
 
 st.set_page_config(page_title="Uni-GPT", page_icon="📚", layout="centered")
 
+
 # Step 1: a light, flat look. Colours change automatically in dark mode.
 st.markdown("""
 <style>
@@ -113,9 +114,32 @@ hr {
 
 # ---------- Helpers ----------
 
+# Step 1b: progress.json keeps the topic ticks between visits. It is a small file next to app.py.
+BASE_FOLDER = os.path.dirname(os.path.abspath(__file__))   # the folder that holds app.py
+PROGRESS_FILE = os.path.join(BASE_FOLDER, "progress.json")
+
+
+def load_progress():
+    try:
+        with open(PROGRESS_FILE, encoding="utf-8") as f:
+            return json.load(f)
+    except (OSError, ValueError):
+        return {}   # no file yet, or the file is damaged: start fresh
+
+
+def save_ticks():
+    # Called when a tick box changes. Saves every "read_..." tick in the session.
+    data = {k: bool(v) for k, v in st.session_state.items() if k.startswith("read_")}
+    try:
+        with open(PROGRESS_FILE, "w", encoding="utf-8") as f:
+            json.dump(data, f, indent=2)
+    except OSError:
+        pass   # saving is a convenience; the app still works if it fails
+
+
 # Step 2: read a course's study file (topics and quiz). Returns None if it is missing.
 def load_study(course):
-    path = os.path.join("data", course, "study.json")
+    path = os.path.join(BASE_FOLDER, "data", course, "study.json")
     if not os.path.exists(path):
         return None
     with open(path, encoding="utf-8") as f:
@@ -194,6 +218,12 @@ def get_search():
     return load_search()
 
 
+if "progress_loaded" not in st.session_state:
+    for key, value in load_progress().items():
+        if key.startswith("read_"):
+            st.session_state[key] = bool(value)
+    st.session_state["progress_loaded"] = True
+
 model, collection = get_search()
 courses = list_courses(collection)
 st.session_state.setdefault("course", None)
@@ -268,7 +298,8 @@ else:
             st.markdown("**%d. %s**  \n<span class='muted'>%s</span>" % (n, topic["name"], where),
                         unsafe_allow_html=True)
             # Step B: a tick box the student clicks once they have read the topic
-            st.checkbox("I have read this topic", key="read_%s_%d" % (course, n))
+            st.checkbox("I have read this topic", key="read_%s_%d" % (course, n),
+                        on_change=save_ticks)
             for objective in topic["objectives"]:
                 st.markdown('<div class="objective">&nbsp;&nbsp;&nbsp;&nbsp;• %s</div>' % objective,
                             unsafe_allow_html=True)

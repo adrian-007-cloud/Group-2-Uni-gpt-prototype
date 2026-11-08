@@ -1,12 +1,15 @@
 # This file runs the RAG steps: find the notes, build the prompt, get the answer.
+import os
 import chromadb
 from sentence_transformers import SentenceTransformer
 from core.llm_client import ask_model
 
-DB_FOLDER = "chroma_db"
+# The project folder is one level above core/, where this file lives
+PROJECT_FOLDER = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+DB_FOLDER = os.path.join(PROJECT_FOLDER, "chroma_db")
 COLLECTION_NAME = "notes"
 EMBEDDING_MODEL = "all-MiniLM-L6-v2"
-NUMBER_OF_RESULTS = 3
+NUMBER_OF_RESULTS = 5     # how many note chunks the model sees for each question
 RELEVANCE_CUTOFF = 1.35   # if even the closest note is farther than this, the notes don't cover the question
 HISTORY_EXCHANGES = 2     # how many earlier messages to send back to the model (2 = the last exchange)
 HISTORY_CHARS = 600       # earlier answers are cut to this many characters to keep the prompt short

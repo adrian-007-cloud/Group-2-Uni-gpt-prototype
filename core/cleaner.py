@@ -9,7 +9,8 @@ from collections import Counter
 import pdfplumber
 
 
-DATA_FOLDER = "data"
+PROJECT_FOLDER = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+DATA_FOLDER = os.path.join(PROJECT_FOLDER, "data")
 MIN_REPEAT_LENGTH = 8     # a repeated line must be at least this many characters
 REPEAT_SHARE = 0.5        # ...and must appear on more than half of the pages
 WEAK_PAGE_WORDS = 30      # pages with fewer words than this are flagged

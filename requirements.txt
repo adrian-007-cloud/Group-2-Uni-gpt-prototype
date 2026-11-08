@@ -1,8 +1,20 @@
+# Uni-GPT: Python packages needed to run the project
+# Install with: pip install -r requirements.txt
+
+# Use the CPU-only build of PyTorch (much smaller download, no graphics card needed)
 --extra-index-url https://download.pytorch.org/whl/cpu
+
+# Web page
 streamlit
+
+# Notes database and search
 chromadb
 sentence-transformers
 torch
+
+# Reading PDFs
 pdfplumber
-python-pptx
+pypdf
+
+# Talking to the local model (Ollama must also be installed and running)
 requests
