@@ -27,7 +27,8 @@ os.chdir(PROJECT_FOLDER)             # so data\ and chroma_db are found
 import core.rag_pipeline as rag
 from core.llm_client import ask_model
 
-TEST_FILE = os.path.join("eval", "test_questions.json")
+# Run "python eval\\evaluate.py" for COS331, or "python eval\\evaluate.py eval_COS335.json" for COS335.
+TEST_FILE = os.path.join("eval", sys.argv[1]) if len(sys.argv) > 1 else os.path.join("eval", "test_questions.json")
 RESULTS_FILE = "evaluation_results.csv"
 SUMMARY_FILE = "evaluation_summary.txt"
 

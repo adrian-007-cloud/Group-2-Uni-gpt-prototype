@@ -1,0 +1,98 @@
+[
+  {
+    "course": "COS335",
+    "question": "What do sensors and actuators do for an intelligent agent?",
+    "should_answer": true,
+    "expected_pages": [
+      11,
+      12
+    ]
+  },
+  {
+    "course": "COS335",
+    "question": "What three things does a search problem include?",
+    "should_answer": true,
+    "expected_pages": [
+      21
+    ]
+  },
+  {
+    "course": "COS335",
+    "question": "What is f(n) in A* search?",
+    "should_answer": true,
+    "expected_pages": [
+      33
+    ]
+  },
+  {
+    "course": "COS335",
+    "question": "What does the IS-A relationship mean in a semantic network?",
+    "should_answer": true,
+    "expected_pages": [
+      61
+    ]
+  },
+  {
+    "course": "COS335",
+    "question": "What is a frame?",
+    "should_answer": true,
+    "expected_pages": [
+      61,
+      62
+    ]
+  },
+  {
+    "course": "COS335",
+    "question": "What form does a production rule follow?",
+    "should_answer": true,
+    "expected_pages": [
+      63
+    ]
+  },
+  {
+    "course": "COS335",
+    "question": "What does the universal quantifier mean?",
+    "should_answer": true,
+    "expected_pages": [
+      80,
+      81
+    ]
+  },
+  {
+    "course": "COS335",
+    "question": "How does forward chaining work?",
+    "should_answer": true,
+    "expected_pages": [
+      95,
+      96
+    ]
+  },
+  {
+    "course": "COS335",
+    "question": "What does deductive reasoning do?",
+    "should_answer": true,
+    "expected_pages": [
+      100
+    ]
+  },
+  {
+    "course": "COS335",
+    "question": "What is the input layer of a deep neural network?",
+    "should_answer": true,
+    "expected_pages": [
+      117
+    ]
+  },
+  {
+    "course": "COS335",
+    "question": "Who won the 2022 World Cup?",
+    "should_answer": false,
+    "expected_pages": []
+  },
+  {
+    "course": "COS335",
+    "question": "What is the capital of France?",
+    "should_answer": false,
+    "expected_pages": []
+  }
+]
