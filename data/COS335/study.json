@@ -285,54 +285,6 @@
         "Hidden layers perform mathematical operations on inputs before forwarding the processed data to the output layer."
       ],
       "example": "When a deep neural network receives input data, the input layer passes signals to the hidden layers. The hidden layers perform mathematical operations and forward the processed data to the output layer, which returns the result."
-    },
-    {
-      "name": "Fuzzy Logic",
-      "pages": [],
-      "summary": "Fuzzy logic lets a statement be partly true, with a degree of truth between 0 and 1, instead of only true or false. It is useful for vague ideas such as hot, tall, or fast. This topic is in the course outline but the lecture notes do not cover it yet, so this explanation is general.",
-      "objectives": [
-        "Explain how degrees of truth differ from true or false."
-      ],
-      "key_ideas": [
-        "A fuzzy set gives each value a membership degree between 0 and 1, showing how strongly it belongs to the set.",
-        "A membership function defines these degrees, for example how hot a temperature is.",
-        "Fuzzy rules are written as IF-THEN statements, such as IF the room is hot THEN turn the fan to high.",
-        "Defuzzification turns the fuzzy result back into one clear output value that a machine can use.",
-        "Fuzzy logic is common in control systems such as air conditioners, washing machines, and cameras."
-      ],
-      "example": "A room at 30 degrees Celsius might count as 0.7 hot and 0.3 warm. A fuzzy controller combines these degrees with its rules to choose a fan speed."
-    },
-    {
-      "name": "Pattern Recognition",
-      "pages": [],
-      "summary": "Pattern recognition is the task of finding regularities in data and using them to sort new data into groups. Examples include recognising handwritten digits, faces, or spam email. This topic is in the course outline but the lecture notes do not cover it yet, so this explanation is general.",
-      "objectives": [
-        "Explain features and classes in pattern recognition."
-      ],
-      "key_ideas": [
-        "Features are the measurable properties of an item that the system uses, such as the pixels in an image or the words in an email.",
-        "A classifier assigns each new item to one of a set of classes.",
-        "In supervised learning, the training data includes the correct class for each item. In unsupervised learning, the system finds groups without being given the answers.",
-        "A model is trained on known examples and then tested on examples it has not seen before.",
-        "The quality of a pattern recognition system depends on the features chosen and the amount of training data."
-      ],
-      "example": "A spam filter is trained on emails already marked spam or not spam. When a new email arrives, it uses the words and features it learned to classify the email."
-    },
-    {
-      "name": "Self-Organizing Neural Networks",
-      "pages": [],
-      "summary": "Self-organizing neural networks learn to group similar inputs without being given the correct answers. A common type is the Kohonen self-organizing map, which arranges its neurons so that similar inputs activate neighbouring neurons. This topic is in the course outline but the lecture notes do not cover it yet, so this explanation is general.",
-      "objectives": [
-        "Explain how a self-organizing network groups similar inputs."
-      ],
-      "key_ideas": [
-        "They use unsupervised learning, so the training data has no labels.",
-        "For each input, the neuron whose weights are closest to it is chosen as the winner.",
-        "The winner and its neighbours then adjust their weights to move closer to the input.",
-        "Over time, similar inputs end up mapped to nearby neurons, which forms clusters.",
-        "They are used for clustering and for showing high-dimensional data in a simple two-dimensional map."
-      ],
-      "example": "A shop groups its customers by buying habits. Customers who buy similar items end up on neighbouring neurons, so the shop can see the groups without anyone labelling them in advance."
     }
   ],
   "quiz": [
@@ -345,7 +297,8 @@
         "Sensors perceive the environment and actuators act on it",
         "Sensors store data and actuators print results"
       ],
-      "answer": 2
+      "answer": 2,
+      "explanation": "Sensors take in information from the environment, and actuators carry out actions on it."
     },
     {
       "topic": "Introduction to Artificial Intelligence",
@@ -356,7 +309,8 @@
         "Planning surgical operations",
         "Sending letters by post"
       ],
-      "answer": 2
+      "answer": 2,
+      "explanation": "The notes list planning surgical operations as an application of AI."
     },
     {
       "topic": "Introduction to Artificial Intelligence",
@@ -367,7 +321,8 @@
         "Storing the most data possible",
         "Making computers print faster"
       ],
-      "answer": 0
+      "answer": 0,
+      "explanation": "The notes give the main goals of AI as replicating human intelligence and solving knowledge-intensive tasks."
     },
     {
       "topic": "Introduction to Artificial Intelligence",
@@ -378,7 +333,8 @@
         "Typing, drawing, and singing",
         "Running and jumping"
       ],
-      "answer": 0
+      "answer": 0,
+      "explanation": "The notes link AI to human skills such as learning, reasoning and problem-solving."
     },
     {
       "topic": "Problem Formulation and Search",
@@ -389,7 +345,8 @@
         "A tree, a list, and a queue",
         "A cost, a time, and a date"
       ],
-      "answer": 1
+      "answer": 1,
+      "explanation": "A search problem needs a search space, a start state and a goal test."
     },
     {
       "topic": "Problem Formulation and Search",
@@ -400,7 +357,8 @@
         "A date to each action",
         "A colour to each node"
       ],
-      "answer": 1
+      "answer": 1,
+      "explanation": "Path cost gives a numerical cost to a path, so search algorithms can compare routes."
     },
     {
       "topic": "Problem Formulation and Search",
@@ -411,7 +369,8 @@
         "Along one path to its greatest depth first",
         "Only the goal state is checked"
       ],
-      "answer": 1
+      "answer": 1,
+      "explanation": "Breadth-first search explores the tree level by level, checking all nodes at one depth before going deeper."
     },
     {
       "topic": "Problem Formulation and Search",
@@ -422,7 +381,8 @@
         "Number of files and folders",
         "Screen resolution and keyboard speed"
       ],
-      "answer": 0
+      "answer": 0,
+      "explanation": "Completeness, optimality, time complexity and space complexity are the standard measures for comparing search algorithms."
     },
     {
       "topic": "Heuristic Search",
@@ -433,7 +393,8 @@
         "It estimates how close a state is to the goal",
         "It stores the path taken so far"
       ],
-      "answer": 2
+      "answer": 2,
+      "explanation": "h(n) is the heuristic: it estimates how close a state is to the goal."
     },
     {
       "topic": "Heuristic Search",
@@ -444,7 +405,8 @@
         "g(n) + h(n)",
         "h(n) only"
       ],
-      "answer": 2
+      "answer": 2,
+      "explanation": "In A* search, f(n) = g(n) + h(n): the cost so far plus the estimated cost to the goal."
     },
     {
       "topic": "Heuristic Search",
@@ -455,7 +417,8 @@
         "The depth of the node only",
         "The order the nodes were first created"
       ],
-      "answer": 0
+      "answer": 0,
+      "explanation": "Greedy best-first search chooses the node with the best heuristic value, without counting the cost so far."
     },
     {
       "topic": "Heuristic Search",
@@ -466,7 +429,8 @@
         "Nodes not yet expanded and nodes already expanded",
         "The keyboard and the screen"
       ],
-      "answer": 2
+      "answer": 2,
+      "explanation": "OPEN holds nodes waiting to be expanded, and CLOSED holds nodes already expanded."
     },
     {
       "topic": "Semantic Networks",
@@ -477,7 +441,8 @@
         "Relationships only",
         "Costs"
       ],
-      "answer": 0
+      "answer": 0,
+      "explanation": "In a semantic network, the nodes represent objects or concepts, and the links show how they relate."
     },
     {
       "topic": "Semantic Networks",
@@ -488,7 +453,8 @@
         "Before and after",
         "Input and output"
       ],
-      "answer": 1
+      "answer": 1,
+      "explanation": "Semantic networks use IS-A and kind-of relationships to show how objects are related."
     },
     {
       "topic": "Semantic Networks",
@@ -499,7 +465,8 @@
         "Answering questions may require traversing the network, which takes more time",
         "They cannot show relationships"
       ],
-      "answer": 2
+      "answer": 2,
+      "explanation": "Answering a question may mean following links through the network, which takes more time."
     },
     {
       "topic": "Frames",
@@ -510,7 +477,8 @@
         "A rule of the form If-Then",
         "A type of image file"
       ],
-      "answer": 1
+      "answer": 1,
+      "explanation": "A frame is a record-like structure made of attributes (slots) and their values."
     },
     {
       "topic": "Frames",
@@ -521,7 +489,8 @@
         "A single keyboard buffer",
         "A list of production rules"
       ],
-      "answer": 0
+      "answer": 0,
+      "explanation": "A frame system is a set of connected frames that store knowledge about objects or events."
     },
     {
       "topic": "Frames",
@@ -532,7 +501,8 @@
         "They cannot add new attributes",
         "Their inference mechanism is not easily processed"
       ],
-      "answer": 3
+      "answer": 3,
+      "explanation": "The notes say the inference mechanism of frame systems is not easily processed."
     },
     {
       "topic": "Production Systems",
@@ -543,7 +513,8 @@
         "If condition, then action",
         "Start, middle, end"
       ],
-      "answer": 2
+      "answer": 2,
+      "explanation": "A production rule has the form: if a condition holds, then take an action."
     },
     {
       "topic": "Production Systems",
@@ -554,7 +525,8 @@
         "Keyboard, screen, and mouse",
         "Production rules, working memory, and the recognize-act cycle"
       ],
-      "answer": 3
+      "answer": 3,
+      "explanation": "A production system has production rules, a working memory, and a recognize-act cycle."
     },
     {
       "topic": "Production Systems",
@@ -565,7 +537,8 @@
         "They form a conflict set, and conflict resolution is needed",
         "The whole system stops"
       ],
-      "answer": 2
+      "answer": 2,
+      "explanation": "When several rules can fire together, they form a conflict set, and conflict resolution decides which one fires."
     },
     {
       "topic": "Propositional Logic",
@@ -576,7 +549,8 @@
         "A declarative statement that is either true or false",
         "A command to the computer"
       ],
-      "answer": 2
+      "answer": 2,
+      "explanation": "A proposition is a declarative statement that is either true or false."
     },
     {
       "topic": "Propositional Logic",
@@ -587,7 +561,8 @@
         "It works with 0 and 1",
         "It uses only pictures"
       ],
-      "answer": 2
+      "answer": 2,
+      "explanation": "Propositional logic is called Boolean logic because it works with two truth values, 0 and 1."
     },
     {
       "topic": "Propositional Logic",
@@ -598,7 +573,8 @@
         "It cannot represent true or false",
         "It cannot directly represent relationships such as all, some, or none"
       ],
-      "answer": 3
+      "answer": 3,
+      "explanation": "Propositional logic cannot directly express relationships such as all, some or none. Predicate logic can."
     },
     {
       "topic": "Propositional Logic",
@@ -609,7 +585,8 @@
         "Multiplication",
         "Subtraction"
       ],
-      "answer": 0
+      "answer": 0,
+      "explanation": "Conjunction (AND) is one of the logical connectives listed in the notes."
     },
     {
       "topic": "First Order Predicate Logic",
@@ -620,7 +597,8 @@
         "For all",
         "Not at all"
       ],
-      "answer": 2
+      "answer": 2,
+      "explanation": "The universal quantifier means 'for all'."
     },
     {
       "topic": "First Order Predicate Logic",
@@ -631,7 +609,8 @@
         "For all",
         "Never"
       ],
-      "answer": 0
+      "answer": 0,
+      "explanation": "The existential quantifier means 'for some', which is at least one."
     },
     {
       "topic": "First Order Predicate Logic",
@@ -642,7 +621,8 @@
         "Storing files",
         "Counting CPU cycles"
       ],
-      "answer": 1
+      "answer": 1,
+      "explanation": "Predicates describe properties of objects, or relationships between objects."
     },
     {
       "topic": "First Order Predicate Logic",
@@ -653,7 +633,8 @@
         "It starts with known facts and works towards a goal",
         "It chooses rules at random"
       ],
-      "answer": 2
+      "answer": 2,
+      "explanation": "Forward chaining starts from known facts and applies rules to work towards a goal."
     },
     {
       "topic": "Other Methods of Reasoning",
@@ -664,7 +645,8 @@
         "It starts with general information and derives a conclusion that must be true if the premises are true",
         "It ignores the premises"
       ],
-      "answer": 2
+      "answer": 2,
+      "explanation": "Deductive reasoning starts from general premises and reaches a conclusion that must be true if the premises are true."
     },
     {
       "topic": "Other Methods of Reasoning",
@@ -675,7 +657,8 @@
         "It never reaches a conclusion",
         "It uses specific observations to reach a general conclusion that is not guaranteed"
       ],
-      "answer": 3
+      "answer": 3,
+      "explanation": "Inductive reasoning generalises from specific observations, but the conclusion is not guaranteed."
     },
     {
       "topic": "Other Methods of Reasoning",
@@ -686,7 +669,8 @@
         "A proven theorem",
         "A fixed rule with no evidence"
       ],
-      "answer": 1
+      "answer": 1,
+      "explanation": "Abductive reasoning starts from observations and searches for the most likely explanation."
     },
     {
       "topic": "Other Methods of Reasoning",
@@ -697,7 +681,8 @@
         "Stop the system",
         "Delete all facts"
       ],
-      "answer": 0
+      "answer": 0,
+      "explanation": "In non-monotonic reasoning, new information can invalidate conclusions already reached."
     },
     {
       "topic": "Multilayer Neural Networks",
@@ -708,7 +693,8 @@
         "The input layer",
         "The memory layer"
       ],
-      "answer": 2
+      "answer": 2,
+      "explanation": "The input layer is the first layer of a deep neural network, and it receives the data."
     },
     {
       "topic": "Multilayer Neural Networks",
@@ -719,7 +705,8 @@
         "Display layers",
         "Hidden layers"
       ],
-      "answer": 3
+      "answer": 3,
+      "explanation": "The layers between the input and output layers are called hidden layers."
     },
     {
       "topic": "Multilayer Neural Networks",
@@ -730,7 +717,8 @@
         "They store the final answer only",
         "They delete the input data"
       ],
-      "answer": 0
+      "answer": 0,
+      "explanation": "Hidden layers perform calculations on their inputs and pass the results on towards the output."
     },
     {
       "topic": "Multilayer Neural Networks",
@@ -741,7 +729,8 @@
         "Multiple layers containing connected neurons",
         "One large file"
       ],
-      "answer": 2
+      "answer": 2,
+      "explanation": "Deep neural networks are made of multiple layers of connected neurons."
     }
   ]
 }

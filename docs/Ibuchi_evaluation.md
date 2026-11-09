@@ -130,3 +130,14 @@ We set the relevance cutoff to **1.2**. It sits in the middle of the gap between
   - Virtual and physical address: does not explain the difference clearly
   - PCB: "privileges" and "pointer to parent process"
 - The test set is small (10 course, 8 unrelated). Treat these results as a first check, not a final measure.
+
+
+
+Blank message: refused, with a misleading message
+Long paragraph: answered in about 40 seconds
+Multi-part: thrashing missed
+Semaphore: wrong until the history was cleared
+Joke request: refused
+Joke about deadlock: answered with a joke
+Neural networks: reached the model, and pages were shown with the refusal
+Pidgin race condition: refused by the cutoff

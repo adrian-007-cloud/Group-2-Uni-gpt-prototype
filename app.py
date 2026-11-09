@@ -189,6 +189,10 @@ def ask(course, question, model, collection, history):
     for piece in ask_model_stream(messages):
         text += piece
         placeholder.markdown(text)
+    # If the model itself said the notes don't cover it, don't show page numbers,
+    # because those pages were only the closest matches, not the source of an answer.
+    if "cannot find this in the course notes" in text.lower():
+        return text, []
     return text, pages
 
 
@@ -358,6 +362,19 @@ else:
                     st.markdown(":green[Correct]")
                 else:
                     st.markdown(":red[Not quite.] The correct answer is: **" + q["options"][q["answer"]] + "**")
+                    # Step 8b: explain the answer, and point to the notes pages it came from
+                    if q.get("explanation"):
+                        st.info(q["explanation"])
+                # Step 8c: show where the answer is in the notes
+                # Uses the question's own page if it has one, otherwise the topic's pages
+                pages = q.get("pages") or q.get("page")
+                if not pages:
+                    topic = next((t for t in study["topics"] if t["name"] == q["topic"]), None)
+                    pages = topic.get("pages", []) if topic else []
+                if isinstance(pages, int):
+                    pages = [pages]
+                if pages:
+                    st.caption("Notes: page " + ", ".join(str(p) for p in pages))
             st.write("")
 
         # Step 9: the score
@@ -398,6 +415,10 @@ else:
                 st.caption("From pages " + ", ".join(str(p) for p in m["pages"]))
 
     question = st.chat_input("Ask a question about %s" % course) or st.session_state.pop("pending_question", None)
+    if question is not None and not question.strip():
+        # an empty or spaces-only message: ask for a question instead of searching
+        st.info("Type a question first.")
+        question = None
     if question:
         # the chat before this question, in the form rag_pipeline.py expects
         history = [{"role": m["role"], "content": m["text"]} for m in st.session_state["chat"]]

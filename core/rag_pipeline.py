@@ -1,8 +1,8 @@
+import re
 # This file runs the RAG steps: find the notes, build the prompt, get the answer.
 import os
 import chromadb
 from sentence_transformers import SentenceTransformer
-from core.llm_client import ask_model
 
 # The project folder is one level above core/, where this file lives
 PROJECT_FOLDER = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -11,9 +11,9 @@ COLLECTION_NAME = "notes"
 EMBEDDING_MODEL = "all-MiniLM-L6-v2"
 NUMBER_OF_RESULTS = 5     # how many note chunks the model sees for each question
 RELEVANCE_CUTOFF = 1.2   # if even the closest note is farther than this, the notes don't cover the question
+PER_PART = 3            # how many notes to keep for each part of a multi-part question
 HISTORY_EXCHANGES = 2     # how many earlier messages to send back to the model (2 = the last exchange)
 HISTORY_CHARS = 600       # earlier answers are cut to this many characters to keep the prompt short
-FALLBACK = "I cannot find this in the course notes."
 
 # The rules we give the model every time
 INSTRUCTIONS = """You are a study assistant. You answer a student's question using only the course notes provided.
@@ -75,7 +75,23 @@ def build_prompt(question, notes):
     return "Course notes:\n" + notes_text + "Student question: " + question
 
 
+# Splits a multi-part question into its parts, for example
+# "What is a race condition, what is deadlock and what is thrashing?" becomes three questions.
+def split_parts(question):
+    if not re.match(r"\s*what\b", question, re.IGNORECASE):
+        return [question]
+    pieces = [p.strip(" ?.") for p in re.split(r",\s*and\s+|,\s*|\s+and\s+", question)]
+    pieces = [p for p in pieces if len(p.split()) >= 3]
+    return pieces if len(pieces) >= 2 else [question]
+
+
 # Step 4: find the last question the student asked, from the earlier messages
+def is_follow_up(question):
+    words = re.findall(r"[a-z']+", question.lower())
+    refers_back = {"it", "its", "this", "that", "these", "those", "they", "them", "more", "example", "again"}
+    return len(words) <= 6 and any(w in refers_back for w in words)
+
+
 def last_question_in(history):
     for message in reversed(history):
         if message["role"] == "user":
@@ -90,16 +106,34 @@ def prepare_question(model, collection, question, course, pages=None, history=No
     question = question.strip()
     history = history or []
 
+    # Search with only the current question, so an earlier topic does not pull the search off course.
+    # Only a short follow-up that refers back ("it", "this", "example") uses the question before it.
     search_text = question
     last = last_question_in(history)
-    if last:
+    if last and is_follow_up(question):
         search_text = last + " " + question
 
-    notes = find_notes(model, collection, search_text, course, pages)
+    # A multi-part question ("what is X, what is Y and what is Z") is searched one part at a time,
+    # so each topic gets its own chunks and one topic does not crowd out the others.
+    if last and is_follow_up(question):
+        parts = [search_text]
+    else:
+        parts = split_parts(question)
 
-    # Notes come back closest first. If even the closest is too far, the notes don't cover this question.
-    if not notes or notes[0]["distance"] > RELEVANCE_CUTOFF:
+    notes = []
+    for part in parts:
+        found = find_notes(model, collection, part, course, pages)
+        # Notes come back closest first. A part whose closest note is too far is not covered.
+        if not found or found[0]["distance"] > RELEVANCE_CUTOFF:
+            continue
+        keep = found if len(parts) == 1 else found[:PER_PART]
+        for note in keep:
+            if note not in notes:
+                notes.append(note)
+
+    if not notes:
         return None, []
+    notes.sort(key=lambda n: n["distance"])
 
     # The earlier messages go between the rules and the new question, shortened to fit the model's memory
     earlier = [{"role": m["role"], "content": m["content"][:HISTORY_CHARS]}
@@ -109,24 +143,3 @@ def prepare_question(model, collection, question, course, pages=None, history=No
     messages = messages + earlier
     messages.append({"role": "user", "content": build_prompt(question, notes)})
     return messages, notes
-
-
-# The whole process: find notes, build the prompt, ask the model
-def answer_question(model, collection, question, course, pages=None):
-    messages, notes = prepare_question(model, collection, question, course, pages)
-    if messages is None:
-        return FALLBACK, notes
-    answer = ask_model(messages)
-    return answer, notes
-
-
-# Test it on its own. Run from the UNI-GPT folder.
-if __name__ == "__main__":
-    model, collection = load_search()
-    answer, notes = answer_question(model, collection, "what are the types of agents", "COS331")
-    print(answer)
-    page_numbers = []
-    for note in notes:
-        if note["page"] not in page_numbers:
-            page_numbers.append(note["page"])
-    print("Sources: pages", ", ".join(str(p) for p in page_numbers))
