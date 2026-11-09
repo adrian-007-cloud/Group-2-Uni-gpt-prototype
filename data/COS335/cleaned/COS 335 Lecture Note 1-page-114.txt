@@ -1,0 +1,43 @@
+known datasets(setof training examples),andthen predicttheoutput.Asupervised
+learning agentneedstofindoutthefunction thatmatchesa given sampleset.
+Supervisedlearningcan furtherbeclassifiedintotwocategoriesof algorithms:
+1. Classifications
+2. Regression
+2.Reinforcementlearning
+Reinforcementlearning isa typeof learning in which an AIagentistrainedby giving
+somecommands,andon each action,an agentgetsa rewardasa feedback.Using
+thesefeedbacks,agentimprovesitsperformance.
+Rewardfeedbackcan bepositiveornegativewhich meanson each goodaction,
+agentreceivesa positiverewardwhileforwrong action,itgetsa negativereward.
+Reinforcementlearning isof twotypes:
+● PositiveReinforcementlearning
+● NegativeReinforcementlearning
+3.Unsupervisedlearning
+Unsupervisedlearning isassociatedwith learning withoutsupervision ortraining.In
+unsupervisedlearning,thealgorithmsaretrainedwith data which isneitherlabeled
+norclassified.In unsupervisedlearning,theagentneedstolearn frompatterns
+withoutcorresponding outputvalues.
+Unsupervisedlearning can beclassifiedintotwocategoriesof algorithms:
+● Clustering
+● Association
+Natural Languageprocessing
+Natural languageprocessing isa subfieldof computerscienceandartificial
+intelligence.NLPenablesa computersystemtounderstandandprocesshuman
+languagesuch asEnglish.
+NLPplaysan importantrolein AIaswithoutNLP,AIagentcannotworkon human
+instructions,butwith thehelp of NLP,wecan instructan AIsystemon ourlanguage.
+Today weareall aroundAI,andaswell asNLP,wecan easily askSiri,Googleor
+Cortana tohelp usin ourlanguage.
+Natural languageprocessing application enablesa usertocommunicatewith the
+systemin theirown wordsdirectly.
+TheInputandoutputof NLPapplicationscan bein twoforms:
+● Speech
+● Text
+DeepLearning
+Deep learning isa subsetof machinelearning which providestheability tomachine
+toperformhuman-liketaskswithouthuman involvement.Itprovidestheability toan
+AIagenttomimicthehuman brain.Deep learning can useboth supervisedand
+unsupervisedlearning totrain an AIagent.
+● Deep learning isimplementedthrough neural networksarchitecturehence
+alsocalleda deep neural network.
+● Deep learning istheprimary technology behindself-driving cars,speech

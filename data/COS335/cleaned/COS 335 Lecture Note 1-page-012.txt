@@ -1,0 +1,30 @@
+Actuators: Actuatorsarethecomponentof machinesthatconvertsenergy into
+motion.Theactuatorsareonly responsibleformoving andcontrolling a system.An
+actuatorcan bean electricmotor,gears,rails,etc.
+Effectors: Effectorsarethedeviceswhich affecttheenvironment.Effectorscan be
+legs,wheels,arms,fingers,wings,fins,anddisplay screen.
+IntelligentAgents:
+An intelligentagentisan autonomousentity which actupon an environmentusing
+sensorsandactuatorsforachieving goals.An intelligentagentmay learn fromthe
+environmenttoachievetheirgoals.Athermostatisan exampleof an intelligent
+agent.
+Following arethemain fourrulesforan AIagent:
+● Rule1: An AIagentmusthavetheability toperceivetheenvironment.
+● Rule2: Theobservation mustbeusedtomakedecisions.
+● Rule3: Decision shouldresultin an action.
+● Rule4: Theaction taken by an AIagentmustbea rational action.
+Rational Agent:
+Arational agentisan agentwhich hasclearpreference,modelsuncertainty,andacts
+in a way tomaximizeitsperformancemeasurewith all possibleactions.
+Arational agentissaidtoperformtherightthings.AIisaboutcreating rational
+agentstouseforgametheory anddecision theory forvariousreal-worldscenarios.
+Foran AIagent,therational action ismostimportantbecausein AIreinforcement
+learning algorithm,foreach bestpossibleaction,agentgetsthepositiverewardand
+foreach wrong action,an agentgetsa negativereward.
+Note: Rational agentsin AIarevery similartointelligentagents.
+Rationality:
+Therationality of an agentismeasuredby itsperformancemeasure.Rationality can
+bejudgedon thebasisof following points:
+● Performancemeasurewhich definesthesuccesscriterion.
+● Agentpriorknowledgeof itsenvironment.
+● Bestpossibleactionsthatan agentcan perform.

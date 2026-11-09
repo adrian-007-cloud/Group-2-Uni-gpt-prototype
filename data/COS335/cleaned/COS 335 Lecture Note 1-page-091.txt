@@ -1,0 +1,45 @@
+Resolution
+Resolution isa theoremproving techniquethatproceedsby building refutation
+proofs,i.e.,proofsby contradictions.Itwasinventedby a Mathematician John Alan
+Robinson in theyear1965.
+Resolution isused,if therearevariousstatementsaregiven,andweneedtoprovea
+conclusion of thosestatements.Unification isa key conceptin proofsby resolutions.
+Resolution isa singleinferencerulewhich can efficiently operateon the conjunctive
+normalformorclausalform.
+Clause: Disjunction of literals(an atomicsentence) iscalleda clause.Itisalsoknown
+asa unitclause.
+ConjunctiveNormalForm: Asentencerepresentedasa conjunction of clausesissaidto
+be conjunctivenormalform or CNF.
+Note: Tobetterunderstandthistopic,firstly learnstheFOL in AI.
+Theresolution inferencerule:
+Theresolution ruleforfirst-orderlogicissimply a liftedversion of thepropositional
+rule.Resolution can resolvetwoclausesif they contain complementary literals,
+which areassumedtobestandardizedapartsothatthey sharenovariables.
+Where l and m arecomplementary literals.
+i j
+Thisruleisalsocalledthe binaryresolutionrule becauseitonly resolvesexactly two
+literals.
+Example:
+Wecan resolvetwoclauseswhich aregiven below:
+[Animal(g(x)VLoves(f(x),x)] and [￢Loves(a,b)V￢Kills(a,b)]
+Wheretwocomplimentary literalsare: Loves(f(x),x)and￢Loves(a,b)
+Theseliteralscan beunifiedwith unifier θ=[a/f(x),andb/x] ,anditwill generatea
+resolventclause:
+[Animal(g(x)V￢Kills(f(x),x)].
+StepsforResolution:
+1. Conversion of factsintofirst-orderlogic.
+2. ConvertFOL statementsintoCNF
+3. Negatethestatementwhich needstoprove(proof by contradiction)
+4. Drawresolution graph (unification).
+Tobetterunderstandall theabovesteps,wewill takean examplein which wewill
+apply resolution.
+Example:
+1. John likesall kindof food.
+2. Appleandvegetablearefood
+3. Anything anyoneeatsandnotkilledisfood.
+4. Anil eatspeanutsandstill alive
+5. Harry eatseverything thatAnil eats.
+Proveby resolution that:
+6. John likespeanuts.
+Step-1:ConversionofFactsintoFOL
+In thefirststep wewill convertall thegiven statementsintoitsfirstorderlogic.

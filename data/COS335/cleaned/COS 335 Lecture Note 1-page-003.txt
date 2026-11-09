@@ -1,0 +1,29 @@
+● Mathematics
+● Biology
+● Psychology
+● Sociology
+● ComputerScience
+● NeuronsStudy
+● Statistics
+Advantagesof Artificial Intelligence
+Following aresomemain advantagesof Artificial Intelligence:
+o High Accuracy with lesserrors: AImachinesorsystemsarepronetoless
+errorsandhigh accuracy asittakesdecisionsasperpre-experienceor
+information.
+o High-Speed: AIsystemscan beof very high-speedandfast-decision making,
+becauseof thatAIsystemscan beata chesschampion in theChessgame.
+o High reliability: AImachinesarehighly reliableandcan performthesame
+action multipletimeswith high accuracy.
+o Useful forrisky areas: AImachinescan behelpful in situationssuch as
+defusing a bomb,exploring theocean floor,wheretoemploy a human can be
+risky.
+o Digital Assistant: AIcan bevery useful toprovidedigital assistanttothe
+userssuch asAItechnology iscurrently usedby variousE-commerce
+websitestoshowtheproductsaspercustomerrequirement.
+o Useful asa publicutility: AIcan bevery useful forpublicutilitiessuch asa
+self-driving carwhich can makeourjourney saferandhassle-free,facial
+recognition forsecurity purpose,Natural languageprocessing to
+communicatewith thehuman in human-language,etc.
+Disadvantagesof Artificial Intelligence
+Every technology hassomedisadvantages,andthesamegoesforArtificial
+intelligence.Being soadvantageoustechnology,itstill hassomedisadvantages

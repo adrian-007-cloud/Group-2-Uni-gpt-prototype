@@ -1,0 +1,27 @@
+Knowledge: Knowledgeisawarenessorfamiliarity gainedby experiencesof facts,
+data,andsituations.Following arethetypesof knowledgein artificial intelligence:
+Types ofknowledgeinArtificialIntelligence
+Following arethevarioustypesof knowledge:
+1.DeclarativeKnowledge:
+● Declarativeknowledgeistoknowaboutsomething.
+● Itincludesconcepts,facts,andobjects.
+● Itisalsocalleddescriptiveknowledgeandexpressedin declarative
+sentences.
+● Itissimplerthan procedural language.
+2.ProceduralKnowledge
+● Itisalsoknown asimperativeknowledge.
+● Procedural knowledgeisa typeof knowledgewhich isresponsiblefor
+knowing howtodosomething.
+● Itcan bedirectly appliedtoany task.
+● Itincludesrules,strategies,procedures,agendas,etc.
+● Procedural knowledgedependson thetaskon which itcan beapplied.
+3.Meta-knowledge:
+● Knowledgeabouttheothertypesof knowledgeiscalledMeta-knowledge.
+4.Heuristicknowledge:
+● Heuristicknowledgeisrepresenting knowledgeof someexpertsin a filedor
+subject.
+● Heuristicknowledgeisrulesof thumb basedon previousexperiences,
+awarenessof approaches,andwhich aregoodtoworkbutnotguaranteed.
+5.Structuralknowledge:
+● Structural knowledgeisbasicknowledgetoproblem-solving.
+● Itdescribesrelationshipsbetween variousconceptssuch askindof,partof,

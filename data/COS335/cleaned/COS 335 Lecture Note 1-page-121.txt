@@ -1,0 +1,46 @@
+noteasy togeta final outputforthequery.Butif weputtheknowledgegained
+fromhuman expertsintotheexpertsystem,then itprovidesan efficient
+outputby mixing all thefactsandknowledge
+4. Notaffectedby emotions: Thesesystemsarenotaffectedby human
+emotionssuch asfatigue,anger,depression,anxiety,etc..Hencethe
+performanceremainsconstant.
+5. High security: Thesesystemsprovidehigh security toresolveany query.
+6. Considersall thefacts: Torespondtoany query,itchecksandconsidersall
+theavailablefactsandprovidestheresultaccordingly.Butitispossiblethata
+human expertmay notconsidersomefactsduetoany reason.
+7. Regularupdatesimprovetheperformance: If thereisan issuein theresult
+providedby theexpertsystems,wecan improvetheperformanceof the
+systemby updating theknowledgebase.
+Capabilities oftheExpert System
+● Belowaresomecapabilitiesof an ExpertSystem:
+● Advising: Itiscapableof advising thehuman being forthequery of any
+domain fromtheparticularES.
+● Providedecision-making capabilities: Itprovidesthecapability of decision
+making in any domain,such asformaking any financial decision,decisions
+in medical science,etc.
+● Demonstratea device: Itiscapableof demonstrating any newproductssuch
+asitsfeatures,specifications,howtousethatproduct,etc.
+● Problem-solving: Ithasproblem-solving capabilities.
+● Explaining a problem: Itisalsocapableof providing a detaileddescription of
+an inputproblem.
+● Interpreting theinput: Itiscapableof interpreting theinputgiven by theuser.
+● Predicting results: Itcan beusedfortheprediction of a result.
+● Diagnosis: An ES designedforthemedical fieldiscapableof diagnosing a
+diseasewithoutusing multiplecomponentsasitalready containsvarious
+inbuiltmedical tools.
+Advantages ofExpert System
+● Thesesystemsarehighly reproducible.
+● They can beusedforrisky placeswherethehuman presenceisnotsafe.
+● Errorpossibilitiesarelessif theKB containscorrectknowledge.
+● Theperformanceof thesesystemsremainssteady asitisnotaffectedby
+emotions,tension,orfatigue.
+● They providea very high speedtorespondtoa particularquery.
+Limitationsof ExpertSystem
+● Theresponseof theexpertsystemmay getwrong if theknowledgebase
+containsthewrong information.
+● Likea human being,itcannotproducea creativeoutputfordifferent
+scenarios.
+● Itsmaintenanceanddevelopmentcostsarevery high.
+● Knowledgeacquisition fordesigning ismuch difficult.
+● Foreach domain,werequirea specificES,which isoneof thebig limitations.
+● Itcannotlearn fromitself andhencerequiresmanual updates.

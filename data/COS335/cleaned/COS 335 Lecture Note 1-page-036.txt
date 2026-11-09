@@ -1,0 +1,32 @@
+isObjectivefunction,then thegoal of thesearch istofindtheglobal maximumand
+local maximum.
+Differentregionsin thestatespacelandscape:
+LocalMaximum: Local maximumisa statewhich isbetterthan itsneighbourstates,
+butthereisalsoanotherstatewhich ishigherthan it.
+GlobalMaximum: Global maximumisthebestpossiblestateof statespacelandscape.
+Ithasthehighestvalueof objectivefunction.
+Currentstate: Itisa statein a landscapediagramwherean agentiscurrently present.
+Flatlocalmaximum: Itisa flatspacein thelandscapewhereall theneighborstatesof
+currentstateshavethesamevalue.
+Shoulder: Itisa plateau region which hasan uphill edge.
+Typesof Hill Climbing Algorithm:
+o Simplehill Climbing:
+o Steepest-Ascenthill-climbing:
+o Stochastichill Climbing:
+1.SimpleHill Climbing:
+Simplehill climbing isthesimplestway toimplementa hill climbing algorithm. Itonly
+evaluatestheneighbornodestateatatimeandselectsthefirstonewhichoptimizescurrentcost
+andsetitasacurrentstate.Itonly checksit'sonesuccessorstate,andif itfindsbetter
+than thecurrentstate,then moveelsebein thesamestate.Thisalgorithmhasthe
+following features:
+o Lesstimeconsuming
+o Lessoptimal solution andthesolution isnotguaranteed
+AlgorithmforSimpleHill Climbing:
+o Step 1: Evaluatetheinitial state,if itisgoal statethen return successand
+Stop.
+o Step 2: Loop Until a solution isfoundorthereisnonewoperatorlefttoapply.
+o Step 3: Selectandapply an operatortothecurrentstate.
+o Step 4: Checknewstate:
+1. If itisgoal state,then return successandquit.
+2. Elseif itisbetterthan thecurrentstatethen assign newstateasa
+currentstate.

@@ -1,0 +1,42 @@
+● Means-EndsAnalysisisproblem-solving techniquesusedin Artificial
+intelligenceforlimiting search in AIprograms.
+● Itisa mixtureof Backwardandforwardsearch technique.
+● TheMEAtechniquewasfirstintroducedin 1961 by Allen Newell,andHerbert
+A.Simon in theirproblem-solving computerprogram,which wasnamedas
+General ProblemSolver(GPS).
+● TheMEAanalysisprocesscenteredon theevaluation of thedifference
+between thecurrentstateandgoal state.
+Howmeans-endsanalysisWorks:
+Themeans-endsanalysisprocesscan beappliedrecursively fora problem.Itisa
+strategy tocontrol search in problem-solving.Following arethemain Stepswhich
+describestheworking of MEAtechniqueforsolving a problem.
+1. First,evaluatethedifferencebetween Initial Stateandfinal State.
+2. Selectthevariousoperatorswhich can beappliedforeach difference.
+3. Apply theoperatorateach difference,which reducesthedifferencebetween
+thecurrentstateandgoal state.
+Operator Subgoaling
+In theMEAprocess,wedetectthedifferencesbetween thecurrentstateandgoal
+state.Oncethesedifferencesoccur,then wecan apply an operatortoreducethe
+differences.Butsometimesitispossiblethatan operatorcannotbeappliedtothe
+currentstate.Sowecreatethesubproblemof thecurrentstate,in which operatorcan
+beapplied,such typeof backwardchaining in which operatorsareselected,andthen
+sub goalsaresetup toestablish thepreconditionsof theoperatoriscalled Operator
+Subgoaling.
+Algorithmfor Means-Ends Analysis:
+Let'swetakeCurrentstateasCURRENT andGoal StateasGOAL,then following are
+thestepsfortheMEAalgorithm.
+o Step 1: CompareCURRENT toGOAL,if therearenodifferencesbetween both
+then return SuccessandExit.
+o Step 2: Else,selectthemostsignificantdifferenceandreduceitby doing the
+following stepsuntil thesuccessorfailureoccurs.
+1. Selecta newoperatorO which isapplicableforthecurrent
+difference,andif thereisnosuch operator,then signal failure.
+2. Attempttoapply operatorO toCURRENT.Makea description of two
+states.
+i) O-Start,a statein which O?spreconditionsaresatisfied.
+ii) O-Result,thestatethatwouldresultif O wereappliedIn O-start.
+3. If
+(First-Part<------MEA(CURRENT,O-START)
+And
+(LAST-Part<-----MEA(O-Result,GOAL),aresuccessful,then signal
+Successandreturn theresultof combining FIRST-PART,O,andLAST1

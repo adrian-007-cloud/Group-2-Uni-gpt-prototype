@@ -1,0 +1,36 @@
+● Staticenvironmentsareeasy todeal with becausean agentdoesnotneedto
+continuelooking attheworldwhiledeciding foran action.
+● Howeverfordynamicenvironment,agentsneedtokeep looking attheworld
+ateach action.
+● Taxi driving isan exampleof a dynamicenvironmentwhereasCrossword
+puzzlesarean exampleof a staticenvironment.
+6.DiscretevsContinuous:
+● If in an environmenttherearefinitenumberof perceptsandactionsthatcan
+beperformedwithin it,then such an environmentiscalleda discrete
+environmentelseitiscalledcontinuousenvironment.
+● Achessgamecomesunderdiscreteenvironmentasthereisa finitenumber
+of movesthatcan beperformed.
+● Aself-driving carisan exampleof a continuousenvironment.
+7.Known vsUnknown
+● Known andunknown arenotactually a featureof an environment,butitis
+an agent'sstateof knowledgetoperforman action.
+● In a known environment,theresultsforall actionsareknown totheagent.
+Whilein unknown environment,agentneedstolearn howitworksin orderto
+performan action.
+● Itisquitepossiblethata known environmenttobepartially observableand
+an Unknown environmenttobefully observable.
+8.AccessiblevsInaccessible
+● If an agentcan obtain completeandaccurateinformation aboutthestate's
+environment,then such an environmentiscalledan Accessibleenvironment
+elseitiscalledinaccessible.
+● An empty roomwhosestatecan bedefinedby itstemperatureisan example
+of an accessibleenvironment.
+● Information aboutan eventon earth isan exampleof Inaccessible
+environment.
+Turing Testin AI
+In 1950,Alan Turing introduceda testtocheckwhethera machinecan thinklikea
+human ornot,thistestisknown astheTuring Test.In thistest,Turing proposedthat
+thecomputercan besaidtobean intelligentif itcan mimichuman responseunder
+specificconditions.
+Turing Testwasintroducedby Turing in his1950 paper,"Computing Machinery and
+Intelligence,"which consideredthequestion,"Can Machinethink?"

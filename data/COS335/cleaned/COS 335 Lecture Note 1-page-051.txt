@@ -1,0 +1,33 @@
+MoveOrdering in Alpha-Beta Pruning:
+Theeffectivenessof alpha-beta pruning ishighly dependenton theorderin which
+each nodeisexamined.Moveorderisan importantaspectof alpha-beta pruning.
+Itcan beof twotypes:
+● Worstordering: In somecases,alpha-beta pruning algorithmdoesnotprune
+any of theleavesof thetree,andworksexactly asminimax algorithm.In this
+case,italsoconsumesmoretimebecauseof alpha-beta factors,such a move
+of pruning iscalledworstordering.In thiscase,thebestmoveoccurson the
+m
+rightsideof thetree.Thetimecomplexity forsuch an orderisO(b ).
+● Ideal ordering: Theideal ordering foralpha-beta pruning occurswhen lotsof
+pruning happensin thetree,andbestmovesoccurattheleftsideof thetree.
+Weapply DFS henceitfirstsearch leftof thetreeandgodeep twiceas
+minimax algorithmin thesameamountof time.Complexity in ideal ordering
+m/2
+isO(b ).
+Rules to find good ordering:
+Following aresomerulestofindgoodordering in alpha-beta pruning:
+● Occurthebestmovefromtheshallowestnode.
+● Orderthenodesin thetreesuch thatthebestnodesarecheckedfirst.
+● Usedomain knowledgewhilefinding thebestmove.Ex: forChess,try order:
+capturesfirst,then threats,then forwardmoves,backwardmoves.
+● Wecan bookkeep thestates,asthereisa possibility thatstatesmay repeat.
+Knowledge-BasedAgentinArtificialintelligence
+An intelligentagentneeds knowledge aboutthereal worldfortaking decisions
+and reasoning toactefficiently.Knowledge-basedagentsarethoseagentswhohave
+thecapability of maintaining an internal stateof knowledge,reason overthat
+knowledge,updatetheirknowledgeafterobservationsandtakeactions.These
+agentscan representtheworldwith someformal representation andactintelligently.
+Knowledge-basedagentsarecomposedof twomain parts:
+● Knowledge-baseand
+● Inferencesystem.
+Aknowledge-basedagentmustbeabletodothefollowing:

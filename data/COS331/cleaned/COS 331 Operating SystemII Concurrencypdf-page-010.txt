@@ -1,0 +1,30 @@
+The PCB is maintained for a process throughout its lifetime, and is deleted once the process terminatesThese
+may include
+o Process state
+o Program counter
+o Stack pointer
+o Value of CPU registers when the process is suspended.
+o CPU scheduling information such as priority
+o The area of memory used by the process (memory management information)
+o Accounting information: amount of CPU time used, time limits, process no, etc.
+o I/O status information: list of I/O devices such as tape derives allocated for the process, a list of open
+files, etc.
+o Pointer to the next process's PCB
+Process control block includes CPU scheduling, I/O resource management, file management information
+etc. The PCB serves as the repository for any information which can vary from process to process.
+2.2 Scheduling/Dispatching and Context switching
+2.1 PROCESS SCHEDULING AND DISPATCHING
+One of the most critical resources in any computer system is the central processor. Access to the central
+processor by any task occurs through the system scheduler/dispatcher modules.
+Scheduling is the act of arranging a set of processes in some ordered way according to a well-defined
+strategy such as first come first serve (FCFS), last come first serve (LCFS), Priority, etc). The
+SCHEDULER is the module responsible for inserting processes into the ready-to- run queue and
+maintaining the structure of the queue. Dispatching is the operation of selecting a process from the readyto- run queue and providing it with access to the central processor. The DISPACHER is the module that
+removes processes from the ready-to-run queue, establishes their machine state for execution, and transfers
+control to the process. In some systems, no distinction is made between the two modules in terms of
+functions and operations. However, in real-time system, these are distinguished. CPU can only be doing one
+thing at a time: if user process is executing, dispatcher is not: OS has lost control. How does OS regain
+control of processor?
+OS does this by introducing Internal and External events:
+Internal events (things occurring within user process), such as:
+ System call.

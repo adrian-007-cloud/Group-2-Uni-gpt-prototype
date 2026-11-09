@@ -1,0 +1,15 @@
+nodeA,thevalueof alpha will bechangedthemaximumavailablevalueis3 asmax
+(-∞,3)= 3,andβ= +∞,thesetwovaluesnowpassestorightsuccessorof Awhich is
+NodeC.
+AtnodeC,α=3 andβ= +∞,andthesamevalueswill bepassedon tonodeF.
+Step6: AtnodeF,again thevalueof αwill becomparedwith leftchildwhich is0,and
+max(3,0)= 3,andthen comparedwith rightchildwhich is1,andmax(3,1)= 3 still α
+remains3,butthenodevalueof F will become1.
+Step7: NodeF returnsthenodevalue1 tonodeC,atCα= 3 andβ= +∞,herethevalue
+of beta will bechanged,itwill comparewith 1 somin (∞,1) = 1.NowatC,α=3 and
+β= 1,andagain itsatisfiesthecondition α>=β,sothenextchildof Cwhich isG will
+bepruned,andthealgorithmwill notcomputetheentiresub-treeG.
+Step8: Cnowreturnsthevalueof 1 toAherethebestvalueforAismax (3,1) = 3.
+Following isthefinal gametreewhich istheshowing thenodeswhich arecomputed
+andnodeswhich hasnevercomputed.Hencetheoptimal valueforthemaximizeris
+3 forthisexample.

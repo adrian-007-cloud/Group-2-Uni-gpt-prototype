@@ -1,0 +1,28 @@
+operating system does not copy any of the old program's pages out to the disk or any of the new program's
+pages into the main memory Instead, it just begins executing the new program after loading the first page
+and fetches that program's pages as they are referenced.
+While executing a program, if the program references a page which is not available in the main memory
+because it was swapped out a little ago, the processor treats this invalid memory reference as a page
+fault and transfers control from the program to the operating system to demand the page back into the
+memory.
+Advantages
+Following are the advantages of Demand Paging −
+ Large virtual memory.
+ More efficient use of memory.
+ There is no limit on degree of multiprogramming.
+Disadvantages
+ Number of tables and the amount of processor overhead for handling page interrupts are greater than
+in the case of the simple paged management techniques.
+Page Replacement Algorithm
+Page replacement algorithms are the techniques by which an Operating System decides which memory
+pages to swap out, write to disk when a page of memory needs to be allocated. Paging happens whenever a
+page fault occurs and a free page cannot be used for allocation purpose accounting to reason that pages are
+not available or the number of free pages is lower than required pages.
+When the page that was selected for replacement and was paged out, is referenced again, it has to read in
+from disk, and this requires for I/O completion. This process determines the quality of the page replacement
+algorithm: the lesser the time waiting for page-ins, the better is the algorithm.
+A page replacement algorithm looks at the limited information about accessing the pages provided by
+hardware, and tries to select which pages should be replaced to minimize the total number of page misses,
+while balancing it with the costs of primary storage and processor time of the algorithm itself. There are
+many different page replacement algorithms. We evaluate an algorithm by running it on a particular string
+of memory reference and computing the number of page faults,

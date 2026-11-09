@@ -1,0 +1,38 @@
+The producer should produce data only when the buffer is not full. If the buffer is full, then the producer
+shouldn't be allowed to put any data into the buffer.
+The consumer should consume data only when the buffer is not empty. If the buffer is empty, then the
+consumer shouldn't be allowed to take any data from the buffer.
+The producer and consumer should not access the buffer at the same time.
+What is the solution?
+The above three problems can be solved with the help of semaphores
+In the producer-consumer problem, we use three semaphore variables:
+Semaphore S: This semaphore variable is used to achieve mutual exclusion between processes. By using
+this variable, either Producer or Consumer will be allowed to use or access the shared buffer at a particular
+time. This variable is set to 1 initially.
+Semaphore E: This semaphore variable is used to define the empty space in the buffer. Initially, it is set to
+the whole space of the buffer i.e., ―n‖ because the buffer is initially empty.
+Semaphore F: This semaphore variable is used to define the space that is filled by the producer. Initially, it
+is set to ―0‖ because there is no space filled by the producer initially.
+By using the above three semaphore variables and by using the wait () and signal () function, we can solve
+our problem (the wait () function decreases the semaphore variable by 1 and the signal () function increases
+the semaphore variable by 1). So. let's see how.
+The following is the pseudo-code for the producer:
+void producer () {
+while(T) {
+produce ()
+wait(E)
+wait(S)
+append ()
+signal(S)
+signal(F)
+}
+}
+The above code can be summarized as:
+while () is used to produce data, again and again, if it wishes to produce, again and again.
+produce () function is called to produce data by the producer.
+wait(E) will reduce the value of the semaphore variable ―E‖ by one i.e., when the producer produces
+something then there is a decrease in the value of the empty space in the buffer. If the buffer is full i.e., the
+value of the semaphore variable ―E‖ is ―0‖, then the program will stop its execution and no production will
+be done.
+wait(S) is used to set the semaphore variable ―S‖ to ―0‖ so that no other process can enter into the critical
+section.

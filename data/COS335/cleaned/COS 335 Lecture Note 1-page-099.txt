@@ -1,0 +1,36 @@
+chaining triestoavoidtheunnecessary path of reasoning.
+● In forward-chaining therecan bevariousASKquestionsfromtheknowledge
+base,whereasin backwardchaining therecan befewerASKquestions.
+● Forwardchaining isslowasitchecksforall therules,whereasbackward
+chaining isfastasitchecksfewrequiredrulesonly.
+S.No. ForwardChaining BackwardChaining
+1. Forwardchainingstartsfromknownfactsand Backwardchainingstartsfromthegoal
+appliesinferenceruletoextractmoredataunitit andworksbackwardthroughinference
+reachestothegoal. rulestofindtherequiredfactsthat
+supportthegoal.
+2. Itisabottom-upapproach Itisatop-downapproach
+3. Forwardchainingisknownasdata-driveninference Backwardchainingisknownasgoaltechniqueaswereachtothegoalusingtheavailable driventechniqueaswestartfromthe
+data. goalanddivideintosub-goaltoextract
+thefacts.
+4. Forwardchainingreasoningappliesabreadth-first Backwardchainingreasoningappliesa
+searchstrategy. depth-firstsearchstrategy.
+5. Forwardchainingtestsforalltheavailablerules Backwardchainingonlytestsforfew
+requiredrules.
+6. Forwardchainingissuitablefortheplanning, Backwardchainingissuitablefor
+monitoring,control,andinterpretationapplication. diagnostic,prescription,anddebugging
+application.
+7. Forwardchainingcangenerateaninfinitenumberof Backwardchaininggeneratesafinite
+possibleconclusions. numberofpossibleconclusions.
+8. Itoperatesintheforwarddirection. Itoperatesinthebackwarddirection.
+9. Forwardchainingisaimedforanyconclusion. Backwardchainingisonlyaimedforthe
+requireddata.
+Reasoning in Artificial intelligence
+In previoustopics,wehavelearnedvariouswaysof knowledgerepresentation in
+artificial intelligence.Nowwewill learn thevariouswaystoreason on thisknowledge
+using differentlogical schemes.
+Reasoning
+Thereasoning isthemental processof deriving logical conclusion andmaking
+predictionsfromavailableknowledge,facts,andbeliefs.Orwecan say,"Reasoningis
+awaytoinferfactsfromexistingdata."Itisa general processof thinking rationally,to
+findvalidconclusions.
+In artificial intelligence,thereasoning isessential sothatthemachinecan alsothink

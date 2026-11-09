@@ -1,0 +1,40 @@
+oP∀True= P,
+oP# True= True.
+● Distributive:
+oP∀(Q # R) = (P∀Q) # (P∀R).
+oP# (Q ∀R) = (P# Q) ∀(P# R).
+● DEMorgan'sLaw:
+o¬ (P∀Q) = (¬P) # (¬Q)
+o¬ (P# Q) = (¬ P) ∀(¬Q).
+● Double-negation elimination:
+o¬ (¬P) = P.
+Limitationsof Propositional logic:
+o WecannotrepresentrelationslikeALL,some,ornonewith propositional
+logic.Example:
+1. All thegirlsareintelligent.
+2. Someapplesaresweet.
+o Propositional logichaslimitedexpressivepower.
+o In propositional logic,wecannotdescribestatementsin termsof their
+propertiesorlogical relationships.
+Rules of Inference in Artificial intelligence
+Inference
+In artificial intelligence,weneedintelligentcomputerswhich can createnewlogic
+fromoldlogicorby evidence, sogenerating theconclusionsfromevidenceandfacts
+istermedasInference.
+Inferencerules:
+Inferencerulesarethetemplatesforgenerating validarguments.Inferencerulesare
+appliedtoderiveproofsin artificial intelligence,andtheproof isa sequenceof the
+conclusion thatleadstothedesiredgoal.
+In inferencerules,theimplication among all theconnectivesplaysan importantrole.
+Following aresometerminologiesrelatedtoinferencerules:
+● Implication: Itisoneof thelogical connectiveswhich can berepresented
+asP Q.Itisa Boolean expression.
+● Converse: Theconverseof implication,which meanstheright-handside
+proposition goestotheleft-handsideandvice-versa.Itcan bewritten asQ
+P.
+● Contrapositive: Thenegation of converseistermedascontrapositive,
+anditcan berepresentedas¬ Q ¬ P.
+● Inverse: Thenegation of implication iscalledinverse.Itcan be
+representedas¬ P ¬ Q.
+Fromtheabovetermsomeof thecompoundstatementsareequivalenttoeach
+other,which wecan proveusing truth table:

@@ -1,0 +1,42 @@
+o Admissible: thefirstcondition requiresforoptimality isthath(n) shouldbe
+an admissibleheuristicforA* treesearch.An admissibleheuristicis
+optimisticin nature.
+o Consistency: Secondrequiredcondition isconsistency foronly A* graphsearch.
+If theheuristicfunction isadmissible,then A* treesearch will alwaysfindtheleast
+costpath.
+TimeComplexity: Thetimecomplexity of A* search algorithmdependson heuristic
+function,andthenumberof nodesexpandedisexponential tothedepth of solution
+d.Sothetimecomplexity isO(b^d),whereb isthebranching factor.
+SpaceComplexity: Thespacecomplexity of A* search algorithmis O(b^d)
+Hill Climbing Algorithmin Artificial Intelligence
+● Hill climbing algorithmisa local search algorithmwhich continuously
+movesin thedirection of increasing elevation/valuetofindthepeakof the
+mountain orbestsolution totheproblem.Itterminateswhen itreachesa peak
+valuewherenoneighborhasa highervalue.
+● Hill climbing algorithmisa techniquewhich isusedforoptimizing the
+mathematical problems.Oneof thewidely discussedexamplesof Hill
+climbing algorithmisTraveling-salesman Problemin which weneedto
+minimizethedistancetraveledby thesalesman.
+● Itisalsocalledgreedy local search asitonly lookstoitsgoodimmediate
+neighborstateandnotbeyondthat.
+● Anodeof hill climbing algorithmhastwocomponentswhich arestateand
+value.
+● Hill Climbing ismostly usedwhen a goodheuristicisavailable.
+● In thisalgorithm,wedon'tneedtomaintain andhandlethesearch treeor
+graph asitonly keepsa singlecurrentstate.
+Featuresof Hill Climbing:
+Following aresomemain featuresof Hill Climbing Algorithm:
+● GenerateandTestvariant: Hill Climbing isthevariantof GenerateandTest
+method.TheGenerateandTestmethodproducefeedbackwhich helpsto
+decidewhich direction tomovein thesearch space.
+● Greedy approach: Hill-climbing algorithmsearch movesin thedirection
+which optimizesthecost.
+● Nobacktracking: Itdoesnotbacktrackthesearch space,asitdoesnot
+rememberthepreviousstates.
+State-spaceDiagramforHill Climbing:
+Thestate-spacelandscapeisa graphical representation of thehill-climbing
+algorithmwhich isshowing a graph between variousstatesof algorithmand
+Objectivefunction/Cost.
+On Y-axiswehavetaken thefunction which can bean objectivefunction orcost
+function,andstate-spaceon thex-axis.If thefunction on Y-axisiscostthen,thegoal
+of search istofindtheglobal minimumandlocal minimum.If thefunction of Y-axis

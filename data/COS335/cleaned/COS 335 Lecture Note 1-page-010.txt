@@ -1,0 +1,32 @@
+Expertsystemapproach combinedwith Machinelearning andnatural language
+processing.
+● SomeExamplesof NarrowAIareplaying chess,purchasing suggestionson
+e-commercesite,self-driving cars,speech recognition,andimagerecognition.
+2.General AI:
+o General AIisa typeof intelligencewhich couldperformany intellectual task
+with efficiency likea human.
+o Theidea behindthegeneral AItomakesuch a systemwhich couldbe
+smarterandthinklikea human by itsown.
+o Currently,thereisnosuch systemexistwhich couldcomeundergeneral AI
+andcan performany taskasperfectasa human.
+o Theworldwideresearchersarenowfocusedon developing machineswith
+General AI.
+o Assystemswith general AIarestill underresearch,anditwill takelotsof
+effortsandtimetodevelop such systems.
+3.SuperAI:
+o SuperAIisa level of intelligenceof systemsatwhich machinescould
+surpasshuman intelligence,andcan performany taskbetterthan human
+with cognitiveproperties.Itisan outcomeof general AI.
+o Somekey characteristicsof strong AIincludecapability,theability tothink,
+toreason, solvethepuzzle,makejudgments,plan,learn,andcommunicateon
+itsown.
+o SuperAIisstill a hypothetical conceptof Artificial Intelligence.Development
+of such systemsin real isstill worldchanging task.
+Artificial Intelligencetype-2: Basedon functionality
+1.ReactiveMachines
+o Purely reactivemachinesarethemostbasictypesof Artificial Intelligence.
+o Such AIsystemsdonotstorememoriesorpastexperiencesforfuture
+actions.
+o Thesemachinesonly focuson currentscenariosandreacton itasper
+possiblebestaction.
+o IBM'sDeep Bluesystemisan exampleof reactivemachines.

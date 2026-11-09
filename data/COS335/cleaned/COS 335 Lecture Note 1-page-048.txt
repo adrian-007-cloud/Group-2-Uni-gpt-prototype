@@ -1,0 +1,41 @@
+moveasthestandardalgorithmdoes,butitremovesall thenodeswhich arenot
+really affecting thefinal decision butmaking algorithmslow.Henceby
+pruning thesenodes,itmakesthealgorithmfast.
+Note: Tobetterunderstandthistopic,kindly study theminimax algorithm.
+Condition forAlpha-beta pruning:
+Themain condition which requiredforalpha-beta pruning is:
+1. α>=β
+Key pointsaboutalpha-beta pruning:
+o TheMax playerwill only updatethevalueof alpha.
+o TheMin playerwill only updatethevalueof beta.
+o Whilebacktracking thetree,thenodevalueswill bepassedtouppernodes
+insteadof valuesof alpha andbeta.
+o Wewill only passthealpha,beta valuestothechildnodes.
+Pseudo-codeforAlpha-beta Pruning:
+1. function minimax(node, depth, alpha, beta, maximizingPlayer) is
+2. if depth ==0 or node is a terminal node then
+3. return static evaluation of node
+4.
+5. if MaximizingPlayer then // for Maximizer Player
+6. maxEva= -infinity
+7. for each child of node do
+8. eva= minimax(child, depth-1, alpha, beta, False)
+9. maxEva= max(maxEva, eva)
+10. alpha= max(alpha, maxEva)
+11. if beta<=alpha
+12. break
+13. return maxEva
+14.
+15. else // for Minimizer player
+16. minEva= +infinity
+17. for each child of node do
+18. eva= minimax(child, depth-1, alpha, beta, true)
+19. minEva= min(minEva, eva)
+20. beta= min(beta, eva)
+21. if beta<=alpha
+22. break
+23. return minEva
+Working of Alpha-Beta Pruning:
+Let'stakean exampleof two-playersearch treetounderstandtheworking of Alphabeta pruning
+Step1: Atthefirststep the,Max playerwill startfirstmovefromnodeAwhereα= -∞
+andβ= +∞,thesevalueof alpha andbeta passeddown tonodeB whereagain α=

@@ -1,0 +1,27 @@
+Fancier algorithm: give pages a second (third? fourth?) chance. Store (in software) a counter for each page
+frame, and increment the counter if use bit is zero. Only throw the page out if the counter passes a certain
+limit value. Limit = 0 corresponds to the previous case. What happens when limit is small? large?
+Some systems also use a "dirty" bit to give preference to dirty pages. This is because it is more expensive to
+throw out dirty pages: clean ones need not be written to disk.
+Thrashing: consider what happens when memory gets overcommitted.
+ Suppose there are many users, and that between them their processes are making frequent references
+to 50 pages, but memory has 40 pages.
+ Each time one page is brought in, another page, whose contents will soon be referenced, is thrown
+out.
+ Compute average memory access time.
+ The system will spend all of its time reading and writing pages. It will be working very hard but not
+getting anything done.
+ Thrashing was a severe problem in early demand paging systems.
+Thrashing occurs because the system does not know when it has taken on more work than it can handle.
+LRU mechanisms order pages in terms of last access, but do not give absolute numbers indicating pages that
+must not be thrown out.
+What can be done?
+ If a single process is too large for memory, there is nothing the OS can do. That process will simply
+thrash.
+ If the problem arises because of the sum of several processes:
+o Figure out how much memory each process needs.
+o Change scheduling priorities to run processes in groups whose memory needs can be
+satisfied.
+Thrashing is a condition that can befall systems managed by the paging technique. It is denoted
+by excessive overhead In the OS and severe performance degradation in the overall system
+throughput.

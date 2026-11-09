@@ -1,0 +1,35 @@
+● Semanticsaretherulesby which wecan interpretthesentencein thelogic.
+● Semanticalsoinvolvesassigning a meaning toeach sentence.
+Logical representation can becategorisedintomainly twologics:
+a. Propositional Logics
+b. Predicatelogics
+Note: Wewill discussPrepositional LogicsandPredicatelogicsin laterchapters.
+Advantagesof logical representation:
+1. Logical representation enablesustodological reasoning.
+2. Logical representation isthebasisfortheprogramming languages.
+Disadvantagesof logical Representation:
+1. Logical representationshavesomerestrictionsandarechallenging towork
+with.
+2. Logical representation techniquemay notbevery natural,andinferencemay
+notbesoefficient.
+Note: Donotbeconfusedwith logical representation andlogical reasoning aslogical
+representation isa representation languageandreasoning isa processof thinking
+logically.
+2.SemanticNetworkRepresentation
+Semanticnetworksarealternativeof predicatelogicforknowledgerepresentation.In
+Semanticnetworks,wecan representourknowledgein theformof graphical
+networks.Thisnetworkconsistsof nodesrepresenting objectsandarcswhich
+describetherelationship between thoseobjects.Semanticnetworkscan categorize
+theobjectin differentformsandcan alsolinkthoseobjects.Semanticnetworksare
+easy tounderstandandcan beeasily extended.
+Thisrepresentation consistof mainly twotypesof relations:
+a.IS-Arelation (Inheritance)
+b.Kind-of-relation
+Example: Following aresomestatementswhich weneedtorepresentin theformof
+nodesandarcs.
+Statements:
+a. Jerry isa cat.
+b. Jerry isa mammal
+c. Jerry isownedby Priya.
+d. Jerry isbrown colour.
+e. All Mammalsareanimal.

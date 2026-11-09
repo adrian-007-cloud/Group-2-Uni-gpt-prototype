@@ -1,0 +1,24 @@
+Listofalleventsoccurringinthisnetwork:
+● Burglary (B)
+● Earthquake(E)
+● Alarm(A)
+● DavidCalls(D)
+● Sophia calls(S)
+Wecan writetheeventsof problemstatementin theformof probability: P[D,S,A,B,E],
+can rewritetheaboveprobability statementusing jointprobability distribution:
+P[D,S,A,B,E]=P[D|S,A,B,E].P[S,A,B,E]
+=P[D|S,A,B,E].P[S|A,B,E].P[A,B,E]
+=P[D|A].P[S|A,B,E].P[A,B,E]
+=P[D|A].P[S|A].P[A|B,E].P[B,E]
+=P[D|A].P[S|A].P[A|B,E].P[B|E].P[E]
+Let'staketheobservedprobability fortheBurglary andearthquakecomponent:
+P(B= True) = 0.002,which istheprobability of burglary.
+P(B= False)= 0.998,which istheprobability of noburglary.
+P(E= True)= 0.001,which istheprobability of a minorearthquake
+P(E= False)= 0.999,Which istheprobability thatan earthquakenotoccurred.
+Wecan providetheconditional probabilitiesasperthebelowtables:
+ConditionalprobabilitytableforAlarmA:
+TheConditional probability of AlarmAdependson Burglarandearthquake:
+B E P(A= True) P(A= False)
+True True 0.94 0.06
+True False 0.95 0.04

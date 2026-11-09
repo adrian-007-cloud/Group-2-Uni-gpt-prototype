@@ -1,0 +1,33 @@
+which weneedtokeep in ourmindwhilecreating an AIsystem.Following arethe
+disadvantagesof AI:
+o High Cost: Thehardwareandsoftwarerequirementof AIisvery costly asit
+requireslotsof maintenancetomeetcurrentworldrequirements.
+o Can'tthinkoutof thebox: Even though,wearemaking smartermachines
+with AI,butstill they cannotworkoutof thebox,astherobotwill only dothat
+workforwhich they aretrained,orprogrammed.
+o Nofeelingsandemotions: AImachinescan bean outstanding performer,but
+still itdoesnothavethefeeling soitcannotmakeany kindof emotional
+attachmentwith human,andmay sometimebeharmful forusersif theproper
+careisnottaken.
+o Increasedependency on machines: With theincrementof technology,people
+aregetting moredependenton devicesandhencethey arelosing theirmental
+capabilities.
+o NoOriginal Creativity: Humansaresocreativeandcan imaginesomenew
+ideasbutAImachinescannotbeatthispowerof human intelligenceand
+cannotbecreativeandimaginative.
+Prerequisite
+Beforelearning aboutArtificial Intelligence,you musthavethefundamental
+knowledgeof thefollowing toenableyou understandtheconceptseasily:
+o Any computerlanguagesuch asC,C++,Java,Python,etc.(knowledgeof
+Python will bean advantage)
+o Knowledgeof essential Mathematicssuch asderivatives,probability theory,
+etc.
+Audience
+Thiscourseisdesignedspecifically forbeginnersandalsoincludedsomehigh-level
+conceptsforprofessionals.
+Application of AI
+Artificial Intelligencehasvariousapplicationsin today'ssociety.Itisbecoming
+essential fortoday'stimebecauseitcan solvecomplex problemswith an efficient
+way in multipleindustries,such asHealthcare,entertainment,finance,education,etc.
+AIismaking ourdaily lifemorecomfortableandfast.
+Following aresomesectorswhich havetheapplication of Artificial Intelligence:

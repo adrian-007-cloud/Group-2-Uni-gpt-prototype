@@ -1,0 +1,45 @@
+systemtofindasolution.
+2.InferenceEngine (Rules ofEngine)
+Theinferenceengineisknown asthebrain of theexpertsystemasitisthemain
+processing unitof thesystem.Itappliesinferencerulestotheknowledgebaseto
+derivea conclusion ordeducenewinformation.Ithelpsin deriving an error-free
+solution of queriesaskedby theuser.With thehelp of an inferenceengine,the
+systemextractstheknowledgefromtheknowledgebase.
+Therearetwotypesof inferenceengine:
+● DeterministicInferenceengine: Theconclusionsdrawn fromthistypeof
+inferenceengineareassumedtobetrue.Itisbasedon facts and rules.
+● ProbabilisticInferenceengine: Thistypeof inferenceenginecontains
+uncertainty in conclusions,andbasedon theprobability.
+Inferenceengineusesthebelowmodestoderivethesolutions:
+● ForwardChaining: Itstartsfromtheknown factsandrules,andappliesthe
+inferencerulestoaddtheirconclusion totheknown facts.
+● BackwardChaining: Itisa backwardreasoning methodthatstartsfromthe
+goal andworksbackwardtoprovetheknown facts.
+3.KnowledgeBase
+Theknowledgebaseisa typeof storagethatstoresknowledgeacquiredfromthe
+differentexpertsof theparticulardomain.Itisconsideredasbig storageof
+knowledge.Themoretheknowledgebase,themoreprecisewill betheExpert
+System.Itissimilartoa databasethatcontainsinformation andrulesof a particular
+domain orsubject.Onecan alsoviewtheknowledgebaseascollectionsof objects
+andtheirattributes.Such asa Lion isan objectanditsattributesareitisa mammal,
+itisnota domesticanimal,etc.
+ComponentsofKnowledgeBase
+● Factual Knowledge: Theknowledgewhich isbasedon factsandacceptedby
+knowledgeengineerscomesunderfactual knowledge.
+● HeuristicKnowledge: Thisknowledgeisbasedon practice,theability to
+guess,evaluation,andexperiences.
+KnowledgeRepresentation: Itisusedtoformalizetheknowledgestoredin the
+knowledgebaseusing theIf-elserules.
+KnowledgeAcquisitions: Itistheprocessof extracting,organizing,andstructuring the
+domain knowledge,specifying therulestoacquiretheknowledgefromvarious
+experts,andstorethatknowledgeintotheknowledgebase.
+Developmentof ExpertSystem
+Here,wewill explain theworking of an expertsystemby taking an exampleof
+MYCINES.Belowaresomestepstobuildan MYCIN:
+● Firstly,ES shouldbefedwith expertknowledge.In thecaseof MYCIN,
+human expertsspecializedin themedical fieldof bacterial infection,
+provideinformation aboutthecauses,symptoms,andotherknowledgein
+thatdomain.
+● TheKB of theMYCINisupdatedsuccessfully.In ordertotestit,the
+doctorprovidesa newproblemtoit.Theproblemistoidentify the
+presenceof thebacteria by inputting thedetailsof a patient,including the

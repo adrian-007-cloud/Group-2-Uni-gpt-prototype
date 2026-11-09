@@ -1,0 +1,12 @@
+Agent'sfourthstep:
+Atroom[2,2],herenostench andnobreezespresentsolet'ssupposeagentdecides
+tomoveto[2,3].Atroom[2,3]agentperceivesglitter,soitshouldgrab thegoldand
+climb outof thecave.
+Knowledge-baseforWumpusworld
+Asin theprevioustopicwehavelearnedaboutthewumpusworldandhowa
+knowledge-basedagentevolvestheworld.Nowin thistopic,wewill createa
+knowledgebaseforthewumpusworld,andwill derivesomeprovesfortheWumpusworldusing propositional logic.
+Theagentstartsvisiting fromfirstsquare[1,1],andwealready knowthatthisroom
+issafefortheagent.Tobuilda knowledgebaseforwumpusworld,wewill usesome
+rulesandatomicpropositions.Weneedsymbol [i,j]foreach location in thewumpus
+world,wherei isforthelocation of rows,andj forcolumn location.

@@ -1,0 +1,33 @@
+8. eva= minimax(child, depth-1, false)
+9. maxEva= max(maxEva,eva) //gives Maximum of the values
+10. return maxEva
+11.
+12. else // for Minimizer player
+13. minEva= +infinity
+14. for each child of node do
+15. eva= minimax(child, depth-1, true)
+16. minEva= min(minEva, eva) //gives minimum of the values
+17. return minEva
+Initial call:
+Minimax(node,3,true)
+Working of Min-Max Algorithm:
+● Theworking of theminimax algorithmcan beeasily describedusing an
+example.Belowwehavetaken an exampleof game-treewhich isrepresenting
+thetwo-playergame.
+● In thisexample,therearetwoplayersoneiscalledMaximizerandotheris
+calledMinimizer.
+● Maximizerwill try togettheMaximumpossiblescore,andMinimizerwill try
+togettheminimumpossiblescore.
+● ThisalgorithmappliesDFS,soin thisgame-tree,wehavetogoall theway
+through theleavestoreach theterminal nodes.
+● Attheterminal node,theterminal valuesaregiven sowewill comparethose
+valueandbacktrackthetreeuntil theinitial stateoccurs.Following arethe
+main stepsinvolvedin solving thetwo-playergametree:
+Step-1: In thefirststep,thealgorithmgeneratestheentiregame-treeandapply the
+utility function togettheutility valuesfortheterminal states.In thebelowtree
+diagram,let'stakeAistheinitial stateof thetree.Supposemaximizertakesfirstturn
+which hasworst-caseinitial value=-infinity,andminimizerwill takenextturn which
+hasworst-caseinitial value= +infinity.
+Step 2: Now,firstwefindtheutilitiesvaluefortheMaximizer,itsinitial valueis-∞,so
+wewill compareeach valuein terminal statewith initial valueof Maximizerand
+determinesthehighernodesvalues.Itwill findthemaximumamong theall.OOPs

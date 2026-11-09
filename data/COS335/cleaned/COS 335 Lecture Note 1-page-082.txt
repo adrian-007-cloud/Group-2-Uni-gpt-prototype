@@ -1,0 +1,28 @@
+&x:boys(x)∀intelligent(x)
+Itwill bereadas: Therearesomex wherex isa boy whoisintelligent.
+Pointstoremember
+● Themain connectiveforuniversal quantifier ! isimplication .
+● Themain connectiveforexistential quantifier & isand ∀.
+Propertiesof Quantifiers:
+● In universal quantifier,! x! y issimilarto ! y! x.
+● In Existential quantifier,&x&y issimilarto &y&x.
+● &x! y isnotsimilarto ! y&x.
+SomeExamplesof FOL using quantifier:
+1.Allbirdsfly.
+In thisquestion thepredicateis"fly(bird)."
+Andsincethereareall birdswhofly soitwill berepresentedasfollows.
+! xbird(x) fly(x).
+2.Everymanrespectshisparent.
+In thisquestion,thepredicateis"respect(x,y),"wherex=man,andy=parent.
+Sincethereisevery man sowill use! ,anditwill berepresentedasfollows:
+! xman(x) respects(x,parent).
+3.Someboysplaycricket.
+In thisquestion,thepredicateis"play(x,y),"wherex= boys,andy= game.Sincethere
+aresomeboyssowewill use &,anditwillberepresentedas:
+&xboys(x) play(x,cricket).
+4.NotallstudentslikebothMathematicsandScience.
+In thisquestion,thepredicateis"like(x,y),"wherex=students,andy=subject.
+Sincetherearenotall students,sowewill use ! withnegation,so following
+representation forthis:
+¬! (x)[student(x) like(x,Mathematics)∀like(x,Science)].
+5.OnlyonestudentfailedMathematics.

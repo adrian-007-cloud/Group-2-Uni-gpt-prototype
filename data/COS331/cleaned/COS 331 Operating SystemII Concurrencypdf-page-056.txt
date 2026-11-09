@@ -1,0 +1,33 @@
+Hardware: This refers to all set of hardware of the given computer. Linux installation depends on the
+hardware requirements of the computer.
+The file system requires an API (Application programming interface) to access the function calls to interact
+with file system components like files and directories. API facilitates tasks such as creating, deleting, and
+copying the files. It facilitates an algorithm that defines the arrangement of files on a file system.
+The first two parts of the given file system together called a Linux virtual file system. It provides a single
+set of commands for the kernel and developers to access the file system. This virtual file system requires the
+specific system driver to give an interface to the file system.
+Linux File System Features
+In Linux, the file system creates a tree structure. All the files are arranged as a tree and its branches. The
+topmost directory called the root (/) directory. All other directories in Linux can be accessed from the root
+directory.
+Some key features of Linux file system are as following:
+o Specifying paths: Linux does not use the backslash (\) to separate the components; it uses forward
+slash (/) as an alternative. For example, as in Windows, the data may be stored in C:\ My
+Documents\ Work, whereas, in Linux, it would be stored in /home/ My Document/ Work.
+o Partition, Directories, and Drives: Linux does not use drive letters to organize the drive as
+Windows does. In Linux, we cannot tell whether we are addressing a partition, a network device, or
+an "ordinary" directory and a Drive.
+o Case Sensitivity: Linux file system is case sensitive. It distinguishes between lowercase and
+uppercase file names. Such as, there is a difference between test.txt and Test.txt in Linux. This rule is
+also applied for directories and Linux commands.
+o File Extensions: In Linux, a file may have the extension '.txt,' but it is not necessary that a file
+should have a file extension. While working with Shell, it creates some problems for the beginners to
+differentiate between files and directories. If we use the graphical file manager, it symbolizes the
+files and folders.
+o Hidden files: Linux distinguishes between standard files and hidden files, mostly the configuration
+files are hidden in Linux OS. Usually, we don't need to access or read the hidden files. The hidden
+files in Linux are represented by a dot (.) before the file name (e.g., .ignore). To access the files, we
+need to change the view in the file manager or need to use a specific command in the shell.
+Types of Linux File System
+When we install the Linux operating system, Linux offers many file systems such as Ext, Ext2, Ext3, Ext4,
+JFS, ReiserFS, XFS, btrfs, and swap.

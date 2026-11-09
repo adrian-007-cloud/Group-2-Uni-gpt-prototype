@@ -1,0 +1,34 @@
+5. Btrfs File System
+Btrfs stands for the B tree file system. It is used for fault tolerance, repair system, fun administration,
+extensive storage configuration, and more. It is not a good suit for the production system.
+6. Swap File System
+The swap file system is used for memory paging in Linux operating system during the system hibernation. A
+system that never goes in hibernate state is required to have swap space equal to its RAM size.
+11.0 Windows (NT) File System
+The Windows file system is called NTFS, and was introduced with Windows NT 4.0 and is the standard file
+system on Windows 2000 and later systems, such as Windows XP. Its goal was to solve the size,
+performance, reliability, and flexibility limitations in the DOS (aka "FAT" file system).
+It has a general similarity to the FAT file system in that all files are described in a single table, called the
+Master File Table (MFT). However, it has more modern characteristics in that all components are files,
+including:
+ Master File Table  free list (bit map)
+ data files  boot images
+ directories  recovery logs
+The file system also has features to support redundancy and transactions, which we will not discuss. A great
+reference for details is the book: Inside the Windows NT File System by Helen Custer, published by (not
+surprisingly) Microsoft Press.
+Disk Layout
+Disks are divided into fixed size regions:
+ Each region is called a volume.
+ Each volume can contain a different kind of file system, such as NTFS, FAT, or even Unix.
+ Since each volume is a separate file system, it has its own root directory.
+ Multiple volumes allow for fixed limits on the growth of a particular file tree, such as limiting the
+size of temporary file space.
+ Multiple volumes also allow a single disk to contain multiple, separating bootable operating system.
+Master File Table (MFT)
+Clusters are the key element to allocation:
+ Logically, the disk consists of allocation units called clusters.
+ A cluster is a power-of-two multiple of the physical disk block size. The cluster size is set when the
+disk is formatted. A small cluster provides a finer granularity of allocation, but may require more
+space to describe the file and more separate operations to transfer data to or from memory.
+ The free list is a bitmap, each of whose bits describe one cluster.

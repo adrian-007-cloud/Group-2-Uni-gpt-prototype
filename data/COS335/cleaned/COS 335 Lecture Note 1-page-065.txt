@@ -1,0 +1,27 @@
+Logicalconnectivesareusedtoconnecttwosimplerpropositionsorrepresentingasentence
+logically.Wecancreatecompoundpropositionswiththehelpoflogicalconnectives.Thereare
+mainlyfiveconnectives,whicharegivenasfollows:
+1. Negation: Asentencesuch as¬ Piscallednegation of P.Aliteral can be
+eitherPositiveliteral ornegativeliteral.
+2. Conjunction: Asentencewhich has ∀ connectivesuch as, P∀Q iscalleda
+conjunction.
+Example: Rohan isintelligentandhardworking.Itcan bewritten as,
+P=Rohan isintelligent,
+Q= Rohan ishardworking. P∀Q.
+3. Disjunction: Asentencewhich has# connective,such as P# Q.iscalled
+disjunction,wherePandQ arethepropositions.
+4. Example: "Paul isa doctororEngineer".
+HereP= Paul isa Doctor.Q= Paul isEngineer,sowecan writeitas P# Q.
+5. Implication: Asentencesuch asP Q,iscalledan implication.Implications
+arealsoknown asif-then rules.Itcan berepresentedas
+If itisraining,then thestreetiswet.
+LetP= Itisraining,andQ= Streetiswet,soitisrepresentedasP Q
+6. Biconditional: Asentencesuch as P∃ Q isa Biconditional sentence,
+exampleIf Iambreathing,then Iamalive
+P= Iambreathing,Q= Iamalive,itcan berepresentedasP∃ Q.
+Following isthesummarizedtableforPropositional LogicConnectives:
+Truth Table:
+In propositional logic,weneedtoknowthetruth valuesof propositionsin all
+possiblescenarios.Wecan combineall thepossiblecombination with logical
+connectives,andtherepresentation of thesecombinationsin a tabularformat
+called Truthtable.Following arethetruth tableforall logical connectives:

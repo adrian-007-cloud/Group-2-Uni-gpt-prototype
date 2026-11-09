@@ -1,0 +1,20 @@
+What is iOS architecture?
+Architecture of iOS or Apple's iOS mobile operating system runs the systems for iPhone, iPad, and iPod
+Touch. The title was updated with the launch of the pads originally known as the iPhone OS. This uses a
+multi-touch interface where the app is controlled through basic motions, such as flicking your fingers around
+the display to switch to the next section or rubbing your finger to focus in. The Apple App Store, the most
+famous app store on any smartphone, has moreover two million iPhone apps available online.
+Figure iOS Operating system
+The architecture of iOS.
+Apple defines the collection of mechanisms and technologies currently being introduced as a sequence of
+layers inside the operating system. Each one of these layers comprises multiple frameworks to be used and
+implemented through your application areas: There are four layers in the architecture of IOS namely Core
+OS, Core Services, Media Layer and Cocoa Touch.
+Figure . Architecture of IOS
+(i) The core layer of iOS: It is the hierarchical structure's lower part and is liable for the operating
+system based on which the various layers are built on. This critical layer is responsible for memory
+management (assigning and removing memory until the program is complete), file system
+management, communication management, as well as other operating system activities. It specifically
+communicates with the hardware, too. Most of the features that the three higher tier layers have are
+based on the Core OS layer as well as its low-grade features. The Main OS layer includes a range of
+frames that can be used directly by your programs, such as the Accelerate and Protection frameworks.

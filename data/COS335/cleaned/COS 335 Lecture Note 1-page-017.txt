@@ -1,0 +1,39 @@
+Hereperformancemeasureistheobjectiveforthesuccessof an agent'sbehaviour.
+PEAS forself-driving cars:
+Let'ssupposea self-driving carthen PEAS representation will be:
+Performance: Safety,time,legal drive,comfort
+Environment: Roads,othervehicles,roadsigns,pedestrian
+Actuators: Steering,accelerator,brake,signal,horn
+Sensors: Camera,GPS,speedometer, odometer,accelerometer,sonar.
+Exampleof Agentswith theirPEAS representation
+Agent Performance Environment Actuators Sensors
+measure
+1.Medical Healthy Patient Tests Keyboard
+Diagnose patient (Entryof
+Hospital Treatments
+symptoms)
+Minimized
+Staff
+cost
+2.Vacuum Cleanness Room Wheels Camera
+Cleaner
+Efficiency Table Brushes Dirt
+detection
+Batterylife Woodfloor Vacuum
+sensor
+Extractor
+Security Carpet
+Cliffsensor
+Various
+Bump
+obstacles
+Sensor
+InfraredWall
+Sensor
+3.Part-picking Percentage Conveyor Jointed Camera
+Robot ofpartsin beltwith Arms
+Jointangle
+correctbins. parts,
+Hand sensors.
+Bins
+An environmentiseverything in theworldwhich surroundstheagent,butitisnota

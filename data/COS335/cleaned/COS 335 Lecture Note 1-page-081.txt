@@ -1,0 +1,26 @@
+UniversalQuantifier
+Universal quantifierisa symbol of logical representation,which specifiesthatthe
+statementwithin itsrangeistrueforeverything orevery instanceof a particularthing.
+TheUniversal quantifierisrepresentedby a symbol ! ,which resemblesan invertedA.
+Note: In universal quantifierweuseimplication " ",
+If x isa variable,then ! x isreadas:
+● Forall x
+● Foreach x
+● Forevery x.
+Example:
+Allmandrinkcoffee.
+Leta variablex which referstoaman soall x can berepresentedin UOD asbelow:
+! xman(x) drink(x,coffee).
+Itwill bereadas: Thereareall x wherex isa man whodrinkcoffee.
+ExistentialQuantifier
+Existential quantifiersarethetypeof quantifiers,which expressthatthestatement
+within itsscopeistrueforatleastoneinstanceof something.Itisdenotedby the
+logical operator &,which resemblesan invertedE.When itisusedwith a predicate
+variablethen itiscalledasan existential quantifier.
+Note: In Existential quantifier,wealwaysuseAND orConjunction symbol (∀).
+If x isa variable,then existential quantifierwill be&x or&(x).Anditwill bereadas:
+● Thereexistsan 'x.'
+● Forsome'x.'
+● Foratleast,one'x.'
+Example:
+Someboysareintelligent.

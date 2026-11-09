@@ -1,0 +1,37 @@
+ A large bowl of spaghetti is in the center and a fork is placed in between each pair of adjacent
+philosophers.
+ This spaghetti is difficult to serve and eat with a single fork, so each philosopher must acquire two
+forks to eat.
+ Each philosopher can only use the forks on their immediate left and right.
+ Each philosopher can acquire forks only one at a time.
+ Philosophers never speak to each other.
+Solutions to the deadlock problem fall into two general categories:
+ Detection: determine when the system is deadlocked and then take drastic action. Requires
+termination of one or more processes in order to release their resources. Usually this is not practical.
+ Prevention: organize the system so that it is impossible for deadlock ever to occur. May lead to less
+efficient resource utilization in order to guarantee no deadlocks.
+Deadlock prevention: must find a way to eliminate one of the four necessary conditions for deadlock:
+In general, there are four conditions for deadlock:
+ Limited access: resources cannot be shared.
+ No preemption. Once given, a resource cannot be taken away.
+ Multiple independent requests: processes do not ask for resources all at once.
+ There is a circularity in the graph of who has what and who wants what. Draw graph showing
+processes as circles, resources as squares, arrows from process to resource waited for, from resource
+to owning process.
+One mechanism of attacking deadlock is by trying to negate some of the conditions-deadlock avoidance.
+Deadlock Avoidance
+ Avoid deadlock by careful resource scheduling.
+o Requires that the system has some additional prior information available.
+o Simplest and most useful model requires that each process declare the maximum number of
+resources of each type that it may need.
+o The deadlock avoidance algorithm dynamically examines the resource allocation state to ensure that
+there can never be a circular wait.
+o Resource allocation state is defined by the number of available and allocated resources, and the
+maximum demands of the process.
+Deadlock Prevention
+ Prevent deadlock by resource scheduling so as to negate at least one of the four conditions
+o Attacking the mutual exclusion condition
+o Attacking the hold and wait condition
+o Attacking the no preemption condition
+o Attacking the circular wait condition
+Banker's Algorithm and Its usefulness in Operating System (OS)

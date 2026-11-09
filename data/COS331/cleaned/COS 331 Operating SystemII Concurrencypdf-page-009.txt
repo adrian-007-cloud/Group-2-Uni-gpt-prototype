@@ -1,0 +1,32 @@
+Implementation of Processes
+Process Control Block (PCB)
+A Process Control Block is a data structure maintained by the Operating System for every process. The PCB
+is identified by an integer process ID (PID). A PCB keeps all the information needed to keep track of a
+process as listed below in the table −
+S.N. Information & Description
+1 Process State
+The current state of the process i.e., whether it is ready, running, waiting, or whatever.
+2 Process privileges
+This is required to allow/disallow access to system resources.
+3 Process ID
+Unique identification for each of the process in the operating system.
+4 Pointer
+A pointer to parent process.
+5 Program Counter
+Program Counter is a pointer to the address of the next instruction to be executed for this
+process.
+6 CPU registers
+Various CPU registers where process need to be stored for execution for running state.
+7 CPU Scheduling Information
+Process priority and other scheduling information which is required to schedule the
+process.
+8 Memory management information
+This includes the information of page table, memory limits, Segment table depending on
+memory used by the operating system.
+9 Accounting information
+This includes the amount of CPU used for process execution, time limits, execution ID
+etc.
+10 IO status information
+This includes a list of I/O devices allocated to the process.
+The architecture of a PCB is completely dependent on Operating System and may contain different
+information in different operating systems. Here is a simplified diagram of a PCB:

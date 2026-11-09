@@ -1,0 +1,31 @@
+TheTuring testisbasedon a party game"Imitation game,"with somemodifications.
+Thisgameinvolvesthreeplayersin which oneplayerisComputer,anotherplayeris
+human responder,andthethirdplayerisa human Interrogator,whoisisolatedfrom
+othertwoplayersandhisjob istofindthatwhich playerismachineamong twoof
+them.
+Consider,PlayerAisa computer,PlayerB ishuman,andPlayerCisan interrogator.
+Interrogatorisawarethatoneof themismachine,butheneedstoidentify thison the
+basisof questionsandtheirresponses.
+Theconversation between all playersisvia keyboardandscreen sotheresultwould
+notdependon themachine'sability toconvertwordsasspeech.
+Thetestresultdoesnotdependon each correctanswer,butonly howclosely its
+responseslikea human answer.Thecomputerispermittedtodoeverything possible
+toforcea wrong identification by theinterrogator.
+Thequestionsandanswerscan belike:
+Interrogator: Areyou a computer?
+PlayerA(Computer): No
+Interrogator: Multiply twolargenumberssuch as(256896489*456725896)
+PlayerA: Long pauseandgivethewrong answer.
+In thisgame,if an interrogatorwouldnotbeabletoidentify which oneisa machine
+andwhich oneishuman,then thecomputerpassesthetestsuccessfully,andthe
+machineissaidtobeintelligentandcan thinklikea human.
+"In 1991,theNewYorkbusinessman Hugh Loebnerannouncestheprizecompetition,
+offering a $100,000 prizeforthefirstcomputertopasstheTuring test.However,no
+AIprogramtill date,comeclosetopassing an undilutedTuring test".
+ChatbotstoattempttheTuring test:
+ELIZA: ELIZAwasa Natural languageprocessing computerprogramcreatedby
+Joseph Weizenbaum.Itwascreatedtodemonstratetheability of communication
+between machineandhumans.Itwasoneof thefirstchatterbots,which has
+attemptedtheTuring Test.
+Parry: Parry wasa chatterbotcreatedby Kenneth Colby in 1972.Parry wasdesigned
+tosimulatea person with Paranoidschizophrenia(mostcommon chronicmental

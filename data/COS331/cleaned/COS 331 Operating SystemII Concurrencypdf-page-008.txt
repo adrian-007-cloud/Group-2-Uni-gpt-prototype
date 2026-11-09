@@ -1,0 +1,38 @@
+Operations on the Process
+1. Creation
+Once the process is created, it will be ready and come into the ready queue (main memory) and will be ready
+for the execution.
+2. Scheduling
+Out of the many processes present in the ready queue, the Operating system chooses one process and start
+executing it. Selecting the process which is to be executed next, is known as scheduling.
+3. Execution
+Once the process is scheduled for the execution, the processor starts executing it. Process may come to the
+blocked or wait state during the execution then in that case the processor starts executing the other
+processes.
+4. Deletion/killing
+Once the purpose of the process gets over then the OS will kill the process. The Context of the process
+(PCB) will be deleted and the process gets terminated by the Operating system.
+2.1 Structures (ready list, process control blocks, and so forth)
+Ready list: The ready processes in the system are kept in a queue called the ready list. This list is sorted by
+the priority of the processes; the lowest priority process appears at the head of the list and the highest
+priority process is at the tail.
+Operating System Maintains List of Ready and Waiting Processes
+Ready list Waiting list
+Ordered P 1 Unordered P 10
+P
+11 P
+P
+20 P
+Fig. 2:Ready List and Waiting List
+Process Control Block or PCB:
+Usually, Operating systems describe a process by means of a description table call Process Control Block
+or PCB. PCB serves as a runtime description of the lifecycle of a process. Different operating systems are
+using, however, diverse designations for the process description table, like Process Table in UNIX, Process
+Control Block in VMS, Process Information Block in OS/2, or Task Control Block in IBM mainframe
+operating systems. A PCB contains all the information that can be relevant during the whole lifecycle of a
+process. It holds on the one hand, basic data, such as process identification number (PID), priority, process
+status (ready, running, dormant), hardware status (CPU registers, flags), scheduling information, I/O status (
+allocated devices, pending), Program counter, Scheduling priority, Credentials, A pointer to the process's
+parent process, Pointers to the process's child processes to locate the process's data, and instructions in
+memory to allocated resources, file management information (open file, close file, access right), description
+of the allocated address space, accounting information, etc.

@@ -1,0 +1,35 @@
+Itisa way tocalculatethevalueof P(B|A) with theknowledgeof P(A|B).
+OOPsConceptsin Java
+Bayes' theoremallowsupdating theprobability prediction of an eventby observing
+newinformation of thereal world.
+Example: If cancercorrespondstoone'sagethen by using Bayes' theorem,wecan
+determinetheprobability of cancermoreaccurately with thehelp of age.
+Bayes' theoremcan bederivedusing productruleandconditional probability of
+eventAwith known eventB:
+Asfromproductrulewecan write:
+1. P(A B)= P(A|B) P(B) or
+Similarly,theprobability of eventB with known eventA:
+1. P(A B)= P(B|A) P(A)
+Equating righthandsideof both theequations,wewill get:
+Theaboveequation (a) iscalledas Bayes'rule or Bayes'theorem.Thisequation isbasic
+of mostmodern AIsystemsfor probabilisticinference.
+Itshowsthesimplerelationship between jointandconditional probabilities.Here,
+P(A|B) isknown as posterior,which weneedtocalculate,anditwill bereadas
+Probability of hypothesisAwhen wehaveoccurredan evidenceB.
+P(B|A) iscalledthelikelihood,in which weconsiderthathypothesisistrue,then we
+calculatetheprobability of evidence.
+P(A) iscalledthe priorprobability,probability of hypothesisbeforeconsidering the
+evidence
+P(B) iscalled marginalprobability,pureprobability of an evidence.
+In theequation (a),in general,wecan writeP(B) = P(A)*P(B|Ai),hencetheBayes'
+rulecan bewritten as:
+WhereA ,A ,A ,........,A isa setof mutually exclusiveandexhaustiveevents.
+1 2 3 n
+Applying Bayes' rule:
+Bayes' ruleallowsustocomputethesingletermP(B|A) in termsof P(A|B),P(B),and
+P(A).Thisisvery useful in caseswherewehavea goodprobability of thesethree
+termsandwanttodeterminethefourth one.Supposewewanttoperceivetheeffect
+of someunknown cause,andwanttocomputethatcause,then theBayes' rule
+becomes:
+Example-1:
+Question:whatistheprobabilitythatapatienthasdiseasesmeningitiswithastiffneck?

@@ -1,0 +1,20 @@
+Figure 10
+Here, we can use any of the two following approaches −
+ First, do not allow any request for an item, which is already locked by another transaction. This is
+not always feasible and may cause starvation, where a transaction indefinitely waits for a data item
+and can never acquire it.
+ The second option is to roll back one of the transactions. It is not always feasible to roll back the
+younger transaction, as it may be important than the older one. With the help of some relative
+algorithm, a transaction is chosen, which is to be aborted. This transaction is known as
+the victim and the process is known as victim selection.
+The following four conditions must hold for there to be a deadlock
+1. Mutual exclusion condition:- each resource is assigned to exactly one process.
+2. Hold and wait condition:- process holding resources can request additional resources.
+3. No preemption condition:- previously granted resources can't be forcibly taken away; only the
+process can voluntarily release resource.
+4. Circular wait condition:- there must be a circular chain of two or more processes. Each of which is
+waiting for a resource held by the next member of the chain.
+Deadlock arises because the number of units of a given resource is less than the number of processes
+requesting specified amounts of the resource. A system deadlock occurs when all processes in the system are
+incapable of further progress in execution. The simplest example occurs where two processes each hold a
+resource required by the other process and are unwilling to relinquish the resource they own.

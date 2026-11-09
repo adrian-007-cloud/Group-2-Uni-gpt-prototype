@@ -1,0 +1,26 @@
+Exploring theWumpusworld:
+Nowwewill exploretheWumpusworldandwill determinehowtheagentwill findits
+goal by applying logical reasoning.
+Agent'sFirststep:
+Initially,theagentisin thefirstroomoron thesquare[1,1],andwealready knowthat
+thisroomissafefortheagent,sotorepresenton thebelowdiagram(a) thatroomis
+safewewill addsymbol OK.Symbol Aisusedtorepresentagent,symbol B forthe
+breeze,G forGlitterorgold,Vforthevisitedroom,Pforpits,WforWumpus.
+AtRoom[1,1]agentdoesnotfeel any breezeorany Stench which meansthe
+adjacentsquaresarealsoOK.
+Agent'ssecondStep:
+Nowagentneedstomoveforward,soitwill eithermoveto[1,2],or[2,1].Let's
+supposeagentmovestotheroom[2,1],atthisroomagentperceivessomebreeze
+which meansPitisaroundthisroom.Thepitcan bein [3,1],or[2,2],sowewill add
+symbol P? tosay that,isthisPitroom?
+Nowagentwill stop andthinkandwill notmakeany harmful move.Theagentwill
+gobacktothe[1,1]room.Theroom[1,1],and[2,1]arevisitedby theagent,sowewill
+usesymbol Vtorepresentthevisitedsquares.
+Agent'sthirdstep:
+Atthethirdstep,nowagentwill movetotheroom[1,2]which isOK.In theroom[1,2]
+agentperceivesa stench which meanstheremustbea Wumpusnearby.But
+Wumpuscannotbein theroom[1,1]asby rulesof thegame,andalsonotin [2,2]
+(Agenthadnotdetectedany stench when hewasat[2,1]).Thereforeagentinfers
+thatWumpusisin theroom[1,3],andin currentstate,thereisnobreezewhich
+meansin [2,2]thereisnoPitandnoWumpus.Soitissafe,andwewill markitOK,
+andtheagentmovesfurtherin [2,2].

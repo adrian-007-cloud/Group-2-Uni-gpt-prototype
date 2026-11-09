@@ -1,0 +1,38 @@
+8.1 The Producer-Consumer Problem
+The Producer-Consumer problem is a classic problem that is used for multi-process synchronization i.e.,
+synchronization between more than one processes. In the producer-consumer problem, there is
+one Producer that is producing something and there is one Consumer that is consuming the products
+produced by the Producer.
+As an example of how these primitives can be used, let us consider the producer-consumer problem (also
+known as the bounded-buffer problem). Two processes share a common, fixed-size buffer. One of them, the
+producer, puts information into the buffer, and the other one, the consumer, takes it out. (It is also possible to
+generalize the problem to have m producers and n consumers, but we will consider only the case of one
+producer and one consumer because this assumption simplifies the solutions.)
+Trouble arises when the producer wants to put a new item in the buffer, but it is already full. The solution is
+for the producer to go to sleep, to be awakened when the consumer has removed one or more items.
+Similarly, if the consumer wants to remove an item from the buffer and sees that the buffer is empty, it goes
+to sleep until the producer puts something in the buffer and wakes it up. This approach sounds simple
+enough, but it leads to the same kinds of race conditions we saw earlier with the spooler directory. To keep
+track of the number of items in the buffer, we will need a variable, count. If the maximum number of items
+the buffer can hold is N, the producer's code will first test to see if count is N. If it is, the producer will go to
+sleep; if it is not, the producer will add an item and increment count. The consumer's code is similar: first
+test count to see if it is 0. If it is, go to sleep; if it is nonzero, remove an item and decrement the counter.
+Each of the processes also tests to see if the other should be awakened, and if so, wakes it up.
+To express system calls such as sleep and wakeup in C, we will show them as calls to library routines. They
+are not part of the standard C library but presumably would be made available on any system that actually
+had these system calls. The procedures insert item and remove item, which are not shown. It handles the
+bookkeeping of putting items into the buffer and taking items out of the buffer. Now let us get back to the
+race condition.
+A race condition is a situation that may occur inside a critical section. This happens when the result of
+multiple thread execution in critical section differs according to the order in which the threads execute.
+A race condition occurs when two threads access a shared variable at the same time. The first thread reads
+the variable, and the second thread reads the same value from the variable. Then the first thread and second
+thread perform their operations on the value, and they race to see which thread can write the value last to the
+shared variable. The value of the thread that writes its value last is preserved, because the thread is writing
+over the value that the previous thread wrote. For example:
+Thread1: Total =Total + val1
+Thread2: Total =Total – val2
+In this example, the value of the thread2 that writes its value last is preserved, because the thread2 is writing
+over the value that the previous thread1 wrote.
+What is the problem here?
+The following are the problems that might occur in the Producer-Consumer:

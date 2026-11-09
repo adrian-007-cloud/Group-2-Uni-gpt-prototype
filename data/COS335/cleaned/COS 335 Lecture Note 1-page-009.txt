@@ -1,0 +1,28 @@
+thatitcouldunderstandnatural languageandcan solvetricky questionsquickly.
+● Year2012: Googlehaslaunchedan Androidapp feature"Googlenow",which
+wasabletoprovideinformation totheuserasa prediction.
+● Year2014: In theyear2014,Chatbot"EugeneGoostman"won a competition
+in theinfamous"Turing test."
+● Year2018: The"ProjectDebater"fromIBM debatedon complex topicswith
+twomasterdebatersandalsoperformedextremely well.
+● Googlehasdemonstratedan AIprogram"Duplex"which wasa virtual
+assistantandwhich hadtaken hairdresserappointmenton call,andlady on
+othersidedidn'tnoticethatshewastalking with themachine.
+NowAIhasdevelopedtoa remarkablelevel.Theconceptof Deep learning,big data,
+anddata sciencearenowtrending likea boom.NowadayscompanieslikeGoogle,
+Facebook,IBM,andAmazon areworking with AIandcreating amazing devices.The
+futureof Artificial Intelligenceisinspiring andwill comewith high intelligence.
+Typesof Artificial Intelligence:
+Artificial Intelligencecan bedividedinto varioustypes,therearetwo main typesof
+categorization which arebasedon thecapabilitiesandfunctionalitiesof AI.
+Following isflowdiagramwhich explainsthetypesof AI.
+AItype-1: Basedon Capabilities
+1.WeakAIorNarrowAI:
+● NarrowAIisa typeof AIwhich isabletoperforma dedicatedtaskwith
+intelligence.Themostcommon andcurrently availableAIisNarrowAIin the
+worldof Artificial Intelligence.
+● NarrowAIcannotperformbeyonditsfieldorlimitations,asitisonly trained
+foronespecifictask.HenceitisalsotermedasweakAI.NarrowAIcan fail in
+unpredictablewaysif itgoesbeyonditslimits.
+● AppleSiriisa goodexampleof NarrowAI,butitoperateswith a limitedpredefinedrangeof functions.
+● IBM'sWatson supercomputeralsocomesunderNarrowAI,asitusesan

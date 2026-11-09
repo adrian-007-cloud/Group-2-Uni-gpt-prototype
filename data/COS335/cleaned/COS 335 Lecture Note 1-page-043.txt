@@ -1,0 +1,28 @@
+● Terminal-Test(s): Terminal testistrueif thegameisover,elseitisfalseat
+any case.Thestatewherethegameendsiscalledterminal states.
+● Utility(s,p): Autility function givesthefinal numericvaluefora gamethat
+endsin terminal statessforplayerp.Itisalsocalledpayoff function.For
+Chess,theoutcomesarea win,loss,ordrawanditspayoff valuesare+1,0,
+½.Andfortic-tac-toe,utility valuesare+1,-1,and0.
+Gametree:
+Agametreeisa treewherenodesof thetreearethegamestatesandEdgesof the
+treearethemovesby players.Gametreeinvolvesinitial state,actionsfunction,and
+resultFunction.
+Example:Tic-Tac-Toegametree:
+Thefollowing figureisshowing partof thegame-treefortic-tac-toegame.Following
+aresomekey pointsof thegame:
+● TherearetwoplayersMAXandMIN.
+● Playershavean alternateturn andstartwith MAX.
+● MAXmaximizestheresultof thegametree
+● MINminimizestheresult.
+ExampleExplanation:
+● Fromtheinitial state,MAXhas9 possiblemovesashestartsfirst.MAX
+placex andMINplaceo,andboth playerplaysalternatively until wereach a
+leaf nodewhereoneplayerhasthreein a roworall squaresarefilled.
+● Both playerswill computeeach node,minimax,theminimax valuewhich is
+thebestachievableutility againstan optimal adversary.
+● Supposeboth theplayersarewell awareof thetic-tac-toeandplaying the
+bestplay.Each playerisdoing hisbesttopreventanotheronefromwinning.
+MINisacting againstMax in thegame.
+● Soin thegametree,wehavea layerof Max,a layerof MIN,andeach layeris
+calledas Ply.Max placex,then MINputsotopreventMax fromwinning,and

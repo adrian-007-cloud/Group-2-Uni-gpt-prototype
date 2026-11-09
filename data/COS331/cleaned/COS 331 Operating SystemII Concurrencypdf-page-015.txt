@@ -1,0 +1,41 @@
+ The activities of other processes;
+ The way operating system handles interrupts;
+ The scheduling policies of the operating system.
+Problems in Concurrency:
+ Sharing global resources: Sharing of global resources safely is difficult. If two processes both make
+use of a global variable and both perform read and write on that variable, then the order in which
+various read and write are executed is critical.
+ Optimal allocation of resources: It is difficult for the operating system to manage the allocation of
+resources optimally.
+ Locating programming errors: It is very difficult to locate a programming error because reports are
+usually not reproducible.
+ Locking the channel: It may be inefficient for the operating system to simply lock the channel and
+prevents its use by other processes.
+Advantages of Concurrency:
+ Running of multiple applications: It enables running of multiple applications at the same time.
+ Better resource utilization: It enables that the resources that are unused by one application can be
+used for other applications.
+ Better average response time: Without concurrency, each application has to be run to completion
+before the next one can be run.
+ Better performance: It enables better performance by the operating system. When one application
+uses only the processor and another application uses only the disk drive then the time to run both
+applications concurrently to completion will be shorter than the time to run each application
+consecutively.
+ Reduced waiting time response time or turnaround time.
+ Increased throughput or resource utilization.
+Drawbacks of Concurrency
+ It is required to protect multiple applications from one another.
+ It is required to coordinate multiple applications through additional mechanisms.
+ Additional performance overheads and complexities in operating systems are required for switching
+among applications.
+ Sometimes running too many applications concurrently leads to severely degraded performance.
+Issues of Concurrency:
+ Non-atomic: Operations that are non-atomic but interruptible by multiple processes can cause
+problems.
+ Race conditions: A race condition occurs if the outcome depends on which of several processes gets
+to a point first.
+ Blocking: Processes can block waiting for resources. A process could be blocked for long period of
+time waiting for input from a terminal. If the process is required to periodically update some data,
+this would be very undesirable.
+ Starvation: It occurs when a process does not obtain service to progress.
+ Deadlock: It occurs when two processes are blocked and hence neither can proceed to execute.

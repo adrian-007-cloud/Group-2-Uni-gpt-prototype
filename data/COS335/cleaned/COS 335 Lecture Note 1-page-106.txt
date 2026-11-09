@@ -1,0 +1,24 @@
+WhereP(A B)=JointprobabilityofaandB
+P(B)=MarginalprobabilityofB.
+If theprobability of Aisgiven andweneedtofindtheprobability of B,then itwill be
+given as:
+Itcan beexplainedby using thebelowVenn diagram,whereB isoccurredevent,so
+samplespacewill bereducedtosetB,andnowwecan only calculateeventAwhen
+eventB isalready occurredby dividing theprobability of P(A B)byP(B).
+Example:
+In a class,thereare70% of thestudentswholikeEnglish and40% of thestudents
+wholikesEnglish andmathematics,andthen whatisthepercentof studentsthose
+wholikeEnglish alsolikemathematics?
+Solution:
+Let,Aisan eventthata studentlikesMathematics
+B isan eventthata studentlikesEnglish.
+Hence,57%arethestudentswholikeEnglishalsolikeMathematics.
+Bayes'theoreminArtificialintelligence
+Bayes' theorem:
+Bayes' theoremisalsoknown as Bayes'rule,Bayes'law,or Bayesianreasoning,which
+determinestheprobability of an eventwith uncertain knowledge.
+In probability theory,itrelatestheconditional probability andmarginal probabilities
+of tworandomevents.
+Bayes' theoremwasnamedaftertheBritish mathematician ThomasBayes.
+The Bayesianinference isan application of Bayes' theorem,which isfundamental to
+Bayesian statistics.

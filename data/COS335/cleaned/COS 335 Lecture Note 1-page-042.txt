@@ -1,0 +1,43 @@
+aboutthegame,andthey can seeeach othermovesalso.ExamplesareChess,
+Checkers,Go,etc.
+● Imperfectinformation: If in a gameagentsdonothaveall information about
+thegameandnotawarewith what'sgoing on,such typeof gamesarecalled
+thegamewith imperfectinformation,such astic-tac-toe,Battleship,blind,
+Bridge,etc.
+● Deterministicgames: Deterministicgamesarethosegameswhich followa
+strictpattern andsetof rulesforthegames,andthereisnorandomness
+associatedwith them.Examplesarechess,Checkers,Go,tic-tac-toe,etc.
+● Non-deterministicgames: Non-deterministicarethosegameswhich have
+variousunpredictableeventsandhasa factorof chanceorluck.Thisfactor
+of chanceorluckisintroducedby eitherdiceorcards.Thesearerandom,and
+each action responseisnotfixed.Such gamesarealsocalledasstochastic
+games.
+Example: Backgammon,Monopoly,Poker,etc.
+Note: In thistopic,wewill discussdeterministicgames,fully observableenvironment,
+zero-sum,andwhereeach agentactsalternatively.
+Zero-SumGame
+● Zero-sumgamesareadversarial search which involvespurecompetition.
+● In Zero-sumgameeach agent'sgain orlossof utility isexactly balancedby
+thelossesorgainsof utility of anotheragent.
+● Oneplayerof thegametry tomaximizeonesinglevalue,whileotherplayer
+triestominimizeit.
+● Each moveby oneplayerin thegameiscalledasply.
+● Chessandtic-tac-toeareexamplesof a Zero-sumgame.
+Zero-sumgame: Embeddedthinking
+TheZero-sumgameinvolvedembeddedthinking in which oneagentorplayeris
+trying tofigureout:
+● Whattodo.
+● Howtodecidethemove
+● Needstothinkabouthisopponentaswell
+● Theopponentalsothinkswhattodo
+Each of theplayersistrying tofindouttheresponseof hisopponenttotheiractions.
+Thisrequiresembeddedthinking orbackwardreasoning tosolvethegameproblems
+in AI.
+Formalizationofthe problem:
+AgamecanbedefinedasatypeofsearchinAIwhichcanbeformalizedofthefollowing
+elements:
+● Initial state: Itspecifieshowthegameissetup atthestart.
+● Player(s): Itspecifieswhich playerhasmovedin thestatespace.
+● Action(s): Itreturnsthesetof legal movesin statespace.
+● Result(s,a): Itisthetransition model,which specifiestheresultof movesin
+thestatespace.

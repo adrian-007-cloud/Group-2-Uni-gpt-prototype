@@ -1,0 +1,29 @@
+plateau area.
+Solution: Thesolution fortheplateau istotakebig stepsorvery littlestepswhile
+searching,tosolvetheproblem.Randomly selecta statewhich isfaraway fromthe
+currentstatesoitispossiblethatthealgorithmcouldfindnon-plateau region.
+3.Ridges: Aridgeisa special formof thelocal maximum.Ithasan area which is
+higherthan itssurrounding areas,butitself hasa slope,andcannotbereachedin a
+singlemove.
+Solution: With theuseof bidirectional search,orby moving in differentdirections,we
+can improvethisproblem.
+Simulated Annealing:
+Ahill-climbing algorithmwhich nevermakesa movetowardsa lowervalue
+guaranteedtobeincompletebecauseitcan getstuckon a local maximum.Andif
+algorithmappliesa randomwalk,by moving a successor,then itmay completebut
+notefficient. SimulatedAnnealing isan algorithmwhich yieldsboth efficiency and
+completeness.
+In mechanical term Annealing isa processof hardening a metal orglasstoa high
+temperaturethen cooling gradually,sothisallowsthemetal toreach a low-energy
+crystallinestate.Thesameprocessisusedin simulatedannealing in which the
+algorithmpicksa randommove,insteadof picking thebestmove.If therandom
+moveimprovesthestate,then itfollowsthesamepath.Otherwise,thealgorithm
+followsthepath which hasa probability of lessthan 1 oritmovesdownhill and
+choosesanotherpath.
+Means-EndsAnalysisin Artificial Intelligence
+● Wehavestudiedthestrategieswhich can reason eitherin forwardor
+backward,buta mixtureof thetwodirectionsisappropriateforsolving a
+complex andlargeproblem.Such a mixedstrategy,makeitpossiblethatfirst
+tosolvethemajorpartof a problemandthen gobackandsolvethesmall
+problemsariseduring combining thebig partsof theproblem.Such a
+techniqueiscalled Means-EndsAnalysis.

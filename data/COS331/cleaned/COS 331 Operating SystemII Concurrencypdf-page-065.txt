@@ -1,0 +1,35 @@
+For apparent security purposes, the Core OS layer also embodies the kernel framework and low-grade
+UNIX interfaces with which your application has no exposure. However, several low-level attributes,
+like BSD connectors, POSIX posts, and DNS service providers, can be powered easily via the C-based
+library system catalogue.
+(ii) The core service layer in iOS: The core services layer is responsible for handling the basic
+device services that are used by native iOS users. In some of its features, the Cocoa Touch layer is
+based on the Core Services layer. There is also a range of important features in the Core Services tier,
+like block artifacts, Grand Central Control, In-App Purchase, and iCloud Memory. Automatic
+Reference Counting (ARC) is among the most important additions to the core services network. ARC
+is a preprocessor-level feature, launched with the release of iOS 5 in 2011. ARC optimizes the memory
+management within Objective-C. A further important framework for iOS and OS X apps is the Base
+Framework or Base for short. We'll discuss this concept in more depth in the next paragraph.
+(iii) Media layer in iOS: The media layer allows the image on your iOS device to be clearer
+and the music you ‗re listening to sound transparent. All audio, video, and graphics components are
+included in this layer which helps in providing a dynamic immersive experience for the mobile user.
+The Media layer manages the graphics, audio, and video. There is a range of primary innovations in
+this layer, like OpenGL ES, Core Graphics, AV Foundation, OpenAL, and Core Media. The Media
+layer includes a large number of frames such as the Assets Libraries system for accessing the images
+and videos stored on the computer, the Core Image system for shutter photo manipulation, and the
+Central Graphics system for 2D representation.
+(iv) Cocoa Touch Layer in iOS: The Cocoa Touch layer is therefore very essential for just how
+we communicate with our iOS devices. This completely covered how our applications appear when we
+try to communicate with them, and also how they react. For instance, if you appreciate the notification
+bar on your smartphone, you can thank the Cocoa Touch layer for that feature. The Cocoa Touch layer
+also contains a range of high-level iOS framework features, such as the opportunity to multi-task
+among apps or use the touchscreen of the computer to execute commands. The Cocoa Touch layer is
+the topmost part of the iOS structure. This includes some of the main frameworks on which native iOS
+apps depend, the most popular of which is the UIKit system.
+The Cocoa Touch layer describes the core application architecture and includes a range of critical features,
+like multi-tasking and touch-based feedback. The UIKit framework is customized to the iOS platform or
+UIKit in short. OS X system, Application Manager application, or AppKit provides an analogous
+application. UIKit offers the visual, event guided iOS framework. Apple also looks after other core elements
+of the iOS app, such as multitasking, push alerts, and availability. The Cocoa Touch layer offers a wide
+range of high-level features for users, like auto design, publishing, gesture object detection, and
+document management.

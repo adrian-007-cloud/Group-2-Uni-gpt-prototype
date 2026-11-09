@@ -1,0 +1,39 @@
+Program Process
+Static entity Dynamic entity
+Exist in a single space and continue to exist Exist in a limited span of time.
+Programs contain instructions Executes instruction
+There are two types of processes:
+Sequential Processes: Execution progresses in a sequential fashion, i.e., one after the other. So, at any point
+in time, at most one process is being executed.
+Concurrent Processes: There are two types of concurrent processes.
+(i) True Concurrency (Multiprocessing): Two or more processes are executed simultaneously in a
+multiprocessor environment. So, supports real parallelism.
+(ii) Apparent Concurrency (Multiprogramming): Two or more processes are executed in parallel in a
+uniprocessor environment.
+State Diagram
+A state diagram is used in computer science and related fields to describe the behavior of systems. State
+diagrams require that the system is composed of a finite number of states. Sometimes, this is indeed the
+case, while at other times this is a reasonable abstraction. Many forms of state diagrams exist, which differ
+slightly and have different semantics.
+State diagrams provide an abstract description of a system's behavior. This behavior is analyzed and
+represented by a series of events that can occur in one or more possible states. Hereby "each diagram usually
+represents objects of a single class and track the different states of its objects through the system".
+State diagrams can be used to graphically represent finite-state machines (also called finite automata). This
+was introduced by Claude Shannon and Warren Weaver in their 1949 book The Mathematical Theory of
+Communication.
+Directed graph]
+A directed graph
+A classic form of state diagram for a finite automaton (FA) is a directed graph with the following elements
+(Q, Σ, Z, δ, q , F):
+ Vertices Q: a finite set of states, normally represented by circles and labeled with unique designator
+symbols or words written inside them
+ Input symbols Σ: a finite collection of input symbols or designators
+ Output symbols Z: a finite collection of output symbols or designators
+The output function ω represents the mapping of ordered pairs of input symbols and states onto output
+symbols, denoted mathematically as ω : Σ × Q→ Z.
+ Edges δ: represent transitions from one state to another as caused by the input (identified by their
+symbols drawn on the edges). An edge is usually drawn as an arrow directed from the present state to
+the next state. This mapping describes the state transition caused by an input. This is written
+mathematically as δ : Q × Σ → Q, so δ (the transition function) in the definition of the FA is given by
+both the pair of vertices connected by an edge and the symbol on an edge in a diagram representing this
+FA. Item δ(q, a) = p in the definition of the FA means that from the state named q under input symbol a,

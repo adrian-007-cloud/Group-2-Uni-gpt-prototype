@@ -1,0 +1,44 @@
+Substitution isa fundamental operation performedon termsandformulas.Itoccurs
+in all inferencesystemsin first-orderlogic.Thesubstitution iscomplex in the
+presenceof quantifiersin FOL.If wewrite F[a/x],soitreferstosubstitutea constant"a
+"in placeof variable"x".
+Note: First-orderlogiciscapableof expressing factsaboutsomeorall objectsin the
+universe.
+Equality:
+First-Orderlogicdoesnotonly usepredicateandtermsformaking atomicsentences
+butalsousesanotherway,which isequality in FOL.Forthis,wecan use equality
+symbols which specify thatthetwotermsrefertothesameobject.
+Example:Brother(John)=Smith.
+Asin theaboveexample,theobjectreferredby the Brother(John) issimilartothe
+objectreferredby Smith.Theequality symbol can alsobeusedwith negation to
+representthattwotermsarenotthesameobjects.
+Example:￢(x=y)whichisequivalenttox≠y.
+FOL inferencerulesforquantifier:
+Aspropositional logicwealsohaveinferencerulesin first-orderlogic,sofollowing
+aresomebasicinferencerulesin FOL:
+● Universal Generalization
+● Universal Instantiation
+● Existential Instantiation
+● Existential introduction
+1.UniversalGeneralization:
+● Universal generalization isa validinferencerulewhich statesthatif premise
+P(c) istrueforany arbitrary elementcin theuniverseof discourse,then we
+can havea conclusion as! x P(x).
+●
+Itcan berepresentedas: .
+● Thisrulecan beusedif wewanttoshowthatevery elementhasa similar
+property.
+● In thisrule,x mustnotappearasa freevariable.
+Example: Let'srepresent,P(c): "Abytecontains8bits",sofor ! xP(x) "Allbytescontain8
+bits.",itwill alsobetrue.
+● UniversalInstantiation:
+● Universal instantiation isalsocalledasuniversal elimination orUIisa valid
+inferencerule.Itcan beappliedmultipletimestoaddnewsentences.
+● ThenewKB islogically equivalenttothepreviousKB.
+● AsperUI, wecan inferany sentenceobtainedby substituting a groundterm
+forthevariable.
+● TheUIrulestatethatwecan inferany sentenceP(c) by substituting a
+groundtermc(a constantwithin domain x) from ! x P(x) forany objectin the
+universeof discourse.
+●
+Itcan berepresentedas: .

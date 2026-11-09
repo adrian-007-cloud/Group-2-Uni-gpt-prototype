@@ -1,0 +1,42 @@
+●Highly responsive
+●Understandable
+Robotics
+● Roboticsisa branch of artificial intelligenceandengineering which isused
+fordesigning andmanufacturing of robots.
+● Robotsaretheprogrammedmachineswhich can performa seriesof actions
+automatically orsemi-automatically.
+● AIcan beappliedtorobotstomakeintelligentrobotswhich can performthe
+taskwith theirintelligence.AIalgorithmsarenecessary toallowa robotto
+performmorecomplex tasks.
+● Nowadays,AIandmachinelearning arebeing appliedon robotsto
+manufactureintelligentrobotswhich can alsointeractsocially likehumans.
+Oneof thebestexamplesof AIin roboticsis Sophia robot.
+MachineVision
+● Machinevision isan application of computervision which enablesa
+machinetorecognizetheobject.
+● Machinevision capturesandanalysesvisual information using oneormore
+videocameras,analog-to-digital conversations,anddigital signal processing.
+● Machinevision systemsareprogrammedtoperformnarrowly definedtasks
+such ascounting objects,reading theserial number,etc.
+● Computersystemsdonotseein thesameway ashuman eyescan see,butit
+isalsonotboundedby human limitationssuch astoseethrough thewall.
+● With thehelp of machinelearning andmachinevision,an AIagentcan be
+abletoseethrough walls.
+SpeechRecognition
+Speech recognition isa technology which enablesa machinetounderstandthe
+spoken languageandtranslateintoa machine-readableformat.Itcan alsobesaid
+asautomaticSpeech recognition andcomputerspeech recognition. Itisawaytotalk
+withacomputer,andonthebasisofthatcommand,acomputercanperformaspecifictask.
+Thereissomespeech recognition softwarewhich hasa limitedvocabulary of words
+andphrase.Thissoftwarerequiresunambiguousspoken languagetounderstand
+andperformspecifictask.Today'stherearevarioussoftwareordeviceswhich
+containsspeech recognition technology such asCortana,Googlevirtual assistant,
+AppleSiri,etc.
+Weneedtotrain ourspeech recognition systemtounderstandourlanguage.In
+previousdays,thesesystemswereonly designedtoconvertthespeech totext,but
+nowtherearevariousdeviceswhich can directly convertspeech intocommands.
+Speech recognition systemscan beusedin thefollowing areas:
+● Systemcontrol ornavigation system
+● Industrial application
+● Voicedialing system
+Therearetwotypesof speech recognition

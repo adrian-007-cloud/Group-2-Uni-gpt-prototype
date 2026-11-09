@@ -1,0 +1,50 @@
+Sol: S =>Here,Ψ = p(f(a),g(Y)),andΨ = p(X,X)
+0 1 2
+SUBST θ= {f(a) / X}
+S1 =>Ψ = p(f(a),g(Y)),andΨ = p(f(a),f(a))
+1 2
+SUBST θ= {f(a) / g(y)}, Unification failed.
+Unification isnotpossiblefortheseexpressions.
+2.FindtheMGUof {p(b,X,f(g(Z))) andp(Z,f(Y),f(Y))}
+Here,Ψ = p(b,X,f(g(Z))) ,andΨ = p(Z,f(Y),f(Y))
+1 2
+S =>{p(b,X,f(g(Z)));p(Z,f(Y),f(Y))}
+SUBST θ={b/Z}
+S =>{p(b,X,f(g(b)));p(b,f(Y),f(Y))}
+SUBST θ={f(Y) /X}
+S =>{p(b,f(Y),f(g(b)));p(b,f(Y),f(Y))}
+SUBST θ= {g(b) /Y}
+S =>{p(b,f(g(b)),f(g(b));p(b,f(g(b)),f(g(b))} UnifiedSuccessfully.
+AndUnifier= {b/Z,f(Y) /X,g(b) /Y}.
+3.FindtheMGUof {p (X,X),andp (Z,f(Z))}
+Here,Ψ = {p (X,X),andΨ = p (Z,f(Z))
+1 2
+S =>{p (X,X),p (Z,f(Z))}
+SUBST θ= {X/Z}
+S1 =>{p (Z,Z),p (Z,f(Z))}
+SUBST θ= {f(Z) / Z}, Unification Failed.
+Hence,unification isnotpossiblefortheseexpressions.
+4.FindtheMGUof UNIFY(prime(11),prime(y))
+Here,Ψ = {prime(11) ,andΨ = prime(y)}
+1 2
+S =>{prime(11) ,prime(y)}
+SUBST θ= {11/y}
+S =>{prime(11) ,prime(11)}, Successfully unified.
+Unifier: {11/y}.
+5.FindtheMGUof Q(a,g(x,a),f(y)),Q(a,g(f(b),a),x)}
+Here,Ψ = Q(a,g(x,a),f(y)),andΨ = Q(a,g(f(b),a),x)
+1 2
+S =>{Q(a,g(x,a),f(y));Q(a,g(f(b),a),x)}
+SUBST θ= {f(b)/x}
+S =>{Q(a,g(f(b),a),f(y));Q(a,g(f(b),a),f(b))}
+SUBST θ= {b/y}
+S =>{Q(a,g(f(b),a),f(b));Q(a,g(f(b),a),f(b))}, Successfully Unified.
+Unifier: [a/a,f(b)/x,b/y].
+6.UNIFY(knows(Richard,x),knows(Richard,John))
+Here,Ψ = knows(Richard,x),andΨ = knows(Richard,John)
+1 2
+S =>{knows(Richard,x);knows(Richard,John)}
+SUBST θ= {John/x}
+S =>{knows(Richard,John);knows(Richard,John)}, Successfully Unified.
+Unifier: {John/x}.
+Resolution in FOL

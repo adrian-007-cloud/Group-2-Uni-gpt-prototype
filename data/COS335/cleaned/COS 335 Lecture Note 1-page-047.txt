@@ -1,0 +1,35 @@
+Thatwasthecompleteworkflowof theminimax twoplayergame.
+Propertiesof Mini-Max algorithm:
+● Complete- Min-Max algorithmisComplete.Itwill definitely finda solution (if
+exist),in thefinitesearch tree.
+● Optimal- Min-Max algorithmisoptimal if both opponentsareplaying
+optimally.
+● Timecomplexity- AsitperformsDFS forthegame-tree,sothetime
+m
+complexity of Min-Max algorithmis O(b ),whereb isbranching factorof the
+game-tree,andmisthemaximumdepth of thetree.
+● SpaceComplexity- Spacecomplexity of Mini-max algorithmisalsosimilarto
+DFS which is O(bm).
+Limitation of theminimax Algorithm:
+Themain drawbackof theminimax algorithmisthatitgetsreally slowforcomplex
+gamessuch asChess,go,etc.Thistypeof gameshasa hugebranching factor,and
+theplayerhaslotsof choicestodecide.Thislimitation of theminimax algorithmcan
+beimprovedfrom alpha-beta pruning which wehavediscussedin thenexttopic.
+Alpha-Beta Pruning
+● Alpha-beta pruning isa modifiedversion of theminimax algorithm.Itisan
+optimization techniquefortheminimax algorithm.
+● Aswehaveseen in theminimax search algorithmthatthenumberof game
+statesithastoexamineareexponential in depth of thetree.Sincewecannot
+eliminatetheexponent,butwecan cutittohalf.Hencethereisa techniqueby
+which withoutchecking each nodeof thegametreewecan computethe
+correctminimax decision,andthistechniqueiscalled pruning.Thisinvolves
+twothresholdparameterAlpha andbeta forfutureexpansion,soitis
+called alpha-beta pruning.Itisalsocalledas Alpha-Beta Algorithm.
+● Alpha-beta pruning can beappliedatany depth of a tree,andsometimesit
+notonly prunethetreeleavesbutalsoentiresub-tree.
+● Thetwo-parametercan bedefinedas:
+oAlpha: Thebest(highest-value) choicewehavefoundsofaratany point
+along thepath of Maximizer.Theinitial valueof alpha is -∞.
+1. Beta: Thebest(lowest-value) choicewehavefoundsofaratany
+pointalong thepath of Minimizer.Theinitial valueof beta is +∞.
+o TheAlpha-beta pruning toa standardminimax algorithmreturnsthesame

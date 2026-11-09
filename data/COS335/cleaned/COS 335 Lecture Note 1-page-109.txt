@@ -1,0 +1,33 @@
+"ABayesian networkisa probabilisticgraphical model which representsa setof
+variablesandtheirconditional dependenciesusing a directedacyclicgraph."
+Itisalsocalleda Bayesnetwork,beliefnetwork,decisionnetwork,or Bayesianmodel.
+Bayesian networksareprobabilistic,becausethesenetworksarebuiltfrom
+a probabilitydistribution,andalsouseprobability theory forprediction andanomaly
+detection.
+Real worldapplicationsareprobabilisticin nature,andtorepresenttherelationship
+between multipleevents,weneeda Bayesian network.Itcan alsobeusedin various
+tasksincluding prediction,anomalydetection,diagnostics,automatedinsight,reasoning,time
+seriesprediction,and decisionmakingunderuncertainty.
+Bayesian Networkcan beusedforbuilding modelsfromdata andexpertsopinions,
+anditconsistsof twoparts:
+● DirectedAcyclicGraph
+● Tableof conditional probabilities.
+Thegeneralizedformof Bayesian networkthatrepresentsandsolvedecision
+problemsunderuncertain knowledgeisknown asan Influencediagram.
+ABayesiannetworkgraphismadeupofnodesandArcs(directedlinks),where:
+● Each node correspondstotherandomvariables,anda variablecan
+be continuous or discrete.
+● Arcordirectedarrows representthecausal relationship orconditional
+probabilitiesbetween randomvariables.Thesedirectedlinksorarrows
+connectthepairof nodesin thegraph.
+Theselinksrepresentthatonenodedirectly influencetheothernode,andif there
+isnodirectedlink,thatmeansthatnodesareindependentwith each other
+●In theabovediagram,A,B,C,andD arerandomvariablesrepresentedby
+thenodesof thenetworkgraph.
+●If weareconsidering nodeB,which isconnectedwith nodeAby a
+directedarrow,then nodeAiscalledtheparentof NodeB.
+●NodeCisindependentof nodeA.
+Note: TheBayesian networkgraph doesnotcontain any cyclicgraph.Hence,itis
+known asa directedacyclicgraph orDAG.
+TheBayesian networkhasmainly twocomponents:
+● Causal Component

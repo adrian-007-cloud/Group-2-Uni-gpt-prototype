@@ -1,0 +1,29 @@
+In the ready to run state processes are able to run when a processor is allocated for them. In this state they
+are waiting for the processor to be executed. In the running state they are in execution on the allocated
+processor. In the wait state they are suspended or blocked waiting for the occurrence of some events for
+getting again ready-to-run.
+A Parent process
+B C
+Child process
+D E
+Figure 4. Process spawning
+The Concept of Thread
+The notion of thread was introduced in the framework of the process-thread model in order to
+express more parallelism in code than in the process model. This is achieved by declaration of smaller
+chunks of code, called threads (lightweight processes), within a process as an entity that can be executed
+concurrently or parallel. A thread, like a process, is a sequence of instructions. Threads are created within
+and belonging to processes. All the threads created within one process share the resources of the process,
+above all, the address space. Scheduling is also performed on a per thread basis. In other words, the processthread model is a finer grain scheduling model than the process model.
+Threads have a similar lifecycle as the processes and will be managed mainly in the same way as processes
+are. Initially each process will be created with one single thread. However, threads are usually allowed to
+create new ones using particular system calls. For instance, in OS/2 new threads can be created by issuing
+the DoscCreateThread system call. Then, typically for each process a thread tree will be created (Figure 5).
+Process
+Threads
+Figure 5. Thread tree
+During creation each thread will be declared by a particular data structure mostly called Thread Control
+Block (TCB). The scheduling of threads will be performed in a similar way as described for processes.
+Each thread belongs to exactly one process and no thread can exist outside a process. Each thread represents
+a separate flow of control. Threads have been successfully used in implementing network servers and web
+server. They also provide a suitable foundation for parallel execution of applications on shared memory
+multiprocessors. The following figure shows the working of a single-threaded and a multithreaded process.

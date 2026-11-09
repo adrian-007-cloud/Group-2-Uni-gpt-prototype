@@ -1,0 +1,23 @@
+Memory-mapped I/O
+When using memory-mapped I/O, the same address space is shared by memory and I/O devices. The device
+is connected directly to certain main memory locations so that I/O device can transfer block of data to/from
+memory without going through CPU.
+While using memory mapped IO, OS allocates buffer in memory and informs I/O device to use that buffer to
+send data to the CPU. I/O device operates asynchronously with CPU, interrupts CPU when finished.
+The advantage to this method is that every instruction which can access memory can be used to manipulate
+an I/O device. Memory mapped IO is used for most high-speed I/O devices like disks, communication
+interfaces.
+Direct Memory Access (DMA)
+Slow devices like keyboards will generate an interrupt to the main CPU after each byte is transferred. If a
+fast device such as a disk generated an interrupt for each byte, the operating system would spend most of its
+time handling these interrupts. So a typical computer uses direct memory access (DMA) hardware to reduce
+this overhead.
+Direct Memory Access (DMA) means CPU grants I/O module authority to read from or write to memory
+without involvement. DMA module itself controls exchange of data between main memory and the I/O
+device. CPU is only involved at the beginning and end of the transfer and interrupted only after entire block
+has been transferred.
+Direct Memory Access needs a special hardware called DMA controller (DMAC) that manages the data
+transfers and arbitrates access to the system bus. The controllers are programmed with source and
+destination pointers (where to read/write the data), counters to track the number of transferred bytes, and
+settings, which includes I/O and memory types, interrupts and states for the CPU cycles.
+The operating system uses the DMA hardware as follows:

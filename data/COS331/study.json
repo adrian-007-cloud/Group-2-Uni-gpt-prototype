@@ -1,0 +1,1181 @@
+{
+  "course": "COS331",
+  "topics": [
+    {
+      "name": "Process Structures",
+      "pages": [
+        5,
+        6,
+        8,
+        9,
+        10
+      ],
+      "summary": "A process is a program in execution. From creation to completion it moves through states: new, ready, running, blocked (waiting), and terminated. The operating system keeps track of each process with a Process Control Block (PCB), and it keeps the ready processes in a ready list.",
+      "objectives": [
+        "Describe the states a process moves through, from creation to termination.",
+        "Explain what a Process Control Block stores and why the OS needs it."
+      ],
+      "key_ideas": [
+        "A newly created process enters the ready state and waits for the CPU.",
+        "A running process is one the scheduler has chosen. With one CPU, only one process runs at a time.",
+        "A blocked (waiting) process needs I/O, user input, or a locked critical region. It waits and does not use the CPU.",
+        "A terminated process has finished. Its PCB is deleted and its resources are released.",
+        "The PCB holds the process ID, its state, the program counter, CPU registers, scheduling priority, memory information, and I/O status.",
+        "The ready list is ordered by priority.",
+        "Dispatching gives the CPU to a selected process. A context switch saves the state of one process and loads the state of another."
+      ],
+      "example": "A program starts and enters the ready state. The scheduler picks it and it runs. It then asks to read a file, so it moves to blocked. When the read finishes it returns to ready, runs again, and finally terminates, and its PCB is deleted."
+    },
+    {
+      "name": "Scheduling and Dispatching",
+      "pages": [
+        10,
+        11,
+        12,
+        13,
+        14
+      ],
+      "summary": "The scheduler decides which process should run next and how the ready queue is kept in order. The dispatcher then removes that process from the ready queue and gives it the CPU. They are separate parts of the operating system.",
+      "objectives": [
+        "Explain the difference between the scheduler and the dispatcher.",
+        "Compare preemptive and non-preemptive scheduling algorithms."
+      ],
+      "key_ideas": [
+        "The scheduler puts processes in the ready queue and maintains it.",
+        "The dispatcher removes a process from the ready queue, sets up its state, and transfers control to it. The time this takes is the dispatch latency.",
+        "There are three kinds of scheduler: long-term (chooses batch jobs), medium-term (handles swapped-out processes), and short-term (picks from the ready processes in memory).",
+        "Preemptive algorithms, such as Round Robin, SRTF, and Priority, can take the CPU from a running process. Non-preemptive algorithms, such as FCFS and SJF, let it finish its CPU turn.",
+        "Goals: use the CPU and disks well, keep overhead low, reduce response time, and share the CPU fairly."
+      ],
+      "example": "Processes P1 to P4 arrive in that order and FIFO scheduling is used. The scheduler chooses P1 first and the dispatcher gives it the CPU. Then the same happens for P2, P3, and P4."
+    },
+    {
+      "name": "Interrupts",
+      "pages": [
+        11,
+        13,
+        14
+      ],
+      "summary": "An interrupt is a signal that tells the CPU to stop what it is doing and run part of the operating system. Interrupts are how the OS regains control from a running user process. Without them, a user program could keep the CPU for as long as it liked.",
+      "objectives": [
+        "Explain what an interrupt is and why the OS needs interrupts.",
+        "Distinguish hardware interrupts, software interrupts, and traps."
+      ],
+      "key_ideas": [
+        "Hardware interrupts come from devices, such as a key press or a finished disk operation.",
+        "Software interrupts are made by a program that wants a system call.",
+        "Traps are made by the CPU itself when an error happens, such as an illegal instruction or an addressing violation.",
+        "The timer interrupt makes sure the OS gets control regularly.",
+        "On a task switch caused by a timer interrupt, the context switcher first saves the state of the interrupted task, then sets up system code, then calls the dispatcher."
+      ],
+      "example": "A program is running when the timer interrupt fires. The OS saves the program's state, the dispatcher picks the next ready process, and that process runs."
+    },
+    {
+      "name": "Concurrent Execution",
+      "pages": [
+        14,
+        15
+      ],
+      "summary": "Concurrent execution means several instruction sequences run at the same time, or appear to. Processes and threads communicate through shared memory or message passing. It makes systems faster and better at using resources, but it also causes problems such as deadlock and starvation.",
+      "objectives": [
+        "Describe the advantages of running processes concurrently.",
+        "Explain the problems that concurrent execution creates."
+      ],
+      "key_ideas": [
+        "Advantages: several applications run at once, resources unused by one application can be used by another, response and turnaround times improve, and throughput increases.",
+        "Problems: sharing global resources safely is hard, because the order of reads and writes matters. The OS must allocate resources well, and errors are hard to reproduce.",
+        "The relative speed of processes cannot be predicted. It depends on the other processes, how the OS handles interrupts, and the scheduling policy.",
+        "Drawbacks: applications must be protected from each other and coordinated, and switching between them adds overhead."
+      ],
+      "example": "Two processes each update the same global variable. Whether the final value is correct depends on the order in which their reads and writes happen. This is why concurrent execution needs coordination."
+    },
+    {
+      "name": "Mutual Exclusion",
+      "pages": [
+        16
+      ],
+      "summary": "When several processes share a resource, such as a variable, they must take turns using it. Mutual exclusion (MUTEX) guarantees that no two processes are in the critical section at the same time. The critical section is the part of the code that uses the shared resource.",
+      "objectives": [
+        "Explain what mutual exclusion guarantees.",
+        "Describe what a race condition is and how mutual exclusion prevents it."
+      ],
+      "key_ideas": [
+        "A race condition happens when shared data is accessed without coordination, and the result depends on the order of the accesses.",
+        "Example from the notes: a counter starts at 1, and two processes each add 1. The correct result is 3. Without coordination, one update can be lost and the result is 2.",
+        "A good mutual exclusion solution must be free of deadlock: if processes try to enter the critical section, one of them must eventually succeed."
+      ],
+      "example": "Two processes both want to update the same counter. Mutual exclusion makes one process finish its update before the other starts, so both increments are counted."
+    },
+    {
+      "name": "Deadlock",
+      "pages": [
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22
+      ],
+      "summary": "Deadlock happens when a set of processes each wait for something that only another process in the set can provide, so none of them can continue. The notes say deadlock needs four conditions to hold at the same time. The OS can prevent it, avoid it, or detect it and recover.",
+      "objectives": [
+        "List the four conditions needed for deadlock.",
+        "Compare the Wait-Die and Wound-Wait schemes."
+      ],
+      "key_ideas": [
+        "The four conditions: mutual exclusion (a resource is held by one process at a time), hold and wait (a process holding resources can ask for more), no preemption (resources cannot be taken away), and circular wait (a chain of processes, each waiting for the next).",
+        "Prevention breaks one of the four conditions. Avoidance checks each request before granting it. The Banker's algorithm does this by checking whether the system stays in a safe state.",
+        "Wait-Die: an older process may wait for a younger one, but a younger process that asks for an older process's item dies (is restarted later).",
+        "Wound-Wait: an older process wounds a younger one (forces it to roll back and release the item), but a younger process waits for an older one.",
+        "A wait-for graph with a cycle means a deadlock is present."
+      ],
+      "example": "Process A holds resource X and waits for Y. Process B holds Y and waits for X. Neither can move forward. This is a circular wait, and it is a deadlock."
+    },
+    {
+      "name": "Semaphores",
+      "pages": [
+        25,
+        27
+      ],
+      "summary": "A semaphore is an integer variable that controls access to shared resources. It is changed only by two operations, wait and signal. Wait decreases the value, if it is positive. Signal increases it.",
+      "objectives": [
+        "Explain how the wait and signal operations change a semaphore."
+      ],
+      "key_ideas": [
+        "wait(S) decreases S if S is positive. Otherwise the process must wait.",
+        "signal(S) increases S by one.",
+        "In the producer-consumer problem three semaphores are used: S for mutual exclusion (starts at 1), E for empty slots in the buffer (starts at n), and F for filled slots (starts at 0)."
+      ],
+      "example": "A buffer has 5 slots, so E starts at 5 and F starts at 0. Before adding an item, the producer waits on E, so E goes down by one. Before removing an item, the consumer waits on F, so F goes down by one."
+    },
+    {
+      "name": "Monitors",
+      "pages": [
+        25
+      ],
+      "summary": "A monitor is a programming-language construct that bundles shared data, the procedures that use it, and the synchronization between calls. Condition variables let a thread wait inside a monitor until some condition becomes true.",
+      "objectives": [
+        "Describe what a monitor provides.",
+        "Explain the role of condition variables in a monitor."
+      ],
+      "key_ideas": [
+        "A monitor lets only one caller use the shared data at a time.",
+        "Condition variables let threads wait until a condition occurs. Operations 'wake one' and 'wake all' wake waiting threads.",
+        "Condition variables are user-mode objects and cannot be shared across processes.",
+        "A rendezvous happens when two processes synchronize and exchange messages."
+      ],
+      "example": "A consumer finds the buffer empty and waits on a condition variable. When a producer adds an item, it signals the variable, and the waiting consumer wakes up."
+    },
+    {
+      "name": "Producer-Consumer Problem",
+      "pages": [
+        26,
+        27,
+        28
+      ],
+      "summary": "One producer puts items into a shared fixed-size buffer and one consumer takes them out. This is also called the bounded-buffer problem. The buffer must not overflow or underflow, and the two processes must not access it at the same time.",
+      "objectives": [
+        "Explain how semaphores S, E, and F solve the producer-consumer problem."
+      ],
+      "key_ideas": [
+        "The producer produces only when the buffer is not full. If it is full, the producer sleeps.",
+        "The consumer consumes only when the buffer is not empty. If it is empty, the consumer sleeps.",
+        "The producer and consumer must not touch the buffer at the same time.",
+        "Producer: wait(E), wait(S), append, signal(S), signal(F).",
+        "Consumer: wait(F), wait(S), take, signal(S), signal(E)."
+      ],
+      "example": "The producer adds 3 items to a 5-slot buffer, so E becomes 2 and F becomes 3. The consumer takes one item: it waits on F (F becomes 2), and then signals E (E becomes 3)."
+    },
+    {
+      "name": "Synchronization",
+      "pages": [
+        26,
+        28
+      ],
+      "summary": "Synchronization makes processes or threads wait for each other at the right points. A race condition happens when two threads access a shared variable at the same time, and the final value depends on which one writes last.",
+      "objectives": [
+        "Explain how race conditions occur.",
+        "Explain how a barrier keeps processes in step."
+      ],
+      "key_ideas": [
+        "In the example Total = Total + val1 and Total = Total - val2 running together, the value written last is kept and the other update is lost.",
+        "Some applications run in phases. A barrier at the end of each phase blocks each process until all processes have reached it.",
+        "A spinlock makes a thread loop, checking until the lock is free. It suits short waits on multiprocessor systems, but a thread that holds a lock for a long time makes others waste CPU time."
+      ],
+      "example": "Four workers finish phase 1. Each one waits at the barrier. When all four have arrived, phase 2 starts for all of them."
+    },
+    {
+      "name": "Multiprocessor Issues",
+      "pages": [
+        28,
+        29
+      ],
+      "summary": "On a multiprocessor system, several CPUs run threads at the same time, so locks and reentrant code need special care. A spinlock is a lock that a thread waits for by looping until the lock becomes free.",
+      "objectives": [
+        "Explain how a spinlock works.",
+        "Explain when a spinlock is suitable and when it is not."
+      ],
+      "key_ideas": [
+        "A spinlock suits short waits on multiprocessors. The waiting thread stays active, so no context switch is needed.",
+        "The problems with spinlocks: if a thread holds the lock for a long time, other threads waste CPU time, and an unfair lock can leave a waiting thread starved.",
+        "A reentrant procedure can be interrupted in the middle and called again safely, or run on several processors at once.",
+        "A non-reentrant spinlock makes a thread that takes it a second time wait forever for itself."
+      ],
+      "example": "Thread A takes a spinlock to update a shared list for a moment. Thread B, on another CPU, keeps checking the lock in a loop until A releases it, and then takes it."
+    },
+    {
+      "name": "Partitioning",
+      "pages": [
+        31,
+        32,
+        41
+      ],
+      "summary": "In partitioned memory, main memory is divided into partitions, and each partition holds one process. As processes come and go, the free memory breaks into pieces. This is called fragmentation.",
+      "objectives": [
+        "Distinguish internal fragmentation from external fragmentation.",
+        "Explain how compaction reduces external fragmentation."
+      ],
+      "key_ideas": [
+        "Internal fragmentation: a block given to a process is bigger than the process, so some of the block is unused.",
+        "External fragmentation: the total free memory is enough for a request, but it is not in one contiguous block.",
+        "Compaction moves memory contents so the free memory is in one block. It needs dynamic relocation to work.",
+        "Placement policies (best fit, first fit, worst fit) decide which free partition a process gets."
+      ],
+      "example": "A process needing 3 MB is placed in a 5 MB partition. The 2 MB left over inside that partition is wasted. This is internal fragmentation."
+    },
+    {
+      "name": "Swapping",
+      "pages": [
+        31,
+        41,
+        42
+      ],
+      "summary": "Swapping moves a whole process out of main memory to disk, and later brings it back. It lets the system run more processes than fit in memory at once, and it increases the number of processes sharing the CPU.",
+      "objectives": [
+        "Explain how swapping moves processes between memory and disk.",
+        "Describe the time cost of swapping a process."
+      ],
+      "key_ideas": [
+        "Swapping out sends a process to secondary memory. Swapping in returns it to main memory when space is free.",
+        "Swapping takes time. The total includes moving the process out, moving it back in, and the time the process needs to regain memory.",
+        "Low memory holds the operating system and high memory holds user processes. Single-partition allocation uses a relocation register and a limit register to protect processes. Multiple-partition allocation gives each process one fixed-size partition."
+      ],
+      "example": "A 2048 KB process is swapped out to disk at about 1 MB per second, which takes about 2 seconds. Swapping it back in takes another 2 seconds, so the total is about 4 seconds, before other overheads."
+    },
+    {
+      "name": "Paging",
+      "pages": [
+        32,
+        33,
+        34,
+        37,
+        38,
+        39,
+        40
+      ],
+      "summary": "Paging divides a process's address space into fixed-size pages, and physical memory into frames of the same size. A page table maps each page to a frame, so a page can go into any free frame. This avoids external fragmentation and is the basis of virtual memory.",
+      "objectives": [
+        "Explain how a page table maps pages to frames.",
+        "Convert a logical address into a physical address."
+      ],
+      "key_ideas": [
+        "A logical address is a page number plus an offset. A physical address is a frame number plus the same offset.",
+        "The page table records which frame holds each page.",
+        "Demand paging loads a page only when it is referenced. Referencing a page that is not in memory causes a page fault.",
+        "Page replacement policies (FIFO, LRU, LFU) are covered in their own topic.",
+        "Paging still causes internal fragmentation, and the page table needs memory of its own."
+      ],
+      "example": "The page table starts at address 4096 and the page number is 128, so the entry is at 4096 + 128 = 4224. If page 128 is in memory at address 65,536 and the word offset is 32, the physical address is 65,536 + 32 = 65,568."
+    },
+    {
+      "name": "Segmentation",
+      "pages": [
+        34,
+        35,
+        36
+      ],
+      "summary": "Segmentation divides a program into segments of different sizes, usually one per logical part such as a function or a data structure. Unlike pages, segments are variable in length. Many systems combine segmentation with paging.",
+      "objectives": [
+        "Compare segments with pages.",
+        "Describe what the segment map table stores."
+      ],
+      "key_ideas": [
+        "A segment map table stores, for each segment, its starting address and its length.",
+        "A logical address is a segment number and an offset within the segment.",
+        "In the combined approach, segments are used from the programmer's point of view, but each segment is split into fixed-size pages for allocation.",
+        "Virtual memory can be built with demand paging or demand segmentation. It lets a program be larger than physical memory."
+      ],
+      "example": "A program has a segment for its main function, a segment for its utility functions, and a segment for its data. Each segment is a different size."
+    },
+    {
+      "name": "Page Replacement Policies",
+      "pages": [
+        37,
+        38,
+        39,
+        40,
+        48
+      ],
+      "summary": "When a page fault happens and no free frame is left, the OS must choose a page to replace. A good replacement algorithm causes few page faults. The notes compare algorithms by running them on a reference string and counting the faults.",
+      "objectives": [
+        "Apply FIFO, LRU, and LFU to a reference string and count the page faults.",
+        "Explain why OPT is used as a benchmark."
+      ],
+      "key_ideas": [
+        "A reference string is the sequence of page numbers a program uses. A repeated reference to a page that is already in memory does not cause a fault.",
+        "FIFO replaces the oldest page in memory. It is easy to implement.",
+        "LRU replaces the page that has not been used for the longest time.",
+        "LFU replaces the page with the smallest count. Its weakness is that a page used heavily at the start, and never again, stays in memory.",
+        "MFU replaces the page with the largest count, on the argument that the page with the smallest count was probably just brought in.",
+        "OPT replaces the page that will not be used for the longest time. It has the fewest faults but needs knowledge of the future, so it serves as a benchmark.",
+        "The clock algorithm approximates LRU using a use bit for each frame."
+      ],
+      "example": "For the reference string 1, 3, 0, 3, 5, 6, 3 with 3 frames, FIFO gives 6 page faults in the notes' example."
+    },
+    {
+      "name": "Overlays",
+      "pages": [
+        40,
+        41
+      ],
+      "summary": "Overlaying lets a program run when there is not enough physical memory for all of it. The program is split into pieces, called overlays, that share the same logical addresses. Only one piece is in memory at a time.",
+      "objectives": [
+        "Explain how overlaying lets a program run in less memory.",
+        "Describe the main drawback of overlays."
+      ],
+      "key_ideas": [
+        "The programmer defines two or more overlay segments so that no two of them need to be in memory at the same time.",
+        "The OS manages the swapping of overlay segments in and out of memory.",
+        "The main disadvantage is that the programmer must plan the overlays in detail, which takes a lot of work."
+      ],
+      "example": "A program has a setup part and a calculation part that are never needed at the same time. The calculation overlay is loaded into the same memory area that the setup overlay used."
+    },
+    {
+      "name": "Placement Policies",
+      "pages": [
+        41
+      ],
+      "summary": "When a process needs memory, the system must choose a free partition for it. The notes describe best fit, first fit, worst fit, and the buddy system.",
+      "objectives": [
+        "Compare best fit, first fit, and worst fit placement.",
+        "Explain how the buddy system chooses a block."
+      ],
+      "key_ideas": [
+        "Best fit picks the smallest hole that is large enough. It uses memory well but is slower, and it can leave tiny useless holes.",
+        "First fit picks the first hole that is large enough. It is the fastest, but the leftover space can be wasted.",
+        "Worst fit always picks the largest hole, so the leftover piece is large enough to be useful.",
+        "The buddy system keeps block sizes as powers of 2 and splits blocks in halves until one fits. It is fast, but rounding up to a power of 2 wastes memory."
+      ],
+      "example": "A 70 KB process is placed in a 512 KB memory using the buddy system. The 512 KB block is split into two 256 KB halves, one 256 KB half is split into two 128 KB blocks, and one 128 KB block is given to the process."
+    },
+    {
+      "name": "Caching",
+      "pages": [
+        46,
+        47
+      ],
+      "summary": "A cache is a small amount of fast memory that holds copies of data used often. A cache hit means the data is found in the cache. A cache miss means it has to be fetched from slower memory. Caching is one of the most effective ways to speed up memory access.",
+      "objectives": [
+        "Calculate effective access time using the hit ratio.",
+        "Explain what a cache hit and a cache miss are."
+      ],
+      "key_ideas": [
+        "The hit ratio H is the share of accesses that find their data in the cache. A good cache controller reaches 95 percent or more.",
+        "Effective access time: EAT = h x tmem + (1 - h) x tdisk, where h is the fraction of references that do not cause a page fault.",
+        "Speed-up: S = tm / (H x tc + (1 - H) x tm), where tm is memory access time and tc is cache access time.",
+        "The kernel also caches device data, for example in its I/O subsystem."
+      ],
+      "example": "If 95 out of every 100 accesses hit the cache, most accesses are fast. The few misses still matter, because each one is much slower and they can noticeably raise the average time."
+    },
+    {
+      "name": "Thrashing",
+      "pages": [
+        47,
+        48,
+        49
+      ],
+      "summary": "Thrashing is when a system spends most of its time moving pages between disk and memory and very little time doing useful work. It happens when the processes need more memory than the system has.",
+      "objectives": [
+        "Explain what causes thrashing.",
+        "Describe how working sets help prevent thrashing."
+      ],
+      "key_ideas": [
+        "The notes' example: many users reference 50 pages, but memory has 40. Each page brought in forces out a page that will soon be needed, so the system keeps reading and writing.",
+        "Thrashing happens because the system does not know when it has taken on more work than it can handle.",
+        "Fixes: work out how much memory each process needs, and change scheduling so that only groups of processes whose needs fit run together.",
+        "If one process alone is too big for memory, the OS cannot fix it.",
+        "The clock algorithm approximates LRU using use bits, and it helps decide which pages to replace."
+      ],
+      "example": "Fifty pages are referenced by active processes, but only 40 frames exist. Every new page fault evicts a page that is needed a moment later, so the system spends its time swapping pages rather than running programs."
+    },
+    {
+      "name": "Working Sets",
+      "pages": [
+        49,
+        50
+      ],
+      "summary": "A process's working set is the collection of pages it has been using recently. The working set must be in memory, or the process will thrash. The idea was proposed by Peter Denning.",
+      "objectives": [
+        "Define a working set.",
+        "Explain why a working set must stay in memory."
+      ],
+      "key_ideas": [
+        "The working set is the set of pages referenced in the last tau seconds of execution. Tau is the window size.",
+        "A process should not run unless its working set is in memory. Pages outside it can be discarded.",
+        "The balance set is the group of active processes whose working sets fit in memory. If the working sets together are too big, some processes are paused.",
+        "Real systems approximate working sets using use bits, in an algorithm called WSClock."
+      ],
+      "example": "If a process has touched pages 4, 5, and 9 in its recent window, its working set is {4, 5, 9}. Those pages must stay in memory while it runs."
+    }
+  ],
+  "quiz": [
+    {
+      "topic": "Process Structures",
+      "question": "According to the notes, what state does a process enter directly when it is created?",
+      "options": [
+        "Ready",
+        "Running",
+        "Blocked",
+        "Terminated"
+      ],
+      "answer": 0
+    },
+    {
+      "topic": "Process Structures",
+      "question": "What is a Process Control Block (PCB), according to the notes?",
+      "options": [
+        "A piece of hardware inside the CPU",
+        "A data structure the OS keeps for every process to track its information",
+        "A file that holds the program code",
+        "A queue of waiting I/O devices"
+      ],
+      "answer": 1
+    },
+    {
+      "topic": "Process Structures",
+      "question": "A process requests I/O or needs a critical region that is already locked. Which state does it enter?",
+      "options": [
+        "Ready",
+        "Running",
+        "Blocked or Wait",
+        "New"
+      ],
+      "answer": 2
+    },
+    {
+      "topic": "Process Structures",
+      "question": "According to the notes, how is the ready list ordered?",
+      "options": [
+        "By arrival time only",
+        "Randomly",
+        "By process ID",
+        "By priority, with the lowest priority at the head and the highest at the tail"
+      ],
+      "answer": 3
+    },
+    {
+      "topic": "Interrupts",
+      "question": "According to the notes, what does an interrupt do to the CPU?",
+      "options": [
+        "It makes the CPU stop its current activity and run the appropriate part of the OS",
+        "It deletes the current program",
+        "It runs two programs at once without the OS",
+        "It stops the clock"
+      ],
+      "answer": 0
+    },
+    {
+      "topic": "Interrupts",
+      "question": "Which type of interrupt is generated by the CPU itself to signal an error?",
+      "options": [
+        "Hardware interrupt",
+        "Trap",
+        "Software interrupt",
+        "Concurrent execution"
+      ],
+      "answer": 1
+    },
+    {
+      "topic": "Interrupts",
+      "question": "Which type of interrupt is generated when a program makes a system call?",
+      "options": [
+        "Hardware interrupt",
+        "Trap",
+        "Software interrupt",
+        "Race condition"
+      ],
+      "answer": 2
+    },
+    {
+      "topic": "Interrupts",
+      "question": "During a task switch caused by a timer interrupt, what does the context switcher do first?",
+      "options": [
+        "It deletes the interrupted task",
+        "It restarts the CPU",
+        "It calls the scheduler and never saves state",
+        "It saves the context of the interrupted task, then sets up system code and calls the dispatcher"
+      ],
+      "answer": 3
+    },
+    {
+      "topic": "Mutual Exclusion",
+      "question": "According to the notes, what does mutual exclusion (MUTEX) guarantee?",
+      "options": [
+        "No two processes can be in the critical section at the same time",
+        "All processes run at the same time",
+        "Every process gets the same amount of memory",
+        "Processes never have to wait for resources"
+      ],
+      "answer": 0
+    },
+    {
+      "topic": "Mutual Exclusion",
+      "question": "According to the notes, what is a race condition?",
+      "options": [
+        "A contest between two CPUs for speed",
+        "Uncoordinated concurrent access to shared resources that leads to incorrect behaviour",
+        "A type of scheduling algorithm",
+        "A method for allocating memory pages"
+      ],
+      "answer": 1
+    },
+    {
+      "topic": "Mutual Exclusion",
+      "question": "In the counter example, the counter starts at 1 and two processes each increment it once, correctly. What should the final value be?",
+      "options": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
+      "answer": 2
+    },
+    {
+      "topic": "Mutual Exclusion",
+      "question": "Which requirement does the notes give for the mutual exclusion solution to avoid deadlock?",
+      "options": [
+        "Every process must always be inside the critical section",
+        "Two processes must enter at the same time",
+        "The critical section must be as large as possible",
+        "If processes are trying to enter the critical section, one of them must eventually be able to"
+      ],
+      "answer": 3
+    },
+    {
+      "topic": "Deadlock",
+      "question": "Which of these is one of the four necessary conditions for deadlock in the notes?",
+      "options": [
+        "Mutual exclusion condition",
+        "Time slicing",
+        "Demand paging",
+        "Overlaying"
+      ],
+      "answer": 0
+    },
+    {
+      "topic": "Deadlock",
+      "question": "According to the notes, what is a deadlock?",
+      "options": [
+        "A process that finishes too quickly",
+        "A situation where a process in each of a collection of processes waits for something only another process in the collection can provide",
+        "A state where all memory is free",
+        "A scheduler that always picks the highest priority process"
+      ],
+      "answer": 1
+    },
+    {
+      "topic": "Deadlock",
+      "question": "In the Wound-Wait scheme, what happens when an older transaction requests an item held by a younger one?",
+      "options": [
+        "The older transaction waits for the younger one",
+        "Both transactions are restarted",
+        "The older transaction forces the younger one to roll back and release the item",
+        "The request is ignored"
+      ],
+      "answer": 2
+    },
+    {
+      "topic": "Deadlock",
+      "question": "In the Wait-Die scheme, what happens when a younger transaction requests an item held by an older one?",
+      "options": [
+        "The younger transaction waits for the older one",
+        "The younger transaction forces the older one to roll back",
+        "The younger transaction takes the item",
+        "The younger transaction dies and is restarted later with the same timestamp"
+      ],
+      "answer": 3
+    },
+    {
+      "topic": "Semaphores",
+      "question": "According to the notes, what does the wait operation do to a semaphore S?",
+      "options": [
+        "It decrements the value of S, if it is positive",
+        "It increments S",
+        "It sets S to zero",
+        "It deletes S"
+      ],
+      "answer": 0
+    },
+    {
+      "topic": "Semaphores",
+      "question": "Which semaphore in the producer-consumer problem is used for mutual exclusion?",
+      "options": [
+        "E",
+        "S",
+        "F",
+        "N"
+      ],
+      "answer": 1
+    },
+    {
+      "topic": "Semaphores",
+      "question": "According to the notes, what does semaphore E represent in the producer-consumer problem?",
+      "options": [
+        "The filled space in the buffer, initially 0",
+        "The mutual exclusion lock, initially 1",
+        "The empty space in the buffer, initially set to n",
+        "The number of consumers"
+      ],
+      "answer": 2
+    },
+    {
+      "topic": "Semaphores",
+      "question": "According to the notes, what does semaphore F represent in the producer-consumer problem?",
+      "options": [
+        "The empty space in the buffer, initially n",
+        "The mutual exclusion lock, initially 1",
+        "The number of producers",
+        "The space filled by the producer, initially 0"
+      ],
+      "answer": 3
+    },
+    {
+      "topic": "Monitors",
+      "question": "According to the notes, what is a monitor?",
+      "options": [
+        "A module that encapsulates shared data, the procedures on it, and the synchronization between concurrent calls",
+        "A hardware device that shows the CPU's state",
+        "A type of disk",
+        "A scheduling algorithm"
+      ],
+      "answer": 0
+    },
+    {
+      "topic": "Monitors",
+      "question": "What are condition variables used for, according to the notes?",
+      "options": [
+        "Sharing memory across different processes",
+        "Letting threads wait until a particular condition occurs",
+        "Storing the value of a CPU register",
+        "Deleting waiting threads"
+      ],
+      "answer": 1
+    },
+    {
+      "topic": "Monitors",
+      "question": "Can condition variables be shared across processes, according to the notes?",
+      "options": [
+        "Yes, always",
+        "Only on a multiprocessor",
+        "No, they are user-mode objects that cannot be shared across processes",
+        "Only for disks"
+      ],
+      "answer": 2
+    },
+    {
+      "topic": "Monitors",
+      "question": "What does a condition variable's 'wake one' or 'wake all' operation do?",
+      "options": [
+        "Turns the CPU off",
+        "Resets the monitor",
+        "Starts a new process",
+        "Wakes one or all waiting threads"
+      ],
+      "answer": 3
+    },
+    {
+      "topic": "Producer-Consumer Problem",
+      "question": "What is the producer-consumer problem also known as, according to the notes?",
+      "options": [
+        "The bounded-buffer problem",
+        "The dining philosophers problem",
+        "The banker's problem",
+        "The spinlock problem"
+      ],
+      "answer": 0
+    },
+    {
+      "topic": "Producer-Consumer Problem",
+      "question": "According to the notes, what should the producer do when it wants to put an item in a full buffer?",
+      "options": [
+        "Overwrite the oldest item",
+        "Go to sleep until the consumer has removed one or more items",
+        "Take an item out itself",
+        "Stop the program permanently"
+      ],
+      "answer": 1
+    },
+    {
+      "topic": "Producer-Consumer Problem",
+      "question": "According to the notes, when should the producer produce data?",
+      "options": [
+        "Only when the buffer is empty",
+        "Only when the consumer is asleep",
+        "Only when the buffer is not full",
+        "Only when the buffer is always full"
+      ],
+      "answer": 2
+    },
+    {
+      "topic": "Producer-Consumer Problem",
+      "question": "In the consumer's code, what does wait(F) do?",
+      "options": [
+        "It increases E by one",
+        "It sets S to 1",
+        "It calls use()",
+        "It decreases F by one, because one item is being consumed"
+      ],
+      "answer": 3
+    },
+    {
+      "topic": "Synchronization",
+      "question": "According to the notes, what is the synchronization mechanism intended for?",
+      "options": [
+        "Groups of processes rather than just two-process producer-consumer situations",
+        "Only single-threaded programs",
+        "Disk storage management",
+        "Memory compaction"
+      ],
+      "answer": 0
+    },
+    {
+      "topic": "Synchronization",
+      "question": "In a phased application with a barrier, what happens to a process that reaches the barrier?",
+      "options": [
+        "It stops the operating system",
+        "It is blocked until all processes have reached the barrier",
+        "It deletes the finished processes",
+        "It doubles the memory size"
+      ],
+      "answer": 1
+    },
+    {
+      "topic": "Synchronization",
+      "question": "According to the notes, when does a race condition occur?",
+      "options": [
+        "When a thread is sleeping",
+        "Only on disks",
+        "When two threads access a shared variable at the same time",
+        "When the CPU is idle"
+      ],
+      "answer": 2
+    },
+    {
+      "topic": "Synchronization",
+      "question": "In the example Total = Total + val1 and Total = Total - val2 running at the same time, which value is kept?",
+      "options": [
+        "The value written first",
+        "The two values added together",
+        "Zero",
+        "The value written last"
+      ],
+      "answer": 3
+    },
+    {
+      "topic": "Scheduling and Dispatching",
+      "question": "According to the notes, what is the scheduler's job?",
+      "options": [
+        "To insert processes into the ready-to-run queue and maintain the structure of that queue",
+        "To give the CPU to a process",
+        "To save the registers",
+        "To delete the PCB"
+      ],
+      "answer": 0
+    },
+    {
+      "topic": "Scheduling and Dispatching",
+      "question": "According to the notes, what is the dispatcher's job?",
+      "options": [
+        "To decide priorities for the disk",
+        "To remove a process from the ready queue and give it access to the CPU",
+        "To store the page table",
+        "To create new threads"
+      ],
+      "answer": 1
+    },
+    {
+      "topic": "Scheduling and Dispatching",
+      "question": "Which scheduler works with the batch queue, according to the notes?",
+      "options": [
+        "The short-term scheduler",
+        "The medium-term scheduler",
+        "The long-term scheduler",
+        "The dispatcher"
+      ],
+      "answer": 2
+    },
+    {
+      "topic": "Scheduling and Dispatching",
+      "question": "Which of these is listed in the notes as a preemptive algorithm?",
+      "options": [
+        "FCFS",
+        "SJF",
+        "FCFS and SJF",
+        "Round Robin"
+      ],
+      "answer": 3
+    },
+    {
+      "topic": "Overlays",
+      "question": "According to the notes, what is overlaying?",
+      "options": [
+        "Replacing one piece of a user's program with another piece that shares the same logical addresses",
+        "Copying the whole program to a second disk",
+        "Combining two processes into one",
+        "A type of paging algorithm"
+      ],
+      "answer": 0
+    },
+    {
+      "topic": "Overlays",
+      "question": "According to the notes, what is the main purpose of overlaying?",
+      "options": [
+        "To make the CPU faster",
+        "To let a process run even when the system has insufficient physical memory",
+        "To encrypt the program",
+        "To remove the page table"
+      ],
+      "answer": 1
+    },
+    {
+      "topic": "Overlays",
+      "question": "What is a major disadvantage of overlaying, according to the notes?",
+      "options": [
+        "It uses no memory at all",
+        "It cannot run on any computer",
+        "It needs extensive programmer involvement",
+        "It needs a graphics card"
+      ],
+      "answer": 2
+    },
+    {
+      "topic": "Overlays",
+      "question": "According to the notes, can two overlay segments be in memory at the same time?",
+      "options": [
+        "Yes, always",
+        "Only if the disk is full",
+        "Only on Tuesdays",
+        "No, the programmer defines them so that no two need to be in memory at the same time"
+      ],
+      "answer": 3
+    },
+    {
+      "topic": "Partitioning",
+      "question": "What is internal fragmentation, according to the notes?",
+      "options": [
+        "A memory block given to a process is bigger than needed, leaving some space unused",
+        "Free memory is split into pieces too small to use",
+        "Processes share one page",
+        "The disk is full"
+      ],
+      "answer": 0
+    },
+    {
+      "topic": "Partitioning",
+      "question": "What is external fragmentation, according to the notes?",
+      "options": [
+        "A process is larger than the whole memory",
+        "Total free memory is enough for a request, but it is not contiguous",
+        "The page table is too large",
+        "Only the OS uses memory"
+      ],
+      "answer": 1
+    },
+    {
+      "topic": "Partitioning",
+      "question": "How can external fragmentation be reduced, according to the notes?",
+      "options": [
+        "By adding more CPU cores",
+        "By deleting the OS",
+        "By compaction, moving memory contents so that free memory is in one large block",
+        "By using smaller disks"
+      ],
+      "answer": 2
+    },
+    {
+      "topic": "Partitioning",
+      "question": "In multiple-partition allocation, how many processes can one fixed-size partition contain?",
+      "options": [
+        "Ten processes",
+        "As many as fit",
+        "None",
+        "Only one process"
+      ],
+      "answer": 3
+    },
+    {
+      "topic": "Paging",
+      "question": "What is paging, according to the notes?",
+      "options": [
+        "Breaking the process address space into blocks of the same size called pages",
+        "Breaking memory into variable-length segments",
+        "Storing whole programs on disk",
+        "Sorting data in a buffer"
+      ],
+      "answer": 0
+    },
+    {
+      "topic": "Paging",
+      "question": "What does the page map table keep track of?",
+      "options": [
+        "The names of files",
+        "The relation between a page of a process and a frame in physical memory",
+        "The CPU register values only",
+        "The disk speed"
+      ],
+      "answer": 1
+    },
+    {
+      "topic": "Paging",
+      "question": "In the notes' example, the page is in memory starting at address 65,536 and the word number is 32. What is the physical address?",
+      "options": [
+        "65,536",
+        "65,504",
+        "65,568",
+        "32"
+      ],
+      "answer": 2
+    },
+    {
+      "topic": "Paging",
+      "question": "Which page does the LFU (least frequently used) algorithm select for replacement, according to the notes?",
+      "options": [
+        "The most recently used page",
+        "The page with the largest count",
+        "The first page in the queue",
+        "The page with the smallest count"
+      ],
+      "answer": 3
+    },
+    {
+      "topic": "Placement Policies",
+      "question": "Which placement policy searches the whole list for the smallest hole that is adequate?",
+      "options": [
+        "Best fit",
+        "First fit",
+        "Worst fit",
+        "Buddy system"
+      ],
+      "answer": 0
+    },
+    {
+      "topic": "Placement Policies",
+      "question": "According to the notes, how does first-fit placement choose a partition?",
+      "options": [
+        "It picks the largest hole",
+        "It picks the first hole that is large enough for the process",
+        "It picks the smallest hole",
+        "It picks a hole at random"
+      ],
+      "answer": 1
+    },
+    {
+      "topic": "Placement Policies",
+      "question": "What does worst fit do, according to the notes?",
+      "options": [
+        "It picks the smallest hole",
+        "It picks the first hole",
+        "It always picks the largest remaining hole",
+        "It removes holes"
+      ],
+      "answer": 2
+    },
+    {
+      "topic": "Placement Policies",
+      "question": "What is a disadvantage of best fit, according to the notes?",
+      "options": [
+        "It uses no memory",
+        "It only works with disks",
+        "It cannot allocate any process",
+        "It is slower and may fill memory with tiny useless holes"
+      ],
+      "answer": 3
+    },
+    {
+      "topic": "Segmentation",
+      "question": "How do segments differ from pages, according to the notes?",
+      "options": [
+        "Segments are variable-length, while pages are fixed-size",
+        "Segments are fixed-size, while pages are variable-length",
+        "They are the same",
+        "Segments exist only on disks"
+      ],
+      "answer": 0
+    },
+    {
+      "topic": "Segmentation",
+      "question": "What does a segment contain, according to the notes?",
+      "options": [
+        "Only one page of memory",
+        "Parts of a program, such as the main function, utility functions, and data structures",
+        "The keyboard buffer",
+        "The CPU registers only"
+      ],
+      "answer": 1
+    },
+    {
+      "topic": "Segmentation",
+      "question": "What does the segment map table store for each segment?",
+      "options": [
+        "Only the process ID",
+        "Page replacement counts",
+        "The starting address and the length of the segment",
+        "Keyboard input"
+      ],
+      "answer": 2
+    },
+    {
+      "topic": "Segmentation",
+      "question": "What does the combined segmentation and paging approach do?",
+      "options": [
+        "It uses pages only, with no segments",
+        "It uses no tables",
+        "It removes memory protection",
+        "It uses segments from the user's point of view but divides each segment into fixed-size pages for allocation"
+      ],
+      "answer": 3
+    },
+    {
+      "topic": "Working Sets",
+      "question": "According to the notes, what is a working set?",
+      "options": [
+        "The collection of pages a process is working with, which must be resident to avoid thrashing",
+        "The total size of the program on disk",
+        "All pages used by all processes in the system",
+        "The number of CPU cycles the process used"
+      ],
+      "answer": 0
+    },
+    {
+      "topic": "Working Sets",
+      "question": "Which parameter sets the time window for a working set, according to the notes?",
+      "options": [
+        "alpha",
+        "tau",
+        "omega",
+        "delta"
+      ],
+      "answer": 1
+    },
+    {
+      "topic": "Working Sets",
+      "question": "What is the balance set, according to the notes?",
+      "options": [
+        "The list of inactive processes on disk",
+        "The free memory",
+        "The collection of active processes",
+        "The swap file"
+      ],
+      "answer": 2
+    },
+    {
+      "topic": "Working Sets",
+      "question": "What should happen if the sum of the working sets of all runnable processes is greater than memory?",
+      "options": [
+        "Run all processes at once anyway",
+        "Delete the page table",
+        "Stop the clock",
+        "Refuse to run some of the processes for a while"
+      ],
+      "answer": 3
+    },
+    {
+      "topic": "Thrashing",
+      "question": "According to the notes, what is thrashing?",
+      "options": [
+        "Excessive overhead and severe performance loss caused by constant page movement",
+        "A very fast CPU",
+        "A type of disk",
+        "A way to share memory"
+      ],
+      "answer": 0
+    },
+    {
+      "topic": "Thrashing",
+      "question": "In the notes' example, many processes reference 50 pages but memory has 40. What happens?",
+      "options": [
+        "Everything runs faster",
+        "The system spends all its time reading and writing pages",
+        "Memory is extended automatically",
+        "The processes stop immediately"
+      ],
+      "answer": 1
+    },
+    {
+      "topic": "Thrashing",
+      "question": "If several processes together need more memory than exists, what do the notes suggest?",
+      "options": [
+        "Add more processes",
+        "Remove the working sets",
+        "Change scheduling priorities so that processes run in groups whose memory needs can be met",
+        "Turn off paging"
+      ],
+      "answer": 2
+    },
+    {
+      "topic": "Thrashing",
+      "question": "Why does thrashing occur, according to the notes?",
+      "options": [
+        "There are too few disks",
+        "The CPU is too slow",
+        "The page size is too small",
+        "The system does not know when it has taken on more work than it can handle"
+      ],
+      "answer": 3
+    },
+    {
+      "topic": "Caching",
+      "question": "According to the notes, what is a cache?",
+      "options": [
+        "A region of fast memory that holds copies of data",
+        "A slow disk for backups",
+        "A list of waiting processes",
+        "A type of interrupt"
+      ],
+      "answer": 0
+    },
+    {
+      "topic": "Caching",
+      "question": "According to the notes, what does a cache hit mean?",
+      "options": [
+        "The cache is full",
+        "The data the CPU wants is already in the cache",
+        "The disk has failed",
+        "The CPU has stopped"
+      ],
+      "answer": 1
+    },
+    {
+      "topic": "Caching",
+      "question": "What is the effective access time formula in the notes?",
+      "options": [
+        "EAT = tmem + tdisk",
+        "EAT = h / tdisk",
+        "EAT = h x tmem + (1 - h) x tdisk",
+        "EAT = 1 - h"
+      ],
+      "answer": 2
+    },
+    {
+      "topic": "Caching",
+      "question": "In the effective access time calculation, what does h represent?",
+      "options": [
+        "The height of the cache",
+        "The time taken to read from disk",
+        "The number of cache misses",
+        "The fraction of references that do not need a page fault"
+      ],
+      "answer": 3
+    }
+  ]
+}

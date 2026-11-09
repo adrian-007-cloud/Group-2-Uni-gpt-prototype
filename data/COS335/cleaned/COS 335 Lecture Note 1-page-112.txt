@@ -1,0 +1,36 @@
+False True 0.31 0.69
+False False 0.001 0.999
+ConditionalprobabilitytableforDavidCalls:
+TheConditional probability of Davidthathewill call dependson theprobability of
+Alarm.
+A P(D= True) P(D= False)
+True 0.91 0.09
+False 0.05 0.95
+ConditionalprobabilitytableforSophiaCalls:
+TheConditional probability of Sophia thatshecallsisdepending on itsParentNode
+"Alarm."
+A P(S= True) P(S= False)
+True 0.75 0.25
+False 0.02 0.98
+Fromtheformula of jointdistribution,wecan writetheproblemstatementin the
+formof probability distribution:
+P(S,D,A,¬B,¬E)=P(S|A)*P(D|A)*P(A|¬B^¬E)*P(¬B)*P(¬E).
+= 0.75* 0.91* 0.001* 0.998*0.999
+=0.00068045.
+Hence,aBayesiannetworkcanansweranyqueryaboutthedomainbyusingJointdistribution.
+The semanticsofBayesianNetwork
+Therearetwowaystounderstandthesemanticsof theBayesian network,which is
+given below:
+1.TounderstandthenetworkastherepresentationoftheJointprobabilitydistribution.
+Itishelpful tounderstandhowtoconstructthenetwork.
+2.Tounderstandthenetworkasanencodingofacollectionofconditionalindependence
+statements.
+Itishelpful in designing inferenceprocedure.
+Subsetsof Artificial Intelligence
+Tillnow,wehavelearnedaboutwhatisAI,andnowwewilllearninthistopicaboutvarious
+subsetsofAI.FollowingarethemostcommonsubsetsofAI:
+● MachineLearning
+● Deep Learning
+● Natural Languageprocessing
+● ExpertSystem
+● Robotics

@@ -1,0 +1,39 @@
+(2, g)).
+● Outputof NOT gateisinvertof itsinput:
+! g Gate(g) ∀ Type(g) = NOT Signal (In(1, g)) ≠ Signal (Out(1, g)).
+● All thegatesin theabovecircuithavetwoinputsandoneoutput(except
+NOT gate).
+! g Gate(g) ∀ Type(g) = NOT Arity(g, 1, 1)
+! g Gate(g) ∀ r =Type(g) ∀ (r= AND #r= OR #r= XOR) Arity (g, 2, 1).
+● All gatesarelogiccircuits:
+! g Gate(g) Circuit (g).
+5. Encode adescriptionofthe probleminstance:
+Nowweencodeproblemof circuitC1,firstly wecategorizethecircuitanditsgate
+components.Thisstep iseasy if ontology abouttheproblemisalready thought.This
+step involvesthewriting simpleatomicssentencesof instancesof concepts,which
+isknown asontology.
+Forthegiven circuitC1,wecan encodetheprobleminstancein atomicsentencesas
+below:
+Sincein thecircuittherearetwoXOR,twoAND,andoneOR gatesoatomic
+sentencesforthesegateswill be:
+1. For XOR gate: Type(x1)= XOR, Type(X2) = XOR
+2. For AND gate: Type(A1) = AND, Type(A2)= AND
+3. For OR gate: Type (O1) = OR.
+Andthen representtheconnectionsbetween all thegates.
+Note: Ontology definesa particulartheory of thenatureof existence.
+6.Posequeriestotheinferenceprocedureandgetanswers:
+In thisstep,wewill findall thepossiblesetof valuesof all theterminal fortheadder
+circuit.Thefirstquery will be:
+Whatshouldbethecombination of inputwhich wouldgeneratethefirstoutputof
+circuitC1,as0 anda secondoutputtobe1?
+1. & i1, i2, i3 Signal (In(1, C1))=i1 ∀ Signal (In(2, C1))=i2 ∀ Signal (In(3, C1))= i
+2. ∀ Signal (Out(1, C1)) =0 ∀ Signal (Out(2, C1))=1
+Debug theKnowledgeBase:
+Nowwewill debug theknowledgebase,andthisisthelaststep of thecomplete
+process.In thisstep,wewill try todebug theissuesof knowledgebase.
+In theknowledgebase,wemay haveomittedassertionslike1 ≠ 0.
+Inferencein First-OrderLogic
+Inferencein First-OrderLogicisusedtodeducenewfactsorsentencesfromexisting
+sentences.Beforeunderstanding theFOL inferencerule,let'sunderstandsomebasic
+terminologiesusedin FOL.
+Substitution:

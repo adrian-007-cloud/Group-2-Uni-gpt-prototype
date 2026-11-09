@@ -1,0 +1,41 @@
+TimeComplexity: Timecomplexity of bidirectional search using BFS is O(bd).
+SpaceComplexity: Spacecomplexity of bidirectional search is O(bd).
+Optimal: Bidirectional search isOptimal.
+InformedSearchAlgorithms
+Sofarwehavetalkedabouttheuninformedsearch algorithmswhich lookedthrough
+search spaceforall possiblesolutionsof theproblemwithouthaving any additional
+knowledgeaboutsearch space.Butinformedsearch algorithmcontainsan array of
+knowledgesuch ashowfarwearefromthegoal,path cost,howtoreach togoal
+node,etc.Thisknowledgehelp agentstoexplorelesstothesearch spaceandfind
+moreefficiently thegoal node.
+Theinformedsearchalgorithmismoreusefulforlargesearchspace.Informedsearchalgorithm
+usestheideaofheuristicsoitisalsocalledHeuristicsearch.
+Heuristicsfunction: Heuristicisa function which isusedin InformedSearch,andit
+findsthemostpromising path.Ittakesthecurrentstateof theagentasitsinputand
+producestheestimation of howcloseagentisfromthegoal.Theheuristicmethod,
+however,mightnotalwaysgivethebestsolution,butisguaranteedtofinda good
+solution in reasonabletime.Heuristicfunction estimateshowclosea stateistothe
+goal.Itisrepresented by h(n),anditcalculatesthecostof an optimal path between
+thepairof states.Thevalueof theheuristicfunction isalwayspositive.
+Admissibilityoftheheuristicfunctionisgivenas:
+1. h(n) <= h*(n)
+Hereh(n)isheuristiccost,andh*(n)istheestimatedcost.Henceheuristiccostshouldbeless
+thanorequaltotheestimatedcost.
+PureHeuristicSearch:
+Pureheuristicsearch isthesimplestformof heuristicsearch algorithms.Itexpands
+nodesbasedon theirheuristicvalueh(n).Itmaintainstwolists,OPENandCLOSED
+list.In theCLOSED list,itplacesthosenodeswhich havealready expandedandin
+theOPENlist,itplacesnodeswhich haveyetnotbeen expanded.
+On each iteration,each noden with thelowestheuristicvalueisexpandedand
+generatesall itssuccessorsandn isplacedtotheclosedlist.Thealgorithm
+continuesuntil goal stateisfound.
+In theinformedsearch wewill discusstwomain algorithmswhich aregiven below:
+● BestFirstSearch Algorithm(Greedy search)
+● A* Search Algorithm
+1.)Best-first SearchAlgorithm(GreedySearch):
+Greedy best-firstsearch algorithmalwaysselectsthepath which appearsbestatthat
+moment.Itisthecombination of depth-firstsearch andbreadth-firstsearch
+algorithms.Itusestheheuristicfunction andsearch.Best-firstsearch allowsusto
+taketheadvantagesof both algorithms.With thehelp of best-firstsearch,ateach
+step,wecan choosethemostpromising node.In thebestfirstsearch algorithm,we
+expandthenodewhich isclosesttothegoal nodeandtheclosestcostisestimated

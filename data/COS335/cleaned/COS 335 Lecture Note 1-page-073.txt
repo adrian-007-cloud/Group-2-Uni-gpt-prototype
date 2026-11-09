@@ -1,0 +1,39 @@
+o -1 foreach action,and-10 forusing an arrow.
+o Thegameendsif eitheragentdiesorcameoutof thecave.
+Environment:
+o A4*4 gridof rooms.
+o Theagentinitially in roomsquare[1,1],facing towardtheright.
+o Location of Wumpusandgoldarechosen randomly exceptthefirstsquare
+[1,1].
+o Each squareof thecavecan bea pitwith probability 0.2 exceptthefirst
+square.
+Actuators:
+o Leftturn,
+o Rightturn
+o Moveforward
+o Grab
+o Release
+o Shoot.
+Sensors:
+o Theagentwill perceivethe stench if heisin theroomadjacenttothe
+Wumpus.(Notdiagonally).
+o Theagentwill perceive breeze if heisin theroomdirectly adjacenttothePit.
+o Theagentwill perceivethe glitter in theroomwherethegoldispresent.
+o Theagentwill perceivethe bump if hewalksintoa wall.
+o When theWumpusisshot,itemitsa horrible scream which can beperceived
+anywherein thecave.
+o Theseperceptscan berepresentedasfiveelementlist,in which wewill have
+differentindicatorsforeach sensor.
+o Exampleif agentperceivesstench,breeze,butnoglitter,nobump,andno
+screamthen itcan berepresentedas:
+[Stench,Breeze,None,None,None].
+TheWumpusworldProperties:
+o Partially observable: TheWumpusworldispartially observablebecausethe
+agentcan only perceivethecloseenvironmentsuch asan adjacentroom.
+o Deterministic: Itisdeterministic,astheresultandoutcomeof theworldare
+already known.
+o Sequential: Theorderisimportant,soitissequential.
+o Static: ItisstaticasWumpusandPitsarenotmoving.
+o Discrete: Theenvironmentisdiscrete.
+o Oneagent: Theenvironmentisa singleagentaswehaveoneagentonly and
+Wumpusisnotconsidered asan agent.

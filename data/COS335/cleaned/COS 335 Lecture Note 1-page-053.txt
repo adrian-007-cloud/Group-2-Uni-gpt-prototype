@@ -1,0 +1,41 @@
+2. ASK: Thisoperation askstheknowledgebasewhataction itshouldperform.
+3. Perform: Itperformstheselectedaction.
+Agenericknowledge-basedagent: Followingisthestructureoutlineofagenericknowledgebasedagentsprogram:
+1. function KB-AGENT(percept):
+2. persistent: KB, a knowledge base
+3. t, a counter, initially 0, indicating time
+4. TELL(KB, MAKE-PERCEPT-SENTENCE(percept, t))
+5. Action = ASK(KB, MAKE-ACTION-QUERY(t))
+6. TELL(KB, MAKE-ACTION-SENTENCE(action, t))
+7. t = t + 1
+8. return action
+Theknowledge-basedagenttakesperceptasinputandreturnsan action asoutput.
+Theagentmaintainstheknowledgebase,KB,anditinitially hassomebackground
+knowledgeof thereal world.Italsohasa countertoindicatethetimeforthewhole
+process,andthiscounterisinitializedwith zero.
+Each timewhen thefunction iscalled,itperformsitsthreeoperations:
+● Firstly itTELLstheKB whatitperceives.
+● Secondly,itasksKB whataction itshouldtake
+● Thirdly,agentprogramTELLS theKB which action waschosen.
+TheMAKE-PERCEPT-SENTENCEgeneratesa sentenceassetting thattheagent
+perceivedthegiven perceptatthegiven time.
+TheMAKE-ACTION-QUERY generatesa sentencetoaskwhich action shouldbedone
+atthecurrenttime.
+MAKE-ACTION-SENTENCEgeneratesa sentencewhich assertsthat thechosen
+action wasexecuted.
+Various Levels ofknowledge-based Agent:
+Aknowledge-basedagentcan beviewedatdifferentlevelswhich aregiven below:
+1.Knowledgelevel
+Knowledgelevel isthefirstlevel of knowledge-basedagent,andin thislevel,weneed
+tospecify whattheagentknows,andwhattheagentgoalsare.With these
+specifications,wecan fix itsbehaviour.Forexample,supposean automatedtaxi
+agentneedstogofroma station Atostation B,andheknowstheway fromAtoB,
+sothiscomesattheknowledgelevel.
+2.Logical level:
+Atthislevel,weunderstandhowtheknowledgerepresentation isstored.Atthislevel,
+sentencesareencodedintodifferentlogics.Atthelogical level,an encoding of
+knowledgeintological sentencesoccurs.Atthelogical level wecan expecttothe
+automatedtaxi agenttoreach tothedestination B.
+3.Implementation level:
+Thisisthephysical representation of logicandknowledge.Attheimplementation
+level agentperformactionsasperlogical andknowledgelevel.Atthislevel,an

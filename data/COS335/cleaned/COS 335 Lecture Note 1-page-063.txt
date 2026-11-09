@@ -1,0 +1,39 @@
+5. Framerepresentation iseasy tounderstandandvisualize.
+DisadvantagesofFrameRepresentation
+1. In framesysteminferencemechanismisnoteasily processed.
+2. Inferencemechanismcannotbesmoothly proceededby frame
+representation.
+3. Framerepresentation hasa much generalizedapproach.
+4.Production Rules
+Production rulessystemconsistof (condition,action) pairswhich mean,"If condition
+then action".Ithasmainly threeparts:
+● Thesetof production rules
+● Working Memory
+● Therecognize-act-cycle
+In production rulesagentchecksforthecondition andif thecondition existsthen
+production rulefiresandcorresponding action iscarriedout.Thecondition partof
+theruledetermineswhich rulemay beappliedtoa problem.Andtheaction part
+carriesouttheassociatedproblem-solving steps.Thiscompleteprocessiscalleda
+recognize-actcycle.
+Theworking memory containsthedescription of thecurrentstateof problemssolving andrulecan writeknowledgetotheworking memory.Thisknowledgematch
+andmay fireotherrules.
+If thereisa newsituation (state) generates,then multipleproduction ruleswill be
+firedtogether,thisiscalledconflictset.In thissituation,theagentneedstoselecta
+rulefromthesesets,anditiscalleda conflictresolution.
+Example:
+● IF (atbusstop AND busarrives) THENaction (getintothebus)
+● IF (on thebusAND paidAND empty seat) THENaction (sitdown).
+● IF (on busAND unpaid) THENaction (pay charges).
+● IF (busarrivesatdestination) THENaction (getdown fromthebus).
+AdvantagesofProductionrule:
+1. Theproduction rulesareexpressedin natural language.
+2. Theproduction rulesarehighly modular,sowecan easily remove,addor
+modify an individual rule.
+DisadvantagesofProductionrule:
+1. Production rulesystemdoesnotexhibitany learning capabilities,asitdoes
+notstoretheresultof theproblemforthefutureuses.
+2. During theexecution of theprogram,many rulesmay beactivehencerulebasedproduction systemsareinefficient.
+PropositionallogicinArtificialintelligence
+Propositional logic(PL) isthesimplestformof logicwhereall thestatementsare
+madeby propositions.Aproposition isa declarativestatementwhich iseithertrueor
+false.Itisa techniqueof knowledgerepresentation in logical andmathematical form.

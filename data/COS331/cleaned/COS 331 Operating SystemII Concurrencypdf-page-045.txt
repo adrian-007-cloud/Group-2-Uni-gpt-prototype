@@ -1,0 +1,40 @@
+Device Drivers
+Device drivers are software modules that can be plugged into an OS to handle a particular device. Operating
+System takes help from device drivers to handle all I/O devices. Device drivers encapsulate devicedependent code and implement a standard interface in such a way that code contains device-specific register
+reads/writes. Device driver, is generally written by the device's manufacturer and delivered along with the
+device on a CD-ROM.
+A device driver performs the following jobs:
+ To accept request from the device independent software above to it.
+ Interact with the device controller to take and give I/O and perform required error handling
+ Making sure that the request is executed successfully
+How a device driver handles a request is as follows:
+Suppose a request comes to read a block N. If the driver is idle at the time a request arrives, it starts carrying
+out the request immediately. Otherwise, if the driver is already busy with some other request, it places the
+new request in the queue of pending requests.
+Interrupt handlers
+An interrupt handler, also known as an interrupt service routine or ISR, is a piece of software or more
+specifically a callback function in an operating system or more specifically in a device driver, whose
+execution is triggered by the reception of an interrupt.
+When the interrupt happens, the interrupt procedure does whatever it has to in order to handle the interrupt,
+updates data structures and wakes up process that was waiting for an interrupt to happen.
+The interrupt mechanism accepts an address, which is a number that selects a specific interrupt handling
+routine/function from a small set. In most architectures, this address is an offset stored in a table called the
+interrupt vector table. This vector contains the memory addresses of specialized interrupt handlers.
+Device-Independent I/O Software
+The basic function of the device-independent software is to perform the I/O functions that are common to all
+devices and to provide a uniform interface to the user-level software. Though it is difficult to write
+completely device independent software but we can write some modules which are common among all the
+devices. Following is a list of functions of device-independent I/O Software −
+ Uniform interfacing for device drivers
+ Device naming - Mnemonic names mapped to Major and Minor device numbers
+ Device protection
+ Providing a device-independent block size
+ Buffering because data coming off a device cannot be stored in final destination.
+ Storage allocation on block devices
+ Allocation and releasing dedicated devices
+ Error Reporting
+User-Space I/O Software
+These are the libraries which provide richer and simplified interface to access the functionality of the kernel
+or ultimately interactive with the device drivers. Most of the user-level I/O software consists of library
+procedures with some exception like spooling system which is a way of dealing with dedicated I/O devices
+in a multiprogramming system.

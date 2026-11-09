@@ -1,0 +1,44 @@
+any particular point only one process is running and other are waiting. But for one clock time all three
+process are running. So in uniprocessor system the parallel processing is called virtual parallel processing.
+1. Process States and state diagrams
+All modern computers often do several things at the same time. People work with personal computers but
+may not be fully aware of this fact, so a few examples may make the point clearer. First consider a Web
+server. Requests come in from all over asking for Web pages. When a request comes in, the server checks to
+see if the page needed is in the cache. Imagine, the memory hierarchy! If the page is in the cache, it is sent
+back; if it is not, a disk request is started to fetch it.
+However, from the CPU's perspective, disk requests sometimes take long time to complete. While waiting
+for the disk request to complete, many more requests may come in. If there are multiple disks present, some
+or all of them may be fired off to other disks long before the first request is satisfied. Clearly some way is
+needed to model and control this concurrency. Processes (and especially threads) can help here. Now
+consider a user PC. When the system is booted, many processes are secretly started, often unknown to the
+user. For example, a process may be started up to wait for incoming e-mail. Another process may run on
+behalf of the antivirus program to check periodically if any new virus definitions are available. In addition,
+explicit user processes may be running, printing files and burning a CDROM, all while the user is surfing
+the Web. All this activity has to be managed, and a multiprogramming system supporting multiple processes
+comes in very handy here.
+Process concepts
+A question that arises in discussing operating systems involves what to call all the CPU activities. A batch
+system executes jobs, whereas a time-shared system has user's programs, or tasks. Even on a single-user
+system such as Microsoft Windows, a user may be able to run several programs at one time. In many
+respects, all these activities are similar, so we call all of them processes.
+ A process is a program in execution. The execution of a process must progress in a sequential
+fashion.
+ Process is a dynamic entity i.e., a program in execution.
+ Processes exist in a limited span of time.
+ A process has object program, data, resources and the status of the process on execution.
+ A process is not a closed system; there is a communication between processes through a shared
+environment.
+What is a Process?
+A process is defined as an entity which represents the basic unit of work to be implemented in the system.
+Components of a process are:
+I. Object Program: - Code to be executed
+II. Data: - Data to be used for executing the program
+III. Resources:- While executing the program, it may require some resources
+IV. Status:- verifies the status of the process execution.
+A process can run to completion only when all requested resources have been allocated to the process. Two
+or more processes could be executing the same program, each using their own data and resources.
+A program by itself is not a process. It is a static entity made up of program statement while process is a
+dynamic entity. Program contains the instructions to be executed by processor.
+A program takes a space at single place in main memory and continues to stay there. A program does not
+perform any action by itself.
+Programs versus Process

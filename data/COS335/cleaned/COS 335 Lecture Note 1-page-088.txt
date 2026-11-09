@@ -1,0 +1,42 @@
+Fortheinferenceprocessin FOL,wehavea singleinferencerulewhich iscalled
+GeneralizedModusPonens.Itisliftedversion of Modusponens.
+GeneralizedModusPonenscan besummarizedas,"PimpliesQ andPisassertedto
+betrue,thereforeQ mustbeTrue."
+According toModusPonens,foratomicsentences pi,pi',q.Wherethereisa
+substitution θsuch thatSUBST (θ,pi',)=SUBST(θ,pi),itcan berepresentedas:
+Example:
+WewillusethisruleforKingsareevil,sowewillfindsomexsuchthatxisking,andxisgreedyso
+wecaninferthatxisevil.
+1. Here let say, p1' is king(John) p1 is king(x)
+2. p2' is Greedy(y) p2 is Greedy(x)
+3. θ is {x/John, y/John} q is evil(x)
+4. SUBST(θ,q).
+WhatisUnification?
+● Unification isa processof making twodifferentlogical atomicexpressions
+identical by finding a substitution.Unification dependson thesubstitution
+process.
+● Ittakestwoliteralsasinputandmakesthemidentical using substitution.
+● LetΨ andΨ betwoatomicsentencesand bea unifiersuch that, Ψ =
+1 2 1
+Ψ ,then itcan beexpressedas UNIFY(Ψ ,Ψ ).
+2 1 2
+Example: FindtheMGUforUnify{King(x),King(John)}
+LetΨ = King(x),Ψ = King(John),
+1 2
+Substitution θ= {John/x} isa unifierfortheseatomsandapplying thissubstitution,
+andboth expressionswill beidentical.
+● TheUNIFY algorithmisusedforunification,which takestwoatomic
+sentencesandreturnsa unifierforthosesentences(If any exist).
+● Unification isa key componentof all first-orderinferencealgorithms.
+● Itreturnsfail if theexpressionsdonotmatch with each other.
+● Thesubstitution variablesarecalledMostGeneral UnifierorMGU.
+E.g. Let'ssay therearetwodifferentexpressions, P(x,y),andP(a,f(z)).
+In thisexample,weneedtomakeboth abovestatementsidentical toeach other.For
+this,wewill performthesubstitution.
+P(x,y).........(i)
+P(a,f(z)).........(ii)
+● Substitutex with a,andy with f(z) in thefirstexpression,anditwill be
+representedas a/x andf(z)/y.
+● With both thesubstitutions,thefirstexpression will beidentical tothe
+secondexpression andthesubstitution setwill be: [a/x,f(z)/y].
+●

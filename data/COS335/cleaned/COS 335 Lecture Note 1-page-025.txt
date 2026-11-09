@@ -1,0 +1,30 @@
+finitedepth,then BFS will finda solution.
+Optimality: BFS isoptimal if path costisa non-decreasing function of thedepth of the
+node.
+2.Depth-firstSearch
+● Depth-firstsearch isa recursivealgorithmfortraversing a treeorgraph data
+structure.
+● Itiscalledthedepth-firstsearch becauseitstartsfromtherootnodeand
+followseach path toitsgreatestdepth nodebeforemoving tothenextpath.
+● DFS usesa stackdata structureforitsimplementation.
+● Theprocessof theDFS algorithmissimilartotheBFS algorithm.
+Note: Backtracking isan algorithmtechniqueforfinding all possiblesolutionsusing
+recursion.
+Advantage:
+o DFS requiresvery lessmemory asitonly needstostorea stackof thenodes
+on thepath fromrootnodetothecurrentnode.
+o Ittakeslesstimetoreach tothegoal nodethan BFS algorithm(if ittraverses
+in therightpath).
+Disadvantage:
+o Thereisthepossibility thatmany stateskeep re-occurring,andthereisno
+guaranteeof finding thesolution.
+o DFS algorithmgoesfordeep down searching andsometimeitmay gotothe
+infiniteloop.
+Example:
+In thebelowsearch tree,wehaveshown theflowof depth-firstsearch,anditwill
+followtheorderas:
+Rootnode--->Leftnode---->rightnode.
+Itwill startsearching fromrootnodeS,andtraverseA,then B,then D andE,after
+traversing E,itwill backtrackthetreeasEhasnoothersuccessorandstill goal node
+isnotfound.Afterbacktracking itwill traversenodeCandthen G,andhereitwill
+terminateasitfoundgoal node.

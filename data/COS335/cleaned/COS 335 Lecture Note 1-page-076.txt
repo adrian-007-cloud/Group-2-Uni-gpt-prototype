@@ -1,0 +1,21 @@
+Atomicproposition variableforWumpusworld:
+o Let P betrueif thereisa Pitin theroom[i,j].
+i,j
+o Let B betrueif agentperceivesbreezein [i,j],(deadoralive).
+i,j
+o Let W betrueif thereiswumpusin thesquare[i,j].
+i,j
+o Let S betrueif agentperceivesstench in thesquare[i,j].
+i,j
+o Let V betrueif thatsquare[i,j]isvisited.
+i,j
+o Let G betrueif thereisgold(andglitter) in thesquare[i,j].
+i,j
+o Let OK betrueif theroomissafe.
+i,j
+Note:Fora4*4squareboard,therewillbe7*4*4=122propositionalvariables.
+SomePropositional Rulesforthewumpusworld:
+Note:lackofvariablesgivesussimilarrulesforeachcell.
+Representation of KnowledgebaseforWumpusworld:
+Following istheSimpleKB forwumpusworldwhen an agentmovesfromroom[1,
+1],toroom[2,1]:

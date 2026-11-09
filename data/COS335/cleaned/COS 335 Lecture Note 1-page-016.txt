@@ -1,0 +1,29 @@
+●Learning element: Itisresponsibleformaking improvementsby learning
+fromenvironment
+●Critic: Learning elementtakesfeedbackfromcriticwhich describesthat
+howwell theagentisdoing with respecttoa fixedperformance
+standard.
+●Performanceelement: Itisresponsibleforselecting external action
+●Problemgenerator: Thiscomponentisresponsibleforsuggesting
+actionsthatwill leadtonewandinformativeexperiences.
+Hence,learning agentsareabletolearn,analyzeperformance,andlookfornew
+waystoimprovetheperformance.
+Structureof an AIAgent
+Thetaskof AIistodesign an agentprogramwhich implementstheagentfunction.
+Thestructureof an intelligentagentisa combination of architectureandagent
+program.Itcan beviewedas:
+1. Agent = Architecture + Agent program
+Following arethemain threetermsinvolvedin thestructureof an AIagent:
+Architecture: Architectureismachinery thatan AIagentexecuteson.
+AgentFunction: Agentfunction isusedtomap a percepttoan action.
+1. f:P* A
+Agentprogram: Agentprogramisan implementation of agentfunction.An agent
+programexecuteson thephysical architecturetoproducefunction f.
+PEAS Representation
+PEAS isa typeof model on which an AIagentworksupon.When wedefinean AI
+agentorrational agent,then wecan group itspropertiesunderPEAS representation
+model.Itismadeup of fourwords:
+● P: Performancemeasure
+● E: Environment
+● A: Actuators
+● S: Sensors

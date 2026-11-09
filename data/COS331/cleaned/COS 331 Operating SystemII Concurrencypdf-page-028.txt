@@ -1,0 +1,44 @@
+append () function is used to append the newly produced data in the buffer.
+signal(s) is used to set the semaphore variable ―S‖ to ―1‖ so that other processes can come into the critical
+section now because the production is done and the append operation is also done.
+signal(F) is used to increase the semaphore variable ―F‖ by one because after adding the data into the buffer,
+one space is filled in the buffer and the variable ―F‖ must be updated.
+This is how we solve the produce part of the producer-consumer problem. Now, let's see the consumer
+solution. The following is the code for the consumer:
+void consumer () {
+while(T) {
+wait(F)
+wait(S)
+take ()
+signal(S)
+signal(E)
+use ()
+}
+}
+The above code can be summarized as:
+while () is used to consume data, again and again, if it wishes to consume, again and again.
+wait(F) is used to decrease the semaphore variable ―F‖ by one because if some data is consumed by the
+consumer, then the variable ―F‖ must be decreased by one.
+wait(S) is used to set the semaphore variable ―S‖ to ―0‖ so that no other process can enter into the critical
+section.
+take () function is used to take the data from the buffer by the consumer.
+signal(S) is used to set the semaphore variable ―S‖ to ―1‖ so that other processes can come into the critical
+section now because the consumption is done and the take operation is also done.
+signal(E) is used to increase the semaphore variable ―E‖ by one because after taking the data from the
+buffer, one space is freed from the buffer and the variable ―E‖ must be increased.
+use () is a function that is used to use the data taken from the buffer by the process to do some operation.
+So, this is how we can solve the producer-consumer problem.
+8.2 Synchronization
+Synchronization mechanism is intended for groups of processes rather than two-process producer-consumer
+type situations. Some applications are divided into phases and have the rule that no process may proceed
+into the next phase until all processes are ready to proceed to the next phase. This behavior may be achieved
+by placing a barrier at the end of each phase. When a process reaches the barrier, it is blocked until all
+processes have reached the barrier. This allows groups of processes to synchronize.
+9.0 Multiprocessor issues (spin-locks, reentrancy)
+What is spinlock?
+Spinlock: Is a locking system mechanism. It allows a thread to acquire it to simply wait in loop until the
+lock is available, i.e., a thread waits in a loop or spin until the lock is available. Spinlock is held for a short
+period of time. Spinlock are useful in multiprocessor system. The thread will wait in a loop, and then
+continuously judge whether the lock can be acquired successfully. It will not exit the loop until the lock is
+acquired. The thread that gets the lock is always active, but it doesn't perform any effective task. Using this
+lock will cause a lot of problems busy-waiting.

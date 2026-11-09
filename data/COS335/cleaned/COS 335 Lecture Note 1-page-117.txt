@@ -1,0 +1,32 @@
+1. SpeakerDependent
+2. SpeakerIndependent
+What is anExpert System?
+An expertsystemisa computerprogramthatisdesignedtosolvecomplex problems
+andtoprovidedecision-making ability likea human expert.Itperformsthisby
+extracting knowledgefromitsknowledgebaseusing thereasoning andinference
+rulesaccording totheuserqueries.
+Theexpertsystemisa partof AI,andthefirstES wasdevelopedin theyear1970,
+which wasthefirstsuccessful approach of artificial intelligence.Itsolvesthemost
+complex issueasan expertby extracting theknowledgestoredin itsknowledge
+base.Thesystemhelpsin decision making forcompsex problemsusing bothfacts
+andheuristicslikeahumanexpert.Itiscalledsobecauseitcontainstheexpert
+knowledgeof a specificdomain andcan solveany complex problemof that
+particulardomain.Thesesystemsaredesignedfora specificdomain,such
+as medicine,science, etc.
+Theperformanceof an expertsystemisbasedon theexpert'sknowledgestoredin
+itsknowledgebase.Themoreknowledgestoredin theKB,themorethatsystem
+improvesitsperformance.Oneof thecommon examplesof an ES isa suggestion of
+spelling errorswhiletyping in theGooglesearch box.
+Belowistheblockdiagramthatrepresentstheworking of an expertsystem:inisters
+of India | Listof PrimeMinisterof India (1947-2020)
+Note: Itisimportanttorememberthatan expertsystemisnotusedtoreplacethe
+human experts;instead,itisusedtoassistthehuman in making a complex decision.
+Thesesystemsdonothavehuman capabilitiesof thinking andworkon thebasisof
+theknowledgebaseof theparticulardomain.
+BelowaresomepopularexamplesoftheExpertSystem:
+● DENDRAL: Itwasan artificial intelligenceprojectthatwasmadeasa
+chemical analysisexpertsystem.Itwasusedin organicchemistry todetect
+unknown organicmoleculeswith thehelp of theirmassspectra and
+knowledgebaseof chemistry.
+● MYCIN: Itwasoneof theearliestbackwardchaining expertsystemsthat
+wasdesignedtofindthebacteria causing infectionslikebacteraemia and

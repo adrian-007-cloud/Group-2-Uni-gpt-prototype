@@ -1,0 +1,15 @@
+In thissearch example,weareusing twolistswhich are OPEN and CLOSED Lists.
+Following aretheiteration fortraversing theaboveexample.
+ExpandthenodesofSandputintheCLOSEDlist
+Initialization: Open [A,B],Closed[S]
+Iteration1: Open [A],Closed[S,B]
+Iteration2: Open [E,F,A],Closed[S,B]
+: Open [E,A],Closed[S,B,F]
+Iteration3: Open [I,G,E,A],Closed[S,B,F]
+: Open [I,E,A],Closed[S,B,F,G]
+Hencethefinal solution path will be: S---->B----->F---->G
+m
+TimeComplexity: Theworstcasetimecomplexity of Greedy bestfirstsearch isO(b ).
+SpaceComplexity: Theworstcasespacecomplexity of Greedy bestfirstsearch is
+m
+O(b ).Where,misthemaximumdepth of thesearch space.

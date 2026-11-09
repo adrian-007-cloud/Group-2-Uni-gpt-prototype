@@ -1,0 +1,27 @@
+ Clusters on the disk are numbered starting from zero to the maximum number of clusters (minus
+one). These numbers are called logical cluster numbers (LCN) and are used to name blocks (clusters)
+on disk.
+The MFT is the major, and in some ways, the only data structure on disk:
+ All files, and therefore all objects stored on disk are described by the MFT.
+ All files are logical stored in the MFT and, for small files are physically within the bounds of the
+MFT. In this sense, the MFT is the file system.
+ The MFT logically can be described as a table with one row per file.
+ The first rows in the table described important configuration files, including for the MFT itself.
+MFT Entries
+As stated previously, each row or entry in the MFT (called a record) describes a file and logically contains
+the file. In the case of small files, the entry actually contains the contents of the file.
+Each entry is consists of (attribute, value) pairs. While the conceptual design of NTFS is such that this set of
+pairs is extensible to include user-defined attributes, current version of NTFS have a fixed set. The main
+attributes are:
+ Standard information: This attribute includes the information that was standard in the MS-DOS
+world:
+o read/write permissions,
+o creation time,
+o last modification time,
+o count of how many directories point to this this file (hard link count.
+ File Name: This attribute describes the file's name in the Unicode character set. Multiple file names
+are possible, such as when:
+o the file has multiple links, or
+o the file has an MS-DOS short name.
+ Security Descriptor: This attribute lists which user owns the file and which users can access it (and
+how they can access it).

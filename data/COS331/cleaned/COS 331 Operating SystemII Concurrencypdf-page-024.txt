@@ -1,0 +1,39 @@
+3. What will happen if the resource request (1, 0, 0) for process P1 can the system accept this request
+immediately?
+Ans. 1: Context of the need matrix is as follows:
+Need [i] = Max [i] - Allocation [i]
+Need for P1: (7, 5, 3) - (0, 1, 0) = 7, 4, 3
+Need for P2: (3, 2, 2) - (2, 0, 0) = 1, 2, 2
+Need for P3: (9, 0, 2) - (3, 0, 2) = 6, 0, 0
+Need for P4: (2, 2, 2) - (2, 1, 1) = 0, 1, 1
+Need for P5: (4, 3, 3) - (0, 0, 2) = 4, 3, 1
+Process Need
+A B C
+P1 7 4 3
+P2 1 2 2
+P3 6 0 0
+P4 0 1 1
+P5 4 3 1
+Hence, we created the context of need matrix.
+Ans. 2: Apply the Banker's Algorithm:
+Available Resources of A, B and C are 3, 3, and 2.
+Now we check if each type of resource request is available for each process.
+Step 1: For Process P1:
+Need <= Available
+7, 4, 3 <= 3, 3, 2 condition is false.
+So, we examine another process, P2.
+Step 2: For Process P2:
+Need <= Available
+1, 2, 2 <= 3, 3, 2 condition true
+New available = available + Allocation
+(3, 3, 2) + (2, 0, 0) => 5, 3, 2
+Similarly, we examine another process P3.
+Step 3: For Process P3:
+P3 Need <= Available
+6, 0, 0 < = 5, 3, 2 condition is false.
+Similarly, we examine another process, P4.
+Step 4: For Process P4:
+P4 Need <= Available
+0, 1, 1 <= 5, 3, 2 condition is true
+New Available resource = Available + Allocation
+5, 3, 2 + 2, 1, 1 => 7, 4, 3

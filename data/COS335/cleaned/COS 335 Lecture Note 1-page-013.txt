@@ -1,0 +1,28 @@
+● Thesequenceof percepts.
+Note: Rationality differsfromOmnisciencebecausean Omniscientagentknowsthe
+actual outcomeof itsaction andactaccordingly,which isnotpossiblein reality.
+Typesof AIAgents
+Agentscan begroupedintofiveclassesbasedon theirdegreeof perceived
+intelligenceandcapability.All theseagentscan improvetheirperformanceand
+generatebetteraction overthetime.Thesearegiven below:
+● SimpleReflex Agent
+● Model-basedreflex agent
+● Goal-basedagents
+● Utility-basedagent
+● Learning agent
+1.SimpleReflex agent:
+● TheSimplereflex agentsarethesimplestagents.Theseagentstake
+decisionson thebasisof thecurrentperceptsandignoretherestof the
+percepthistory.
+● Theseagentsonly succeedin thefully observableenvironment.
+● TheSimplereflex agentdoesnotconsiderany partof perceptshistory
+during theirdecision andaction process.
+● TheSimplereflex agentworkson Condition-action rule,which meansit
+mapsthecurrentstatetoaction.Such asa RoomCleaneragent,itworksonly
+if thereisdirtin theroom.
+Problemsforthesimplereflex agentdesign approach:
+●They havevery limitedintelligence
+●They donothaveknowledgeof non-perceptual partsof thecurrentstate
+●Mostly toobig togenerateandtostore.
+●Notadaptivetochangesin theenvironment.
+2.Model-basedreflex agent

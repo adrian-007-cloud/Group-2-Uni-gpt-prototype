@@ -1,0 +1,22 @@
+Q R istrue.Itcan berepresentedasthefollowing notation:
+Example:
+Statement-1: If you havemy homekey then you can unlockmy home. P Q
+Statement-2: If you can unlockmy homethen you can takemy money. Q R
+Conclusion: If you havemy homekey then you can takemy money. P R
+Proof by truth table:
+4.DisjunctiveSyllogism
+TheDisjunctivesyllogismrulestatesthatif P#Q istrue,and¬Pistrue,then Q will be
+true.Itcan berepresentedas:
+Example:
+Statement-1: Today isSunday orMonday.==>P#Q
+Statement-2: Today isnotSunday.==>¬P
+Conclusion: Today isMonday.==>Q
+Proof by truth-table:
+5.Addition
+TheAddition ruleisonethecommon inferencerule,anditstatesthatIf Pistrue,then
+P#Q will betrue.
+Example:
+Statement: Ihavea vanilla ice-cream.==>P
+Statement-2: IhaveChocolateice-cream.
+Conclusion: Ihavevanilla orchocolateice-cream.==>(P#Q)
+Proof by Truth-Table:

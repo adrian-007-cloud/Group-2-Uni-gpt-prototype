@@ -1,0 +1,24 @@
+statements:
+¬W ,¬W ,and¬W .
+21 22 31
+o Apply MPtoS andR4:
+Apply ModusPonensto S and R which is S W #.W #.W #.W ,wewill getthe
+12 4 12 13 12 22 11
+outputas W # W # W #.W .
+13 12 22 11
+o Apply Unitresolution on W # W # W #W and¬ W :
+13 12 22 11 11
+Afterapplying Unitresolution formula on W # W # W #W and¬ W wewill get
+13 12 22 11 11
+W # W # W .
+13 12 22
+o Apply Unitresolution on W # W # W and¬ W :
+13 12 22 22
+Afterapplying Unitresolution on W # W # W ,and ¬W ,wewill get W # W as
+13 12 22 22 13 12
+output.
+o Apply UnitResolution on W # W and¬ W :
+13 12 12
+AfterApplying Unitresolution on W # W and¬W ,wewill get W asan output,hence
+13 12 12 13
+itisprovedthattheWumpusisin theroom[1,3].

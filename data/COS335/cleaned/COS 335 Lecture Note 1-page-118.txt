@@ -1,0 +1,28 @@
+meningitis.Itwasalsousedfortherecommendation of antibioticsandthe
+diagnosisof bloodclotting diseases.
+● PXDES: Itisan expertsystemthatisusedtodeterminethetypeandlevel of
+lung cancer.Todeterminethedisease,ittakesa picturefromtheupperbody,
+which looksliketheshadow.Thisshadowidentifiesthetypeanddegreeof
+harm.
+● CaDeT: TheCaDetexpertsystemisa diagnosticsupportsystemthatcan
+detectcanceratearly stages.
+CharacteristicsofExpertSystem
+● High Performance: Theexpertsystemprovideshigh performanceforsolving
+any typeof complex problemof a specificdomain with high efficiency and
+accuracy.
+● Understandable: Itrespondsin a way thatcan beeasily understandableby
+theuser.Itcan takeinputin human languageandprovidestheoutputin the
+sameway.
+● Reliable: Itismuch reliableforgenerating an efficientandaccurateoutput.
+● Highly responsive: ES providestheresultforany complex query within a very
+shortperiodof time.
+Components ofanExpert System
+An expertsystemmainly consistsof threecomponents:
+● UserInterface
+● InferenceEngine
+● KnowledgeBase
+1.User Interface
+With thehelp of a userinterface,theexpertsysteminteractswith theuser,takes
+queriesasan inputin a readableformat,andpassesittotheinferenceengine.After
+getting theresponsefromtheinferenceengine,itdisplaystheoutputtotheuser.In
+otherwords, itisaninterfacethathelpsanon-expertusertocommunicatewiththeexpert

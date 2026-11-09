@@ -1,0 +1,28 @@
+Differencebetween InductiveandDeductivereasoning
+Reasoning in artificial intelligencehastwoimportantforms,Inductivereasoning,and
+Deductivereasoning.Both reasoning formshavepremisesandconclusions,butboth
+reasoning arecontradictory toeach other.Following isa listforcomparison between
+inductiveanddeductivereasoning:
+● Deductivereasoning usesavailablefacts,information,orknowledgeto
+deducea validconclusion,whereasinductivereasoning involvesmaking a
+generalization fromspecificfacts,andobservations.
+● Deductivereasoning usesa top-down approach,whereasinductive
+reasoning usesa bottom-up approach.
+● Deductivereasoning movesfromgeneralizedstatementtoa valid
+conclusion,whereasInductivereasoning movesfromspecificobservation to
+a generalization.
+● In deductivereasoning,theconclusionsarecertain,whereas,in Inductive
+reasoning,theconclusionsareprobabilistic.
+● Deductiveargumentscan bevalidorinvalid,which meansif premisesare
+true,theconclusion mustbetrue,whereasinductiveargumentcan bestrong
+orweak,which meansconclusion may befalseeven if premisesaretrue.
+Thedifferencesbetween inductiveanddeductivecan beexplainedusing thebelow
+diagramon thebasisof arguments:
+Comparison Chart:
+Basisfor DeductiveReasoning InductiveReasoning
+compariso
+n
+Definition Deductivereasoning istheformof Inductivereasoning arrivesata
+validreasoning,todeducenew conclusion by theprocessof
+information orconclusion fromknown generalization using specificfactsor
+relatedfactsandinformation. data.

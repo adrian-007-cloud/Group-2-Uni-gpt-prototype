@@ -1,0 +1,18 @@
+● MachineVision
+● Speech Recognition
+Note: Among all of theabove,Machinelearning playsa crucial rolein AI.Machine
+learning anddeep learning arethewaysof achieving AIin real life.
+Machine Learning
+Machinelearning isa partof AIwhich providesintelligencetomachineswith the
+ability toautomatically learn with experienceswithoutbeing explicitly programmed.
+● Itisprimarily concernedwith thedesign anddevelopmentof algorithmsthat
+allowthesystemtolearn fromhistorical data.
+● MachineLearning isbasedon theidea thatmachinescan learn frompast
+data,identify patterns,andmakedecisionsusing algorithms.
+● Machinelearning algorithmsaredesignedin such a way thatthey can learn
+andimprovetheirperformanceautomatically.
+● Machinelearning helpsin discovering patternsin data.
+Types ofMachineLearning
+Machinelearning can besubdividedinto threemain types:
+1.Supervised learning
+Supervisedlearning isa typeof machinelearning in which machinelearn from

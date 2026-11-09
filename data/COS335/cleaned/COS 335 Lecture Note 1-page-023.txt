@@ -1,0 +1,41 @@
+Uninformed/Blind Search:
+Theuninformedsearch doesnotcontain any domain knowledgesuch ascloseness,
+thelocation of thegoal.Itoperatesin a brute-forceway asitonly includes
+information abouthowtotraversethetreeandhowtoidentify leaf andgoal nodes.
+Uninformedsearch appliesa way in which search treeissearchedwithoutany
+information aboutthesearch spacelikeinitial stateoperatorsandtestforthegoal,
+soitisalsocalledblindsearch.Itexamineseach nodeof thetreeuntil itachievesthe
+goal node.
+Itcanbedividedintofivemaintypes:
+● Breadth-firstsearch
+● Uniformcostsearch
+● Depth-firstsearch
+● Iterativedeepening depth-firstsearch
+● Bidirectional Search
+Informed Search
+Informedsearch algorithmsusedomain knowledge.In an informedsearch,problem
+information isavailablewhich can guidethesearch.Informedsearch strategiescan
+finda solution moreefficiently than an uninformedsearch strategy.Informedsearch
+isalsocalleda Heuristicsearch.
+Aheuristicisa way which mightnotalwaysbeguaranteedforbestsolutionsbut
+guaranteedtofinda goodsolution in reasonabletime.
+Informedsearch can solvemuch complex problemwhich couldnotbesolvedin
+anotherway.
+An exampleof an informedsearch algorithmsisa traveling salesman problem.
+1. Greedy Search
+2. A* Search
+UninformedSearch Algorithms
+Uninformedsearchisaclassofgeneral-purposesearchalgorithmswhichoperatesinbruteforceway.Uninformedsearchalgorithmsdonothaveadditionalinformationaboutstateorsearch
+spaceotherthanhowtotraversethetree,soitisalsocalledblindsearch.
+Followingarethevarioustypesofuninformedsearchalgorithms:
+1. Breadth-firstSearch
+2. Depth-firstSearch
+3. Depth-limitedSearch
+4. Iterativedeepening depth-firstsearch
+5. Uniformcostsearch
+6. Bidirectional Search
+1.Breadth-firstSearch:
+● Breadth-firstsearch isthemostcommon search strategy fortraversing a tree
+orgraph.Thisalgorithmsearchesbreadthwisein a treeorgraph,soitiscalled
+breadth-firstsearch.
+● BFS algorithmstartssearching fromtherootnodeof thetreeandexpands

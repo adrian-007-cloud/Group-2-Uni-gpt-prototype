@@ -1,0 +1,23 @@
+PART.
+Theabove-discussedalgorithmismoresuitablefora simpleproblemandnot
+adequateforsolving complex problems.
+ExampleofMean-Ends Analysis:
+Let'stakean examplewhereweknowtheinitial stateandgoal stateasgiven below.
+In thisproblem,weneedtogetthegoal stateby finding differencesbetween the
+initial stateandgoal stateandapplying operators.
+Solution:
+Tosolvetheaboveproblem,wewill firstfindthedifferencesbetween initial states
+andgoal states,andforeach difference,wewill generatea newstateandwill apply
+theoperators.Theoperatorswehaveforthisproblemare:
+● Move
+● Delete
+● Expand
+1.Evaluatingtheinitialstate: In thefirststep,wewill evaluatetheinitial stateandwill
+comparetheinitial andGoal statetofindthedifferencesbetween both states.
+2.ApplyingDeleteoperator: Aswecan checkthefirstdifferenceisthatin goal state
+thereisnodotsymbol which ispresentin theinitial state,so,firstwewill apply
+the Deleteoperator toremovethisdot.
+3.ApplyingMoveOperator: Afterapplying theDeleteoperator,thenewstateoccurs
+which wewill again comparewith goal state.Aftercomparing thesestates,thereis
+anotherdifferencethatisthesquareisoutsidethecircle,so,wewill apply the Move
+Operator.

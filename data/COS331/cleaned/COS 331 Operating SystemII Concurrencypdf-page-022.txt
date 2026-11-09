@@ -1,0 +1,35 @@
+3. It represents the number of each resource currently available in the system. It is denoted by the
+[AVAILABLE] resource.
+Following are the important data structures terminologies applied in the banker's algorithm:
+Suppose n is the number of processes, and m is the number of each type of resources used in a computer
+system.
+1. Available: It is an array of length 'm' that defines each type of resource available in the system.
+When Available R[j] = K, means that 'K' instances of Resources type R[j] are available in the system.
+2. Max: It is a [n x m] matrix that indicates each process P[i] can store the maximum number of
+resources R[j] (each type) in a system.
+3. Allocation: It is a matrix of m x n orders that indicates the type of resources currently allocated to
+each process in the system. When Allocation [i, j] = K, it means that process P[i] is currently
+allocated K instances of Resources type R[j] in the system.
+4. Need: It is an M x N matrix sequence representing the number of remaining resources for each
+process. When the Need[i] [j] = k, then process P[i] may require K more instances of resources type
+Rj to complete the assigned work.
+Need[i][j] = Max[i][j] - Allocation[i][j].
+5. Finish: It is the vector of the order m. It includes a Boolean value (true/false) indicating whether the
+process has been allocated to the requested resources, and all resources have been released after
+finishing its task.
+The Banker's Algorithm is the combination of the safety algorithm and the resource request algorithm to
+control the processes and avoid deadlock in a system:
+Safety Algorithm
+It is a safety algorithm used to check whether or not a system is in a safe state or follows the safe sequence
+in a banker's algorithm:
+1. There are two vectors Work and Finish of length m and n in a safety algorithm.
+Initialize: Work = Available
+Finish[i] = false; for I = 0, 1, 2, 3, 4… n - 1.
+2. Check the availability status for each type of resources [i], such as:
+Need[i] <= Work
+Finish[i] == false
+If the i does not exist, go to step 4.
+3. Work = Work +Allocation(i) // to get new resource allocation
+Finish[i] = true
+Go to step 2 to check the status of resource availability for the next process.
+4. If Finish[i] == true; it means that the system is safe for all processes.

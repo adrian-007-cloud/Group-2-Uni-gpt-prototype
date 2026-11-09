@@ -1,0 +1,27 @@
+Theabovediagramisshowing howan AIsystemcan interactwith thereal worldand
+whatcomponentshelp ittoshowintelligence.AIsystemhasPerception component
+by which itretrievesinformation fromitsenvironment.Itcan bevisual,audioor
+anotherformof sensory input.Thelearning componentisresponsibleforlearning
+fromdata capturedby Perception comportment.In thecompletecycle,themain
+componentsareknowledgerepresentation andReasoning.Thesetwocomponents
+areinvolvedin showing theintelligencein machine-likehumans.Thesetwo
+componentsareindependentwith each otherbutalsocoupledtogether.The
+planning andexecution dependon analysisof Knowledgerepresentation and
+reasoning.
+ApproachestoKnowledgeRepresentation:
+Therearemainly fourapproachestoknowledgerepresentation,which aregiven
+below:
+1.SimpleRelational Knowledge:
+● Itisthesimplestway of storing factswhich usestherelational method,and
+each factabouta setof theobjectissetoutsystematically in columns.
+● Thisapproach of knowledgerepresentation isfamousin databasesystems
+wheretherelationship between differententitiesisrepresented.
+● Thisapproach haslittleopportunity forinference.
+Example:Thefollowingisthesimplerelationalknowledgerepresentation.
+Player Weight Age
+Player1 65 23
+Player2 58 18
+Player3 75 24
+2.Inheritableknowledge:
+● In theinheritableknowledgeapproach,all data mustbestoredintoa
+hierarchy of classes.

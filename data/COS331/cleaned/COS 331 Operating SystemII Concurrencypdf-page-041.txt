@@ -1,0 +1,47 @@
+Overlaying involves the replacement of a piece of the user's program by another piece-the overlay. Both
+program pieces share the same set of logical addresses. However, only one piece is assigned at any time
+during program execution. Overlaying is a method used to overcome main memory limitations. Overlaying
+allows a process to execute despite the system having insufficient physical memory. The programmer
+defines two or more overlay segments within the program such that no two overlay segments need be in
+memory at the same time. The OS would then manage swapping overlay segments, reducing the amount of
+physical memory required by the program. A major disadvantage of overlaying is the extensive programmer
+involvement in the process.
+Dynamic Memory Allocation
+Within the OS, a free pool of memory is usually set aside to accommodate the temporary needs of various
+system processes. This memory pool supports temporary system buffers, queue entries, and blocks for
+processes. As the OS usually operates in an unmapped mode (i.e., with the MMU disabled), this memory
+pool represents a contiguous segment that needs to be dynamically allocated to various requestors.
+Many algorithms have been proposed for dynamic memory allocation. These are:
+1. Best fit placement: This algorithm first searches the entire list of free partitions and considers the
+smallest hole that is adequate. The best fit deal with allocating the smallest free partition which meets the
+requirement of the requesting process. It then tries to find a hole which is close to actual process size
+needed. Whenever, a request is presented to the memory manager, it searches the list for the hole
+yielding the smallest DELTA as computed by:
+HOLE_SIZE – NEEDED_SIZE → DELTA
+Where, DELTA is the space remaining beyond the requested size.
+Advantage: Memory utilization is much better as it searches the smallest free partition first available.
+Disadvantage: It is slower and may even tend to fill up memory with tiny useless holes.
+2. First-fit placement: This algorithm searches for the first hole or partition larger enough which can
+accommodate the process. It finishes after finding the first suitable free partition. Holes are maintained in the
+list by increasing address. The hole-list is searched for the first hole such that:
+HOLE-SIZE >= NEEDED _SIZE
+Advantage: Fastest algorithm because it searches as little as possible.
+Disadvantage: The remaining unused memory areas left after allocation become waste if it is too smaller.
+Thus request for larger memory requirement cannot be accomplished.
+3. Buddy system: The buddy system uses a power-of-2 algorithm to maintain its hole -lists. In buddy
+system, sizes of free blocks are in form of power of 2. For example, 2, 4, 8, 16, 32, 64, etc. Up to the size of
+memory. When a free block of size 2K is requested, a free block from the list of free blocks of size 2K is
+allocated. If no free block of size 2K is available, the block of next larger size, 2K+1 is split in two halves
+called buddies to satisfy the request.
+Example: Let total memory size be 512KB and let a process P1, requires 70KB to be swapped in. As the
+hole lists are only for powers of 2, 128KB will be big enough. If no 128KB is there, nor are blocks of
+256KB, a block of 512KB will be split into two halves giving 256KB each, one of them is further split into
+two 128KB blocks and one of the 128KB is allocated to the process.
+Advantage: Buddy system is faster.
+Disadvantage: It is often become inefficient in terms of memory utilization as all request must be rounded
+up to a power of 2.
+4. Worst-Fit: In situations where best-fit finds a perfect match, the hole that remains is virtually
+useless because it is so small. To prevent the creation of these useless holes, worst fit works the opposite of
+best fit; it always picks the largest remaining hole.
+Swapping: Swapping may be used to increase the number of processes sharing the CPU. In addition to the
+processes stored in the main memory, one or more processes may be temporarily copied out of memory to a

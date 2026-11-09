@@ -1,0 +1,37 @@
+Similarly, we examine another process P5.
+Step 5: For Process P5:
+P5 Need <= Available
+4, 3, 1 <= 7, 4, 3 condition is true
+New available resource = Available + Allocation
+7, 4, 3 + 0, 0, 2 => 7, 4, 5
+Now, we again examine each type of resource request for processes P1 and P3.
+Step 6: For Process P1:
+P1 Need <= Available
+7, 4, 3 <= 7, 4, 5 condition is true
+New Available Resource = Available + Allocation
+7, 4, 5 + 0, 1, 0 => 7, 5, 5
+So, we examine another process P2.
+Step 7: For Process P3:
+P3 Need <= Available
+6, 0, 0 <= 7, 5, 5 condition is true
+New Available Resource = Available + Allocation
+7, 5, 5 + 3, 0, 2 => 10, 5, 7
+Hence, we execute the banker's algorithm to find the safe state and the safe sequence:
+P2, P4, P5, P1 and P3.
+Ans. 3: For granting the Request (1, 0, 2), first we have to check that Request <= Available, that is (1, 0,
+2) <= (3, 3, 2), since the condition is true. So the process P1 gets the request immediately.
+7. Models and mechanisms (semaphores, monitors, condition variables, rendezvous)
+What are condition variables in OS?
+Condition variables are synchronization primitives that enable threads to wait until a particular condition
+occurs. Condition variables are user-mode objects that cannot be shared across processes. Condition
+variables support operations that ―wake one‖ or ―wake all‖ waiting threads.
+A rendezvous occurs when two processes synchronize and subsequently exchange messages.
+Rendezvous is symmetric, in that processes that wish to communicate both use the same primitive; and
+processes invoke Rendezvous with class designations, not procedure names.
+Monitors are defined as the construct of programming language, which helps in controlling shared data
+access. The Monitor is a module or package which encapsulates shared data structure, procedures, and the
+synchronization between the concurrent procedure invocations.
+Semaphores are integer variables that are used to solve the critical section problem by using two
+atomic operations, wait and signal that are used for process synchronization. The wait operation decrements
+the value of its argument S, if it is positive.
+8. Producer-consumer problems and synchronization

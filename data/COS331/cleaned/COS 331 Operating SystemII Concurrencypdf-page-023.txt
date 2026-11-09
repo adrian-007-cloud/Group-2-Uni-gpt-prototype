@@ -1,0 +1,35 @@
+Resource Request Algorithm
+A resource request algorithm checks how a system will behave when a process makes each type of resource
+request in a system as a request matrix.
+Let create a resource request array R[i] for each process P[i]. If the Resource Request [j] equal to 'K', which
+i
+means the process P[i] requires 'k' instances of Resources type R[j] in the system.
+1. When the number of requested resources of each type is less than the Need resources, go to step 2
+and if the condition fails, which means that the process P[i] exceeds its maximum claim for the resource. As
+the expression suggests:
+If Request(i) <= Need
+Go to step 2;
+2. And when the number of requested resources of each type is less than the available resource for each
+process, go to step (3). As the expression suggests:
+If Request(i) <= Available
+Else Process P[i] must wait for the resource since it is not available for use.
+3. When the requested resource is allocated to the process by changing state:
+Available = Available - Request
+Allocation(i) = Allocation(i) + Request (i)
+Need = Need - Request
+i i i
+When the resource allocation state is safe, its resources are allocated to the process P(i). And if the new state
+is unsafe, the Process P (i) has to wait for each type of Request R(i) and restore the old resource-allocation
+state.
+Example: Consider a system that contains five processes P1, P2, P3, P4, P5 and the three resource types A,
+B and C. Following are the resources types: A has 10, B has 5 and the resource type C has 7 instances.
+Process Allocation Max Available
+A B C A B C A B C
+P1 0 1 0 7 5 3 3 3 2
+P2 2 0 0 3 2 2
+P3 3 0 2 9 0 2
+P4 2 1 1 2 2 2
+P5 0 0 2 4 3 3
+Answer the following questions using the banker's algorithm:
+1. What is the reference of the need matrix?
+2. Determine if the system is safe or not.

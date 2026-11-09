@@ -1,0 +1,20 @@
+Step-5:
+Atstep-5,wecan inferthefact Enemy(A,America) from Hostile(A) which satisfiesRule6.Andhenceall thestatementsareprovedtrueusing backwardchaining.
+Differencebetween backwardchaining andforwardchaining
+Following isthedifferencebetween theforwardchaining andbackwardchaining:
+● Forwardchaining asthenamesuggests,startfromtheknown factsand
+moveforwardby applying inferencerulestoextractmoredata,andit
+continuesuntil itreachestothegoal,whereasbackwardchaining startsfrom
+thegoal,movebackwardby using inferencerulestodeterminethefactsthat
+satisfy thegoal.
+● Forwardchaining iscalleda data-driven inferencetechnique,whereas
+backwardchaining iscalleda goal-driven inferencetechnique.
+● Forwardchaining isknown asthe down-up approach,whereasbackward
+chaining isknown asa top-down approach.
+● Forwardchaining uses breadth-firstsearch strategy,whereasbackward
+chaining uses depth-firstsearch strategy.
+● Forwardandbackwardchaining both applies Modusponens inferencerule.
+● Forwardchaining can beusedfortaskssuch as planning,design process
+monitoring,diagnosis,andclassification,whereasbackwardchaining can be
+usedfor classification anddiagnosistasks.
+● Forwardchaining can belikean exhaustivesearch,whereasbackward

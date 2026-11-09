@@ -1,0 +1,31 @@
+In theabovediagram,wehaverepresentedthedifferenttypeof knowledgein the
+formof nodesandarcs.Each objectisconnectedwith anotherobjectby some
+relation.
+Drawbacksin Semanticrepresentation:
+1. Semanticnetworkstakemorecomputational timeatruntimeasweneedto
+traversethecompletenetworktreetoanswersomequestions.Itmightbe
+possiblein theworstcasescenariothataftertraversing theentiretree,wefind
+thatthesolution doesnotexistin thisnetwork.
+2. Semanticnetworkstry tomodel human-likememory (Which has1015
+neuronsandlinks) tostoretheinformation,butin practice,itisnotpossibleto
+buildsuch a vastsemanticnetwork.
+3. Thesetypesof representationsareinadequateasthey donothaveany
+equivalentquantifier,e.g.,forall,forsome,none,etc.
+4. Semanticnetworksdonothaveany standarddefinition forthelinknames.
+5. Thesenetworksarenotintelligentanddependon thecreatorof thesystem.
+Advantagesof Semanticnetwork:
+1. Semanticnetworksarea natural representation of knowledge.
+2. Semanticnetworksconvey meaning in a transparentmanner.
+3. Thesenetworksaresimpleandeasily understandable.
+3.FrameRepresentation
+Aframeisa recordlikestructurewhich consistsof a collection of attributesandits
+valuestodescribean entity in theworld.FramesaretheAIdata structurewhich
+dividesknowledgeintosubstructuresby representing stereotypessituations.It
+consistsof a collection of slotsandslotvalues.Theseslotsmay beof any typeand
+sizes.Slotshavenamesandvalueswhich arecalledfacets.
+Facets: Thevariousaspectsof a slotisknown as Facets.Facetsarefeaturesof
+frameswhich enableustoputconstraintson theframes.Example: IF-NEEDED facts
+arecalledwhen data of any particularslotisneeded.Aframemay consistof any
+numberof slots,anda slotmay includeany numberof facetsandfacetsmay have
+any numberof values.Aframeisalsoknown as slot-filterknowledgerepresentation in
+artificial intelligence.

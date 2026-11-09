@@ -1,0 +1,31 @@
+Note that this calculation is the same type that computer architects use to calculate memory performance. In
+that case, their access classes might be (1) cached in L1, (2) cached in L2, and (3) RAM.
+12. The Concept of Cache Hit versus Cache Miss
+A cache memory requires a cache controller to determine whether or not the data currently being accessed
+by the CPU resides in the cache or whether it must be obtained from the main memory. When the current
+address is applied to the cache controller, the controller returns a signal called hit, which is asserted if the
+data is currently in the cache. A cache hit means that the particular data the CPU wanted was available in
+the cache RAM and no additional wait states are needed for retrieving this data.
+A cache miss – means that the data the CPU wanted had not been loaded into the cache RAM and that wait
+states must be inserted while the data is retrieved. A good cache controller has a hit ratio of 95 percent or
+more. The principal parameter of a cache system is its hit ratio, H, which determines the ratio of hits to all
+accesses. The following parameters are readily used:
+Let;
+Access time of main memory be tm
+,
+Access time of cache memory be tc,
+Hit ratio be H,
+Miss ratio be M,
+Speed-up ratio be S.
+The speed-up ratio is defined as the ratio of the memory system's access time without cache to its speed
+with cache. For N accesses to memory the total access time of a memory without cache is given by: Ntm.
+For N accesses to a memory with cache the total access time is given by: N (Htc + Mtm).
+The speed-up ratio is therefore given by S = Ntm/N(Htc + Mtm) =tm/ (Htc + Mtm).
+If M is expressed in terms of H as M = 1- H; then by substitution:
+S = tm/ (Htc + (1 – H)tm).
+THRASHING: CLOCK ALGORITHM, THRASHING
+This is an efficient way to approximate LRU.
+Clock algorithm: keeps "use" bit for each page frame, hardware sets the appropriate bit on every memory
+reference. The operating system clears the bits from time to time in order to figure out how often pages are
+being referenced. The OS uses clock algorithm to find a page where to throw out physical frames, clearing
+use bits until one is found that is zero and uses that one. Figure below shows clock analogy.

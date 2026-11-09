@@ -1,0 +1,28 @@
+recognition,imagerecognition,automaticmachinetranslation,etc.
+● Themain challengefordeep learning isthatitrequireslotsof data with lots
+of computational power.
+Howdeep learning works:
+● Deep Learning Algorithmsworkon deep neural networks,soitiscalleddeep
+learning.Thesedeep neural networksaremadeof multiplelayers.
+● Thefirstlayeriscalledan Inputlayer,thelastlayeriscalledan outputlayer,
+andall layersbetween thesetwolayersarecalledhidden layers.
+● In thedeep neural network,therearemultiplehidden layers,andeach layeris
+composedof neurons.Theseneuronsareconnectedin each layer.
+● Theinputlayerreceivesinputdata,andtheneuronspropagatetheinput
+signal toitsabovelayers.
+● Thehidden layersperformmathematical operationson inputs,andthe
+performeddata forwardedtotheoutputlayer.
+● Theoutputlayerreturnstheoutputtotheuser.
+ExpertSystems
+● An expertsystemisan application of artificial intelligence.In artificial
+intelligence,expertsystemsarethecomputerprogramsthatrely on obtaining
+theknowledgeof human expertsandprogramming thatknowledgeintoa
+system.
+● Expertsystemsemulatethedecision-making ability of human experts.These
+systemsaredesignedtosolvethecomplex problemthrough bodiesof
+knowledgeratherthan conventional procedural code.
+● Oneof theexamplesof an expertsystemisa Suggestion forthespelling
+errorwhiletyping in theGooglesearch box.
+Following aresomecharacteristicsof expertsystems:
+●High performance
+●Reliable

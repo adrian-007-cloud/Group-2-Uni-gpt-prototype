@@ -1,0 +1,23 @@
+● TheModel-basedagentcan workin a partially observableenvironment,and
+trackthesituation.
+● Amodel-basedagenthastwoimportantfactors:
+● Model: Itisknowledgeabout"howthingshappen in theworld,"soitis
+calleda Model-basedagent.
+● Internal State: Itisa representation of thecurrentstatebasedon percept
+history.
+● Theseagentshavethemodel,"which isknowledgeof theworld"andbased
+on themodel they performactions.
+● Updating theagentstaterequiresinformation about:
+oHowtheworldevolves
+oHowtheagent'saction affectstheworld.
+3.Goal-basedagents
+● Theknowledgeof thecurrentstateenvironmentisnotalwayssufficientto
+decideforan agenttowhattodo.
+● Theagentneedstoknowitsgoal which describesdesirablesituations.
+● Goal-basedagentsexpandthecapabilitiesof themodel-basedagentby
+having the"goal"information.
+● They choosean action,sothatthey can achievethegoal.
+● Theseagentsmay havetoconsidera long sequenceof possibleactions
+beforedeciding whetherthegoal isachievedornot.Such considerationsof
+differentscenarioarecalledsearching andplanning,which makesan agent
+proactive.

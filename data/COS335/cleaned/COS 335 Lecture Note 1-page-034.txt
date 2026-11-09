@@ -1,0 +1,22 @@
+Example:
+In thisexample,wewill traversethegiven graph using theA* algorithm.Theheuristic
+valueof all statesisgiven in thebelowtablesowewill calculatethef(n) of each
+stateusing theformula f(n)= g(n) +h(n),whereg(n) isthecosttoreach any node
+fromstartstate.
+Herewewill useOPENandCLOSED list.
+Solution:
+Initialization: {(S,5)}
+Iteration1: {(S-->A,4),(S-->G,10)}
+Iteration2: {(S-->A-->C,4),(S-->A-->B,7),(S-->G,10)}
+Iteration3: {(S-->A-->C--->G,6),(S-->A-->C--->D,11),(S-->A-->B,7),(S-->G,10)}
+Iteration4 will givethefinal result,as S--->A--->C--->G itprovidestheoptimal path with
+cost6.
+Pointstoremember:
+● A* algorithmreturnsthepath which occurredfirst,anditdoesnotsearch for
+all remaining paths.
+● Theefficiency of A* algorithmdependson thequality of heuristic.
+● A* algorithmexpandsall nodeswhich satisfy thecondition f(n)<=""li="">
+Complete: A* algorithmiscompleteaslong as:
+o Branching factorisfinite.
+o Costatevery action isfixed.
+Optimal: A* search algorithmisoptimal if itfollowsbelowtwoconditions:

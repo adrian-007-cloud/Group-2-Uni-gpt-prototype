@@ -1,0 +1,23 @@
+stuckthereforever.Theexciting thing with thiscaveisthatin oneroomthereisa
+possibility of finding a heap of gold.Sotheagentgoal istofindthegoldandclimb
+outthecavewithoutfallen intoPitsoreaten by Wumpus.Theagentwill geta reward
+if hecomesoutwith gold,andhewill geta penalty if eaten by Wumpusorfallsin the
+pit.
+Note:HereWumpusisstaticandcannotmove.
+Following isa samplediagramforrepresenting theWumpusworld.Itisshowing
+someroomswith Pits,oneroomwith Wumpusandoneagentat(1,1) square
+location of theworld.
+Therearealsosomecomponentswhichcanhelptheagenttonavigatethecave.These
+componentsaregivenasfollows:
+1. TheroomsadjacenttotheWumpusroomaresmelly,sothatitwouldhave
+somestench.
+2. TheroomadjacenttoPITshasa breeze,soif theagentreachesneartoPIT,
+then hewill perceivethebreeze.
+3. Therewill beglitterin theroomif andonly if theroomhasgold.
+4. TheWumpuscan bekilledby theagentif theagentisfacing toit,and
+Wumpuswill emita horriblescreamwhich can beheardanywherein thecave.
+PEAS description of Wumpusworld:
+Toexplain theWumpusworldwehavegiven PEAS description asbelow:
+Performancemeasure:
+o +1000 rewardpointsif theagentcomesoutof thecavewith thegold.
+o -1000 pointspenalty forbeing eaten by theWumpusorfalling intothepit.

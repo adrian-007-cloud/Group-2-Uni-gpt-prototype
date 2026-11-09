@@ -1,0 +1,47 @@
+Atthesecondlevel,wewill examinethecircuitstructuredetailssuch as:
+● Which gateisconnectedtothefirstinputterminal?
+● Doesthecircuithavefeedbackloops?
+2.Assembletherelevantknowledge:
+In thesecondstep,wewill assembletherelevantknowledgewhich isrequiredfor
+digital circuits.Sofordigital circuits,wehavethefollowing requiredknowledge:
+● Logiccircuitsaremadeup of wiresandgates.
+● Signal flowsthrough wirestotheinputterminal of thegate,andeach gate
+producesthecorresponding outputwhich flowsfurther.
+● In thislogiccircuit,therearefourtypesof gatesused: AND,OR,XOR,and
+NOT.
+● All thesegateshaveoneoutputterminal andtwoinputterminals(except
+NOT gate,ithasoneinputterminal).
+3.Decideon vocabulary
+Thenextstep of theprocessistoselectfunctions,predicate,andconstantsto
+representthecircuits,terminals,signals,andgates.Firstly wewill distinguish the
+gatesfromeach otherandfromotherobjects.Each gateisrepresentedasan object
+which isnamedby a constant,such as, Gate(X1).Thefunctionality of each gateis
+determinedby itstype,which istaken asconstantssuch as AND,OR,XOR,orNOT.
+Circuitswill beidentifiedby a predicate: Circuit(C1).
+Fortheterminal,wewill usepredicate: Terminal(x).
+Forgateinput,wewill usethefunction In(1,X1) fordenoting thefirstinputterminal of
+thegate,andforoutputterminal wewill use Out(1,X1).
+Thefunction Arity(c,i,j) isusedtodenotethatcircuitchasi input,j output.
+Theconnectivity between gatescan berepresentedby predicate Connect(Out(1,X),
+In(1,X)).
+Weusea unary predicate On(t),which istrueif thesignal ata terminal ison.
+4.Encodegeneralknowledgeabout thedomain:
+Toencodethegeneral knowledgeaboutthelogiccircuit,weneedsomefollowing
+rules:
+● If twoterminalsareconnectedthen they havethesameinputsignal,itcan
+berepresentedas:
+! t , t Terminal (t ) ∀ Terminal (t ) ∀ Connect (t , t ) Signal (t ) = Signal (2).
+1 2 1 2 1 2 1
+● Signal atevery terminal will haveeithervalue0 or1,itwill berepresentedas:
+! t Terminal (t) Signal (t) = 1 #Signal (t) = 0.
+● Connectpredicatesarecommutative:
+! t , t Connect(t , t ) Connect (t , t ).
+1 2 1 2 2 1
+● Representation of typesof gates:
+! g Gate(g) ∀ r = Type(g) r = OR #r = AND #r = XOR #r = NOT.
+● Outputof AND gatewill bezeroif andonly if any of itsinputiszero.
+! g Gate(g) ∀ Type(g) = AND Signal (Out(1, g))= 0 ∃ &n Signal (In(n, g))= 0.
+● Outputof OR gateis1 if andonly if any of itsinputis1:
+! g Gate(g) ∀ Type(g) = OR Signal (Out(1, g))= 1 ∃ &n Signal (In(n, g))= 1
+● Outputof XOR gateis1 if andonly if itsinputsaredifferent:
+! g Gate(g) ∀ Type(g) = XOR Signal (Out(1, g)) = 1 ∃ Signal (In(1, g)) ≠ Signal (In

@@ -1,0 +1,10 @@
+Figure 11 Deadlock example1
+Deadlock defined: Deadlock may be defined as a situation where a process in each of a collection of
+processes is waiting for something from other processes in the collection. Since all are waiting, none can
+provide any of the things being waited for.
+ Deadlock can occur over separate resources, as in above example, or even over separate copies of a
+single resource.
+Figure 11 Deadlock example2
+The Dining Philosophers Problem (due to Edsger Dijkstra and Tony Hoare, 1965)
+ Five philosophers sit at a circular table doing one of two things: eating or thinking.
+ While eating, they are not thinking, and while thinking, they are not eating.

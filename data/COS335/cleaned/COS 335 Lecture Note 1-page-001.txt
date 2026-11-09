@@ -1,0 +1,29 @@
+Artificial Intelligence 1 COS 337 (2 units)
+Introduction toartificial intelligence; Problemformulation andsearch: heuristic
+search,production system;Semanticnetworkandframe; Propositional logic: first
+orderpredicatelogic,fuzzy logic;Othermethodsforreasoning;An Introduction to
+pattern recognition;Multilayerneural networks;Self-organizing neural networks
+Introduction to Artificial Intelligence(AI)
+An introduction toAIwill help you tounderstandtheconceptsbehind artificial
+intelligence.Wearegoing todiscussvariouspopulartopicssuch asHistory of AI,
+applicationsof AI,deep learning,machinelearning,natural languageprocessing,
+Reinforcementlearning,Q-learning,Intelligentagents,Varioussearch algorithms,etc.
+Thisnoteispreparedfroman elementary leveltoenableyou easily understandthe
+coursefrombasicconcepts.
+WhatisArtificial Intelligence?
+In today'sworld,technology isgrowing very fast,andwearegetting in touch with
+differentnewtechnologiesday by day.
+Here,oneof thebooming technologiesof computerscienceisArtificial Intelligence
+which isready tocreatea newrevolution in theworldby making intelligent
+machines.TheArtificial Intelligenceisnowall aroundus.Itiscurrently working with
+a variety of subfields,ranging fromgeneral tospecific,such asself-driving cars,
+playing chess,proving theorems,playing music,etc.
+AIisoneof thefascinating anduniversal fieldsof Computersciencewhich hasa
+greatscopein future.AIholdsa tendency tocausea machinetoworkasa human.
+Artificial Intelligenceiscomposedof twowords Artificial and Intelligence,where
+Artificial defines "man-made," andintelligencedefines "thinkingpower",henceAI
+means "aman-madethinkingpower."
+So,wecan defineAIas:
+"Itisa branch of computerscienceby which wecan createintelligentmachinesthat
+can behavelikea human,thinklikehumans,andabletomakedecisions."
+Artificial Intelligenceexistswhen a machinecan havehuman basedskillssuch as

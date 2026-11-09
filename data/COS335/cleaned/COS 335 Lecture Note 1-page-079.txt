@@ -1,0 +1,36 @@
+First-OrderLogicin Artificial intelligence
+In thetopicof Propositional logic,wehaveseen howtorepresentstatementsusing
+propositional logic.Butunfortunately,in propositional logic,wecan only represent
+thefacts,which areeithertrueorfalse.PL isnotsufficienttorepresentthecomplex
+sentencesornatural languagestatements.Thepropositional logichasvery limited
+expressivepower.Considerthefollowing sentences,which wecannotrepresent
+using PL logic.
+● "Somehumansareintelligent",or
+● "Godwin likescricket."
+Torepresenttheabovestatements,PL logicisnotsufficient,sowerequiredsome
+morepowerful logic,such asfirst-orderlogic.
+First-Orderlogic:
+● First-orderlogicisanotherway of knowledgerepresentation in artificial
+intelligence.Itisan extension topropositional logic.
+● FOL issufficiently expressivetorepresentthenatural languagestatementsin
+a conciseway.
+● First-orderlogicisalsoknown as PredicatelogicorFirst-orderpredicate
+logic.First-orderlogicisa powerful languagethatdevelopsinformation about
+theobjectsin a moreeasy way andcan alsoexpresstherelationship between
+thoseobjects.
+● First-orderlogic(likenatural language) doesnotonly assumethattheworld
+containsfactslikepropositional logicbutalsoassumesthefollowing things
+in theworld:
+● Objects: A,B,people,numbers,colors,wars,theories,squares,pits,
+wumpus,etc.
+● Relations: Itcan beunary relation such as: red,round,isadjacent, ornany relation such as: thesisterof,brotherof,hascolor,comesbetween,
+etc
+● Function: Fatherof,bestfriend,thirdinning of, endof,etc
+● Asa natural language,first-orderlogicalsohastwomain parts:
+● Syntax
+● Semantics
+SyntaxofFirst-Order logic
+Thesyntax of FOL determineswhich collection of symbolsisa logical expression in
+first-orderlogic.Thebasicsyntacticelementsof first-orderlogicaresymbols.We
+writestatementsin short-handnotation in FOL.
+BasicElements ofFirst-order logic

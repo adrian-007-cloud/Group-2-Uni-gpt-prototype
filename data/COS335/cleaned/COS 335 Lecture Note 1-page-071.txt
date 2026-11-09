@@ -1,0 +1,17 @@
+6.Simplification
+Thesimplification rulestatesthatif P∀Q istrue,then Q orP will alsobetrue.Itcan
+berepresentedas:
+Proof by Truth-Table:
+7.Resolution
+TheResolution rulestatesthatif P#Q and¬ P∀R istrue,then Q#R will alsobetrue. It
+can berepresentedas
+Proof by Truth-Table:
+TheWumpusWorldin Artificial intelligence
+Wumpusworld:
+TheWumpusworldisa simpleworldexampletoillustratetheworth of a knowledgebasedagentandtorepresentknowledgerepresentation.Itwasinspiredby a video
+game HunttheWumpus by Gregory Yob in 1973.
+TheWumpusworldisa cavewhich has4/4 roomsconnectedwith passageways.So
+therearetotal 16 roomswhich areconnectedwith each other.Wehavea knowledgebasedagentwhowill goforwardin thisworld.Thecavehasa roomwith a beast
+which iscalledWumpus,whoeatsanyonewhoenterstheroom.TheWumpuscan
+beshotby theagent,buttheagenthasa singlearrow.In theWumpusworld,there
+aresomePitsroomswhich arebottomless,andif agentfallsin Pits,then hewill be

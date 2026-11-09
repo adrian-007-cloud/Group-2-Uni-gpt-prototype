@@ -1,0 +1,26 @@
+all successornodeatthecurrentlevel beforemoving tonodesof nextlevel.
+● Thebreadth-firstsearch algorithmisan exampleof a general-graph search
+algorithm.
+● Breadth-firstsearch implementedusing FIFO queuedata structure.
+Advantages:
+● BFS will providea solution if any solution exists.
+● If therearemorethan onesolutionsfora given problem,then BFS will
+providetheminimal solution which requirestheleastnumberof steps.
+Disadvantages:HTML Tutorial
+● Itrequireslotsof memory sinceeach level of thetreemustbesavedinto
+memory toexpandthenextlevel.
+● BFS needslotsof timeif thesolution isfaraway fromtherootnode.
+Example:
+In thebelowtreestructure,wehaveshown thetraversing of thetreeusing BFS
+algorithmfromtherootnodeS togoal nodeK.BFS search algorithmtraversein
+layers,soitwill followthepath which isshown by thedottedarrow,andthe
+traversedpath will be:
+1. S---> A--->B---->C--->D---->G--->H--->E---->F---->I---->K
+TimeComplexity: TimeComplexity of BFS algorithmcan beobtainedby thenumberof
+nodestraversedin BFS until theshallowestNode.Wherethed= depth of shallowest
+solution andb isa nodeatevery state.
+T(b)=1+b2+b3+.......+bd=O(bd)
+SpaceComplexity: Spacecomplexity of BFS algorithmisgiven by theMemory sizeof
+d
+frontierwhich isO(b ).
+Completeness: BFS iscomplete,which meansif theshallowestgoal nodeisatsome

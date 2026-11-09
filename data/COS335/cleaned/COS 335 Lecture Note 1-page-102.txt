@@ -1,0 +1,41 @@
+Monotonicreasoning isusedin conventional reasoning systems,anda logic-based
+systemismonotonic.
+Any theoremproving isan exampleof monotonicreasoning.
+Example:
+● Earth revolvesaroundtheSun.
+Itisa truefact,anditcannotbechangedeven if weaddanothersentencein
+knowledgebaselike,"Themoon revolvesaroundtheearth"Or"Earth isnotround,"
+etc.
+Advantagesof MonotonicReasoning:
+● In monotonicreasoning,each oldproof will alwaysremain valid.
+● If wededucesomefactsfromavailablefacts,then itwill remain validfor
+always.
+Disadvantagesof MonotonicReasoning:
+● Wecannotrepresentthereal worldscenariosusing Monotonicreasoning.
+● Hypothesisknowledgecannotbeexpressedwith monotonicreasoning,
+which meansfactsshouldbetrue.
+● Sincewecan only deriveconclusionsfromtheoldproofs,sonewknowledge
+fromthereal worldcannotbeadded.
+6.Non-monotonicReasoning
+In Non-monotonicreasoning,someconclusionsmay beinvalidatedif weaddsome
+moreinformation toourknowledgebase.
+Logicwill besaidasnon-monotonicif someconclusionscan beinvalidatedby
+adding moreknowledgeintoourknowledgebase.
+Non-monotonicreasoning dealswith incompleteanduncertain models.
+"Human perceptionsforvariousthingsin daily life,"isa general exampleof nonmonotonicreasoning.
+Example: Letsupposetheknowledgebasecontainsthefollowing knowledge:
+● Birdscan fly
+● Penguinscannotfly
+● Pitty isa bird
+Sofromtheabovesentences,wecan concludethat Pittycanfly.
+However,if weaddoneanothersentenceintoknowledgebase"Pittyisapenguin",
+which concludes"Pittycannotfly",soitinvalidatestheaboveconclusion.
+Advantagesof Non-monotonicreasoning:
+● Forreal-worldsystemssuch asRobotnavigation,wecan usenon-monotonic
+reasoning.
+● In Non-monotonicreasoning,wecan chooseprobabilisticfactsorcan make
+assumptions.
+Disadvantagesof Non-monotonicReasoning:
+● In non-monotonicreasoning,theoldfactsmay beinvalidatedby adding new
+sentences.
+● Itcannotbeusedfortheorem proving.

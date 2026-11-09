@@ -1,0 +1,31 @@
+● All classesshouldbearrangedin a generalizedformora hierarchical
+manner.
+● In thisapproach,weapply inheritanceproperty.
+● Elementsinheritvaluesfromothermembersof a class.
+● Thisapproach containsinheritableknowledgewhich showsa relation
+between instanceandclass,anditiscalledinstancerelation.
+● Every individual framecan representthecollection of attributesanditsvalue.
+● In thisapproach,objectsandvaluesarerepresentedin Boxednodes.
+● WeuseArrowswhich pointfromobjectstotheirvalues.
+Example:
+3.Inferential knowledge:
+● Inferential knowledgeapproach representsknowledgein theformof formal
+logics.
+● Thisapproach can beusedtoderivemorefacts.
+● Itguaranteedcorrectness.
+Example: Let'ssupposetherearetwostatements:
+1. Marcusisa man
+2. All men aremortal
+Then itcan representas;
+man(Marcus) Marcusisa man
+! x = man (x) ---------->mortal (x)s,--Letavariablexreferstoaman,Itwillbe
+readas:Thereareallxwherexisamanwhoismortal.
+4.Procedural knowledge:
+● Procedural knowledgeapproach usessmall programsandcodeswhich
+describeshowtodospecificthings,andhowtoproceed.
+● In thisapproach,oneimportantruleisusedwhich is If-Then rule.
+● In thisknowledge,wecan usevariouscoding languagessuch as LISP
+language and Prolog language.
+● Wecan easily representheuristicordomain-specificknowledgeusing this
+approach.
+● Butitisnotnecessary thatwecan representall casesin thisapproach.

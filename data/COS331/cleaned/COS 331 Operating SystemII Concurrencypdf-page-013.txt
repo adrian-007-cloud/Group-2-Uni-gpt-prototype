@@ -1,0 +1,42 @@
+In non preemptive scheduling, any new process has to wait until the running process finishes its allocated
+CPU cycle. Algorithms based on non preemptive are SJF, FCFS, etc.
+Advantages of Preemptive scheduling:
+(i) A process may not monopolize the CPU.
+(ii) Average response time is improved.
+(iii)Used in multiprogrammed environment.
+(iv) CPU times are fairly utilized.
+Disadvantages of Preemptive scheduling are:
+(i) Suspending a running process and changing the context and dispatch new process takes more time.
+(ii) Low priority processes have to wait if more higher priority processes are available.
+Advantages of Non- Preemptive scheduling:
+(i) It has minimal scheduling burden.
+(ii) Very easy procedure.
+(iii)Less computational resources are needed.
+(iv) It has a high throughput rate.
+Disadvantages of Non Preemptive scheduling are:
+(i) A process may monopolize the CPU time.
+(ii) Bugs in a process can cause a CPU to freeze up.
+(iii)It does not favor multiprogramming.
+Context Switching:
+In computing, a context switch is the process of storing the state of a process or thread, so that it can be
+restored and resume execution at a later point. In a multitasking context, it refers to the process of storing the
+system state for one task, so that task can be paused and another task resumed.
+The term dispatching is associated with scheduling and means roughly selecting the next task to run. So, in
+a typical task switch, for example due to a timer interrupt, the context switcher first saves the context of the
+interrupted task, establishes the context to run system code and then calls the dispatcher.
+Example:
+There are 4 processes in the ready queue, P1, P2, P3, P4; Their arrival times are t0, t1, t2, t3 respectively. A
+First-in First- out (FIFO) scheduling algorithm is used. Because P1 arrived first, the scheduler will decide it
+is the first process that should be executed, and the dispatcher will remove P1 from the ready queue and give
+it to the CPU. The scheduler will then determine P2 to be the next process that should be executed, so when
+the dispatcher returns to the queue for a new process, it will take P2 and give it to the CPU. This continues
+in the same way for P3, and then P4.
+P 4 P 3 P 2 P 1 Dispatcher takes P 1 to CPU (Running)
+running state
+Scheduler selects
+process P P
+1 1
+Figure 8: Example
+Table 1: Comparison of dispatcher and scheduler
+Properties DISPATCHER SCHEDULER
+Definition: Dispatcher is a module that gives control of CPU to the Scheduler is something which

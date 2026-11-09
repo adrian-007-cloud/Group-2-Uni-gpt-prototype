@@ -1,0 +1,33 @@
+threats creates such an environment that operating system resources/ user files are misused. Following is the
+list of some well-known system threats.
+ Worm − Worm is a process which can choked down a system performance by using system
+resources to extreme levels. A Worm process generates its multiple copies where each copy uses
+system resources, prevents all other processes to get required resources. Worms processes can even
+shut down an entire network.
+ Port Scanning − Port scanning is a mechanism or means by which a hacker can detects system
+vulnerabilities to make an attack on the system.
+ Denial of Service − Denial of service attacks normally prevents user to make legitimate use of the
+system. For example, a user may not be able to use internet if denial of service attacks browser's
+content settings.
+14.0 Linux Operating System
+Linux is one of popular version of UNIX operating System. It is open source as its source code is freely
+available. It is free to use. Linux was designed considering UNIX compatibility. Its functionality list is quite
+similar to that of UNIX.
+Components of Linux System
+Linux Operating System has primarily three components
+ Kernel − Kernel is the core part of Linux. It is responsible for all major activities of this operating
+system. It consists of various modules and it interacts directly with the underlying hardware. Kernel
+provides the required abstraction to hide low level hardware details to system or application
+programs.
+ System Library − System libraries are special functions or programs using which application
+programs or system utilities accesses Kernel's features. These libraries implement most of the
+functionalities of the operating system and do not requires kernel module's code access rights.
+ System Utility − System Utility programs are responsible to do specialized, individual level tasks.
+Kernel Mode vs User Mode
+Kernel component code executes in a special privileged mode called kernel mode with full access to all
+resources of the computer. This code represents a single process, executes in single address space and do not
+require any context switch and hence is very efficient and fast. Kernel runs each processes and provides
+system services to processes, provides protected access to hardware to processes.
+Support code which is not required to run in kernel mode is in System Library. User programs and other
+system programs works in User Mode which has no access to system hardware and kernel code. User
+programs/ utilities use System libraries to access Kernel functions to get system's low level tasks.

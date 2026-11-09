@@ -1,0 +1,21 @@
+● American(Robert). ..........(8)
+Backward-Chaining proof
+In Backwardchaining,wewill startwith ourgoal predicate,which is Criminal(Robert),
+andthen inferfurtherrules.
+Step-1:
+Atthefirststep,wewill takethegoal fact.Andfromthegoal fact,wewill inferother
+facts,andatlast,wewill provethosefactstrue.Soourgoal factis"Robertis
+Criminal,"sofollowing isthepredicateof it.
+Step-2:
+Atthesecondstep,wewill inferotherfactsformgoal factwhich satisfiestherules.
+Soaswecan seein Rule-1,thegoal predicateCriminal (Robert) ispresentwith
+substitution {Robert/P}.Sowewill addall theconjunctivefactsbelowthefirstlevel
+andwill replacep with Robert.
+HerewecanseeAmerican(Robert)isafact,soitisprovedhere.
+Step-3:tAtstep-3,wewill extractfurtherfactMissile(q) which inferfromWeapon(q),
+asitsatisfiesRule-(5).Weapon (q) isalsotruewith thesubstitution of a constantT1
+atq.
+Step-4:
+Atstep-4,wecan inferfactsMissile(T1) andOwns(A,T1) formSells(Robert,T1,r)
+which satisfiesthe Rule-4,with thesubstitution of Ain placeof r.Sothesetwo
+statementsareprovedhere.

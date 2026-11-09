@@ -1,0 +1,44 @@
+goal using availabledata.
+● Forward-chaining approach iscommonly usedin theexpertsystem,such as
+CLIPS,business,andproduction rulesystems.
+Considerthefollowing famousexamplewhich wewill usein both approaches:
+Example:
+"Asperthelaw,itisacrimeforanAmericantosellweaponstohostilenations.CountryA,an
+enemyofAmerica,hassomemissiles,andallthemissilesweresoldtoitbyRobert,whoisan
+Americancitizen."
+Provethat "Robertiscriminal."
+Tosolvetheaboveproblem,first,wewill convertall theabovefactsintofirst-order
+definiteclauses,andthen wewill usea forward-chaining algorithmtoreach thegoal.
+FactsConversion intoFOL
+● Itisa crimeforan American tosell weaponstohostilenations.(Let'ssay p,
+q,andrarevariables)
+American (p) ∀weapon(q) ∀sells(p,q,r) ∀hostile(r) Criminal(p) ...(1)
+● Country Ahassomemissiles. ?p Owns(A,p) ∀Missile(p).Itcan bewritten in
+twodefiniteclausesby using Existential Instantiation,introducing new
+ConstantT1.
+Owns(A,T1) ......(2)
+Missile(T1) .......(3)
+● All of themissilesweresoldtocountry Aby Robert.
+?p Missiles(p) ∀Owns(A,p) Sells(Robert,p,A) ......(4)
+● Missilesareweapons.
+Missile(p) Weapons(p) .......(5)
+● Enemy of America isknown ashostile.
+Enemy(p,America) Hostile(p) ........(6)
+● Country Aisan enemy of America.
+Enemy (A,America) .........(7)
+● RobertisAmerican
+American(Robert). ..........(8)
+Forward chaining proof:
+Step-1:
+In thefirststep wewill startwith theknown factsandwill choosethesentences
+which donothaveimplications,such as: American(Robert),Enemy(A,America),Owns(A,
+T1),andMissile(T1).All thesefactswill berepresentedasbelow.
+Step-2:
+Atthesecondstep,wewill seethosefactswhich inferfromavailablefactsandwith
+satisfiedpremises.
+Rule-(1) doesnotsatisfy premises,soitwill notbeaddedin thefirstiteration.
+Rule-(2) and(3) arealready added.
+Rule-(4) satisfy with thesubstitution {p/T1}, soSells(Robert,T1,A) isadded,which
+infersfromtheconjunction of Rule(2) and(3).
+Rule-(6) issatisfiedwith thesubstitution(p/A),soHostile(A) isaddedandwhich
+infersfromRule-(7).

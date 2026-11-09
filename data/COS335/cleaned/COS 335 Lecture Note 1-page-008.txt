@@ -1,0 +1,42 @@
+hadproved38 of 52 Mathematicstheorems,andfindnewandmoreelegant
+proofsforsometheorems.
+● Year1956: Theword"Artificial Intelligence"firstadoptedby American
+ComputerscientistJohn McCarthy attheDartmouth Conference.Forthefirst
+time,AIcoinedasan academicfield.
+Atthattimehigh-level computerlanguagessuch asFORTRAN,LISP,orCOBOL were
+invented.AndtheenthusiasmforAIwasvery high atthattime.
+Thegolden years- Early enthusiasm(1956-1974)
+● Year1966: Theresearchersemphasizeddeveloping algorithmswhich can
+solvemathematical problems.Joseph Weizenbaumcreatedthefirstchatbot
+in 1966,which wasnamedasELIZA.
+● Year1972: Thefirstintelligenthumanoidrobotwasbuiltin Japan which was
+namedasWABOT-1.
+ThefirstAIwinter(1974-1980)
+● Theduration between years1974 to1980 wasthefirstAIwinterduration.AI
+winterreferstothetimeperiodwherecomputerscientistdealtwith a severe
+shortageof funding fromgovernmentforAIresearches.
+● During AIwinters,an interestof publicity on artificial intelligencewas
+decreased.
+Aboomof AI(1980-1987)
+● Year1980: AfterAIwinterduration,AIcamebackwith "ExpertSystem".
+Expertsystemswereprogrammedthatemulatethedecision-making ability of
+a human expert.
+● In theYear1980,thefirstnational conferenceof theAmerican Association of
+Artificial Intelligence washeldatStanfordUniversity.
+ThesecondAIwinter(1987-1993)
+● Theduration between theyears1987 to1993 wasthesecondAIWinter
+duration.
+● Again Investorsandgovernmentstoppedin funding forAIresearch asdueto
+high costbutnotefficientresult.Theexpertsystemsuch asXCONwasvery
+costeffective.
+Theemergenceof intelligentagents(1993-2011)
+● Year1997: In theyear1997,IBM Deep Bluebeatsworldchesschampion,
+Gary Kasparov,andbecamethefirstcomputertobeata worldchess
+champion.
+● Year2002: forthefirsttime,AIenteredthehomein theformof Roomba,a
+vacuumcleaner.
+● Year2006: AIcamein theBusinessworldtill theyear2006.Companieslike
+Facebook,Twitter,andNetflix alsostartedusing AI.
+Deep learning,big data andartificial general intelligence(2011-present)
+● Year2011: In theyear2011,IBM'sWatson won jeopardy,a quiz show,where
+ithadtosolvethecomplex questionsaswell asriddles.Watson hadproved

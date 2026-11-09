@@ -1,0 +1,22 @@
+Hencefromtheabovetruth table,wecan provethatP Q isequivalentto¬ Q ¬
+P,andQ Pisequivalentto¬ P ¬ Q.
+Types of Inference rules:
+1.Modus Ponens:
+TheModusPonensruleisoneof themostimportantrulesof inference,anditstates
+thatif PandP Q istrue,then wecan inferthatQ will betrue.Itcan berepresented
+as:
+Example:
+Statement-1: "If Iamsleepy then Igotobed"==>P Q
+Statement-2: "Iamsleepy"==>P
+Conclusion: "Igotobed."==>Q.
+Hence,wecan say that,if P Q istrueandPistruethen Q will betrue.
+Proof by Truth table:
+2.Modus Tollens:
+TheModusTollensrulestatesthatif P Q istrueand ¬ Q istrue,then ¬ P will also
+true.Itcan berepresentedas:
+Statement-1: "If Iamsleepy then Igotobed"==>P Q
+Statement-2: "Idonotgotothebed."==>~Q
+Statement-3: Which infersthat"Iamnotsleepy"=>~P
+Proof by Truth table:
+3.HypotheticalSyllogism:
+TheHypothetical Syllogismrulestatesthatif P R istruewheneverP Q istrue,and

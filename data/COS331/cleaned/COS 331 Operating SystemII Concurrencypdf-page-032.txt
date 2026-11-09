@@ -1,0 +1,24 @@
+Fragmentation is of two types:
+S.N. Fragmentation & Description
+1 External fragmentation
+Total memory space is enough to satisfy a request or to reside a process in it, but it is not
+contiguous, so it cannot be used.
+2 Internal fragmentation
+Memory block assigned to process is bigger. Some portion of memory is left unused, as it
+cannot be used by another process.
+The following diagram shows how fragmentation can cause waste of memory and a compaction technique
+can be used to create more free memory out of fragmented memory −
+External fragmentation can be reduced by compaction or shuffle memory contents to place all free memory
+together in one large block. To make compaction feasible, relocation should be dynamic.
+The internal fragmentation can be reduced by effectively assigning the smallest partition but large enough
+for the process.
+Paging
+A computer can address more memory than the amount physically installed on the system. This extra
+memory is actually called virtual memory and it is a section of a hard that's set up to emulate the computer's
+RAM. Paging technique plays an important role in implementing virtual memory.
+Paging is a memory management technique in which process address space is broken into blocks of the
+same size called pages (size is power of 2, between 512 bytes and 8192 bytes). The size of the process is
+measured in the number of pages.
+Similarly, main memory is divided into small fixed-sized blocks of (physical) memory called frames and
+the size of a frame is kept the same as that of a page to have optimum utilization of the main memory and to
+avoid external fragmentation.

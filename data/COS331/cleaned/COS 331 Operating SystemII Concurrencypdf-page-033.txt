@@ -1,0 +1,22 @@
+Address Translation
+Page address is called logical address and represented by page number and the offset.
+Logical Address = Page number + page offset
+Frame address is called physical address and represented by a frame number and the offset.
+Physical Address = Frame number + page offset
+A data structure called page map table is used to keep track of the relation between a page of a process to a
+frame in physical memory.
+When the system allocates a frame to any page, it translates this logical address into a physical address and
+create entry into the page table to be used throughout execution of the program.
+When a process is to be executed, its corresponding pages are loaded into any available memory frames.
+Suppose you have a program of 8Kb but your memory can accommodate only 5Kb at a given point in time,
+then the paging concept will come into picture. When a computer runs out of RAM, the operating system
+(OS) will move idle or unwanted pages of memory to secondary memory to free up RAM for other
+processes and brings them back when needed by the program.
+This process continues during the whole execution of the program where the OS keeps removing idle pages
+from the main memory and write them onto the secondary memory and bring them back when required by
+the program.
+Solved example:
+i) Assume the page table pointer contains 4096 and the page number is 128. What is the starting address of
+the block which specifies the information for page #128? Suppose the page is already in memory and has a
+starting address of 65,536. What is the physical address given the word number is 32? How many pages of
+2048 bytes each can we accommodate in a 256 KB memory bank?

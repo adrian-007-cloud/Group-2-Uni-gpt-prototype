@@ -1,0 +1,32 @@
+symptoms,currentcondition,andmedical history.
+● TheES will needa questionnairetobefilledby thepatienttoknowthe
+general information aboutthepatient,such asgender,age,etc.
+● Nowthesystemhascollectedall theinformation,soitwill findthe
+solution fortheproblemby applying if-then rulesusing theinference
+engineandusing thefactsstoredwithin theKB.
+● In theend,itwill providea responsetothepatientby using theuser
+interface.
+ParticipantsinthedevelopmentofExpertSystem
+Therearethreeprimary participantsin thebuilding of ExpertSystem:
+1. Expert: Thesuccessof an ES much dependson theknowledgeprovidedby
+human experts.Theseexpertsarethosepersonswhoarespecializedin that
+specificdomain.
+2. KnowledgeEngineer: Knowledgeengineeristheperson whogathersthe
+knowledgefromthedomain expertsandthen codifiesthatknowledgetothe
+systemaccording totheformalism.
+3. End-User: Thisisa particularperson ora group of peoplewhomay notbe
+experts,andworking on theexpertsystemneedsthesolution oradviceforhis
+queries,which arecomplex.
+WhyExpert System?
+Beforeusing any technology,wemusthavean idea aboutwhy tousethat
+technology andhencethesamefortheES.Although wehavehuman expertsin
+every field,then whatistheneedtodevelop a computer-basedsystem.Sobeloware
+thepointsthataredescribing theneedof theES:
+1. Nomemory Limitations: Itcan storeasmuch data asrequiredandcan
+memorizeitatthetimeof itsapplication.Butforhuman experts,thereare
+somelimitationstomemorizeall thingsatevery time.
+2. High Efficiency: If theknowledgebaseisupdatedwith thecorrectknowledge,
+then itprovidesa highly efficientoutput,which may notbepossiblefora
+human.
+3. Expertisein a domain: Therearelotsof human expertsin each domain,and
+they all havedifferentskills,differentexperiences,anddifferentskills,soitis

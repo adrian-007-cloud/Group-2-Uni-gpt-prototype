@@ -1,0 +1,37 @@
+3. Elseif notbetterthan thecurrentstate,then return tostep2.
+o Step 5: Exit.
+o
+2.Steepest-Ascenthill climbing:
+Thesteepest-Ascentalgorithmisa variation of simplehill climbing algorithm.This
+algorithmexaminesall theneighboring nodesof thecurrentstateandselectsone
+neighbornodewhich isclosesttothegoal state.Thisalgorithmconsumesmore
+timeasitsearchesformultipleneighbors
+AlgorithmforSteepest-Ascenthill climbing:
+o Step 1: Evaluatetheinitial state,if itisgoal statethen return successand
+stop,elsemakecurrentstateasinitial state.
+o Step 2: Loop until a solution isfoundorthecurrentstatedoesnotchange.
+1. LetSUCCbea statesuch thatany successorof thecurrentstatewill
+bebetterthan it.
+2. Foreach operatorthatappliestothecurrentstate:
+I. Apply thenewoperatorandgeneratea newstate.
+II. Evaluatethenewstate.
+III. If itisgoal state,then return itandquit,elsecompareittothe
+SUCC.
+IV.If itisbetterthan SUCC,then setnewstateasSUCC.
+V. If theSUCCisbetterthan thecurrentstate,then setcurrentstate
+toSUCC.
+o Step 5: Exit.
+3.Stochastichill climbing:
+Stochastichill climbing doesnotexamineforall itsneighborbeforemoving.Rather,
+thissearch algorithmselectsoneneighbornodeatrandomanddecideswhetherto
+chooseitasa currentstateorexamineanotherstate.
+Problemsin Hill Climbing Algorithm:
+1.LocalMaximum: Alocal maximumisa peakstatein thelandscapewhich isbetter
+than each of itsneighboring states,butthereisanotherstatealsopresentwhich is
+higherthan thelocal maximum.
+Solution: Backtracking techniquecan bea solution of thelocal maximumin state
+spacelandscape.Createa listof thepromising path sothatthealgorithmcan
+backtrackthesearch spaceandexploreotherpathsaswell.
+2.Plateau: Aplateau istheflatarea of thesearch spacein which all theneighbor
+statesof thecurrentstatecontainsthesamevalue,becauseof thisalgorithmdoes
+notfindany bestdirection tomove.Ahill-climbing search mightbelostin the

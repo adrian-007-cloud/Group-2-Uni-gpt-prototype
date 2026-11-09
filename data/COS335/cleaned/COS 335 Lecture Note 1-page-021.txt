@@ -1,0 +1,42 @@
+disorder).Parry wasdescribedas"ELIZAwith attitude."Parry wastestedusing a
+variation of theTuring Testin theearly 1970s.
+EugeneGoostman: EugeneGoostman wasa chatbotdevelopedin SaintPetersburg
+in 2001.Thisbothascompetedin thevariousnumberof Turing Test.In June2012,
+atan event,Goostman won thecompetition promotedaslargest-everTuring test
+content,in which ithasconvinced29% of judgesthatitwasa human.Goostman
+resembledasa 13-yearoldvirtual boy.
+TheChineseRoomArgument:
+Thereweremany philosopherswhoreally disagreedwith thecompleteconceptof
+Artificial Intelligence.Themostfamousargumentin thislistwas"ChineseRoom."
+In theyear 1980,John Searle presented"ChineseRoom"thoughtexperiment,in his
+paper"Mind,Brains,andProgram,"which wasagainstthevalidity of Turing'sTest.
+According tohisargument,"Programming a computermay makeittounderstanda
+language,butitwill notproducea real understanding of languageorconsciousness
+in a computer."
+HearguedthatMachinesuch asELIZAandParry couldeasily passtheTuring test
+by manipulating keywordsandsymbol,butthey hadnoreal understanding of
+language.Soitcannotbedescribedas"thinking"capability of a machinesuch asa
+human.
+Featuresrequiredfora machinetopasstheTuring test:
+● Natural languageprocessing: NLPisrequiredtocommunicatewith
+Interrogatorin general human languagelikeEnglish.
+● Knowledgerepresentation: Tostoreandretrieveinformation during thetest.
+● Automatedreasoning: Tousethepreviously storedinformation for
+answering thequestions.
+● Machinelearning: Toadaptnewchangesandcan detectgeneralized
+patterns.
+● Vision (Fortotal Turing test): Torecognizetheinterrogatoractionsandother
+objectsduring a test.
+● MotorControl (Fortotal Turing test): Toactupon objectsif requested.
+SearchAlgorithmsinArtificialIntelligence
+Search algorithmsareoneof themostimportantareasof Artificial Intelligence.This
+section explainsall aboutthesearch algorithmsin AI.
+Problem-SolvingAgents:In Artificial Intelligence,Search techniquesareuniversal
+problem-solving methods. Rationalagents or Problem-solvingagents in AImostly use
+thesesearch strategiesoralgorithmstosolvea specificproblemandprovidethe
+bestresult.Problem-solving agentsarethegoal-basedagentsanduseatomic
+representation.In thistopic, wewill learn variousproblem-solving search algorithms.
+Search AlgorithmTerminologies:
+● Search: Searching isa step by step proceduretosolvea search-problemin a
+given search space.Asearch problemcan havethreemain factors:
+●Search Space: Search spacerepresentsa setof possiblesolutions,

@@ -1,0 +1,44 @@
+● In thesecondstep of theresolution graph, ¬ food(Peanuts) ,and food(z) get
+resolved(canceled) by substitution of {Peanuts/z},andweareleftwith ¬
+eats(y,Peanuts) Vkilled(y) .
+● In thethirdstep of theresolution graph, ¬ eats(y,Peanuts) and eats(Anil,
+Peanuts) getresolvedby substitution {Anil/y},andweareleftwith Killed(Anil) .
+● In thefourth step of theresolution graph, Killed(Anil) and ¬ killed(k) get
+resolveby substitution {Anil/k},andweareleftwith ¬ alive(Anil) .
+● In thelaststep of theresolution graph ¬ alive(Anil) and alive(Anil) get
+resolved.
+ForwardChainingandbackwardchaininginAI
+In artificial intelligence,forwardandbackwardchaining isoneof theimportant
+topics,butbeforeunderstanding forwardandbackwardchaining letsfirst
+understandthatfromwherethesetwotermscame.
+InferenceEngine
+Theinferenceengineisthecomponentof theintelligentsystemin artificial
+intelligence,which applieslogical rulestotheknowledgebasetoinfernew
+information fromknown facts.Thefirstinferenceenginewaspartof theexpert
+system.Inferenceenginecommonly proceedsin twomodes,which are:
+a.Forwardchaining
+b.Backwardchaining
+HornClauseandDefiniteclause:
+Horn clauseanddefiniteclausearetheformsof sentences,which enables
+knowledgebasetousea morerestrictedandefficientinferencealgorithm.Logical
+inferencealgorithmsuseforwardandbackwardchaining approaches,which require
+KB in theformof the first-orderdefiniteclause.Java Try Catch
+Definiteclause: Aclausewhich isa disjunction of literalswith exactlyonepositiveliteral is
+known asa definiteclauseorstricthorn clause.
+Hornclause: Aclausewhich isa disjunction of literalswith atmostonepositiveliteral is
+known ashorn clause.Henceall thedefiniteclausesarehorn clauses.
+Example:(¬pV¬qVk).Ithasonly onepositiveliteral k.
+Itisequivalenttop ∀q k.
+A.ForwardChaining
+Forwardchaining isalsoknown asa forwarddeduction orforwardreasoning
+methodwhen using an inferenceengine.Forwardchaining isa formof reasoning
+which startwith atomicsentencesin theknowledgebaseandappliesinferencerules
+(ModusPonens) in theforwarddirection toextractmoredata until a goal isreached.
+TheForward-chaining algorithmstartsfromknown facts,triggersall ruleswhose
+premisesaresatisfied,andaddtheirconclusion totheknown facts.Thisprocess
+repeatsuntil theproblemissolved.
+PropertiesofForward-Chaining:
+● Itisa down-up approach,asitmovesfrombottomtotop.
+● Itisa processof making a conclusion basedon known factsordata,by
+starting fromtheinitial stateandreachesthegoal state.
+● Forward-chaining approach isalsocalledasdata-driven aswereach tothe

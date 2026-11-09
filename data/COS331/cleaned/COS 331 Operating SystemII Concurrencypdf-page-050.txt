@@ -1,0 +1,39 @@
+o OS maintains idle time value for each page: amount of CPU time received by process since
+last access to page.
+o Every once in a while, scan all pages of a process. For each use bit on, clear page's idle time.
+For use bit off, add process' CPU time (since last scan) to idle time. Turn all use bits off
+during scan.
+o Scans happen on order of every few seconds (in Unix, tau is on the order of a minute or
+more).
+This actual solution is an approximation algorithm known as WSClock.
+The working set w(t) is the smallest collection of pages of a given program that, resident in
+memory (i.e., currently executing process). A working set principle can be stated as follows: a
+program may execute if and only if its working set pages are currently resident in memory.
+Furthermore, a page may not be removed from memory if it is the member of a working set of a
+running program. The working set exhibits several characteristics:
+Suppose that w(h) is the expected working set size, that is,
+W(h)= expected value [w(t,h)].
+where h – is the number of pages; Then the following properties has been identified:
+(1) Given h ≥ 1, then 1 ≤ w(h) < min (n,h). That is a program's working set is always one and
+can be no bigger than the window size or total number of pages in the program.
+(2) Then w(h) ≤ w(h+i). That is, the working set increases up to the limit over time.
+13.0 OS File Systems
+What is a File?
+A file is a named collection of related information that is recorded on secondary storage such as magnetic
+disks, magnetic tapes and optical disks. In general, a file is a sequence of bits, bytes, lines or records whose
+meaning is defined by the files creator and user.
+File Structure
+A File Structure should be according to a required format that the operating system can understand.
+ A file has a certain defined structure according to its type.
+ A text file is a sequence of characters organized into lines.
+ A source file is a sequence of procedures and functions.
+ An object file is a sequence of bytes organized into blocks that are understandable by the machine.
+ When operating system defines different file structures, it also contains the code to support these file
+structure. Unix, MS-DOS support minimum number of file structure.
+File Type
+File type refers to the ability of the operating system to distinguish different types of file such as text files
+source files and binary files etc. Many operating systems support many types of files. Operating system like
+MS-DOS and UNIX have the following types of files −
+Ordinary files
+ These are the files that contain user information.
+ These may have text, databases or executable program.

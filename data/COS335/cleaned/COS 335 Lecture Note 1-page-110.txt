@@ -1,0 +1,49 @@
+● Actual numbers
+Each nodein theBayesian networkhascondition probability distribution P(X |
+i
+Parent(X)),which determinestheeffectof theparenton thatnode.
+i
+Bayesian networkisbasedon Jointprobability distribution andconditional
+probability.Solet'sfirstunderstandthejointprobability distribution:
+Joint probabilitydistribution:
+If wehavevariablesx1,x2,x3,.....,xn,then theprobabilitiesof a different
+combination of x1,x2,x3..xn,areknown asJointprobability distribution.
+P[x,x,x,.....,x],itcan bewritten asthefollowing way in termsof thejointprobability
+1 2 3 n
+distribution.
+=P[x|x,x,.....,x]P[x,x,.....,x]
+1 2 3 n 2 3 n
+=P[x|x,x,.....,x]P[x|x,.....,x]....P[x |x]P[x].
+1 2 3 n 2 3 n n-1 n n
+In general foreach variableXi,wecan writetheequation as:
+P(X|X ,.........,X ) = P(X |Parents(X ))
+i i-1 1 i i
+Explanation of Bayesian network
+Let'sunderstandtheBayesian networkthrough an exampleby creating a directed
+acyclicgraph:
+Example: Harry installeda newburglaralarmathishometodetectburglary.The
+alarmreliably respondsatdetecting a burglary butalsorespondsforminor
+earthquakes.Harry hastwoneighborsDavidandSophia,whohavetaken a
+responsibility toinformHarry atworkwhen they hearthealarm.Davidalwayscalls
+Harry when hehearsthealarm,butsometimeshegotconfusedwith thephone
+ringing andcallsatthattimetoo.On theotherhand,Sophia likestolisten tohigh
+music,sosometimesshemissestohearthealarm.Herewewouldliketocompute
+theprobability of Burglary Alarm.
+Problem:
+Calculatetheprobabilitythatalarmhassounded,butthereisneitheraburglary,noran
+earthquakeoccurred,andDavidandSophiabothcalledtheHarry.
+Solution:
+● TheBayesian networkfortheaboveproblemisgiven below.Thenetwork
+structureisshowing thatburglary andearthquakeistheparentnodeof the
+alarmanddirectly affecting theprobability of alarm'sgoing off,butDavidand
+Sophia'scallsdependon alarmprobability.
+● Thenetworkisrepresenting thatourassumptionsdonotdirectly perceivethe
+burglary andalsodonotnoticetheminorearthquake,andthey alsonot
+conferbeforecalling.
+● Theconditional distributionsforeach nodearegiven asconditional
+probabilitiestableorCPT.
+● Each rowin theCPT mustbesumto1 becauseall theentriesin thetable
+representan exhaustivesetof casesforthevariable.
+K
+● In CPT,a boolean variablewith kboolean parentscontains2 probabilities.
+Hence,if therearetwoparents,then CPT will contain 4 probability values

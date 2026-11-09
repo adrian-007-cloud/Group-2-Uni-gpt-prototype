@@ -1,0 +1,39 @@
+thisgamecontinuesuntil theterminal node.
+● In thiseitherMINwins,MAXwins,orit'sa draw.Thisgame-treeisthewhole
+search spaceof possibilitiesthatMINandMAXareplaying tic-tac-toeand
+taking turnsalternately.
+Henceadversarial Search fortheminimax procedureworksasfollows:
+● Itaimstofindtheoptimal strategy forMAXtowin thegame.
+● Itfollowstheapproach of Depth-firstsearch.
+● In thegametree,optimal leaf nodecouldappearatany depth of thetree.
+● Propagatetheminimax valuesup tothetreeuntil theterminal node
+discovered.
+In a given gametree,theoptimal strategy can bedeterminedfromtheminimax value
+of each node,which can bewritten asMINIMAX(n).MAXprefertomovetoa stateof
+maximumvalueandMINprefertomovetoa stateof minimumvaluethen:
+Mini-Max Algorithmin Artificial Intelligence
+● Mini-max algorithmisa recursiveorbacktracking algorithmwhich isusedin
+decision-making andgametheory.Itprovidesan optimal movefortheplayer
+assuming thatopponentisalsoplaying optimally.
+● Mini-Max algorithmusesrecursion tosearch through thegame-tree.
+● Min-Max algorithmismostly usedforgameplaying in AI.Such asChess,
+Checkers,tic-tac-toe,go,andvarioustow-playersgame.ThisAlgorithm
+computestheminimax decision forthecurrentstate.
+● In thisalgorithmtwoplayersplay thegame,oneiscalledMAXandotheris
+calledMIN.
+● Both theplayersfightitastheopponentplayergetstheminimumbenefit
+whilethey getthemaximumbenefit.
+● Both Playersof thegameareopponentof each other,whereMAXwill select
+themaximizedvalueandMINwill selecttheminimizedvalue.
+● Theminimax algorithmperformsa depth-firstsearch algorithmforthe
+exploration of thecompletegametree.
+● Theminimax algorithmproceedsall theway down totheterminal nodeof
+thetree,then backtrackthetreeastherecursion.
+Pseudo-codeforMinMax Algorithm:
+1. function minimax(node, depth, maximizingPlayer) is
+2. if depth ==0 or node is a terminal node then
+3. return static evaluation of node
+4.
+5. if MaximizingPlayer then // for Maximizer Player
+6. maxEva= -infinity
+7. for each child of node do

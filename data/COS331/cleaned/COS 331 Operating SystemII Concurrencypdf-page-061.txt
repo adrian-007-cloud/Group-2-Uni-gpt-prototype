@@ -1,0 +1,39 @@
+ A directory entry contains the name of the file and file reference. The file references indentifies the
+file on this volume. In other words, it is an internal name for the file. A reference is a (file number,
+sequence number) pair. The file number is the offset of the file's entry in the MFT table. It is similar
+to the Unix inumber (Inode number).
+ The list of file names in the directories is not stored in a simple list, but rather as a lexigraphicallysorted tree, called a B+ tree (this will be familiar to those with a database background). The data
+structure is called an index in NFTS (again, following the terminology from databases).
+ The NTFS design specifies that an index can be constructed for any attribute, but currently only file
+name indices are supported.
+ The name for a file appears both in its directory entry and in the MFT entry for the file itself.
+ As with regular files, if the directory is small enough, it can fit entirely within the MFT entry.
+If the directory is larger, then the top part of (the B+ tree of) the directory is in the MFT entry, which points
+to extents that contain the rest of the name/file mappings.
+15.0 Anatomy of a Mobile Operating System
+What is a mobile operating system?
+A mobile operating system is software that allows smartphones, tablets and other devices to run applications
+and programs. A mobile OS provides an interface between the device's hardware components and its
+software functions. It typically starts when a device powers on, presenting a screen with icons or tiles that
+show information and provide application access. Mobile operating systems also manage cellular and
+wireless network connectivity and phone access.
+Millions of people use mobile operating systems worldwide, powering a wide range of devices, from
+smartphones to tablets and wearable technology. These systems offer users a wide selection of features,
+including calling and messaging, internet and cellular data connectivity, multitasking capabilities, interactive
+user interfaces and access to a wide range of third-party applications and services to enhance the user
+experience even further.
+Types of mobile operating systems
+There are several mobile operating systems on the market today, but two of the most widely adopted are the
+iPhone's OS, Apple iOS, and Google's open source OS, Google Android. These two mobile OSes take
+different approaches to the mobile operating system and end-user experience.
+Apple distributes the only devices that natively support iOS, and it takes a "walled garden" approach, in
+which Apple regulates all mobile apps and services that can run on iOS devices. Apple developed iOS to run
+on its own XNU kernel. Apple has also released several device-specific mobile operating systems, such as
+watchOS for the Apple Watch and iPadOS for iPad tablets.
+Google takes an Open Source approach with Android, which allows mobile device OEMs (original
+equipment manufacturers) to customize the Android source code to fit their devices. Android runs on the
+Linux kernel. Additionally, due to being open source and globally popular, Android has become a staple in
+development for various equipment such as kiosks, machinery, TV operating systems and more.
+Other mobile operating systems are available, but their adoption rates are well below those of iOS and
+Android and are mostly found outside of the U.S. These include operating systems like KaiOS, Sailfish OS
+and Huawei's HarmonyOS.

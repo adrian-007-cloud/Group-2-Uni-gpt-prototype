@@ -1,0 +1,14 @@
+-∞andβ= +∞,andNodeB passesthesamevaluetoitschildD.
+Step2: AtNodeD,thevalueof αwill becalculatedasitsturn forMax.Thevalueof α
+iscomparedwith firstly 2 andthen 3,andthemax (2,3) = 3 will bethevalueof αat
+nodeD andnodevaluewill also3.
+Step3: NowalgorithmbacktracktonodeB,wherethevalueof βwill changeasthisis
+a turn of Min,Nowβ= +∞,will comparewith theavailablesubsequentnodesvalue,
+i.e.min (∞,3) = 3,henceatnodeB nowα= -∞,andβ= 3.
+In thenextstep,algorithmtraversethenextsuccessorof NodeB which isnodeE,
+andthevaluesof α= -∞,andβ= 3 will alsobepassed.
+Step4: AtnodeE,Max will takeitsturn,andthevalueof alpha will change.The
+currentvalueof alpha will becomparedwith 5,somax (-∞,5) = 5,henceatnodeE
+α= 5 andβ= 3,whereα>=β,sotherightsuccessorof Ewill bepruned,andalgorithm
+will nottraverseit,andthevalueatnodeEwill be5.
+Step5: Atnextstep,algorithmagain backtrackthetree,fromnodeB tonodeA.At

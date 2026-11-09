@@ -1,0 +1,30 @@
+Thesamelogicisforspacecomplexity so,theworst-casespacecomplexity of
+Uniform-costsearch is O(b1+[C*/ε]).
+Optimal:
+Uniform-costsearch isalwaysoptimal asitonly selectsa path with thelowestpath
+cost.
+5.Iterativedeepening depth-firstSearch:
+Theiterativedeepening algorithmisa combination of DFS andBFS algorithms.This
+search algorithmfindsoutthebestdepth limitanddoesitby gradually increasing
+thelimituntil a goal isfound.
+Thisalgorithmperformsdepth-firstsearch up toa certain "depth limit",anditkeeps
+increasing thedepth limitaftereach iteration until thegoal nodeisfound.
+ThisSearch algorithmcombinesthebenefitsof Breadth-firstsearch'sfastsearch
+anddepth-firstsearch'smemory efficiency.
+Theiterativesearch algorithmisuseful uninformedsearch when search spaceis
+large,anddepth of goal nodeisunknown.
+Advantages:
+o Itcombinesthebenefitsof BFS andDFS search algorithmin termsof fast
+search andmemory efficiency.
+Disadvantages:
+o Themain drawbackof IDDFS isthatitrepeatsall theworkof theprevious
+phase.
+Example:
+Following treestructureisshowing theiterativedeepening depth-firstsearch.IDDFS
+algorithmperformsvariousiterationsuntil itdoesnotfindthegoal node.The
+iteration performedby thealgorithmisgiven as:
+1'stIteration----->A
+2'ndIteration---->A,B,C
+3'rdIteration------>A,B,D,E,C,F,G
+4'th Iteration------>A,B,D,H,I,E,C,F,K,G
+In thefourth iteration,thealgorithmwill findthegoal node.

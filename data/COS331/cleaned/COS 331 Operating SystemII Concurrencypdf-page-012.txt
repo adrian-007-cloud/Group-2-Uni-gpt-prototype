@@ -1,0 +1,37 @@
+CPU Scheduling
+Processes may be in any one of three general scheduling states:
+ Running. That is, using CPU time.
+ Ready. That is, waiting for CPU time. Scheduler and dispatcher determine transitions between ready
+and running state.
+ Blocked. Waiting for some other event: disk I/O, message, semaphore, etc. Transitions into and out
+of this state are caused by various processes.
+There are two parts to CPU scheduling:
+ The dispatcher provides the basic mechanism for running processes.
+ The scheduler is a piece of OS code that decides the priorities of processes and how long each will
+run.
+This is an example of policy/mechanism separation.
+Goals for Scheduling Disciplines
+ Efficiency of resource utilization (keep CPU and disks busy).
+ Minimize overhead (context swaps).
+ Minimize response time. (Define response time.)
+ Distribute cycles equitably. What does this mean?
+2.3 Types of Schedulers
+There are three broad types of scheduler. These are long-term, medium-term and short-term. The longterm scheduler works with batch queue and selects the next batch job to be executed. Medium-term
+scheduler is in charge of handling the swapped-out or suspended processes. It works when the suspended
+condition is removed. Short-term scheduler allocates the processor among the pool of ready processes
+resident in memory. Figure 7 shows these schedulers.
+Suspended & swappedout Queue
+Batch Batch Ready CPU Exit
+Queue
+Jobs Queu
+e
+Suspended
+Queue
+Interactive
+Programs
+Figure 7 Types of schedulers
+Preemptive and Non Preemptive Schedulers
+There are two basic types of schedulers: Preemptive and Non preemptive.
+Preemptive scheduler allows a running process to be interrupted by a higher priority process. In this case,
+the process is allowed to switch from running state to the ready state. Algorithms based preemptive are
+Round Robin, SRTF, Priority, etc.

@@ -1,0 +1,31 @@
+Step-3:
+Atstep-3,aswecan checkRule-(1) issatisfiedwith thesubstitution {p/Robert,q/T1,r/
+A},sowecanaddCriminal(Robert) which infersall theavailablefacts.Andhencewe
+reachedourgoal statement.
+HenceitisprovedthatRobertisCriminalusingforwardchainingapproach.
+B.BackwardChaining
+Backward-chaining isalsoknown asa backwarddeduction orbackwardreasoning
+methodwhen using an inferenceengine.Abackwardchaining algorithmisa formof
+reasoning,which startswith thegoal andworksbackward,chaining through rulesto
+findknown factsthatsupportthegoal.
+Propertiesofbackwardchaining:
+● Itisknown asa top-down approach.
+● Backward-chaining isbasedon modusponensinferencerule.
+● In backwardchaining,thegoal isbroken intosub-goal orsub-goalstoprove
+thefactstrue.
+● Itiscalleda goal-driven approach,asa listof goalsdecideswhich rulesare
+selectedandused.
+● Backward-chaining algorithmisusedin gametheory,automatedtheorem
+proving tools,inferenceengines,proof assistants,andvariousAIapplications.
+● Thebackward-chaining methodmostly useda depth-firstsearch strategy for
+proof.
+Example:
+● In backward-chaining,wewill usethesameaboveexample,andwill rewrite
+all therules.
+● American (p) ∀weapon(q) ∀sells(p,q,r) ∀hostile(r) Criminal(p) ...(1)
+Owns(A,T1) ........(2)
+● Missile(T1)
+● ?p Missiles(p) ∀Owns(A,p) Sells(Robert,p,A) ......(4)
+● Missile(p) Weapons(p) .......(5)
+● Enemy(p,America) Hostile(p) ........(6)
+● Enemy (A,America) .........(7)

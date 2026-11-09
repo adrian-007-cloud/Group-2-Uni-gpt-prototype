@@ -1,0 +1,29 @@
+SpaceComplexity: Spacecomplexity of DLS algorithmisO(b×ℓ).
+Optimal: Depth-limitedsearch can beviewedasa special caseof DFS,anditisalso
+notoptimal even if ℓ>d.
+4.Uniform-costSearch Algorithm:
+Uniform-costsearch isa searching algorithmusedfortraversing a weightedtreeor
+graph.Thisalgorithmcomesintoplay when a differentcostisavailableforeach
+edge.Theprimary goal of theuniform-costsearch istofinda path tothegoal node
+which hasthelowestcumulativecost.Uniform-costsearch expandsnodes
+according totheirpath costsfromtherootnode.Itcan beusedtosolveany graph/
+treewheretheoptimal costisin demand.Auniform-costsearch algorithmis
+implementedby thepriority queue.Itgivesmaximumpriority tothelowest
+cumulativecost.Uniformcostsearch isequivalenttoBFS algorithmif thepath cost
+of all edgesisthesame.
+Advantages:
+● Uniformcostsearch isoptimal becauseatevery statethepath with the
+leastcostischosen.
+Disadvantages:
+● Itdoesnotcareaboutthenumberof stepsinvolvein searching andonly
+concernedaboutpath cost.Duetowhich thisalgorithmmay bestuckin an
+infiniteloop.
+Example:
+Completeness:
+Uniform-costsearch iscomplete,such asif thereisa solution,UCS will findit.
+TimeComplexity:
+LetC* isCostoftheoptimalsolution,and ε iseach step togetclosertothegoal node.
+Then thenumberof stepsis= C*/ε+1.Herewehavetaken +1,aswestartfromstate
+0 andendtoC*/ε.
+Hence,theworst-casetimecomplexity of Uniform-costsearch isO(b1+[C*/ε])/.
+SpaceComplexity:

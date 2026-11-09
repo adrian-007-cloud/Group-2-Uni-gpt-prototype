@@ -1,0 +1,48 @@
+Segment Page Offset
+Number No
++
+To Memory
+Segment size Illegal Access
+violation
+No No
+Yes AUTHORIZED Yes
+ LIMIT
+ACCESS
++ Segment X
+SDTLR
+Segment Descriptor Table
+Page Map Table
+Yes for Segment X
+ SDTLR +
+x
+No
+  
+Non-existent Base Size Access
+Segment Rights
+exception
+Figure: Segmentation and Paging
+SDTLR – Segment descriptor Table Limit Register
+As shown, both segment descriptor tables and page-map tables are required for mapping. Instead of
+containing the base and limit of the corresponding segment, each entry of the SDT contains the base address
+and size of the page-map table to be used for mapping of the related segment's pages. The presence bit in
+each PMT entry indicates whether the corresponding page is in the real memory or not.
+Access rights are usually recorded as a part of segment descriptors. Each virtual address in a combined
+system basically consists of three fields: the segment number, the page number and the offset within the
+page. When a virtual address is presented to the mapping hardware, the segment number is used to locate
+the corresponding page-map table. Provided that the issuing process is authorized to make the intended type
+of reference to the target segment, the page number is used to index the PMT as usual.
+Virtual Memory System
+A computer can address more memory than the amount physically installed on the system. This extra
+memory is actually called virtual memory and it is a section of a hard disk that's set up to emulate the
+computer's RAM.
+The main visible advantage of this scheme is that programs can be larger than physical memory. Virtual
+memory serves two purposes. First, it allows us to extend the use of physical memory by using disk. Second,
+it allows us to have memory protection, because each virtual address is translated to a physical address.
+Following are the situations, when entire program is not required to be loaded fully in main memory.
+ User written error handling routines are used only when an error occurred in the data or computation.
+ Certain options and features of a program may be used rarely.
+ Many tables are assigned a fixed amount of address space even though only a small amount of the
+table is actually used.
+ The ability to execute a program that is only partially in memory would counter many benefits.
+ Less number of I/O would be needed to load or swap each user program into memory.
+ A program would no longer be constrained by the amount of physical memory that is available.

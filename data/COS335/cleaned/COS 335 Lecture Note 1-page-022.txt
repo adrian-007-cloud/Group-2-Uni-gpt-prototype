@@ -1,0 +1,29 @@
+which a systemmay have.
+●StartState: Itisa statefromwhereagentbegins thesearch.
+●Goal test: Itisa function which observethecurrentstateandreturns
+whetherthegoal stateisachievedornot.
+● Search tree: Atreerepresentation of search problemiscalledSearch tree.
+Therootof thesearch treeistherootnodewhich iscorresponding tothe
+initial state.
+● Actions: Itgivesthedescription of all theavailableactionstotheagent.
+● Transition model: Adescription of whateach action do,can berepresented
+asa transition model.
+● Path Cost: Itisa function which assignsa numericcosttoeach path.
+● Solution: Itisan action sequencewhich leadsfromthestartnodetothegoal
+node.
+● Optimal Solution: If a solution hasthelowestcostamong all solutions.
+PropertiesofSearchAlgorithms:
+Following arethefouressential propertiesof search algorithmstocomparethe
+efficiency of thesealgorithms:
+Completeness: Asearch algorithmissaidtobecompleteif itguaranteestoreturn a
+solution if atleastany solution existsforany randominput.
+Optimality: If a solution foundforan algorithmisguaranteedtobethebestsolution
+(lowestpath cost) among all othersolutions,then such a solution issaidtobean
+optimal solution.
+TimeComplexity: Timecomplexity isa measureof timeforan algorithmtocomplete
+itstask.
+SpaceComplexity: Itisthemaximumstoragespacerequiredatany pointduring the
+search,asthecomplexity of theproblem.
+Typesof Search Algorithms
+Basedonthesearchproblemswecanclassifythesearchalgorithmsintouninformed(Blind
+search)searchandinformedsearch(Heuristicsearch)algorithms.

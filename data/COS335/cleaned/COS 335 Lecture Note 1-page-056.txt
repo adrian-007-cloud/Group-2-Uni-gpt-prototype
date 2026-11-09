@@ -1,0 +1,21 @@
+andgrouping of something.
+● Itdescribestherelationship thatexistsbetween conceptsorobjects.
+Therelationbetweenknowledgeand intelligence:
+Knowledgeof real-worldsplaysa vital rolein intelligenceandsameforcreating
+artificial intelligence.Knowledgeplaysan importantrolein demonstrating intelligent
+behaviourin AIagents.An agentisonly abletoaccurately acton someinputwhen
+hehassomeknowledgeorexperienceaboutthatinput.
+Let'ssupposeif you metsomeperson whoisspeaking in a languagewhich you
+don'tknow,then howwillyou beabletoacton that? Thesamething appliestothe
+intelligentbehaviourof theagents.
+Aswecan seein belowdiagram,thereisonedecision makerwhich actby sensing
+theenvironmentandusing knowledge.Butif theknowledgepartwill notpresent
+then,itcannotdisplay intelligentbehaviour.
+AI knowledgecycle:
+An Artificial intelligencesystemhasthefollowing componentsfordisplaying
+intelligentbehaviour:
+● Perception
+● Learning
+● KnowledgeRepresentation andReasoning
+● Planning
+● Execution

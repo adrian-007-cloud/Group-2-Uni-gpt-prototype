@@ -1,0 +1,40 @@
+learning,reasoning,andsolving problems
+With Artificial Intelligenceyou donotneedtopreprograma machinetodosome
+work,despitethatyou can createa machinewith programmedalgorithmswhich can
+workwith own intelligence,andthatistheawesomenessof AI.
+ItisbelievedthatAIisnota new technology,andsomepeoplesay thatasperGreek
+myth,therewereMechanical men in early dayswhich can workandbehavelike
+humans.
+Why Artificial Intelligence?
+BeforeLearning aboutArtificial Intelligence,weshouldknowtheimportanceof AI
+andwhy shouldwelearn it.Following aresomemain reasonstolearn aboutAI:
+● With thehelp of AI,you can createsuch softwareordeviceswhich can solve
+real-worldproblemsvery easily andwith accuracy such ashealth issues,
+marketing,trafficissues,etc.
+● With thehelp of AI,you can createyourpersonal virtual Assistant,suchas
+Cortana,GoogleAssistant,Siri,etc.
+● With thehelp of AI,you can buildsuch Robotswhich can workin an
+environmentwheresurvival of humanscan beatrisk.
+● AIopensa path forothernewtechnologies,newdevices,andnew
+Opportunities.
+Goalsof Artificial Intelligence
+Following arethemain goalsof Artificial Intelligence:
+1. Replicatehuman intelligence
+2. SolveKnowledge-intensivetasks
+3. An intelligentconnection of perception andaction
+4. Building a machinewhich can performtasksthatrequireshuman
+intelligencesuch as:
+●Proving a theorem
+●Playing chess
+●Plan somesurgical operation
+●Driving a carin traffic
+5. Creating somesystemwhich can exhibitintelligentbehaviour,learn new
+thingsby itself,demonstrate,explain,andcan adviseitsuser.
+WhatComprisestoArtificial Intelligence?
+Artificial Intelligenceisnotjusta partof computerscience,itissovastandrequires
+lotsof otherfactorswhich contributetoit.TocreatetheAI,firstweshouldknowhow
+intelligenceiscomposed,sotheIntelligenceisan intangiblepartof ourbrain which
+isa combination of Reasoning,learning,problem-solving perception,language
+understanding,etc.
+Toachievetheabovefactors fora machineorsoftware,AIrequiresthefollowing
+disciplines:

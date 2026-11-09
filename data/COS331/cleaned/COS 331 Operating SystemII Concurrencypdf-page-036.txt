@@ -1,0 +1,10 @@
+ Each user program could take less physical memory, more programs could be run the same time,
+with a corresponding increase in CPU utilization and throughput.
+Modern microprocessors intended for general-purpose use, a memory management unit, or MMU, is built
+into the hardware. The MMU's job is to translate virtual addresses into physical addresses. A basic example
+is given below −
+Virtual memory is commonly implemented by demand paging. It can also be implemented in a segmentation
+system. Demand segmentation can also be used to provide virtual memory.
+Demand Paging
+A demand paging system is quite similar to a paging system with swapping where processes reside in
+secondary memory and pages are loaded only on demand, not in advance. When a context switch occurs, the

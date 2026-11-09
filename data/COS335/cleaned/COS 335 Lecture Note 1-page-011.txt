@@ -1,0 +1,42 @@
+o Google'sAlphaGoisalsoan exampleof reactivemachines.
+2.LimitedMemory
+o Limitedmemory machinescan storepastexperiencesorsomedata fora
+shortperiodof time.
+o Thesemachinescan usestoreddata fora limitedtimeperiodonly.
+o Self-driving carsareoneof thebestexamplesof LimitedMemory systems.
+Thesecarscan storerecentspeedof nearby cars,thedistanceof othercars,
+speedlimit,andotherinformation tonavigatetheroad.
+3.TheoryofMind
+o Theory of mindAIshouldunderstandthehuman emotions,people,beliefs,
+andbeabletointeractsocially likehumans.
+o Thistypeof AImachinesarestill notdeveloped,butresearchersaremaking
+lotsof effortsandimprovementfordeveloping such AImachines.
+4.Self-Awareness
+o Self-awarenessAIisthefutureof Artificial Intelligence.Thesemachineswill
+besuperintelligent,andwill havetheirown consciousness,sentiments,and
+self-awareness.
+o Thesemachineswill besmarterthan human mind.
+o Self-AwarenessAIdoesnotexistin reality still anditisa hypothetical
+concept.
+Agentsin Artificial Intelligence
+An AIsystemcan bedefinedasthestudy of therational agentanditsenvironment.
+Theagentssensetheenvironmentthrough sensorsandacton theirenvironment
+through actuators.An AIagentcan havemental propertiessuch asknowledge,
+belief,intention,etc.
+Whatisan Agent?
+An agentcan beanything thatperceivesitsenvironmentthrough sensorsandact
+upon thatenvironmentthrough actuators.An Agentrunsin thecycle
+of perceiving, thinking,and acting.An agentcan be:
+● Human-Agent: Ahuman agenthaseyes,ears,andotherorganswhich work
+forsensorsandhand,legs,vocal tractworkforactuators.
+● RoboticAgent: Aroboticagentcan havecameras,infraredrangefinder,
+Natural languageprocessing (NLP) forsensorsandvariousmotorsfor
+actuators.
+● SoftwareAgent: Softwareagentcan havekeystrokes,filecontentsas
+sensory inputandacton thoseinputsanddisplay outputon thescreen.
+Hencetheworldaroundusisfull of agentssuch asthermostat,cellphone,camera,
+andeven wearealsoagents.
+Beforemoving forward,weshouldfirstknowaboutsensors,effectors,andactuators.
+Sensor: Sensorisa devicewhich detectsthechangein theenvironmentandsends
+theinformation tootherelectronicdevices.An agentobservesitsenvironment
+through sensors.

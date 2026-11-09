@@ -1,0 +1,15 @@
+Conceptsin Java
+o FornodeD max(-1,--∞) =>max(-1,4)= 4
+o ForNodeE max(2,-∞) =>max(2,6)= 6
+o ForNodeF max(-3,-∞) =>max(-3,-5) = -3
+o FornodeG max(0,-∞) = max(0,7) = 7
+Step 3: In thenextstep,it'sa turn forminimizer,soitwill compareall nodesvalue
+rd
+with +∞,andwill findthe3 layernodevalues.
+o FornodeB= min(4,6) = 4
+o FornodeC= min (-3,7) = -3
+Step 4: Nowit'sa turn forMaximizer,anditwill again choosethemaximumof all
+nodesvalueandfindthemaximumvaluefortherootnode.In thisgametree,there
+areonly 4 layers,hencewereach immediately totherootnode,butin real games,
+therewill bemorethan 4 layers.
+o FornodeAmax(4,-3)= 4

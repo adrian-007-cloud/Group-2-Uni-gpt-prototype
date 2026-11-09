@@ -1,0 +1,35 @@
+Step-2:ConversionofFOLintoCNF
+In Firstorderlogicresolution,itisrequiredtoconverttheFOL intoCNF asCNF form
+makeseasierforresolution proofs.
+● Eliminateall implication ( ) andrewrite
+1. ! x ¬ food(x) Vlikes(John,x)
+2. food(Apple) Λ food(vegetables)
+3. ! x ! y ¬ [eats(x,y) Λ ¬ killed(x)]Vfood(y)
+4. eats(Anil,Peanuts) Λ alive(Anil)
+5. ! x ¬ eats(Anil,x) Veats(Harry,x)
+6. ! x¬ [¬ killed(x) ]Valive(x)
+7. ! x ¬ alive(x) V¬ killed(x)
+8. likes(John,Peanuts).
+● Movenegation (¬)inwardsandrewrite
+9. ! x ¬ food(x) Vlikes(John,x)
+10. food(Apple) Λ food(vegetables)
+11. ! x ! y ¬ eats(x,y) Vkilled(x) Vfood(y)
+12. eats(Anil,Peanuts) Λ alive(Anil)
+13. ! x ¬ eats(Anil,x) Veats(Harry,x)
+14. ! x ¬killed(x) ]Valive(x)
+15. ! x ¬ alive(x) V¬ killed(x)
+16. likes(John,Peanuts).
+● Renamevariablesorstandardizevariables
+17. ! x ¬ food(x) Vlikes(John,x)
+18. food(Apple) Λ food(vegetables)
+19. ! y ! z ¬ eats(y,z) Vkilled(y) Vfood(z)
+20. eats(Anil,Peanuts) Λ alive(Anil)
+21. ! w¬ eats(Anil,w) Veats(Harry,w)
+22. ! g ¬killed(g) ]Valive(g)
+23. ! k¬ alive(k) V¬ killed(k)
+24. likes(John,Peanuts).
+● Eliminateexistential instantiation quantifierby elimination.
+In thisstep,wewill eliminateexistential quantifier&,andthisprocessis
+known as Skolemization.Butin thisexampleproblemsincethereisno
+existential quantifiersoall thestatementswill remain samein thisstep.
+● Drop Universal quantifiers.

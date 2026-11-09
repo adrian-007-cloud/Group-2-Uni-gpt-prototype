@@ -1,0 +1,28 @@
+In thisstep wewill drop all universal quantifiersinceall thestatementsarenot
+implicitly quantifiedsowedon'tneedit.
+25. ¬ food(x) Vlikes(John,x)
+26. food(Apple)
+27. food(vegetables)
+28. ¬ eats(y,z) Vkilled(y) Vfood(z)
+29. eats(Anil,Peanuts)
+30. alive(Anil)
+31. ¬ eats(Anil,w) Veats(Harry,w)
+32. killed(g) Valive(g)
+33. ¬ alive(k) V¬ killed(k)
+34. likes(John,Peanuts).
+Note: Statements"food(Apple) Λ food(vegetables)"and"eats(Anil,Peanuts) Λ
+alive(Anil)"can bewritten in twoseparatestatements. Distributeconjunction ∀over
+disjunction ¬.
+Thisstep will notmakeany changein thisproblem.
+Step-3:Negatethestatementtobeproved
+In thisstatement,wewill apply negation totheconclusion statements,which will be
+written as¬likes(John,Peanuts)
+Step-4:DrawResolutiongraph:
+Nowin thisstep,wewill solvetheproblemby resolution treeusing substitution.For
+theaboveproblem,itwill begiven asfollows:
+Hencethenegation of theconclusion hasbeen provedasa completecontradiction
+with thegiven setof statements.
+Explanation of Resolution graph:
+● In thefirststep of resolution graph, ¬likes(John,Peanuts) ,and likes(John,
+x) getresolved(canceled) by substitution of {Peanuts/x},andweareleft
+with ¬ food(Peanuts)

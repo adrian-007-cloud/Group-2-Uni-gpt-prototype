@@ -1,0 +1,32 @@
+RequirementsforknowledgeRepresentation system:
+Agoodknowledgerepresentation systemmustpossessthefollowing properties.
+1.Representational Accuracy
+KR systemshouldhavetheability torepresentall kindof requiredknowledge.
+2.Inferential Adequacy:
+KR systemshouldhaveability tomanipulatetherepresentational structuresto
+producenewknowledgecorresponding toexisting structure.
+3.Inferential Efficiency:
+Theability todirecttheinferential knowledgemechanismintothemost
+productivedirectionsby storing appropriateguides.
+4.Acquisitional efficiency- Theability toacquirethenewknowledgeeasily using
+automatic
+methods.
+Techniquesof knowledgerepresentation
+Therearemainly fourwaysof knowledgerepresentation which aregiven asfollows:
+1. Logical Representation
+2. SemanticNetworkRepresentation
+3. FrameRepresentation
+4. Production Rules
+1.Logical Representation
+Logical representation isa languagewith someconcreteruleswhich dealswith
+propositionsandhasnoambiguity in representation.Logical representation means
+drawing a conclusion basedon variousconditions.Thisrepresentation laysdown
+someimportantcommunication rules.Itconsistsof precisely definedsyntax and
+semanticswhich supportsthesoundinference.Each sentencecan betranslatedinto
+logicsusing syntax andsemantics.
+Syntax:
+● Syntaxesaretheruleswhich decidehowwecan constructlegal sentencesin
+thelogic.
+● Itdetermineswhich symbol wecan usein knowledgerepresentation.
+● Howtowritethosesymbols.
+Semantics:

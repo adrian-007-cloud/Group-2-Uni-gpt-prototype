@@ -1,0 +1,45 @@
+Several mobile operating systems are no longer commonly supported. BlackBerry 10, Nokia's Symbian, LG
+webOS -- formerly Palm webOS and HP webOS -- and Microsoft's Windows Phone OS are all no longer
+supported.
+Features of mobile operating systems
+Mobile operating systems deliver various features to users. The distinguishing feature that mobile operating
+systems offer is the ability to connect to the internet via the smartphone's built-in modem and a wireless
+service provider such as Verizon or AT&T. This is a major difference between mobile operating systems
+and most desktop OSes, which rely on a Wi-Fi network or Ethernet connection to access the internet, giving
+end users the ability to work remotely.
+Mobile OSes offer a native web browser application, which allows users to search the internet and visit
+webpages. Mobile operating systems also provide application stores, which enable users to download and
+interface with mobile applications. Several mobile operating systems also have native GPS (global
+positioning system) applications that allow users to search for locations, follow step-by-step directions and,
+in some cases, share locations with different devices. The GPS feature relies on the mobile device's
+hardware and can't run without that support.
+Other common mobile operating system features include native email applications that can link work and
+personal email accounts, a calendar application to keep track of tasks, meetings and events and a contacts
+library to organize and search for contact information.
+Mobile operating systems also include important enterprise management controls. With devices now
+housing both user and corporate data, it is important that these mobile OSes are secure, and data can be
+remotely managed and accessed if needed. Apple and Google have developed standard APIs allowing
+mobile device management (MDM) vendors to create platforms for securing devices that have features such
+as the following:
+ Pin code generation and encryption.
+ Provisioning Wi-Fi and certificates.
+ Enabling and disabling features and capabilities.
+ Remote wipe and factory reset if a device is lost or stolen.
+ Safeguards to ensure end-user privacy and security for Bring Your Own Device (BYOD) programs.
+Other common features include customizable home screens and app stores, access to cloud storage solutions,
+advanced enterprise and corporate management security options, support for multiple accounts, multimedia
+capabilities such as music and video players, messaging and collaboration features, and more. Each system
+has unique features to help users find what best suits their needs.
+I. Android OS Architecture
+Android architecture or Android software stack contains different number of components to support any
+android device needs. Android software contains an open-source Linux Kernel having collection of number
+of C/C++ libraries which are exposed through an application framework services. Among all the
+components Linux Kernel provides main functionality of operating system functions to smartphones and
+Dalvik Virtual Machine (DVM) provide platform for running an android application. The main components
+of android architecture are following:-
+1. Linux kernel
+2. Native libraries (middleware),
+3. Android Runtime
+4. Application Framework
+5. Applications
+Let's see the android architecture first.

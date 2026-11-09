@@ -1,0 +1,29 @@
+Completeness:
+Thisalgorithmiscompleteif thebranching factorisfinite.
+TimeComplexity:
+Let'ssupposeb isthebranching factoranddepth isdthen theworst-casetime
+complexity is O(bd).
+SpaceComplexity:
+Thespacecomplexity of IDDFS will be O(bd).
+Optimal:
+IDDFS algorithmisoptimal if path costisa non-decreasing function of thedepth of
+thenode.
+6.Bidirectional Search Algorithm:
+Bidirectionalsearchalgorithmrunstwosimultaneoussearches,onefrominitialstatecalled
+forward-searchandotherfromgoalnodecalledbackward-search,tofindthegoalnode.
+Bidirectionalsearchreplacesonesinglesearchgraphwithtwosmallsubgraphsinwhichone
+startsthesearchfromaninitialvertexandotherstartsfromgoalvertex.Thesearchstopswhen
+thesetwographsintersecteachother.
+BidirectionalsearchcanusesearchtechniquessuchasBFS,DFS,DLS,etc.
+Advantages:
+● Bidirectional search isfast.
+● Bidirectional search requireslessmemory
+Disadvantages:
+● Implementation of thebidirectional search treeisdifficult.
+● In bidirectional search,oneshouldknowthegoal statein advance.
+● Example:
+In thebelowsearch tree,bidirectional search algorithmisapplied.Thisalgorithm
+dividesonegraph/treeintotwosub-graphs.Itstartstraversing fromnode1 in the
+forwarddirection andstartsfromgoal node16 in thebackwarddirection.
+Thealgorithmterminatesatnode9 wheretwosearchesmeet.
+Completeness: Bidirectional Search iscompleteif weuseBFS in both searches.

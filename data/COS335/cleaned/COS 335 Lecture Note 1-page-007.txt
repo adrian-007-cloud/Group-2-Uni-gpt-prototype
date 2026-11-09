@@ -1,0 +1,20 @@
+History of Artificial Intelligence
+Artificial Intelligenceisnota newwordandnota newtechnology forresearchers.
+Thistechnology ismuch olderthan you wouldimagine.Even therewerethemythsof
+Mechanical men in AncientGreekandEgyptian Myths.Following aresome
+milestonesin thehistory of AIwhich definesthejourney fromtheAIgeneration totill
+datedevelopment.
+Maturation of Artificial Intelligence(1943-1952)
+● Year1943: Thefirstworkwhich isnowrecognizedasAIwasdoneby Warren
+McCulloch andWalterpitsin 1943.They proposeda model of artificial
+neurons.
+● Year1949: DonaldHebb demonstratedan updating ruleformodifying the
+connection strength between neurons.Hisruleisnowcalled Hebbian learning.
+● Year1950: TheAlan Turing whowasan English mathematician and
+pioneeredMachinelearning in 1950.Alan Turing publishes "Computing
+Machinery andIntelligence" in which heproposeda test.Thetestcan check
+themachine'sability toexhibitintelligentbehaviorequivalenttohuman
+intelligence,calleda Turing test.
+Thebirth of Artificial Intelligence(1952-1956)
+● Year1955: An Allen Newell andHerbertA.Simon createdthe"firstartificial
+intelligenceprogram"which wasnamedas "LogicTheorist".Thisprogram

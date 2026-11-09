@@ -1,0 +1,32 @@
+Following arethebasicelementsof FOL syntax:
+Constant 1,2,A,John,Mumbai,cat,....
+Variables x,y,z,a,b,....
+Predicates Brother,Father,>,....
+Function sqrt,LeftLegOf,....
+Connectives ∀,#,¬,%,∃
+Equality ==
+Quantifier ! ,&
+Atomicsentences:
+● Atomicsentencesarethemostbasicsentencesof first-orderlogic.These
+sentencesareformedfroma predicatesymbol followedby a parenthesiswith
+a sequenceof terms.
+● Wecan representatomicsentencesas Predicate(term1,term2,......,termn).
+Example:RaviandAjayarebrothers:=>Brothers(Ravi,Ajay).
+Chinkyisacat:=>cat(Chinky).
+Complex Sentences:
+● Complex sentencesaremadeby combining atomicsentencesusing
+connectives.
+First-orderlogicstatementscanbedividedintotwoparts:
+● Subject: Subjectisthemain partof thestatement.
+● Predicate: Apredicatecan bedefinedasa relation,which bindstwoatoms
+togetherin a statement.
+Considerthestatement:"xisaninteger.",itconsistsof twoparts,thefirstpartx isthe
+subjectof thestatementandsecondpart"isan integer,"isknown asa predicate.
+Quantifiersin First-orderlogic
+● Aquantifierisa languageelementwhich generatesquantification,and
+quantification specifiesthequantity of specimen in theuniverseof discourse.
+● Thesearethesymbolsthatpermittodetermineoridentify therangeand
+scopeof thevariablein thelogical expression.Therearetwotypesof
+quantifier:
+● Universal Quantifier,(forall,everyone,everything)
+● Existential quantifier,(forsome,atleastone).

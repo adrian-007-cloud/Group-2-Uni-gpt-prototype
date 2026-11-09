@@ -1,0 +1,18 @@
+ Data: This attribute either contains the actual file data in the case of a small file or points to the data
+(or points to the objects that point to the data) in the case of larger files.
+For small files, this design is extremely efficient. By looking no further than the MFT entry, you have the
+complete contents of the file.
+However, the Data field gets interesting when the data contained in the file is larger than an MFT entry.
+When dealing with large data, the Data attribute contains pointers to the data, rather than the data itself.
+ The pointers to data are actually pointers to sequences of logical clusters on the disk.
+ Each sequence is identified by three parts:
+o starting cluster in the file, called the virtual cluster number (VCN),
+o starting logical cluster (LCN) of the sequence on disk,
+o length, counted as the number of clusters.
+ The run of clusters is called an extent, following the terminology developed by IBM in the 1960's.
+ NTFS allocates new extents as necessary. When there is no more space left in the MFT entry, then
+another MFT entry is allocated. This design is effectively a list of extents, rather than the Unix or
+DEMOS tree of extents.
+Directories
+As with other modern file systems, a directory in NTFS is a file whose data contains a collection of
+name/file mappings.

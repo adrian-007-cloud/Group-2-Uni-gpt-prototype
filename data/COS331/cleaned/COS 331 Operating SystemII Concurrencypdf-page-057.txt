@@ -1,0 +1,22 @@
+Types of Linux file system
+Let's understand each of these file systems in detail:
+1. Ext, Ext2, Ext3 and Ext4 file system
+The file system Ext stands for Extended File System. It was primarily developed for MINIX OS. The Ext
+file system is an older version, and is no longer used due to some limitations.
+Ext2 is the first Linux file system that allows managing two terabytes of data. Ext3 is developed through
+Ext2; it is an upgraded version of Ext2 and contains backward compatibility. The major drawback of Ext3 is
+that it does not support servers because this file system does not support file recovery and disk snapshot.
+Ext4 file system is the faster file system among all the Ext file systems. It is a very compatible option for the
+SSD (solid-state drive) disks, and it is the default file system in Linux distribution.
+2. JFS File System
+JFS stands for Journaled File System, and it is developed by IBM for AIX Unix. It is an alternative to the
+Ext file system. It can also be used in place of Ext4, where stability is needed with few resources. It is a
+handy file system when CPU power is limited.
+3. ReiserFS File System
+ReiserFS is an alternative to the Ext3 file system. It has improved performance and advanced features. In the
+earlier time, the ReiserFS was used as the default file system in SUSE Linux, but later it has changed some
+policies, so SUSE returned to Ext3. This file system dynamically supports the file extension, but it has some
+drawbacks in performance.
+4. XFS File System
+XFS file system was considered as high-speed JFS, which is developed for parallel I/O processing. NASA
+still using this file system with its high storage server (300+ Terabyte server).

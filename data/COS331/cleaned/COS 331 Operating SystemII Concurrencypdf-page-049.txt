@@ -1,0 +1,29 @@
+Thrashing is the result of a shortage in memory space, which produces a surplus of
+processor cycles. The concept of thrashing relies on the fact that the system goes from a period of
+steady- state efficiency into chaotic movement of pages between storage and main memory.
+Degraded performance because of excessive swapping is known as thrashing.
+Working Sets
+Working Sets are a solution proposed by Peter Denning. An informal definition is "the collection of pages
+that a process is working with, and which must thus be resident if the process is to avoid thrashing." The
+idea is to use the recent needs of a process to predict its future needs.
+ Choose tau, the working set parameter. At any given time, all pages referenced by a process in its
+last tau seconds of execution are considered to comprise its working set.
+ A process will never be executed unless its working set is resident in main memory. Pages outside
+the working set may be discarded at any time.
+Working sets are not enough by themselves to make sure memory does not get overcommitted. We must
+also introduce the idea of a balance set:
+ If the sum of the working sets of all runnable processes is greater than the size of memory, then
+refuse to run some of the processes (for a while).
+ Divide runnable processes up into two groups: active and inactive. When a process is made active its
+working set is loaded, when it is made inactive its working set is allowed to migrate back to disk.
+The collection of active processes is called the balance set.
+ Some algorithm must be provided for moving processes into and out of the balance set. What
+happens if the balance set changes too frequently?
+As working sets change, corresponding changes will have to be made in the balance set.
+Problem with the working set: must constantly be updating working set information.
+ One of the initial plans was to store some sort of a capacitor with each memory page. The capacitor
+would be charged on each reference, then would discharge slowly if the page was not referenced.
+Tau would be determined by the size of the capacitor. This was not actually implemented. One
+problem is that we want separate working sets for each process, so the capacitor should only be
+allowed to discharge when a particular process executes. What if a page is shared?
+ Actual solution: take advantage of use bits

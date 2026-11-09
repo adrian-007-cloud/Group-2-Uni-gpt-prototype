@@ -1,0 +1,32 @@
+Framesarederivedfromsemanticnetworksandlaterevolvedintoourmodern-day
+classesandobjects.Asingleframeisnotmuch useful.Framessystemconsistof a
+collection of frameswhich areconnected.In theframe,knowledgeaboutan object
+oreventcan bestoredtogetherin theknowledgebase.Theframeisa typeof
+technology which iswidely usedin variousapplicationsincluding Natural language
+processing andmachinevisions.
+Example:1
+Let'stakeanexampleofaframeforabook
+Slots Filters
+Title ArtificialIntelligence
+Genre ComputerScience
+Author PeterNorvig
+Edition ThirdEdition
+Year 1996
+Page 1152
+Example2:
+Let'ssupposewearetaking an entity,Peter.Peterisan engineerasa profession,and
+hisageis25,helivesin city London,andthecountry isEngland.Sofollowing isthe
+framerepresentation forthis:
+Slots Filter
+Name Peter
+Profession Doctor
+Age 25
+Marital status Single
+Weight 78
+Advantagesof framerepresentation:
+1. Theframeknowledgerepresentation makestheprogramming easierby
+grouping therelateddata.
+2. Theframerepresentation iscomparably flexibleandusedby many
+applicationsin AI.
+3. Itisvery easy toaddslotsfornewattributeandrelations.
+4. Itiseasy toincludedefaultdata andtosearch formissing values.

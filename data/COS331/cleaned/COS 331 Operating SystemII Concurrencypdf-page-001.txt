@@ -1,0 +1,49 @@
+COS 331- Operating Systems II (2 units)
+Course Contents
+Concurrency: States and state diagrams, structures, Dispatching and context switching; interrupts,
+concurrent execution, mutual exclusion problem and some solutions. Deadlock; Models and mechanisms
+(semaphores, monitors, etc), producer-consumer problem and synchronization; Multiprocessor issues;
+scheduling and dispatching; Memory management; Overlays, swapping and partition, paging and
+segmentation, placement and replacement policies, working sets and trashing, caching.
+1.0 INTRODUCTION
+Concurrency
+Permit us to throw some light on the following two terms: Concurrency and parallelism that are associated
+with computer jobs execution.
+Concurrency means executing multiple tasks at the same time but not necessarily simultaneously. The term
+concurrency is usually achieved in a uniprocessor system. In a single-core environment, concurrency is
+achieved via a process called context-switching. If it's a multi-core environment, concurrency can be
+achieved through parallelism.
+Parallelism is concerned with utilizing multiple processors/cores to perform two or more tasks
+simultaneously. Parallel computing in computer science refers to the process of performing multiple
+calculations simultaneously. This can only be achieved in a multiprocessor system.
+ In a single-core environment, concurrency happens with tasks executing over the same time period
+via context switching. i.e., at a particular time period, only a single task gets executed.
+ In a multi-core environment, concurrency can be achieved via parallelism in which multiple tasks
+are executed simultaneously.
+Parallel processing or parallelism is being widely used in computer architectures ranging from
+supercomputers to workstations, because of its promise of high performance at a relatively low cost.
+Parallel processing in multiprocessor computer is said to be true parallel processing and parallel processing
+in uniprocessor computer is said to be simulated or virtual parallel processing. The following figures
+demonstrate the difference between true and virtual parallel processing by the following figures (see figure
+1):
+Process 3
+Process 2
+Process 1
+Time
+(a)
+Process 3
+Process 3
+Process 2 Process 2
+Process 1
+Process 1
+Time
+Time
+(b)
+(c)
+Figure 1 (a) Serial processing (b) True parallel processing with multiple processor
+(c) Parallel processing simulated by switching
+Figure 1 (a) represents the serial processing means next processing is started when the previous process must
+be completed. In figure 1(b) all three process are running in one clock cycle of three processors. In figure1
+(c) all three process are also running in one clock cycle but each process are getting only 1/3 of actual clock
+cycle on each clock cycle and the CPU is switching from on process to other in its clock cycle. When one
+process is running all other process must wait for their turn. If we see in figure1(b) then we will find that at

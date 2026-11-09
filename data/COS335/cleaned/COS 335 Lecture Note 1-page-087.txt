@@ -1,0 +1,43 @@
+Example:1.
+IF "Every person likeice-cream"=>! x P(x) sowecan inferthat
+"John likesice-cream"=>P(c)
+Example:2.
+Let'stakea famousexample,
+"All kingswhoaregreedy areEvil."Soletourknowledgebasecontainsthisdetail as
+in theformof FOL:
+! xking(x)∀greedy(x) Evil(x),
+Sofromthisinformation,wecan inferany of thefollowing statementsusing
+Universal Instantiation:
+● King(John) ∀Greedy (John) Evil (John),
+● King(Richard) ∀Greedy (Richard) Evil (Richard),
+● King(Father(John)) ∀Greedy (Father(John)) Evil (Father(John)),
+3.ExistentialInstantiation:
+● Existential instantiation isalsocalledasExistential Elimination,which isa
+validinferencerulein first-orderlogic.
+● Itcan beappliedonly oncetoreplacetheexistential sentence.
+● ThenewKB isnotlogically equivalenttooldKB,butitwill besatisfiableif
+oldKB wassatisfiable.
+● Thisrulestatesthatonecan inferP(c) fromtheformula given in theformof
+&x P(x) fora newconstantsymbol c.
+● Therestriction with thisruleisthatcusedin therulemustbea newtermfor
+which P(c) istrue.
+●
+Itcan berepresentedas:
+Example:
+Fromthegiven sentence: &xCrown(x)∀OnHead(x,John),
+Sowecan infer: Crown(K)∀OnHead(K,John), aslong asKdoesnotappearin the
+knowledgebase.
+● TheaboveusedKisa constantsymbol,which iscalled Skolemconstant.
+● TheExistential instantiation isa special caseof Skolemization process.
+4.Existentialintroduction
+● An existential introduction isalsoknown asan existential generalization,
+which isa validinferencerulein first-orderlogic.
+● Thisrulestatesthatif thereissomeelementcin theuniverseof discourse
+which hasa property P,then wecan inferthatthereexistssomething in the
+universewhich hastheproperty P.
+●
+Itcan berepresentedas:
+● Example: Let'ssay that,
+"Priyanka gotgoodmarksin English."
+"Therefore,someonegotgoodmarksin English."
+Generalized Modus Ponens Rule:

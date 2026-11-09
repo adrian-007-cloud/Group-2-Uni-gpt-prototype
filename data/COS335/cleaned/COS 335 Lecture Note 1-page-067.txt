@@ -1,0 +1,27 @@
+Justlikearithmeticoperators,thereisa precedenceorderforpropositional
+connectorsorlogical operators.Thisordershouldbefollowedwhileevaluating a
+propositional problem.Following isthelistof theprecedenceorderforoperators:
+Precedence Operators
+FirstPrecedence Parenthesis
+SecondPrecedence Negation
+ThirdPrecedence Conjunction(AND)
+Fourth Precedence Disjunction(OR)
+Fifth Precedence Implication
+Six Precedence Biconditional
+Note: Forbetterunderstanding useparenthesistomakesureof thecorrect
+interpretations,Such as¬R# Q,Itcan beinterpretedas(¬R) # Q.
+Logical equivalence:
+Logical equivalenceisoneof thefeaturesof propositional logic.Twopropositions
+aresaidtobelogically equivalentif andonly if thecolumnsin thetruth tableare
+identical toeach other.
+Let'staketwopropositionsAandB,soforlogical equivalence,wecan writeitas
+A∃ B.In belowtruth tablewecan seethatcolumn for¬A# B andA B,areidentical
+henceAisEquivalenttoB
+● Propertiesof Operators:
+● Commutativity:
+oP∀Q= Q ∀P,or
+oP# Q = Q # P.
+● Associativity:
+o(P∀Q) ∀R= P∀(Q ∀R),
+o(P# Q) # R= P# (Q # R)
+● Identity element:

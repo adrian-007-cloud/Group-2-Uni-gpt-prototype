@@ -1,0 +1,4 @@
+Truth tablewith threepropositions:
+Wecan builda proposition composing threepropositionsP,Q,andR.Thistruth table
+ismade-up of 8n Tuplesaswehavetaken threeproposition symbols.
+Precedenceof connectives:

@@ -1,0 +1,19 @@
+ApplicationsofExpertSystem
+● In designing andmanufacturing domain
+o Itcan bebroadly usedfordesigning andmanufacturing physical devices
+such ascamera lensesandautomobiles.
+● In theknowledgedomain
+o Thesesystemsareprimarily usedforpublishing therelevantknowledge
+totheusers.ThetwopopularES usedforthisdomain isan advisor
+anda tax advisor.
+● In thefinancedomain
+o In thefinanceindustries,itisusedtodetectany typeof possiblefraud,
+suspiciousactivity,andadvisebankersthatif they shouldprovide
+loansforbusinessornot.
+● In thediagnosisandtroubleshooting of devices
+o In medical diagnosis,theES systemisused,anditwasthefirstarea
+wherethesesystemswereused.
+● Planning andScheduling
+o Theexpertsystemscan alsobeusedforplanning andscheduling some
+particulartasksforachieving thegoal of thattask.
+o

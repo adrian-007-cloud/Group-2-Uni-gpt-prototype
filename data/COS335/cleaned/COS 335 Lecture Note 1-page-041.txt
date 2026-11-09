@@ -1,0 +1,30 @@
+4.ApplyingExpandOperator: Nowa newstateisgeneratedin thethirdstep,andwewill
+comparethisstatewith thegoal state.Aftercomparing thestatesthereisstill one
+differencewhich isthesizeof thesquare,so,wewill apply Expandoperator,and
+finally,itwill generatethegoal state.
+Adversarial Search
+Adversarialsearchisasearch,whereweexaminetheproblemwhichariseswhenwetrytoplan
+aheadoftheworldandotheragentsareplanningagainstus.
+● In previoustopics,wehavestudiedthesearch strategieswhich areonly
+associatedwith a singleagentthataimstofindthesolution which often
+expressedin theformof a sequenceof actions.
+● But,theremightbesomesituationswheremorethan oneagentissearching
+forthesolution in thesamesearch space,andthissituation usually occursin
+gameplaying.
+● Theenvironmentwith morethan oneagentistermedas multi-agent
+environment,in which each agentisan opponentof otheragentandplaying
+againsteach other.Each agentneedstoconsidertheaction of otheragent
+andeffectof thataction on theirperformance.
+● So, Searchesin which twoormoreplayerswith conflicting goalsaretrying to
+explorethesamesearch spaceforthesolution,arecalledadversarial
+searches,often known asGames.
+● Gamesaremodeledasa Search problemandheuristicevaluation function,
+andthesearethetwomain factorswhich help tomodel andsolvegamesin
+AI.
+Typesof Gamesin AI:
+Deterministic ChanceMoves
+Perfectinformation Chess,Checkers,go,Othello Backgammon,monopoly
+Imperfectinformation Battleships,blind,tic-tac-toe Bridge,poker,scrabble,
+nuclearwar
+● Perfectinformation: Agamewith theperfectinformation isthatin which
+agentscan lookintothecompleteboard.Agentshaveall theinformation

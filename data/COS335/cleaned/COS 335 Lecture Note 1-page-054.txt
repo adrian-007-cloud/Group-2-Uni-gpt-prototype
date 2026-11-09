@@ -1,0 +1,43 @@
+automatedtaxi agentactually implementhisknowledgeandlogicsothathecan
+reach tothedestination.
+Approachestodesigning a knowledge-basedagent:
+Therearemainly twoapproachestobuilda knowledge-basedagent:
+1.Declarativeapproach: Wecan createa knowledge-basedagentby initializing with
+an empty knowledgebaseandtelling theagentall thesentenceswith which wewant
+tostartwith.Thisapproach iscalledDeclarativeapproach.
+2.Procedural approach: In theprocedural approach,wedirectly encodedesired
+behaviourasa programcode.Which meanswejustneedtowritea programthat
+already encodesthedesired behaviouroragent.
+However,in thereal world,a successful agentcan bebuiltby combining both
+declarativeandprocedural approaches,anddeclarativeknowledgecan often be
+compiledintomoreefficient procedural code.
+What is knowledgeRepresentation?
+Humansarebestatunderstanding,reasoning,andinterpreting knowledge.Human
+knowsthings,which isknowledgeandaspertheirknowledgethey performvarious
+actionsin thereal world. Buthowmachinesdoallthesethingscomesunderknowledge
+representationandreasoning.Hencewecan describeKnowledgerepresentation as
+follows:
+Knowledgerepresentation andreasoning(KR,KRR) isthepartof Artificial
+intelligencewhich concernedwith AIagentsthinking andhowthinking contributesto
+intelligentbehaviourof agents.
+Itisresponsibleforrepresenting information aboutthereal world sothata computer
+can understandandcan utilizethisknowledgetosolvethecomplex realworld
+problemssuch asdiagnosing a medical condition orcommunicating with humansin
+natural language.
+Itisalsoa way which describeshowwecan representknowledgein artificial
+intelligence.Knowledgerepresentation isnotjuststoring data intosomedatabase,
+butitalsoenablesan intelligentmachinetolearn fromthatknowledgeand
+experiencessothatitcan behaveintelligently likea human.
+WhattoRepresent
+Following arethekindof knowledgewhich needstoberepresentedin AIsystems:
+● Object: All thefactsaboutobjectsin ourworlddomain.E.g.,Guitarscontains
+strings,trumpetsarebrassinstruments.
+● Events: Eventsaretheactionswhich occurin ourworld.
+● Performance: Itdescribebehaviourwhich involvesknowledgeabouthowto
+dothings.
+● Meta-knowledge: Itisknowledgeaboutwhatweknow.
+● Facts: Factsarethetruthsaboutthereal worldandwhatwerepresent.
+● Knowledge-Base: Thecentral componentof theknowledge-basedagentsis
+theknowledgebase.ItisrepresentedasKB.TheKnowledge-baseisa group
+of theSentences(Here,sentencesareusedasa technical termandnot
+identical with theEnglish language).

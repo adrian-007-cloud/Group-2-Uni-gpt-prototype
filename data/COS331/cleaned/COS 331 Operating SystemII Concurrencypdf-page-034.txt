@@ -1,0 +1,30 @@
+Solution:
+The sought address within the page table is 4096 +128 = 4224.
+The Physical address corresponding to the given page number #128 is 65536 + 32 =65,568.
+The bank in question can accommodate a total of 256/2 =128 pages.
+Advantages and Disadvantages of Paging
+Here is a list of advantages and disadvantages of paging:
+ Paging reduces external fragmentation, but still suffer from internal fragmentation.
+ Paging is simple to implement and assumed as an efficient memory management technique.
+ Due to equal size of the pages and frames, swapping becomes very easy.
+ Page table requires extra memory space, so may not be good for a system having small RAM.
+Segmentation
+Segmentation is a memory management technique in which each job is divided into several segments of
+different sizes, one for each module that contains pieces that perform related functions. Each segment is
+actually a different logical address space of the program.
+When a process is to be executed, its corresponding segmentation are loaded into non-contiguous memory
+though every segment is loaded into a contiguous block of available memory.
+Segmentation memory management works very similar to paging but here segments are of variable-length
+where as in paging pages are of fixed size.
+A program segment contains the program's main function, utility functions, data structures, and so on. The
+operating system maintains a segment map table for every process and a list of free memory blocks along
+with segment numbers, their size and corresponding memory locations in main memory. For each segment,
+the table stores the starting address of the segment and the length of the segment. A reference to a memory
+location includes a value that identifies a segment and an offset.
+Combined Paging and Segmentation
+Both segmented and paged implementations have their respective advantages and disadvantages, and neither
+is superior to the other over all characteristics. Some computer systems combine the two approaches in
+order to enjoy the benefits of both. One popular approach is to use segmentation from the user's point of
+view but to divide each segment into pages of fixed size for purposes of allocation. In this way, the
+combined system retains most of the advantages of segmentation. The principle of address translation in
+combined segmentation and paging systems is illustrated below.

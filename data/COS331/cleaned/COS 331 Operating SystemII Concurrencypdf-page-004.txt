@@ -1,0 +1,58 @@
+the transition to the state p occurs in this machine. In the diagram representing this FA, this is
+represented by an edge labeled by a pointing from the vertex labeled by q to the vertex labeled by p.
+ Start state q : (not shown in the examples below). The start state q ∈ Q is usually represented by an
+0 0
+arrow with no origin pointing to the state. In older texts, the start state is not shown and must be inferred
+from the text.
+ Accepting state(s) F: If used, for example for accepting automata, F ∈ Q is the accepting state. It is
+usually drawn as a double circle. Sometimes the accept state(s) function as "Final" (halt, trapped) states.
+State Diagram and Operating System
+The concept of program
+From the programmers perspective a program is an ordered set of instructions. On the other hand, from the
+point of view of an operating system, it is an executable file stored in the secondary (auxiliary) memory,
+typically on a disk. The file is normally stored in the secondary memory and can be accessed through the
+corresponding directory entry and file description.
+The concept of process
+In operating system terminology, the notion of process is used relating to execution instead of the term
+program. It designates a commission, or quantum of work dealt with as an entity. Consequently, required
+resources like address space etc. will be allocated typically on a process basis. Lastly, to execute a process, a
+processor is to be allocated for. This is expressed in operating system terminology by saying that the process
+is to be scheduled for execution.
+Each process has a lifecycle, which consists of creation, an execution phase and termination. In order to
+execute a program prior a corresponding process is to be created. A process will be brought into existence
+by using system services (system calls or supervisor macros). The creation of a process means
+commissioning the operating system to execute a program.
+Process creation involves the following four main actions:
+• setting up the process description,
+• allocation of an address space and
+• loading the program into the allocated address space and
+• passing on the process description to the scheduler.
+Process States in Operating System vs1
+Schedule/Dispatch
+Completion
+New Ready Run Termination
+d
+Priority/Time Quantum
+n
+e
+p e
+s m
+u u
+S s
+e
+R I/O
+Request
+I/O
+Completion
+Suspend Wait/block
+/Ready
+Res
+Sus
+um
+pen
+e
+d
+Figure 2 Lifecycle of a Process
+Process Completed I/O
+but still in suspend Suspend 4
+/Wait

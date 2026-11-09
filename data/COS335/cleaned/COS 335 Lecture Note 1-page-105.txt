@@ -1,0 +1,39 @@
+In thereal world,therearelotsof scenarios,wherethecertainty of something isnot
+confirmed,such as"Itwill rain today,""behaviourof someoneforsomesituations,""A
+match between twoteamsortwoplayers."Theseareprobablesentencesforwhich
+wecan assumethatitwill happen butnotsureaboutit,sohereweuseprobabilistic
+reasoning.
+NeedofprobabilisticreasoninginAI:
+● When thereareunpredictableoutcomes.
+● When specificationsorpossibilitiesof predicatesbecomestoolargeto
+handle.
+● When an unknown erroroccursduring an experiment.
+In probabilisticreasoning,therearetwowaystosolveproblemswith uncertain
+knowledge:
+● Bayes' rule
+● Bayesian Statistics
+Note: Wewill learn theabovetworulesin laterchapters.
+Asprobabilisticreasoning usesprobability andrelatedterms,sobefore
+understanding probabilisticreasoning,let'sunderstandsomecommon terms:
+Probability: Probability can bedefinedasa chancethatan uncertain eventwill occur.
+Itisthenumerical measureof thelikelihoodthatan eventwill occur.Thevalueof
+probability alwaysremainsbetween 0 and1 thatrepresentideal uncertainties.
+1. 0 ≤ P(A) ≤ 1, where P(A) is the probability of an event A.
+1. P(A) = 0, indicates total uncertainty in an event A.
+1. P(A) =1, indicates total certainty in an event A.
+Wecan findtheprobability of an uncertain eventby using thebelowformula.
+● P(¬A) = probability of a nothappening event.
+● P(¬A) +P(A) = 1.
+Event: Each possibleoutcomeof a variableiscalledan event.
+Samplespace: Thecollection of all possibleeventsiscalledsamplespace.
+Randomvariables: Randomvariablesareusedtorepresenttheeventsandobjectsin
+thereal world.
+Priorprobability: Thepriorprobability of an eventisprobability computedbefore
+observing newinformation.
+PosteriorProbability: Theprobability thatiscalculatedafterall evidenceorinformation
+hastaken intoaccount.Itisa combination of priorprobability andnewinformation.
+Conditionalprobability
+Conditional probability isa probability of occurring an eventwhen anothereventhas
+already happened.
+Let'ssuppose,wewanttocalculatetheeventAwhen eventB hasalready occurred,
+"theprobability of Aundertheconditionsof B",itcan bewritten as:

@@ -1,0 +1,44 @@
+The problems of spin lock: There is one problem when using spin lock
+1. If a thread holds the lock for a long time, it will cause other threads waiting for the lock to enter the cycle
+waiting and consume CPU. Improper use will result in high CPU utilization.
+2. The spin lock implemented by Java above is not fair, that is, it cannot satisfy the priority of the thread
+with the longest waiting time to obtain the lock. Unfair locks can lead to ―thread starvation‖.
+Advantages of spin lock
+ Spin lock will not make the thread state switch, always in the user state, that is, the thread is always
+active; it will not make the thread into the blocking state, reduce unnecessary context switching, and the
+execution speed is fast.
+ When the lock cannot be acquired, the non spin lock will enter the blocking state and enter the kernel
+state. When the lock is acquired, it needs to recover from the kernel state and need to switch the thread
+context. (When the thread is blocked, it will enter the kernel (Linux) scheduling state, which will cause
+the system to switch back and forth between the user state and the kernel state, seriously affecting the
+performance of the lock.)
+Reentrant spin lock and non-reentrant spin lock
+A careful analysis of the code at the beginning of the article shows that it does not support reentry. That is,
+when a thread has acquired the lock for the first time, it reacquires the lock again before the lock is released,
+and it cannot acquire it successfully for the second time. Because CAS is not satisfied, the second
+acquisition will enter the while loop waiting. If it is a reentrant lock, the second acquisition should be
+successful. Moreover, even if it can be acquired successfully for the second time, when the lock is released
+for the first time, the lock acquired for the second time will also be released, which is unreasonable.
+In software engineering, a spinlock is a lock which causes a thread trying to acquire it to simply wait in a
+loop (―spin‖) while repeatedly checking if the lock is available. The longer a thread holds a lock, the greater
+the risk that the thread will be interrupted by the OS scheduler while holding the lock. In computing, a
+computer program or subroutine is called reentrant if multiple invocations can safely run concurrently on
+multiple processors, or on a single processor system, where a reentrant procedure can be interrupted in the
+middle of its execution and then safely be called again (―re-entered‖) before its previous.
+10.0 Memory Management System
+Memory management is the functionality of an operating system which handles or manages primary
+memory and moves processes back and forth between main memory and disk during execution. Memory
+management keeps track of each and every memory location, regardless of either it is allocated to some
+process or it is free. It checks how much memory is to be allocated to processes. It decides which process
+will get memory at what time. It tracks whenever some memory gets freed or unallocated and
+correspondingly it updates the status.
+Process Address Space
+The process address space is the set of logical addresses that a process references in its code. For example,
+when 32-bit addressing is in use, addresses can range from 0 to 0x7fffffff; that is, 2^31 possible numbers,
+for a total theoretical size of 2 gigabytes.
+The operating system takes care of mapping the logical addresses to physical addresses at the time of
+memory allocation to the program. There are three types of addresses used in a program before and after
+memory is allocated:
+S.N. Memory Addresses & Description
+1 Symbolic addresses
+The addresses used in a source code. The variable names, constants, and instruction labels

@@ -1,0 +1,37 @@
+Complete: Greedy best-firstsearch isalsoincomplete,even if thegiven statespaceis
+finite.
+Optimal: Greedy bestfirstsearch algorithmisnotoptimal.
+2.)A*SearchAlgorithm:
+A*searchisthemostcommonlyknownformofbest-firstsearch.Itusesheuristicfunctionh(n),
+andcosttoreachthenodenfromthestartstateg(n).IthascombinedfeaturesofUniform
+CostSearch (UCS)andgreedybest-firstsearch,bywhichitsolvetheproblemefficiently.A*
+searchalgorithmfindstheshortestpaththroughthesearchspaceusingtheheuristicfunction.
+Thissearchalgorithmexpandslesssearchtreeandprovidesoptimalresultfaster.A*algorithmis
+similartoUCSexceptthatitusesg(n)+h(n)insteadofg(n).
+In A* search algorithm,weusesearch heuristicaswell asthecosttoreach thenode.
+Hencewecan combineboth costsasfollowing,andthissumiscalleda fitness
+number.
+Ateachpointinthesearchspace,onlythosenodeisexpandedwhichhavethelowestvalueof
+f(n),andthealgorithmterminateswhenthegoalnodeisfound.
+Algorithmof A* search:
+Step1: Placethestarting nodein theOPENlist.
+Step2: Checkif theOPENlistisempty ornot,if thelistisempty then return failure
+andstop.
+Step3: SelectthenodefromtheOPENlistwhich hasthesmallestvalueof evaluation
+function (g+h),if noden isgoal nodethen return successandstop,otherwise
+Step4: Expandnoden andgenerateall of itssuccessors,andputn intotheclosed
+list.Foreach successorn',checkwhethern' isalready in theOPENorCLOSED list,if
+notthen computeevaluation function forn' andplaceintoOpen list.
+Step5: Elseif noden' isalready in OPENandCLOSED,then itshouldbeattachedto
+thebackpointerwhich reflectsthelowestg(n') value.
+Step6: Return to Step2.
+Advantages:
+● A* search algorithmisthebestalgorithmthan othersearch algorithms.
+● A* search algorithmisoptimal andcomplete.
+● Thisalgorithmcan solvevery complex problems.
+Disadvantages:
+● Itdoesnotalwaysproducetheshortestpath asitmostly basedon heuristics
+andapproximation.
+● A* search algorithmhassomecomplexity issues.
+● Themain drawbackof A* ismemory requirementasitkeepsall generated
+nodesin thememory,soitisnotpractical forvariouslarge-scaleproblems.

@@ -1,0 +1,33 @@
+In thisquestion,thepredicateis"failed(x,y),"wherex=student,andy=subject.
+Sincethereisonly onestudentwhofailedin Mathematics,sowewill usefollowing
+representation forthis:
+&(x)[student(x) failed(x,Mathematics)∀! (y)[¬(x==y)∀student(y) ¬failed(x,
+Mathematics)].
+Freeand Bound Variables
+Thequantifiersinteractwith variableswhich appearin a suitableway.Therearetwo
+typesof variablesin First-orderlogicwhich aregiven below:
+FreeVariable: Avariableissaidtobea freevariablein a formula if itoccursoutside
+thescopeof thequantifier.
+Example:! x&(y)[P(x,y,z)],wherezisafreevariable.
+BoundVariable: Avariableissaidtobea boundvariablein a formula if itoccurs
+within thescopeof thequantifier.
+Example:! x[A(x)B(y)],herexandyaretheboundvariables.
+Knowledge EngineeringinFirst-orderlogic
+Whatisknowledge-engineering?
+Theprocessof constructing a knowledge-basein first-orderlogiciscalled
+knowledge-engineering.In knowledge-engineering,Someonewhoinvestigatesa
+particulardomain,learnsimportantconceptof thatdomain,andgeneratesa formal
+representation of theobjects,isknown as knowledgeengineer.
+In thistopic,wewill understandtheKnowledgeengineering processin an electronic
+circuitdomain,which isalready familiar.Thisapproach ismainly suitablefor
+creating special-purposeknowledgebase.
+TheKnowledge-Engineering Process
+Following aresomemain stepsof theknowledge-engineering process.Using these
+steps,wewill develop a knowledgebasewhich will allowustoreason aboutdigital
+circuit(One-bitfulladder) which isgiven below:
+1.Identifythetask:
+Thefirststep of theprocessistoidentify thetask,andforthedigital circuit,thereare
+variousreasoning tasks.
+Atthefirstlevel orhighestlevel,wewill examinethefunctionality of thecircuit:
+● Doesthecircuitaddproperly?
+● Whatwill betheoutputof gateA2,if all theinputsarehigh?

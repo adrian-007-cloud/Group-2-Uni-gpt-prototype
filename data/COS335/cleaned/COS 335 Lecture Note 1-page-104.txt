@@ -1,0 +1,37 @@
+Approach Deductivereasoning followsa top- Inductivereasoning followsa
+down approach. bottom-up approach.
+Validity In deductivereasoning conclusion must In inductivereasoning,thetruth of
+betrueif thepremisesaretrue. premisesdoesnotguaranteethe
+truth of conclusions.
+Usage Useof deductivereasoning isdifficult, Useof inductivereasoning isfast
+asweneedfactswhich mustbetrue. andeasy,asweneedevidence
+insteadof truefacts.Weoften useit
+in ourdaily life.
+Process Theory hypothesis Observationspatterns confirmation. patterns hypothesis Theory.
+Argument In deductivereasoning,argumentsmay In inductivereasoning,arguments
+bevalidorinvalid. may beweakorstrong.
+Structure Deductivereasoning reachesfrom
+general factstospecificfacts.
+Probabilisticreasoning in Artificial intelligence
+Uncertainty
+Till now,wehavelearnedknowledgerepresentation using first-orderlogicand
+propositional logicwith certainty,which meansweweresureaboutthepredicates.
+With thisknowledgerepresentation,wemightwriteA B,which meansif Aistrue
+then B istrue,butconsidera situation wherewearenotsureaboutwhetherAistrue
+ornotthen wecannotexpressthisstatement,thissituation iscalleduncertainty.
+Sotorepresentuncertain knowledge,wherewearenotsureaboutthepredicates,we
+needuncertain reasoning orprobabilisticreasoning.
+Causes ofuncertainty
+Following aresomeleading causesof uncertainty tooccurin thereal world.
+1. Information occurredfromunreliablesources.
+2. Experimental Errors
+3. Equipmentfault
+4. Temperaturevariation
+5. Climatechange.
+Probabilisticreasoning
+Probabilisticreasoning isa way of knowledgerepresentation whereweapply the
+conceptof probability toindicatetheuncertainty in knowledge.In probabilistic
+reasoning,wecombineprobability theory with logictohandletheuncertainty.
+PrimeMinistersof India | Listof PrimeMinisterof India (1947-2020)
+Weuseprobability in probabilisticreasoning becauseitprovidesa way tohandlethe
+uncertainty thatistheresultof someone'slazinessandignorance.

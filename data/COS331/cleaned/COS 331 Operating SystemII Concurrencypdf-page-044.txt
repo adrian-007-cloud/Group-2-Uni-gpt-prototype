@@ -1,0 +1,41 @@
+Step Description
+1 Device driver is instructed to transfer disk data to a buffer address X.
+2 Device driver then instruct disk controller to transfer data to buffer.
+3 Disk controller starts DMA transfer.
+4 Disk controller sends each byte to DMA controller.
+5 DMA controller transfers bytes to buffer, increases the memory address, decreases the
+counter C until C becomes zero.
+6 When C becomes zero, DMA interrupts CPU to signal transfer completion.
+Polling vs Interrupts I/O
+A computer must have a way of detecting the arrival of any type of input. There are two ways that this can
+happen, known as polling and interrupts. Both of these techniques allow the processor to deal with events
+that can happen at any time and that are not related to the process it is currently running.
+Polling I/O
+Polling is the simplest way for an I/O device to communicate with the processor. The process of periodically
+checking status of the device to see if it is time for the next I/O operation, is called polling. The I/O device
+simply puts the information in a Status register, and the processor must come and get the information.
+Most of the time, devices will not require attention and when one does it will have to wait until it is next
+interrogated by the polling program. This is an inefficient method and much of the processors time is wasted
+on unnecessary polls.
+Compare this method to a teacher continually asking every student in a class, one after another, if they need
+help. Obviously the more efficient method would be for a student to inform the teacher whenever they
+require assistance.
+Interrupts I/O
+An alternative scheme for dealing with I/O is the interrupt-driven method. An interrupt is a signal to the
+microprocessor from a device that requires attention.
+A device controller puts an interrupt signal on the bus when it needs CPU's attention when CPU receives an
+interrupt, It saves its current state and invokes the appropriate interrupt handler using the interrupt vector
+(addresses of OS routines to handle various events). When the interrupting device has been dealt with, the
+CPU continues with its original task as if it had never been interrupted.
+Operating System - I/O Software
+I/O software is often organized in the following layers:
+ User Level Libraries − This provides simple interface to the user program to perform input and
+output. For example, stdio is a library provided by C and C++ programming languages.
+ Kernel Level Modules − This provides device driver to interact with the device controller and
+device independent I/O modules used by the device drivers.
+ Hardware − This layer includes actual hardware and hardware controller which interact with the
+device drivers and makes hardware alive.
+A key concept in the design of I/O software is that it should be device independent where it should be
+possible to write programs that can access any I/O device without having to specify the device in advance.
+For example, a program that reads a file as input should be able to read a file on a floppy disk, on a hard
+disk, or on a CD-ROM, without having to modify the program for each different device.

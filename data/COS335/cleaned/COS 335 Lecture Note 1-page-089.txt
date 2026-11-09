@@ -1,0 +1,58 @@
+ConditionsforUnification:
+Following aresomebasicconditionsforunification:
+● Predicatesymbol mustbesame,atomsorexpression with different
+predicatesymbol can neverbeunified.
+● Numberof Argumentsin both expressionsmustbeidentical.
+● Unification will fail if therearetwosimilarvariablespresentin thesame
+expression.
+Unification Algorithm:
+Algorithm: Unify(Ψ ,Ψ )
+1 2
+Step.1: If Ψ orΨ isa variableorconstant,then:
+1 2
+a) If Ψ orΨ areidentical,then return NIL.
+1 2
+b) Elseif Ψ isa variable,
+a.then if Ψ occursin Ψ ,then return FAILURE
+1 2
+b.Elsereturn {(Ψ / Ψ )}.
+2 1
+c) Elseif Ψ isa variable,
+a.If Ψ occursin Ψ then return FAILURE,
+2 1
+b.Elsereturn {(Ψ / Ψ )}.
+1 2
+d) Elsereturn FAILURE.
+Step.2: If theinitial Predicatesymbol in Ψ andΨ arenotsame,then return
+1 2
+FAILURE.
+Step.3: IF Ψ andΨ havea differentnumberof arguments,then return FAILURE.
+1 2
+Step.4: SetSubstitution set(SUBST) toNIL.
+Step.5: Fori=1 tothenumberof elementsin Ψ .
+a) Call Unify function with theith elementof Ψ andith elementof Ψ ,and
+1 2
+puttheresultintoS.
+b) If S = failurethen returnsFailure
+c) If S ≠ NIL then do,
+a.Apply S totheremainderof both L1 andL2.
+b.SUBST= APPEND(S,SUBST).
+Step.6: Return SUBST.
+ImplementationoftheAlgorithm
+Step.1: Initializethesubstitution settobeempty.
+Step.2: Recursively unify atomicsentences:
+1. CheckforIdentical expression match.
+2. If oneexpression isa variablev,andtheotherisa termt which doesnot
+i i
+contain variablev,then:
+i
+1. Substitutet / v in theexisting substitutions
+i i
+2. Addt /v tothesubstitution setlist.
+i i
+3. If both theexpressionsarefunctions,then function namemustbe
+similar,andthenumberof argumentsmustbethesamein both the
+expression.
+Foreach pairof thefollowing atomicsentencesfindthemostgeneral unifier(If
+exist).
+1.FindtheMGUof {p(f(a),g(Y)) andp(X,X)}

@@ -1,0 +1,58 @@
+memory. The suspend ready processes remain in the secondary memory until the main memory gets
+available.
+7. Suspend wait
+Instead of removing the process from the ready queue, it's better to remove the blocked process which is
+waiting for some resources in the main memory. Since it is already waiting for some resource to get
+available hence it is better if it waits in the secondary memory and make room for the higher priority
+process. These processes complete their execution once the main memory gets available and their wait is
+finished.
+Process States in Operating System vs2
+The states of a process are as follows:
+ New (Create): In this step, the process is about to be created but not yet created. It is the
+program that is present in secondary memory that will be picked up by OS to create the
+process.
+ Ready: New -> Ready to run. After the creation of a process, the process enters the
+ready state i.e. the process is loaded into the main memory. The process here is ready to run
+and is waiting to get the CPU time for its execution. Processes that are ready for execution by
+the CPU are maintained in a queue called ready queue for ready processes.
+ Run: The process is chosen from the ready queue by the CPU for execution and the
+instructions within the process are executed by any one of the available CPU cores.
+ Blocked or Wait: Whenever the process requests access to I/O or needs input from the
+user or needs access to a critical region(the lock for which is already acquired) it enters the
+blocked or waits state. The process continues to wait in the main memory and does not
+require CPU. Once the I/O operation is completed the process goes to the ready state.
+ Terminated or Completed: Process is killed as well as PCB is deleted. The resources
+allocated to the process will be released or deallocated.
+ Suspend Ready: Process that was initially in the ready state but was swapped out of
+main memory(refer to Virtual Memory topic) and placed onto external storage by the
+scheduler is said to be in suspend ready state. The process will transition back to a ready
+state whenever the process is again brought onto the main memory.
+ Suspend wait or suspend blocked: Similar to suspend ready but uses the process
+which was performing I/O operation and lack of main memory caused them to move to
+secondary memory. When work is finished it may go to suspend ready.
+The execution phase of a process is under the control of the scheduler. It commences with creation of a
+process and lasts until the process is terminated. However, as far as scheduling is concerned, there are two
+basic models used by operating systems, termed as the process model and the process-thread mode. They
+differ essentially in the granularity i.e., the size of the units by which work is allocated to processors or
+the units of work which are scheduled as one entity.
+In the process model the scheduling is performed on a per process basis, i.e. the smallest unit of work to be
+scheduled is a process. On the contrary, the process-thread model is a finer grained scheduling model,
+where smaller units of work, called threads, are scheduled as entities. In the following we will outline the
+process model, whereas the process-thread model will be briefly discussed in connection with the
+description of threads.
+Process scheduling involves three key concepts:
+i. the declaration of distinct process states,
+ii. the specification of the state transition diagram and
+iii. the statement of a scheduling policy.
+As far as process states are concerned, there are three basic states connected with scheduling (see figure 3
+below); the ready to run state, the running state as well as the wait (or blocked) state.
+Scheduling to run
+Creation Ready Running Termination
+to run
+Suspension
+(time slice is over)
+Occurring of the
+Event causing blocking
+event the process
+has waiting for
+Wait

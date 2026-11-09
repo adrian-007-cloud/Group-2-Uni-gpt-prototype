@@ -1,0 +1,28 @@
+Completeness: DFS search algorithmiscompletewithin finitestatespaceasitwill
+expandevery nodewithin a limitedsearch tree.
+TimeComplexity: Timecomplexity of DFS will beequivalenttothenodetraversedby
+thealgorithm.Itisgiven by:
+T(n)=1+n2+n3 +.........+nm=O(nm)
+Where,m=maximumdepthofanynodeandthiscanbemuchlargerthand(Shallowestsolution
+depth)
+SpaceComplexity: DFS algorithmneedstostoreonly singlepath fromtherootnode,
+hencespacecomplexity of DFS isequivalenttothesizeof thefringeset,which
+is O(bm).
+Optimal: DFS search algorithmisnon-optimal,asitmay generatea largenumberof
+stepsorhigh costtoreach tothegoal node.
+3.Depth-LimitedSearch Algorithm:
+Adepth-limitedsearch algorithmissimilartodepth-firstsearch with a predetermined
+limit.Depth-limitedsearch can solvethedrawbackof theinfinitepath in theDepthfirstsearch.In thisalgorithm,thenodeatthedepth limitwill betreatedasif ithasno
+successornodesfurther.
+Depth-limitedsearch can beterminatedwith twoConditionsof failure:
+● Standardfailurevalue: Itindicatesthatproblemdoesnothaveany solution.
+● Cutoff failurevalue: Itdefinesnosolution fortheproblemwithin a given
+depth limit.
+Advantages:
+Depth-limitedsearch isMemory efficient.
+Disadvantages:
+● Depth-limitedsearch alsohasa disadvantageof incompleteness.
+● Itmay notbeoptimal if theproblemhasmorethan onesolution.
+Example:
+Completeness: DLS search algorithmiscompleteif thesolution isabovethedepthlimit.
+TimeComplexity: Timecomplexity of DLS algorithmis O(bℓ).

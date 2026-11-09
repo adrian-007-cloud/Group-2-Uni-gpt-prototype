@@ -1,0 +1,33 @@
+GivenData:
+Adoctorisawarethatdiseasemeningitiscausesa patienttohavea stiff neck,andit
+occurs80% of thetime.Heisalsoawareof somemorefacts,which aregiven as
+follows:
+● TheKnown probability thata patienthasmeningitisdiseaseis1/30,000.
+● TheKnown probability thata patienthasa stiff neckis2%.
+Leta betheproposition thatpatienthasstiff neckandb betheproposition that
+patienthasmeningitis.,sowecan calculatethefollowing as:
+P(a|b) = 0.8
+P(b) = 1/30000
+P(a)= .02
+Hence,wecan assumethat1 patientoutof 750 patientshasmeningitisdiseasewith
+a stiff neck.
+Example-2
+Question:Fromastandarddeckofplayingcards,asinglecardisdrawn.Theprobabilitythatthe
+cardiskingis4/52,thencalculateposteriorprobabilityP(King|Face),whichmeansthedrawn
+facecardisakingcard.
+Solution:
+P(king): probability thatthecardisKing= 4/52= 1/13
+P(face): probability thata cardisa facecard= 3/13
+P(Face|King): probability of facecardwhen weassumeitisa king = 1
+Putting all valuesin equation (i) wewill get:
+Applic
+ation of Bayes' theoremin Artificial intelligence:
+FollowingaresomeapplicationsofBayes'theorem:
+● Itisusedtocalculatethenextstep of therobotwhen thealready executed
+step isgiven.
+● Bayes' theoremishelpful in weatherforecasting.
+● Itcan solvetheMonty Hall problem.
+Bayesian Belief Networkin artificial intelligence
+Bayesian belief networkiskey computertechnology fordealing with probabilistic
+eventsandtosolvea problemwhich hasuncertainty.Wecan definea Bayesian
+networkas:

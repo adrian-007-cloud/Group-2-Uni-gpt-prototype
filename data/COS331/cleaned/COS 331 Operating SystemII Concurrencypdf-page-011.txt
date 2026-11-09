@@ -1,0 +1,37 @@
+ Error (illegal instruction, addressing violation, etc.).
+ Page fault.
+These are also called traps. They all cause a state switch into the OS.
+External events (things occurring outside the control of the user process):
+ Character typed at terminal.
+ Completion of disk operation (controller is ready for more work).
+ Timer: to make sure OS eventually gets control.
+External events are usually called interrupts. They all cause a state switch into the OS. This means that user
+processes cannot directly take I/O interrupts.
+Structure of the Scheduler/Dispatcher
+The generic structure of a scheduler/dispatcher is shown in figure 6. (below)
+SCHEDULER
+ACTIVATE SUSPEND PAUSE ……
+Ready to
+PCB PCB PCB PCB
+Run
+queue
+DISPATCHER
+CPU
+Figure 6 Structure of the Scheduler/Dispatcher
+The scheduler is composed of a number of functional modules which perform the operations necessary for
+process management.
+SCHEDULING
+Available system resources range from CPU time to disk space to channel I/O time.
+Resources fall into two classes:
+ Preemptible: processor or I/O channel. Can take resource away, use it for something else, then give it
+back later.
+ Non-preemptible: once given, it cannot be reused until process gives it back. Examples are file space,
+terminal, and maybe memory.
+OS makes two related kinds of decisions about resources:
+ Allocation: who gets what. Given a set of requests for resources, which processes should be given
+which resources in order to make most efficient use of the resources? Implication is that resources
+are not easily preemptible.
+ Scheduling: how long can they keep it. When more resources are requested than can be granted
+immediately, in which order should they be serviced? Examples are processor scheduling (one
+processor, many processes), memory scheduling in virtual memory systems. Implication is that
+resource is preemptible.

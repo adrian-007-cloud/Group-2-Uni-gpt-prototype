@@ -1,0 +1,35 @@
+truth of premisesdoesnotguaranteethetruth of theconclusion.
+Example:
+Premise:Allofthepigeonswehaveseeninthezooarewhite.
+Conclusion:Therefore,wecanexpectallthepigeonstobewhite.
+3.Abductivereasoning:
+Abductivereasoning isa formof logical reasoning which startswith singleor
+multipleobservationsthen seekstofindthemostlikely explanation orconclusion for
+theobservation.
+Abductivereasoning isan extension of deductivereasoning,butin abductive
+reasoning,thepremisesdonotguaranteetheconclusion.
+Example:
+Implication: Cricketgroundiswetif itisraining
+Axiom: Cricketgroundiswet.
+Conclusion Itisraining.
+4.Common SenseReasoning
+Common sensereasoning isan informal formof reasoning,which can begained
+through experiences.
+Common Sensereasoning simulatesthehuman ability tomakepresumptionsabout
+eventswhich occurson every day.
+Itrelieson goodjudgmentratherthan exactlogicandoperateson heuristic
+knowledge and heuristicrules.
+Example:
+1. Oneperson can beatoneplaceata time.
+2. If Iputmy handin a fire,then itwill burn.
+Theabovetwostatementsaretheexamplesof common sensereasoning which a
+human mindcan easily understandandassume.
+5.MonotonicReasoning:
+In monotonicreasoning,oncetheconclusion istaken,then itwill remain thesame
+even if weaddsomeotherinformation toexisting information in ourknowledge
+base.In monotonicreasoning,adding knowledgedoesnotdecreasethesetof
+prepositionsthatcan bederived.
+Tosolvemonotonicproblems,wecan derivethevalidconclusion fromtheavailable
+factsonly,anditwill notbeaffectedby newfacts.
+Monotonicreasoning isnotuseful forthereal-timesystems,asin real time,factsget
+changed,sowecannotusemonotonicreasoning.

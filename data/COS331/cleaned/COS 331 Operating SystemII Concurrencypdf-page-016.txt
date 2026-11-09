@@ -1,0 +1,43 @@
+What is a race condition? A race condition occur when there is an uncoordinated concurrent access to
+shared resources e.g memory, registers and devices, which leads to incorrect behavior of the program,
+deadlock or lost work.
+An example: Two processes updating a counter simultaneously. Say the counter has a value of 1. Process A
+reads the variable but before updating Process B reads and updates the counter to 2. Process A, having no
+knowledge of what Process B did, updates the counter to 2. At this time, the correct behavior of the program
+would have the counter being incremented to 3 and not 2.
+5. The mutual exclusion problem and some solutions
+Mutual exclusion (MUTEX) in OS locks is a frequently used method for synchronizing processes or threads
+that want to access some shared resource. Their work justifies their name, if a thread operates on a resource,
+another thread that wants to do tasks on it must wait until the first one is done with its process. Mutex is a
+property of process synchronization which states that ‗no two processes can exist in the critical section at
+any given point of time'. That is, only one process can be in the critical section at a time. It must be free of
+deadlocks: if processes are trying to enter the critical section, one of them must eventually be able to do so
+successfully, provided no process stays in the critical section permanently.
+In this problem, there is a collection of asynchronous processes, each alternately executing a critical and a
+noncritical section that must be synchronized so that no two processes ever execute their critical sections
+concurrently or the mutual-exclusion solution to this makes the shared resource available only while the
+process is in a specific code segment called the critical section. It controls access to the shared resource
+by controlling each mutual execution of that part of its program where the resource would be used. Mutual
+exclusion is a property of concurrency control, which is instituted for the purpose of preventing race
+conditions.
+6. Deadlock: causes, conditions, prevention
+In a multi-process system, deadlock is an unwanted situation that arises in a shared resource environment,
+where a process indefinitely waits for a resource that is held by another process.
+For example, assume a set of transactions {T , T , T , ...,T }. T needs a resource X to complete its task.
+0 1 2 n 0
+Resource X is held by T , and T is waiting for a resource Y, which is held by T . T is waiting for resource
+1 1 2 2
+Z, which is held by T . Thus, all the processes wait for each other to release resources. In this situation,
+none of the processes can finish their task. At this point all processes are blocked and will remain so
+forever. This situation is known as a deadlock.
+Deadlock can be defined formally as follows:
+A set of processes is deadlocked if each process in the set is waiting for an event that only another process
+in the set can cause.
+Deadlocks are not healthy for a system. In case a system is stuck in a deadlock, the transactions involved in
+the deadlock are either rolled back or restarted.
+Assuming the OS detects the system is deadlocked, what can the OS do to recover from deadlock?
+Answer:
+(i) The OS can take resources if they are preemptive.
+(ii) It can kill a process to free up resources.
+(iii) It can try and take snapshots of process state, and roll back to state where the system was not
+deadlocked.

@@ -1,0 +1,35 @@
+rationally asa human brain,andcan performlikea human.
+Typesof Reasoning
+In artificial intelligence,reasoning can bedividedintothefollowing categories:
+Differencebetween JDK,JRE,andJVM
+● Deductivereasoning
+● Inductivereasoning
+● Abductivereasoning
+● Common SenseReasoning
+● MonotonicReasoning
+● Non-monotonicReasoning
+Note: Inductiveanddeductivereasoning aretheformsof propositional logic.
+1.DeductiveReasoning
+Deductivereasoning isdeducing newinformation fromlogically relatedknown
+information.Itistheformof validreasoning,which meanstheargument's
+conclusion mustbetruewhen thepremisesaretrue.
+Deductivereasoning isa typeof propositional logicin AI,anditrequiresvariousrules
+andfacts.Itissometimesreferredtoastop-down reasoning,andcontradictory to
+inductivereasoning.
+In deductivereasoning,thetruth of thepremisesguaranteesthetruth of the
+conclusion.
+Deductivereasoning mostly startsfromthegeneral premisestothespecific
+conclusion,which can beexplainedasbelowexample.
+Example:
+Premise-1:Allthehumaneatsveggies
+Premise-2:Sureshishuman.
+Conclusion:Suresheatsveggies.
+Thegeneral processof deductivereasoning isgiven below:
+2.InductiveReasoning:
+Inductivereasoning isa formof reasoning toarriveata conclusion using limited
+setsof factsby theprocessof generalization.Itstartswith theseriesof specific
+factsordata andreachestoa general statementorconclusion.
+Inductivereasoning isa typeof propositional logic,which isalsoknown ascauseeffectreasoning orbottom-up reasoning.
+In inductivereasoning,weusehistorical data orvariouspremisestogeneratea
+genericrule,forwhich premisessupporttheconclusion.
+In inductivereasoning,premisesprovideprobablesupportstotheconclusion,sothe

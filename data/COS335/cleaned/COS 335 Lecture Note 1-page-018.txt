@@ -1,0 +1,47 @@
+partof an agentitself.An environmentcan bedescribedasa situation in which an
+agentispresent.
+Theenvironmentiswhereagentlives,operateandprovidetheagentwith something
+tosenseandactupon it.An environmentismostly saidtobenon-feministic.
+Featuresof Environment
+AsperRussell andNorvig,an environmentcan havevariousfeaturesfromthepoint
+of viewof an agent:
+1. Fully observablevsPartially Observable
+2. StaticvsDynamic
+3. DiscretevsContinuous
+4. DeterministicvsStochastic
+5. Single-agentvsMulti-agent
+6. Episodicvssequential
+7. Known vsUnknown
+8. AccessiblevsInaccessible
+1.Fully observablevsPartially Observable:
+● If an agentsensorcan senseoraccessthecompletestateof an environment
+ateach pointin timethen itis a fully observable environment,elseit
+is partially observable.
+● Afully observableenvironmentiseasy asthereisnoneedtomaintain the
+internal statetokeep trackhistory of theworld.
+● An agentwith nosensorsin all environmentsthen such an environmentis
+calledas unobservable.
+2.DeterministicvsStochastic:
+● If an agent'scurrentstateandselectedaction can completely determinethe
+nextstateof theenvironment,then such environmentiscalleda deterministic
+environment.
+● Astochasticenvironmentis random in natureandcannotbedetermined
+completely by an agent.
+● In a deterministic,fully observableenvironment,agentdoesnotneedto
+worry aboutuncertainty.
+3.EpisodicvsSequential:
+● In an episodicenvironment,thereisa seriesof one-shotactions,andonly the
+currentperceptisrequiredfortheaction.
+● However,in Sequential environment,an agentrequiresmemory of past
+actionstodeterminethenextbestactions.
+4.Single-agentvsMulti-agent
+● If only oneagentisinvolvedin an environment,andoperating by itself then
+such an environmentiscalledsingleagentenvironment.
+● However,if multipleagentsareoperating in an environment,then such an
+environmentiscalleda multi-agentenvironment.
+● Theagentdesign problemsin themulti-agentenvironmentaredifferentfrom
+singleagentenvironment.
+5.StaticvsDynamic:
+● If theenvironmentcan changeitself whilean agentisdeliberating then such
+environmentiscalleda dynamicenvironmentelseitiscalleda static
+environment.

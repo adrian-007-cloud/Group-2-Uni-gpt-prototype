@@ -1,0 +1,41 @@
+Example:
+1. a) It is Sunday.
+2. b) The Sun rises from West (False proposition)
+3. c) 3+3= 7(False proposition)
+4. d) 5 is a prime number.
+Followingaresomebasicfactsaboutpropositionallogic:
+● Propositional logicisalsocalledBoolean logicasitworkson 0 and1.
+● In propositional logic,weusesymbolicvariablestorepresentthelogic,and
+wecan useany symbol fora representing a proposition,such A,B,C,P,Q,R,
+etc.
+● Propositionscan beeithertrueorfalse,butitcannotbeboth.
+● Propositional logicconsistsof an object,relationsorfunction,and logical
+connectives.
+● Theseconnectivesarealsocalledlogical operators.
+● Thepropositionsandconnectivesarethebasicelementsof the
+propositional logic.
+● Connectivescan besaidasa logical operatorwhich connectstwosentences.
+● Aproposition formula which isalwaystrueiscalled tautology,anditisalso
+calleda validsentence.
+● Aproposition formula which isalwaysfalseiscalled Contradiction.
+● Aproposition formula which hasboth trueandfalsevaluesiscalled
+● Statementswhich arequestions,commands,oropinionsarenot
+propositionssuch as"WhereisRohini","Howareyou","Whatisyourname",
+arenotpropositions.
+Syntax of propositional logic:
+Thesyntax of propositional logicdefinestheallowablesentencesfortheknowledge
+representation.Therearetwotypesof Propositions:
+1) AtomicPropositions
+2) Compoundpropositions
+AtomicProposition: Atomicpropositionsarethesimplepropositions.Itconsistsof a
+singleproposition symbol.Thesearethesentenceswhich mustbeeithertrueor
+false.
+Example:
+a) 2+2 is 4, it is an atomic proposition as it is a true fact.
+b) "The Sun is cold" is also a proposition as it is a false fact.
+Compoundproposition: Compoundpropositionsareconstructedby combining
+simpleroratomicpropositions,using parenthesisandlogical connectives.
+Example:
+a) "It is raining today, and street is wet."
+b) "Obinna is a doctor, and his clinic is in Lagos."
+Logical Connectives:

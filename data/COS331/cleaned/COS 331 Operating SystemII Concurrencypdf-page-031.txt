@@ -1,0 +1,31 @@
+The total time taken by swapping process includes the time it takes to move the entire process to a secondary
+disk and then to copy the process back to memory, as well as the time the process takes to regain main
+memory.
+Let us assume that the user process is of size 2048KB and on a standard hard disk where swapping will take
+place has a data transfer rate around 1 MB per second. The actual transfer of the 1000K process to or from
+memory will take
+2048KB / 1024KB per second
+= 2 seconds
+= 2000 milliseconds
+Now considering in and out time, it will take complete 4000 milliseconds plus other overhead where the
+process competes to regain main memory.
+Memory Allocation
+Main memory usually has two partitions:
+ Low Memory − Operating system resides in this memory.
+ High Memory − User processes are held in high memory.
+Operating system uses the following memory allocation mechanism.
+S.N. Memory Allocation & Description
+1 Single-partition allocation
+In this type of allocation, relocation-register scheme is used to protect user processes from
+each other, and from changing operating-system code and data. Relocation register
+contains value of smallest physical address whereas limit register contains range of logical
+addresses. Each logical address must be less than the limit register.
+2 Multiple-partition allocation
+In this type of allocation, main memory is divided into a number of fixed-sized partitions
+where each partition should contain only one process. When a partition is free, a process is
+selected from the input queue and is loaded into the free partition. When the process
+terminates, the partition becomes available for another process.
+Fragmentation
+As processes are loaded and removed from memory, the free memory space is broken into little pieces. It
+happens after sometimes that processes cannot be allocated to memory blocks considering their small size
+and memory blocks remains unused. This problem is known as Fragmentation.

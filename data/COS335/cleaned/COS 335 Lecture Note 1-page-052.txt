@@ -1,0 +1,31 @@
+● An agentshouldbeabletorepresentstates,actions,etc.
+● An agentshouldbeabletoincorporatenewpercepts
+● An agentcan updatetheinternal representation of theworld
+● An agentcan deducetheinternal representation of theworld
+● An agentcan deduceappropriateactions.
+Thearchitectureof knowledge-basedagent:
+Theabovediagramisrepresenting a generalizedarchitecturefora knowledge-based
+agent.Theknowledge-basedagent(KBA) takeinputfromtheenvironmentby
+perceiving theenvironment.Theinputistaken by theinferenceengineof theagent
+andwhich alsocommunicatewith KB todecideaspertheknowledgestorein KB.
+Thelearning elementof KBAregularly updatestheKB by learning newknowledge.
+Knowledgebase: Knowledge-baseisa central componentof a knowledge-basedagent,
+itisalsoknown asKB.Itisa collection of sentences(here'sentence' isa technical
+termanditisnotidentical tosentencein English).Thesesentencesareexpressedin
+a languagewhich iscalleda knowledgerepresentation language.TheKnowledgebaseof KBAstoresfactabouttheworld.
+Why usea knowledgebase?
+Knowledge-baseisrequiredforupdating knowledgeforan agenttolearn with
+experiencesandtakeaction aspertheknowledge.
+Inferencesystem
+Inferencemeansderiving newsentencesfromold.Inferencesystemallowsustoadd
+a newsentencetotheknowledgebase.Asentenceisa proposition abouttheworld.
+Inferencesystemapplieslogical rulestotheKB todeducenewinformation.
+Inferencesystemgeneratesnewfactssothatan agentcan updatetheKB.An
+inferencesystemworksmainly in tworuleswhich aregiven as:
+● Forwardchaining
+● Backwardchaining
+OperationsPerformedby KBA
+FollowingarethreeoperationswhichareperformedbyKBAinordertoshowtheintelligent
+behaviour:
+1. TELL: Thisoperation tellstheknowledgebasewhatitperceivesfromthe
+environment.

@@ -1,0 +1,16 @@
+4.Utility-basedagents
+● Theseagentsaresimilartothegoal-basedagentbutprovidean extra
+componentof utility measurementwhich makesthemdifferentby providing a
+measureof successata given state.
+● Utility-basedagentactbasednotonly goalsbutalsothebestway toachieve
+thegoal.
+● TheUtility-basedagentisuseful when therearemultiplepossible
+alternatives,andan agenthastochoosein ordertoperformthebestaction.
+● Theutility function mapseach statetoa real numbertocheckhow
+efficiently each action achievesthegoals.
+5.Learning Agents
+● Alearning agentin AIisthetypeof agentwhich can learn fromitspast
+experiences,orithaslearning capabilities.
+● Itstartstoactwith basicknowledgeandthen abletoactandadapt
+automatically through learning.
+● Alearning agenthasmainly fourconceptual components,which are:

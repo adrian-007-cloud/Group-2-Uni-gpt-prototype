@@ -1,0 +1,30 @@
+by heuristicfunction,i.e.
+1. f(n)= g(n).
+Where,h(n)= estimatedcostfromnoden tothegoal.
+g(n) isthestartstate
+Thegreedy bestfirstalgorithmisimplementedby thepriority queue.
+BestFirstSearch Algorithm:
+● Step 1: Placethestarting nodeintotheOPENlist.
+● Step 2: If theOPENlistisempty,Stop andreturn failure.
+● Step 3: Removethenoden,fromtheOPENlistwhich hasthelowestvalueof
+h(n),andplacesitin theCLOSED list.
+● Step 4: Expandthenoden,andgeneratethesuccessorsof noden.
+● Step 5: Checkeach successorof noden,andfindwhetherany nodeisa goal
+nodeornot.If any successornodeisgoal node,then return successand
+terminatethesearch,elseproceedtoStep 6.
+● Step 6: Foreach successornode,algorithmchecksforevaluation function
+f(n),andthen checkif thenodehasbeen in eitherOPENorCLOSED list.If the
+nodehasnotbeen in both list,then addittotheOPENlist.
+● Step 7: Return toStep 2.
+Advantages:
+● Bestfirstsearch can switch between BFS andDFS by gaining the
+advantagesof both thealgorithms.
+● Thisalgorithmismoreefficientthan BFS andDFS algorithms.
+Disadvantages:
+● Itcan behaveasan unguideddepth-firstsearch in theworstcasescenario.
+● Itcan getstuckin a loop asDFS.
+● Thisalgorithmisnotoptimal.
+Example:
+Considerthebelowsearch problem,andwewill traverseitusing greedy best-first
+search.Ateach iteration,each nodeisexpandedusing evaluation function
+f(n)=h(n) ,which isgiven in thebelowtable.

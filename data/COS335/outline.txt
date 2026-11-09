@@ -1,0 +1,13 @@
+Introduction to Artificial Intelligence
+Problem Formulation and Search
+Heuristic Search
+Production Systems
+Semantic Networks
+Frames
+Propositional Logic
+First Order Predicate Logic
+Fuzzy Logic
+Other Methods of Reasoning
+Introduction to Pattern Recognition
+Multilayer Neural Networks
+Self-Organizing Neural Networks
